@@ -1,0 +1,282 @@
+/* External CSS for all cards on the MSBTE Notes & Info site */
+
+body {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  scroll-padding-top: 5rem;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* prevents section from hiding under fixed navbar */
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+}
+
+
+/* Card Design */
+.card-shadow {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #d97706, #dc2626);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  line-height: 1;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  text-transform: capitalize;
+}
+
+.badge-sem {
+  background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  color: white;
+}
+
+.badge-free {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.badge-premium {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: linear-gradient(to right, #facc15, #f97316);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 960px;
+}
+
+.cta-banner button {
+  background-color: white;
+  color: #dc2626;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cta-banner button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Mobile Responsive Menu */
+.mobile-menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    color: #1e3a8a;
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    z-index: 50;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #1e40af;
+  }
+
+  .mobile-nav a:hover {
+    background: #f1f5f9;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+  .card-shadow {
+    padding: 1rem;
+  }
+}
+.filter-btn {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+/* Enhanced Card Styles */
+.note-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.note-card h3 {
+  font-size: 1.125rem;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.note-card .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  line-height: 1;
+  margin: 0.25rem 0.25rem 0 0;
+  text-transform: capitalize;
+}
+
+.badge-sem {
+  background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  color: white;
+}
+
+.badge-free {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.badge-premium {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #d97706, #dc2626);
+}
+
+.filter-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.filter-btn.active {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  border-color: transparent;
+}
+
+input:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3); /* blue glow */
+}
+
+/* Footer styles */
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  color: #ffffff;
+}
+
+footer .text-sm {
+  color: #cbd5e1;
+}
+
+footer .bg-white {
+  background-color: #ffffff;
+  color: #1e40af;
+}
+#about svg {
+  transition: transform 0.3s ease;
+}
+
+#about svg:hover {
+  transform: scale(1.15);
+}

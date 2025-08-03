@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | MSBTE Notes & Info</title>
+    <meta name="description" content="Oops! The page you’re looking for doesn’t exist on MSBTE Notes & Info." />
+
+    <!-- Icons -->
+    <link rel="icon" href="/resourse/favicon.ico">
+    <link rel="apple-touch-icon" href="/resourse/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="/resourse/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/resourse/android-chrome-512x512.png">
+
+    <!-- Fonts & Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 pt-16 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
+                MSBTE Notes & Information
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/about.html" class="hover:text-blue-600">About</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+        </div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+            <a href="/about.html" class="block py-2">About</a>
+            <a href="/contact.html" class="block py-2">Contact</a>
+            <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <!-- Hero / 404 Section -->
+    <main class="flex-grow flex items-center justify-center px-4 py-20">
+        <div class="text-center max-w-lg mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                class="w-16 h-16 mx-auto text-blue-600 floating mb-6" fill="currentColor">
+                <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+            </svg>
+            <h1 class="text-5xl font-extrabold text-blue-600 mb-4 font-display">404</h1>
+            <p class="text-gray-600 text-lg mb-6">
+                Oops! The page you’re looking for doesn't exist.<br>
+                It might have been moved or deleted.<br>
+                Try searching from the homepage or explore our latest notes and resources.
+            </p>
+            <a href="/"
+                class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:from-blue-700 hover:to-indigo-700 transition">
+                ← Back to Home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-16 py-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                <p class="text-sm">We provide free and premium study materials, notes, and guidance for MSBTE diploma
+                    engineering students across all departments.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="/about.html" class="hover:underline">About</a></li>
+                    <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                <p class="text-sm mb-2">📧 info.mraaglave@gmail.com</p>
+                <p class="text-sm mb-2">📱 +91 70832 36221</p>
+                <a href="https://chat.whatsapp.com/LXrtKWuhU3qHJ0ryIEmVJV" target="_blank"
+                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
+                    Join WhatsApp Group
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-10 text-sm text-blue-100">
+            &copy; 2025 MSBTE Notes & Info. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+
+</html>

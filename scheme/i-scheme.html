@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Scheme Curriculum - MSBTE Notes & Info</title>
+    <meta name="description"
+        content="Access the MSBTE I-Scheme curriculum and find syllabus details for diploma engineering programs easily.">
+    <meta name="keywords" content="MSBTE, I Scheme, Curriculum, Syllabus, Diploma Engineering">
+    <meta name="author" content="MSBTE Notes & Info Team" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/resourse/favicon.ico">
+    <link rel="apple-touch-icon" href="/resourse/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="/resourse/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/resourse/android-chrome-512x512.png">
+
+    <!-- Fonts & Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 pt-16">
+
+    <!-- Header -->
+    <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
+                MSBTE Notes & Information
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/about.html" class="hover:text-blue-600">About</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+        </div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+            <a href="/about.html" class="block py-2">About</a>
+            <a href="/contact.html" class="block py-2">Contact</a>
+            <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-10 text-center">
+        <h1 class="text-4xl font-bold text-blue-600 font-display">MSBTE I Scheme Curriculum</h1>
+        <p class="mt-2 text-gray-600">Easily search and explore your I Scheme curriculum details and syllabus for
+            diploma courses.</p>
+    </header>
+
+    <!-- Article Body -->
+    <article class="max-w-5xl mx-auto px-4">
+
+        <div class="prose prose-blue max-w-none">
+            <h2>About I Scheme</h2>
+            <p>The <strong>I Scheme</strong> is the modern curriculum pattern followed by MSBTE (Maharashtra State Board
+                of Technical Education) for diploma engineering courses. It introduces updated subjects, practicals, and
+                advanced skill training tailored to industry needs.</p>
+            <br>
+            <h3>How to Find Your Curriculum</h3>
+            <p>To explore your syllabus:</p>
+            <ul>
+                <li>Click inside the embedded MSBTE Curriculum Search window below.</li>
+                <li>Select <strong>Scheme</strong> → Choose <strong>I Scheme</strong>.</li>
+                <li>Choose your <strong>Programme / Course</strong> (e.g., Computer Engineering).</li>
+                <li>Click <strong>Search</strong> to view your syllabus, subject list, and exam details.</li>
+            </ul>
+            <p>This tool helps you stay updated on subjects, practical hours, credits, and examination patterns for your
+                diploma studies.</p>
+        </div>
+
+        <!-- Embedded MSBTE Curriculum Search -->
+        <div class="mt-10">
+            <iframe src="https://econtent.msbte.edu.in/curriculum_search/" title="MSBTE Curriculum Search"></iframe>
+        </div>
+
+        <div class="text-center my-12">
+            <a href="/"
+                class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full text-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 font-semibold transition">
+                👈 Go Back to Home
+            </a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-16 py-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                <p class="text-sm">We provide free and premium study materials, notes, and guidance for MSBTE diploma
+                    engineering students across all departments.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="/about.html" class="hover:underline">About</a></li>
+                    <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                <p class="text-sm mb-2">📧 info.mraaglave@gmail.com</p>
+                <p class="text-sm mb-2">📱 +91 70832 36221</p>
+                <a href="https://chat.whatsapp.com/LXrtKWuhU3qHJ0ryIEmVJV" target="_blank"
+                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
+                    Join WhatsApp Group
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-10 text-sm text-blue-100">
+            &copy; 2025 MSBTE Notes & Info. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
