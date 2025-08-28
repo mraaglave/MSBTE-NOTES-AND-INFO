@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
     <channel>
-        <title>MSBTE Notes & Info</title>
+        <title>MSBTE Notes &amp; Info</title>
         <link>https://msbtenotes-info.netlify.app/</link>
-        <description>Latest updates, notes, and resources from MSBTE Notes & Info.</description>
+        <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
         <lastBuildDate>Thu, 28 Aug 2025 12:00:00 GMT</lastBuildDate>
 
         <item>
             <title>Home</title>
             <link>https://msbtenotes-info.netlify.app/</link>
-            <description>Welcome to MSBTE Notes & Info</description>
+            <description>Welcome to MSBTE Notes &amp; Info</description>
             <guid>https://msbtenotes-info.netlify.app/</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
         </item>
@@ -26,7 +26,7 @@
         <item>
             <title>Contact</title>
             <link>https://msbtenotes-info.netlify.app/contact.html</link>
-            <description>Get in touch with MSBTE Notes & Info team.</description>
+            <description>Get in touch with MSBTE Notes &amp; Info team.</description>
             <guid>https://msbtenotes-info.netlify.app/contact.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
         </item>
@@ -34,7 +34,7 @@
         <item>
             <title>About Us</title>
             <link>https://msbtenotes-info.netlify.app/about.html</link>
-            <description>Learn more about MSBTE Notes & Info.</description>
+            <description>Learn more about MSBTE Notes &amp; Info.</description>
             <guid>https://msbtenotes-info.netlify.app/about.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
         </item>
