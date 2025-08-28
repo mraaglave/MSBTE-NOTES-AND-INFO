@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>MSBTE Notes & Info</title>
+        <link>https://msbtenotes-info.netlify.app/</link>
+        <description>Latest updates, notes, and resources from MSBTE Notes & Info.</description>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 28 Aug 2025 12:00:00 GMT</lastBuildDate>
+
+        <item>
+            <title>Home</title>
+            <link>https://msbtenotes-info.netlify.app/</link>
+            <description>Welcome to MSBTE Notes & Info</description>
+            <guid>https://msbtenotes-info.netlify.app/</guid>
+            <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Internships</title>
+            <link>https://msbtenotes-info.netlify.app/internships.html</link>
+            <description>Find the latest internship opportunities.</description>
+            <guid>https://msbtenotes-info.netlify.app/internships.html</guid>
+            <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Contact</title>
+            <link>https://msbtenotes-info.netlify.app/contact.html</link>
+            <description>Get in touch with MSBTE Notes & Info team.</description>
+            <guid>https://msbtenotes-info.netlify.app/contact.html</guid>
+            <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>About Us</title>
+            <link>https://msbtenotes-info.netlify.app/about.html</link>
+            <description>Learn more about MSBTE Notes & Info.</description>
+            <guid>https://msbtenotes-info.netlify.app/about.html</guid>
+            <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>I-Scheme</title>
+            <link>https://msbtenotes-info.netlify.app/scheme/i-scheme.html</link>
+            <description>Access I-Scheme syllabus and notes.</description>
+            <guid>https://msbtenotes-info.netlify.app/scheme/i-scheme.html</guid>
+            <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Privacy Policy</title>
+            <link>https://msbtenotes-info.netlify.app/privacy-policy.html</link>
+            <description>Read our updated privacy policy.</description>
+            <guid>https://msbtenotes-info.netlify.app/privacy-policy.html</guid>
+            <pubDate>Wed, 27 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>K-Scheme</title>
+            <link>https://msbtenotes-info.netlify.app/scheme/k-scheme.html</link>
+            <description>Access K-Scheme syllabus and notes.</description>
+            <guid>https://msbtenotes-info.netlify.app/scheme/k-scheme.html</guid>
+            <pubDate>Wed, 27 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>New Updates</title>
+            <link>https://msbtenotes-info.netlify.app/new.html</link>
+            <description>Latest announcements and updates.</description>
+            <guid>https://msbtenotes-info.netlify.app/new.html</guid>
+            <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Links</title>
+            <link>https://msbtenotes-info.netlify.app/links.html</link>
+            <description>Quick access to important MSBTE resources.</description>
+            <guid>https://msbtenotes-info.netlify.app/links.html</guid>
+            <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Computer Branch</title>
+            <link>https://msbtenotes-info.netlify.app/Branches/Computer.html</link>
+            <description>Notes and resources for Computer Engineering branch.</description>
+            <guid>https://msbtenotes-info.netlify.app/Branches/Computer.html</guid>
+            <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
+        </item>
+
+    </channel>
+</rss>
