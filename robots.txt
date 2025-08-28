@@ -21,3 +21,5 @@ Disallow: /*?*
 
 # Sitemap(s) help crawlers find all pages faster
 Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml
+Feed: https://msbtenotes-info.netlify.app/rss.xml
+
