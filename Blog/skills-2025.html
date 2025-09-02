@@ -438,6 +438,56 @@
             document.getElementById('mobileNav').classList.toggle('hidden');
         }
     </script>
+    <!-- Popup Modal -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-2xl shadow-lg max-w-sm w-full p-6 relative text-center">
+
+            <!-- Close Button -->
+            <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                ✖
+            </button>
+
+            <!-- Image -->
+            <img src="https://i.postimg.cc/8PS2g95n/unnamed.png" alt="DSA Course Pre-Registration"
+                class="mx-auto mb-4 rounded-lg shadow-sm max-h-40 object-contain">
+
+            <!-- Content -->
+            <h2 class="text-xl font-bold text-blue-600 mb-2">
+                📘 Data Structures & Algorithms (DSA) Course
+            </h2>
+            <p class="text-gray-600 mb-4">
+                Pre-register now and secure your spot in our upcoming free DSA course. Learn coding, problem-solving,
+                and crack interviews with confidence!
+            </p>
+            <a href="https://forms.gle/naHnN4oBEFs5Xo4C9" target="_blank" rel="noopener noreferrer"
+                class="inline-block bg-blue-600 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-700 transition">
+                Pre-Register Now 🚀
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let popupShown = false;
+
+        function showPopup() {
+            if (!popupShown) {
+                document.getElementById("popup").classList.remove("hidden");
+                popupShown = true;
+            }
+        }
+
+        function closePopup() {
+            document.getElementById("popup").classList.add("hidden");
+        }
+
+        // Show popup after 10s of scrolling
+        window.addEventListener("scroll", () => {
+            if (!popupShown) {
+                setTimeout(showPopup, 10000);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
