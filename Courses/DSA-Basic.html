@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic DSA Course | Learn Data Structures & Algorithms Free</title>
+
+    <meta name="description"
+        content="Join the free Basic DSA Course and learn Data Structures & Algorithms step by step. Includes Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Searching, Sorting, and more." />
+    <meta name="keywords"
+        content="DSA, Data Structures, Algorithms, Free Course, Learn Coding, Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Searching, Sorting" />
+    <meta name="author" content="MSBTE Notes & Info Team" />
+    <link rel="canonical" href="https://msbtenotes-info.netlify.app/courses/DSA-Basic" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Basic DSA Course | Learn Data Structures & Algorithms Free" />
+    <meta property="og:description"
+        content="Master Data Structures & Algorithms with our free Basic DSA Course. Includes video lectures, progress tracking, and a printable certificate of completion." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://msbtenotes-info.netlify.app/courses/DSA-Basic" />
+    <meta property="og:image"
+        content="https://msbtenotes-info.netlify.app/resourse/course-resourse/DSA-Basic-thumbnail.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Basic DSA Course | Learn Data Structures & Algorithms Free" />
+    <meta name="twitter:description"
+        content="Step by step DSA Course with free YouTube lectures, progress tracking, and completion certificate. Start learning today!" />
+    <meta name="twitter:image"
+        content="https://msbtenotes-info.netlify.app/resourse/course-resourse/DSA-Basic-thumbnail.png" />
+
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/resourse/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/resourse/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/resourse/favicon-16x16.png">
+    <link rel="manifest" href="/resourse/site.webmanifest">
+    <link rel="icon" href="/resourse/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resourse/favicon.ico">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Google Funding Choices & Ads -->
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
+    <script>
+        (function () {
+            function signalGooglefcPresent() {
+                if (!window.frames['googlefcPresent']) {
+                    if (document.body) {
+                        const iframe = document.createElement('iframe');
+                        iframe.style = 'width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;';
+                        iframe.style.display = 'none';
+                        iframe.name = 'googlefcPresent';
+                        document.body.appendChild(iframe);
+                    } else {
+                        setTimeout(signalGooglefcPresent, 0);
+                    }
+                }
+            }
+            signalGooglefcPresent();
+        })();
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+
+    <style>
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 pt-16">
+
+    <!-- Header -->
+    <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
+                MSBTE Notes & Info
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/about.html" class="hover:text-blue-600">About</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+        </div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+            <a href="/about.html" class="block py-2">About</a>
+            <a href="/contact.html" class="block py-2">Contact</a>
+            <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <header class="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+        <h1 class="text-4xl font-bold text-blue-600">📘 Basic DSA Course</h1>
+        <p class="mt-2 text-gray-600">Step-by-step video lectures to master Data Structures & Algorithms.</p>
+    </header>
+
+    <!-- Name Input -->
+    <section id="nameSection" class="max-w-2xl mx-auto text-center px-4 mb-6">
+        <input id="studentName" type="text" placeholder="Enter Your Full Name" autocomplete="name"
+            class="w-full text-lg p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-sm" />
+        <button onclick="saveName()" class="mt-3 bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700">
+            Save Name
+        </button>
+        <p class="mt-2 text-sm text-gray-500 px-2">
+            ⚡ Your name will appear on the Certificate after course completion.
+        </p>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="max-w-4xl mx-auto px-4 mb-6">
+        <div class="bg-gray-200 rounded-full h-4 w-full overflow-hidden shadow">
+            <div id="progressBar" class="bg-blue-600 h-4 w-0 transition-all duration-500"></div>
+        </div>
+        <p id="progressText" class="mt-2 text-sm text-gray-600 text-center">Progress: 0%</p>
+    </section>
+
+    <!-- Course Player -->
+    <main class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 id="lectureTitle" class="text-2xl font-semibold mb-4">Loading...</h2>
+            <div class="aspect-video mb-4">
+                <div id="lectureVideo"></div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="text-lg font-semibold mb-2">Description</h3>
+                <p id="lectureDescription" class="text-gray-700 leading-relaxed">Loading description...</p>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button id="prevBtn" onclick="prevLecture()"
+                    class="bg-gray-300 text-gray-800 px-6 py-2 rounded-lg shadow hover:bg-gray-400">
+                    ⬅ Previous
+                </button>
+                <button id="nextBtn" onclick="nextLecture()"
+                    class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 hidden">
+                    Next ➡
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-16 py-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                <p class="text-sm">We provide free and premium study materials, notes, and guidance for MSBTE diploma
+                    engineering students across all departments.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="/about.html" class="hover:underline">About</a></li>
+                    <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                <p class="text-sm mb-2">📧 info.mraaglave@gmail.com</p>
+                <p class="text-sm mb-2">📱 +91 70832 36221</p>
+                <a href="https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ" target="_blank"
+                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">Join
+                    WhatsApp Community</a>
+            </div>
+        </div>
+        <div class="text-center mt-10 text-sm text-blue-100">
+            &copy; 2025 MSBTE Notes & Info. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const lectures = [
+            { id: "-D5u5HJbISc", title: "Introduction to Data Structure & Algorithms", channel: "Learn Coding", description: "This video introduces the fundamental concepts of Data Structures and Algorithms (DSA), which are essential for any computer science student or professional. It covers what data structures are (ways of organizing data) and what algorithms are (step-by-step procedures to solve problems). You'll learn why studying DSA is crucial for writing efficient and scalable code, and how these concepts form the backbone of software development. The lecture provides an overview of various data structures like arrays, linked lists, stacks, queues, trees, and graphs, and introduces the idea of analyzing algorithms for their time and space complexity, setting the stage for deeper dives into each topic. Understanding these basics is the first step toward becoming a better problem-solver and developer." },
+            { id: "E2uHcxzKqS8", title: "Algorithm Complexity (Time & Space)", channel: "Learn Coding", description: "This lecture dives into the core of algorithm analysis: time and space complexity. You'll learn how to measure the performance of an algorithm, not in seconds, but in terms of how its runtime (time complexity) and memory usage (space complexity) grow with the size of the input data. The video explains the concept of Big O notation ($O$), which is the standard way to express complexity. It covers different complexities like constant time ($O(1)$), linear time ($O(n)$), logarithmic time ($O(\log n)$), and quadratic time ($O(n^2)$), and provides practical examples for each. By the end of this video, you'll be able to evaluate an algorithm's efficiency and choose the most optimal one for a given problem, a skill highly valued in technical interviews." },
+            { id: "goqe7OZrJt4", title: "Searching: Linear & Binary", channel: "Learn Coding", description: "This video focuses on two fundamental searching algorithms: Linear Search and Binary Search. You'll first learn about Linear Search, a simple, straightforward method that checks each element in a list sequentially until it finds a match. It's easy to implement but not very efficient for large datasets. Next, the lecture introduces Binary Search, a much faster algorithm that works on sorted arrays. Binary search repeatedly divides the search interval in half, dramatically reducing the number of comparisons needed. The video provides a clear explanation of how each algorithm works, including their time complexities ($O(n)$ for Linear Search and $O(\log n)$ for Binary Search), and demonstrates when to use each one. This is a foundational concept for understanding how to efficiently find data." },
+            { id: "K2BEKh-EqqA", title: "Sorting: Bubble, Insertion, Selection, Merge & Quick", channel: "Learn Coding", description: "This comprehensive video explores five of the most common sorting algorithms. It starts with simple, less efficient sorts like Bubble Sort, Insertion Sort, and Selection Sort, explaining their step-by-step processes and why they are often used for small datasets or educational purposes. The lecture then moves on to more advanced and efficient algorithms: Merge Sort and Quick Sort. You'll learn about their 'divide and conquer' strategy, which makes them highly effective for large datasets. The video breaks down the logic of each algorithm, discusses their time complexities (e.g., $O(n^2)$ for simple sorts and $O(n \log n)$ for Merge and Quick Sort), and provides visual examples to help you grasp how they rearrange data to produce a sorted list." },
+            { id: "A-6WgqH7bQ4", title: "Difference between Stack and Queue", channel: "Learn Coding", description: "This lecture clarifies the key distinctions between two linear data structures: Stacks and Queues. Both are crucial for managing data in a specific order, but they operate on different principles. A Stack follows the LIFO (Last-In, First-Out) principle, much like a stack of plates—the last one you put on is the first one you take off. A Queue follows the FIFO (First-In, First-Out) principle, just like a line of people waiting—the first person in line is the first one served. The video provides clear, relatable analogies and examples to illustrate their behavior, including the primary operations (push/pop for stacks, enqueue/dequeue for queues), and discusses their common applications in computing, such as function call management and print spooling. This video is a must-watch for understanding these foundational concepts." },
+            { id: "h4HpJMSxcF8", title: "Stack in Data Structure", channel: "Learn Coding", description: "Building on the previous video, this lecture provides a detailed look at the Stack data structure. You'll get a deep understanding of its LIFO (Last-In, First-Out) behavior and the two primary operations: push (adding an item) and pop (removing an item). The video also covers other essential operations like `peek` (viewing the top element without removing it) and `isEmpty` (checking if the stack is empty). Through clear code examples and diagrams, it demonstrates how a stack can be implemented using both arrays and linked lists. The lecture also highlights practical applications of stacks in computer science, such as handling function calls in memory (the call stack) and implementing `undo/redo` features in software, reinforcing the importance of this structure." },
+            { id: "E83TEPXmLoU", title: "Applications of Stack", channel: "Learn Coding", description: "This video is dedicated to exploring the various real-world applications of the Stack data structure. It goes beyond the basic theory to show you how stacks are used to solve complex problems. You'll learn how stacks are fundamental in expression evaluation (converting infix to postfix/prefix and calculating expressions), backtracking algorithms (like in solving mazes or Sudoku), and syntactic parsing (checking for balanced parentheses in code). The video also covers how stacks are used for depth-first search (DFS) in graphs and trees and for managing the function call stack in a program's memory. These examples provide a strong practical context for the stack, helping you see its power and versatility in action." },
+            { id: "WUzNweEV8BQ", title: "Queue in Data Structure", channel: "Learn Coding", description: "Following the discussion on stacks, this lecture focuses on the Queue data structure. You'll learn about its FIFO (First-In, First-Out) principle and its two primary operations: enqueue (adding an item to the back) and dequeue (removing an item from the front). The video uses relatable analogies, like a waiting line, to make the concept easy to understand. It also explains how queues can be implemented using arrays or linked lists and the pros and cons of each approach. The lecture highlights several important applications of queues, including managing tasks in an operating system, handling requests on a web server, and implementing a breadth-first search (BFS) in graphs, demonstrating how this simple structure is vital for managing processes in a sequential order." },
+            { id: "XJyfHJqQOIE", title: "Linked List in Data Structure", channel: "Learn Coding", description: "This video introduces the Linked List, a dynamic linear data structure that differs significantly from arrays. Unlike an array, a linked list's elements (nodes) are not stored in contiguous memory locations. Instead, each node contains data and a pointer (or link) to the next node in the sequence. You'll learn about the different types of linked lists: singly linked, doubly linked, and circular linked lists. The lecture covers the fundamental operations, such as insertion, deletion, and traversal, and explains the advantages of linked lists, such as efficient insertions and deletions, and dynamic size. The video also discusses their disadvantages, like slow access to elements, providing a balanced view of when to use this versatile data structure." },
+            { id: "m9AMqK43-u4", title: "Difference between Array & Linked List", channel: "Learn Coding", description: "This video provides a direct and detailed comparison between two of the most fundamental data structures: Arrays and Linked Lists. You'll learn about their core differences in terms of memory allocation (contiguous for arrays, non-contiguous for linked lists), size (fixed for arrays, dynamic for linked lists), and performance of operations like insertion, deletion, and random access. The lecture uses clear diagrams to illustrate how data is stored in each structure. It explains why arrays are great for fast random access but poor for insertions/deletions, while linked lists excel at insertions/deletions but are slow for random access. This comparison is crucial for understanding when to choose one over the other in your programming projects." },
+            { id: "whYm5cqigL8", title: "Deleted Video", channel: "Learn Coding", description: "This placeholder indicates that a video has been deleted. As this course automatically skips over any deleted videos, you don't need to do anything. You can simply proceed to the next available video to continue your learning journey. This feature ensures that your learning path remains uninterrupted and that you don't encounter any broken links or missing content, allowing you to focus on the topics that are available." },
+            { id: "eOYQGAtgBjI", title: "Difference between Tree and Graph", channel: "Learn Coding", description: "This lecture highlights the fundamental differences between two non-linear data structures: Trees and Graphs. While both consist of nodes and connections, their structure and rules are distinct. A Tree is a hierarchical structure with a single root node and a strict parent-child relationship where there are no cycles. A Graph, on the other hand, is a network of nodes (vertices) and connections (edges) with no such restrictions, allowing for complex relationships and cycles. The video uses visual aids to clearly demonstrate these differences, explaining concepts like acyclic nature in trees vs. cycles in graphs, and provides examples of where each structure is used. This comparison is essential for classifying and working with complex data relationships." },
+            { id: "iVJ_avaKDXk", title: "Tree in Data Structures", channel: "Learn Coding", description: "This video offers a comprehensive introduction to the Tree data structure. As a hierarchical, non-linear structure, a tree is composed of nodes connected by edges, with a single root node at the top. You'll learn key terminology, including root, node, edge, leaf, parent, and child. The lecture covers different types of trees, such as binary trees, binary search trees (BSTs), and balanced trees, and explains their respective uses. It also demonstrates the basic operations, such as traversal (pre-order, in-order, post-order), insertion, and deletion. Understanding trees is critical for applications like file systems, databases, and various algorithms for searching and sorting data efficiently." },
+            { id: "uoA93qaX7UQ", title: "Tree Traversing", channel: "Learn Coding", description: "This lecture focuses on the three main methods for visiting every node in a Tree data structure: In-order, Pre-order, and Post-order traversal. You'll learn the specific rules for each method. In-order traversal visits the left subtree, then the root, then the right subtree, and is particularly useful for printing elements of a Binary Search Tree in sorted order. Pre-order traversal visits the root first, then the left subtree, then the right, and is used to create a copy of a tree. Post-order traversal visits the left and right subtrees before the root, making it useful for deleting a tree. The video uses visual examples to walk you through each traversal, helping you understand the logic and recognize their specific applications." },
+            { id: "M2c8D-MCAck", title: "Infix, Prefix, Postfix Expressions", channel: "Learn Coding", description: "This video demystifies the different notations for mathematical expressions: Infix, Prefix, and Postfix. You'll learn that Infix is the standard notation we're all familiar with (e.g., $A + B$). Prefix notation places the operator before the operands (e.g., $+ AB$), and Postfix notation places the operator after the operands (e.g., $AB+$). The lecture explains why computers often prefer Prefix and Postfix notations, especially for expression evaluation, as they eliminate the need for parentheses and complex order of operations. You'll see how to convert between these notations and learn how a stack can be used to easily evaluate expressions in Postfix and Prefix forms. This is a fundamental concept in compiler design and expression evaluation." },
+            { id: "lg48ZZe7YUA", title: "Graph in Data Structure (BFS & DFS)", channel: "Learn Coding", description: "This video introduces the Graph data structure, a powerful tool for modeling relationships between objects. A graph consists of vertices (nodes) and edges (connections). Unlike trees, graphs can have cycles and multiple paths between nodes. The lecture explains key concepts like directed vs. undirected graphs and weighted vs. unweighted graphs. It then dives into two of the most important graph traversal algorithms: Breadth-First Search (BFS) and Depth-First Search (DFS). You'll learn how BFS explores a graph level by level using a queue, while DFS explores as far as possible along a single path before backtracking, using a stack. The video provides clear, visual demonstrations of both algorithms, highlighting their differences and common applications, such as finding the shortest path or topological sorting." }
+        ];
+
+        let current = parseInt(localStorage.getItem("dsaCurrent") || "0");
+        let player;
+
+        const titleEl = document.getElementById("lectureTitle");
+        const descriptionEl = document.getElementById("lectureDescription"); // Added a new element for description
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+
+        function createPlayer(videoId) {
+            if (player) player.destroy();
+            player = new YT.Player("lectureVideo", {
+                videoId: videoId,
+                width: "100%",
+                events: {
+                    onStateChange: (event) => {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            nextBtn.classList.remove("hidden");
+                        }
+                    }
+                }
+            });
+        }
+
+        function loadLecture(index) {
+            const lec = lectures[index];
+            if (!lec) return;
+
+            // Skip deleted video automatically
+            if (lec.title.includes("Deleted")) {
+                current++;
+                loadLecture(current);
+                return;
+            }
+
+            titleEl.innerText = `${index + 1}. ${lec.title} | ${lec.channel}`;
+            descriptionEl.innerText = lec.description; // Update the description element
+            createPlayer(lec.id);
+
+            localStorage.setItem("dsaCurrent", index);
+
+            prevBtn.disabled = index === 0;
+            prevBtn.classList.toggle("opacity-50", index === 0);
+            nextBtn.classList.add("hidden");
+        }
+
+        function nextLecture() {
+            if (current < lectures.length - 1) {
+                current++;
+                loadLecture(current);
+            } else {
+                const studentName = document.getElementById("studentName").value.trim();
+                if (!studentName) {
+                    alert("⚠ Please enter your name before finishing the course.");
+                    return;
+                }
+                localStorage.setItem("studentName", studentName);
+                window.location.href = "certificate.html";
+            }
+        }
+
+        function prevLecture() {
+            if (current > 0) {
+                current--;
+                loadLecture(current);
+            }
+        }
+
+        function onYouTubeIframeAPIReady() {
+            loadLecture(current);
+        }
+
+        // Load API
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+    </script>
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        // ✅ Filter valid lectures (skip deleted)
+        const validLectures = lectures.filter(lec => !lec.title.includes("Deleted"));
+
+        function updateProgress() {
+            const total = validLectures.length;
+            const currentLecture = lectures[current];
+            const completed = validLectures.findIndex(l => l.id === currentLecture.id) + 1;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById("progressBar").style.width = percent + "%";
+            document.getElementById("progressText").innerText = `Progress: ${percent}% (${completed}/${total})`;
+        }
+
+        function loadLecture(index) {
+            const lec = lectures[index];
+            if (!lec) return;
+
+            // Skip deleted video
+            if (lec.title.includes("Deleted")) {
+                current++;
+                loadLecture(current);
+                return;
+            }
+
+            document.getElementById("lectureTitle").innerText = `${index + 1}. ${lec.title} | ${lec.channel}`;
+            document.getElementById("lectureDescription").innerText = lec.description;
+            createPlayer(lec.id);
+
+            localStorage.setItem("dsaCurrent", index);
+
+            prevBtn.disabled = index === 0;
+            prevBtn.classList.toggle("opacity-50", index === 0);
+            nextBtn.classList.add("hidden");
+
+            updateProgress(); // ✅ Correct progress
+        }
+
+        function saveName() {
+            const name = document.getElementById("studentName").value.trim();
+            if (!name) {
+                alert("⚠ Please enter your full name.");
+                return;
+            }
+            localStorage.setItem("studentName", name);
+            document.getElementById("nameSection").style.display = "none";
+        }
+
+        // Hide name section if already saved
+        window.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("studentName")) {
+                document.getElementById("nameSection").style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
