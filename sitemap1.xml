@@ -6,32 +6,7 @@
 		<lastmod>2025-09-04</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//privacy-policy.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//new.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//links.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//internships.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//googlef85124961115b472.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2025-08-27</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//contact.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//404.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2025-09-04</lastmod>
 	</url>
@@ -41,37 +16,42 @@
 		<lastmod>2025-09-04</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//404.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//contact.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2025-09-04</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Courses/test.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2025-09-03</lastmod>
+		<loc>https://www.msbtenotes-info.netlify.app//googlef85124961115b472.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2025-08-27</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Courses/certificate.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//internships.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//links.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//new.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//privacy-policy.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//Courses/DSA-Basic.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2025-09-04</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Blog/skills-2025.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Blog/blog-frame.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//scheme/k-scheme.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2025-09-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//scheme/i-scheme.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//Blog/5-Free-Courses.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2025-09-04</lastmod>
 	</url>
@@ -81,13 +61,33 @@
 		<lastmod>2025-08-03</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Blog/5-Free-Courses.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//scheme/i-scheme.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2025-09-04</lastmod>
 	</url>
 	<url>
-		<loc>https://www.msbtenotes-info.netlify.app//Courses/DSA-Basic.html</loc>
+		<loc>https://www.msbtenotes-info.netlify.app//scheme/k-scheme.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//Blog/blog-frame.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//Blog/skills-2025.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//Courses/certificate.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2025-09-04</lastmod>
+	</url>
+	<url>
+		<loc>https://www.msbtenotes-info.netlify.app//Courses/test.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2025-09-03</lastmod>
 	</url>
 </urlset>
