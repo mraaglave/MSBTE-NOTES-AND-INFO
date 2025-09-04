@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <!-- Consent default (deny until user chooses) -->
+  <script>
+    // Safe gtag shim: push to dataLayer before gtag.js loads
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    // default to denied for analytics and ads until user gives consent
+    gtag('consent', 'default', { 'ad_storage':'denied', 'analytics_storage':'denied' });
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5G5CCD95W"></script>
   <script>
@@ -1222,6 +1230,56 @@
       scrollbar-width: none;
     }
   </style>
+    <!-- Consent banner (CMP-like, accessible) -->
+  <div id="consentBanner" class="fixed inset-x-4 bottom-6 z-50 bg-white shadow-lg rounded-lg p-4 md:p-6 lg:max-w-3xl mx-auto border border-gray-200 hidden"
+    role="dialog" aria-labelledby="consentTitle" aria-describedby="consentDesc" aria-modal="true">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <h3 id="consentTitle" class="text-lg font-semibold text-gray-900">We value your privacy</h3>
+        <p id="consentDesc" class="mt-1 text-sm text-gray-600">We and our partners use cookies to personalize content, provide social features and analyze traffic. Manage your preferences or accept all cookies to improve your experience.</p>
+        <p class="mt-2 text-xs text-gray-500">Change your choices anytime in <a href="/privacy-policy.html" class="underline">Privacy Policy</a>.</p>
+      </div>
+      <div class="flex flex-col items-end gap-2">
+        <button id="consentManage" class="text-sm text-gray-700 hover:underline">Manage</button>
+        <div class="flex gap-2 mt-2">
+          <button id="consentReject" class="px-3 py-2 bg-gray-100 text-gray-800 rounded-md text-sm">Reject non-essential</button>
+          <button id="consentAccept" class="px-3 py-2 bg-blue-600 text-white rounded-md text-sm">Accept all</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="consentManagePanel" class="mt-4 pt-3 border-t border-gray-100 hidden">
+      <form id="consentForm" class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <label class="font-medium text-sm text-gray-800">Analytics</label>
+            <p class="text-xs text-gray-500">Helps us improve the site performance and content.</p>
+          </div>
+          <div>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="consentAnalytics" class="form-checkbox h-4 w-4 text-blue-600">
+            </label>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <label class="font-medium text-sm text-gray-800">Advertising</label>
+            <p class="text-xs text-gray-500">Controls personalized ads and remarketing.</p>
+          </div>
+          <div>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="consentAds" class="form-checkbox h-4 w-4 text-blue-600">
+            </label>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2">
+          <button type="button" id="consentSave" class="px-3 py-2 bg-blue-600 text-white rounded-md text-sm">Save preferences</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <footer class="bg-blue-600 text-white py-12">
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -1285,6 +1343,79 @@
     }
   </script>
   <script src="main.js" defer></script>
+  <script>
+    // Consent banner behavior
+    (function () {
+      const banner = document.getElementById('consentBanner');
+      if (!banner) return;
+      const acceptBtn = document.getElementById('consentAccept');
+      const rejectBtn = document.getElementById('consentReject');
+      const manageBtn = document.getElementById('consentManage');
+      const managePanel = document.getElementById('consentManagePanel');
+      const saveBtn = document.getElementById('consentSave');
+      const analyticsCheckbox = document.getElementById('consentAnalytics');
+      const adsCheckbox = document.getElementById('consentAds');
+
+      function applyConsent(consent) {
+        // consent: { analytics: boolean, ads: boolean }
+        try {
+          gtag('consent', 'update', {
+            'analytics_storage': consent.analytics ? 'granted' : 'denied',
+            'ad_storage': consent.ads ? 'granted' : 'denied'
+          });
+        } catch (e) { /* gtag may not be ready; dataLayer will queue */ }
+
+        localStorage.setItem('site_consent', JSON.stringify(consent));
+
+        // attempt to initialize ads if ads consent given
+        if (consent.ads) {
+          try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { }
+        }
+      }
+
+      function readConsent() {
+        const raw = localStorage.getItem('site_consent');
+        if (!raw) return null;
+        try { return JSON.parse(raw); } catch (e) { return null; }
+      }
+
+      const existing = readConsent();
+      if (!existing) {
+        // show after small delay to avoid flash
+        setTimeout(() => banner.classList.remove('hidden'), 300);
+      } else {
+        applyConsent(existing);
+      }
+
+      acceptBtn.addEventListener('click', function () {
+        applyConsent({ analytics: true, ads: true });
+        banner.classList.add('hidden');
+      });
+
+      rejectBtn.addEventListener('click', function () {
+        applyConsent({ analytics: false, ads: false });
+        banner.classList.add('hidden');
+      });
+
+      manageBtn.addEventListener('click', function () {
+        managePanel.classList.toggle('hidden');
+        const cur = readConsent();
+        analyticsCheckbox.checked = cur ? !!cur.analytics : false;
+        adsCheckbox.checked = cur ? !!cur.ads : false;
+      });
+
+      saveBtn.addEventListener('click', function () {
+        const choice = { analytics: !!analyticsCheckbox.checked, ads: !!adsCheckbox.checked };
+        applyConsent(choice);
+        banner.classList.add('hidden');
+      });
+
+      // keyboard accessibility
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') banner.classList.add('hidden');
+      });
+    })();
+  </script>
 </body>
 
 </html>
