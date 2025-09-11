@@ -164,4 +164,47 @@
 		<priority>0.7</priority>
 		<changefreq>weekly</changefreq>
 	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</loc>
+		<lastmod>2025-09-12</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</loc>
+		<lastmod>2025-09-13</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</loc>
+		<lastmod>2025-09-14</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</loc>
+		<lastmod>2025-09-15</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</loc>
+		<lastmod>2025-09-15</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</loc>
+		<lastmod>2025-09-16</lastmod>
+		<priority>0.7</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</loc>
+		<lastmod>2025-09-17</lastmod>
+		<priority>0.8</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+
 </urlset>
