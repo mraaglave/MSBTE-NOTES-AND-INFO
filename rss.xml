@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MSBTE Notes &amp; Info</title>
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
         <lastBuildDate>Thu, 11 Sep 2025 12:00:00 GMT</lastBuildDate>
+        <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
         <item>
-            <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&TC)</title>
+            <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</title>
             <link>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</link>
-            <description>Download all MSBTE K-Scheme question banks for Computer, Mechanical, Civil, Electrical, IT, and E&TC engineering. Your central hub for all unit test papers.</description>
+            <description>Download all MSBTE K-Scheme question banks for Computer, Mechanical, Civil, Electrical, IT, and E&amp;TC engineering. Your central hub for all unit test papers.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</guid>
             <pubDate>Wed, 17 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image">
                 <media:title type="plain">MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</media:title>
                 <media:description type="plain">Download all MSBTE K-Scheme question banks for Computer, Mechanical, Civil, Electrical, IT, and E&amp;TC engineering. Your central hub for all unit test papers.</media:description>
@@ -25,7 +25,6 @@
             <description>Download MSBTE K-Scheme Electrical Engineering (EE) question banks for all semesters. Get unit test papers for subjects like AC/DC Machines, Switchgear, and Power Electronics.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</guid>
             <pubDate>Tue, 16 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Electrical Engineering (EE) question banks for all semesters. Get unit test papers for subjects like AC/DC Machines, Switchgear, and Power Electronics.</media:description>
@@ -37,7 +36,6 @@
             <description>Download MSBTE K-Scheme Civil Engineering (CE) question banks for all semesters. Get unit test papers for subjects like Strength of Materials, Surveying, and Concrete Technology.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</guid>
             <pubDate>Mon, 15 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Civil Engineering (CE) question banks for all semesters. Get unit test papers for subjects like Strength of Materials, Surveying, and Concrete Technology.</media:description>
@@ -49,7 +47,6 @@
             <description>Download MSBTE K-Scheme Mechanical Engineering (ME) question banks for all semesters. Get unit test papers for subjects like SOM, Thermal Engineering, and Theory of Machines.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</guid>
             <pubDate>Mon, 15 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Mechanical Engineering (ME) question banks for all semesters. Get unit test papers for subjects like SOM, Thermal Engineering, and Theory of Machines.</media:description>
@@ -61,7 +58,6 @@
             <description>Download MSBTE K-Scheme Electronics &amp; Telecommunication (E&amp;TC) question banks for all semesters. Get unit test papers for subjects like Analog Electronics, Digital Communication, and more.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</guid>
             <pubDate>Sat, 13 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Electronics &amp; Telecommunication (E&amp;TC) question banks for all semesters. Get unit test papers for subjects like Analog Electronics, Digital Communication, and more.</media:description>
@@ -73,7 +69,6 @@
             <description>Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
             <pubDate>Sun, 14 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE IT Engineering Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</media:description>
@@ -85,7 +80,6 @@
             <description>Download MSBTE K-Scheme Computer Engineering (CO) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OSY, ACN, and more.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</guid>
             <pubDate>Fri, 12 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Computer Engineering (CO) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OSY, ACN, and more.</media:description>
@@ -97,7 +91,6 @@
             <description>Compete for a ₹20 Lakh prize pool in this national skill test for a chance to win big.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</guid>
             <pubDate>Thu, 11 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" medium="image">
                 <media:title type="plain">Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</media:title>
                 <media:description type="plain">Compete for a ₹20 Lakh prize pool in this national skill test for a chance to win big.</media:description>
@@ -109,7 +102,6 @@
             <description>Explore 20 top Python and Web Development microproject ideas for beginners. Get project topics on creating websites, to-do lists, calculators, and more using HTML, CSS, JavaScript, and Python.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</guid>
             <pubDate>Wed, 10 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image">
                 <media:title type="plain">20 Python &amp; Web Dev Microproject Ideas for Beginners (HTML, CSS, JS) 2025</media:title>
                 <media:description type="plain">Explore 20 top Python and Web Development microproject ideas for beginners. Get project topics on creating websites, to-do lists, calculators, and more using HTML, CSS, JavaScript, and Python.</media:description>
@@ -121,7 +113,6 @@
             <description>Explore 20 top Computer Networks (CN) microproject ideas for diploma students. Get project topics on network design, subnetting, socket programming, and more to master networking concepts.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</guid>
             <pubDate>Tue, 09 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image">
                 <media:title type="plain">20 Computer Networks Microproject Ideas for Diploma Students (Packet Tracer) 2025</media:title>
                 <media:description type="plain">Explore 20 top Computer Networks (CN) microproject ideas for diploma students. Get project topics on network design, subnetting, socket programming, and more to master networking concepts.</media:description>
@@ -133,7 +124,6 @@
             <description>Explore 20 top Software Engineering (SE) microproject ideas for diploma students. Get project topics on SRS, UML diagrams, testing, project planning, and more to master SE concepts.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</guid>
             <pubDate>Mon, 08 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image">
                 <media:title type="plain">20 Software Engineering Microproject Ideas for Diploma Students (SRS, UML) 2025</media:title>
                 <media:description type="plain">Explore 20 top Software Engineering (SE) microproject ideas for diploma students. Get project topics on SRS, UML diagrams, testing, project planning, and more to master SE concepts.</media:description>
@@ -145,7 +135,6 @@
             <description>Explore 20 top Operating System (OS) microproject ideas using C++ and Linux for diploma students. Get project topics on process scheduling, deadlock detection, memory management, and more to master OS concepts.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</guid>
             <pubDate>Sun, 07 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image">
                 <media:title type="plain">20 OS Microproject Ideas for Diploma Students (C++/Linux) 2025</media:title>
                 <media:description type="plain">Explore 20 top Operating System (OS) microproject ideas using C++ and Linux for diploma students. Get project topics on process scheduling, deadlock detection, memory management, and more to master OS concepts.</media:description>
@@ -157,7 +146,6 @@
             <description>Explore 20 top DBMS microproject ideas using SQL for diploma students. Get project topics on college, hospital, e-commerce databases, and more to master database management concepts.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</guid>
             <pubDate>Sat, 06 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image">
                 <media:title type="plain">20 DBMS Microproject Ideas for Diploma Students (SQL) 2025</media:title>
                 <media:description type="plain">Explore 20 top DBMS microproject ideas using SQL for diploma students. Get project topics on college, hospital, e-commerce databases, and more to master database management concepts.</media:description>
@@ -169,7 +157,6 @@
             <description>Explore 20 top OOP microproject ideas in C++ and Java for diploma students. Get project topics on gradebooks, ATMs, shopping carts, and more to master object-oriented programming concepts.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</guid>
             <pubDate>Fri, 05 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image">
                 <media:title type="plain">20 Best OOP Microproject Ideas for Diploma Students (C++/Java) 2025</media:title>
                 <media:description type="plain">Explore 20 top OOP microproject ideas in C++ and Java for diploma students. Get project topics on gradebooks, ATMs, shopping carts, and more to master object-oriented programming concepts.</media:description>
@@ -181,7 +168,6 @@
             <description>Master coding, communication, AI tools, data &amp; cloud, and adaptability with free resources and clear roadmaps for students and parents.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/skills-2025.html</guid>
             <pubDate>Tue, 02 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" medium="image">
                 <media:title type="plain">Top 5 Must-Have Skills for Engineers in 2025</media:title>
                 <media:description type="plain">Master coding, communication, AI tools, data &amp; cloud, and adaptability with free resources and clear roadmaps for students and parents.</media:description>
@@ -193,7 +179,6 @@
             <description>Check MSBTE Winter 2025 exam form fill-up dates for newly admitted and regular students. Official link, last date, late fees, and step-by-step guide to confirm your MSBTE exam form online.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</guid>
             <pubDate>Mon, 01 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" medium="image">
                 <media:title type="plain">MSBTE Winter 2025 Exam Form Fill up Dates, Last Date &amp; Official Link</media:title>
                 <media:description type="plain">Check MSBTE Winter 2025 exam form fill-up dates for newly admitted and regular students. Official link, last date, late fees, and step-by-step guide to confirm your MSBTE exam form online.</media:description>
@@ -205,7 +190,6 @@
             <description>Discover 5 free, industry-recognized certificate courses from AWS, Google, and Microsoft to help you land a job at top tech companies like Meta, Apple, Amazon, Netflix, and Google.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</guid>
             <pubDate>Sat, 30 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-Free-Certificate-Courses.PNG" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-Free-Certificate-Courses.PNG" medium="image">
                 <media:title type="plain">5 Free Certificate Courses to Get MAANG Level Jobs</media:title>
                 <media:description type="plain">Discover 5 free, industry-recognized certificate courses from AWS, Google, and Microsoft to help you land a job at top tech companies like Meta, Apple, Amazon, Netflix, and Google.</media:description>
@@ -218,7 +202,6 @@
             <description>Welcome to MSBTE Notes &amp; Info</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Home</media:title>
                 <media:description type="plain">Welcome to MSBTE Notes &amp; Info</media:description>
@@ -231,7 +214,6 @@
             <description>Find the latest internship opportunities.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/internships.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Internships</media:title>
                 <media:description type="plain">Find the latest internship opportunities.</media:description>
@@ -244,7 +226,6 @@
             <description>Get in touch with MSBTE Notes &amp; Info team.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/contact.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Contact</media:title>
                 <media:description type="plain">Get in touch with MSBTE Notes &amp; Info team.</media:description>
@@ -257,7 +238,6 @@
             <description>Learn more about MSBTE Notes &amp; Info.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/about.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">About Us</media:title>
                 <media:description type="plain">Learn more about MSBTE Notes &amp; Info.</media:description>
@@ -270,7 +250,6 @@
             <description>Access I-Scheme syllabus and notes.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/scheme/i-scheme.html</guid>
             <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">I-Scheme</media:title>
                 <media:description type="plain">Access I-Scheme syllabus and notes.</media:description>
@@ -283,7 +262,6 @@
             <description>Read our updated privacy policy.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/privacy-policy.html</guid>
             <pubDate>Wed, 27 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Privacy Policy</media:title>
                 <media:description type="plain">Read our updated privacy policy.</media:description>
@@ -296,7 +274,6 @@
             <description>Access K-Scheme syllabus and notes.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/scheme/k-scheme.html</guid>
             <pubDate>Wed, 27 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">K-Scheme</media:title>
                 <media:description type="plain">Access K-Scheme syllabus and notes.</media:description>
@@ -309,7 +286,6 @@
             <description>Latest announcements and updates.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/new.html</guid>
             <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">New Updates</media:title>
                 <media:description type="plain">Latest announcements and updates.</media:description>
@@ -322,7 +298,6 @@
             <description>Quick access to important MSBTE resources.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/links.html</guid>
             <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Links</media:title>
                 <media:description type="plain">Quick access to important MSBTE resources.</media:description>
@@ -335,7 +310,6 @@
             <description>Notes and resources for Computer Engineering branch.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Branches/Computer.html</guid>
             <pubDate>Sun, 03 Aug 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" />
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Computer Branch</media:title>
                 <media:description type="plain">Notes and resources for Computer Engineering branch.</media:description>
