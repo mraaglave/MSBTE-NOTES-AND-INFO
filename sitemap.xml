@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 	<url>
-		<loc>https://msbtenotes-info.netlify.app/</loc>
+		<loc>https://msbtenotes-info.netlify.app/index.html</loc>
 		<lastmod>2025-08-31</lastmod>
 		<priority>1.00</priority>
 		<changefreq>daily</changefreq>
@@ -203,6 +203,12 @@
 	<url>
 		<loc>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</loc>
 		<lastmod>2025-09-17</lastmod>
+		<priority>0.8</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</loc>
+		<lastmod>2025-09-18</lastmod>
 		<priority>0.8</priority>
 		<changefreq>weekly</changefreq>
 	</url>

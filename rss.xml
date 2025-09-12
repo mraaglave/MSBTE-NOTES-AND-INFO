@@ -5,9 +5,20 @@
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 11 Sep 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 18 Sep 2025 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title>Advanced Java Handwritten Notes - Free PDF Download</title>
+            <link>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</link>
+            <description>Download free handwritten notes for Advanced Java (J2EE), covering Servlets, JSP, JDBC, and more. A comprehensive PDF perfect for diploma and engineering students.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</guid>
+            <pubDate>Thu, 18 Sep 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" medium="image">
+                <media:title type="plain">Advanced Java Handwritten Notes - Free PDF Download</media:title>
+                <media:description type="plain">Download free handwritten notes for Advanced Java (J2EE), covering Servlets, JSP, JDBC, and more. A comprehensive PDF perfect for diploma and engineering students.</media:description>
+            </media:content>
+        </item>
         <item>
             <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</title>
             <link>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</link>
