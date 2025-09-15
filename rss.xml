@@ -9,6 +9,17 @@
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</title>
+            <link>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</link>
+            <description>Celebrate Engineer's Day 2025! Learn about its history, significance, and how engineers are shaping our world. Join our community for free resources, courses, and career guidance.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</guid>
+            <pubDate>Mon, 15 Sep 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" medium="image">
+                <media:title type="plain">Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</media:title>
+                <media:description type="plain">Celebrate Engineer's Day 2025! Learn about its history, significance, and how engineers are shaping our world. Join our community for free resources, courses, and career guidance.</media:description>
+            </media:content>
+        </item>
+        <item>
             <title>Advanced Java Handwritten Notes - Free PDF Download</title>
             <link>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</link>
             <description>Download free handwritten notes for Advanced Java (J2EE), covering Servlets, JSP, JDBC, and more. A comprehensive PDF perfect for diploma and engineering students.</description>
