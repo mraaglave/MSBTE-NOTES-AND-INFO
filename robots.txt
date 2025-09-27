@@ -1,30 +1,11 @@
-# robots.txt for https://msbtenotes-info.netlify.app
-# Optimized for SEO & Crawl Efficiency
-
+# Allow all crawlers full access
 User-agent: *
 Allow: /
 
-# Block duplicate/junk/unnecessary pages
-Disallow: /search
-Disallow: /tag/
-Disallow: /category/
-Disallow: /drafts/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /admin/
-Disallow: /scheme/
-Disallow: /404.html
+# Disallow crawling of verification files
+Disallow: /googlef85124961115b472.html
+Disallow: /pinterest-9961f.html
+Disallow: /yandex_7a3f92ea9dc08f64.html
 
-# Prevent indexing of URL parameters (avoids duplicate content issues)
-Disallow: /*?*
-
-# Optional: Block internal system files (if any)
-Disallow: /*.php$
-Disallow: /*.cgi$
-Disallow: /*.asp$
-
-# Crawl-delay (only if your server gets overloaded; otherwise keep commented)
-# Crawl-delay: 5
-
-# Point crawlers to your sitemap for faster indexing
+# Sitemap location
 Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml
