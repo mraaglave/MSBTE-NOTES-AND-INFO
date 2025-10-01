@@ -1,7 +1,7 @@
 {
   "sitemap1.xml": {
     "Protocol": "https",
-    "DomainName": "msbtenotes-info.netlify.app/",
+    "DomainName": "msbtenotes-info.netlify.app",
     "Root": "",
     "IncludeExt": [
       ".html",
