@@ -70,13 +70,43 @@
     <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 
     <style>
-        h1, h2, h3, .font-display { font-family: 'Clash Display', sans-serif; }
-        .sitemap-section { margin-bottom: 2.5rem; }
-        .sitemap-section h2 { font-size: 1.75rem; color: #2563eb; border-bottom: 2px solid #dbeafe; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-        .sitemap-list { list-style-type: disc; margin-left: 1.5rem; }
-        .sitemap-list li { margin-bottom: 0.75rem; }
-        .sitemap-list a { color: #374151; text-decoration: none; }
-        .sitemap-list a:hover { color: #1d4ed8; text-decoration: underline; }
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        .sitemap-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .sitemap-section h2 {
+            font-size: 1.75rem;
+            color: #2563eb;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sitemap-list {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .sitemap-list a {
+            color: #374151;
+            text-decoration: none;
+        }
+
+        .sitemap-list a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -86,7 +116,10 @@
     <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
         <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
             <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
                 MSBTE Notes & Info
             </a>
             <div class="hidden md:flex space-x-6">
@@ -147,7 +180,8 @@
                     <li><a href="/Notes/20-microproject-ideas-oop.html">20 OOP Microproject Ideas</a></li>
                     <li><a href="/Notes/20-microproject-ideas-dbms.html">20 DBMS Microproject Ideas</a></li>
                     <li><a href="/Notes/20-microproject-ideas-os.html">20 Operating System Microproject Ideas</a></li>
-                    <li><a href="/Notes/20-microproject-ideas-se.html">20 Software Engineering Microproject Ideas</a></li>
+                    <li><a href="/Notes/20-microproject-ideas-se.html">20 Software Engineering Microproject Ideas</a>
+                    </li>
                     <li><a href="/Notes/20-microproject-ideas-cn.html">20 Computer Networks Microproject Ideas</a></li>
                     <li><a href="/Notes/20-microproject-ideas-web.html">20 Python & Web Dev Microproject Ideas</a></li>
                 </ul>
@@ -177,14 +211,18 @@
             <section class="sitemap-section">
                 <h2>Computer Engineering Subjects (K-Scheme)</h2>
                 <ul class="sitemap-list">
-                    <li><a href="/Branches/314321-microprocessor-programming.html">Microprocessor Programming (314321)</a></li>
+                    <li><a href="/Branches/314321-microprocessor-programming.html">Microprocessor Programming
+                            (314321)</a></li>
                     <li><a href="/Branches/315319-operating-system.html">Operating System (315319)</a></li>
                     <li><a href="/Branches/315323-software-engineering.html">Software Engineering (315323)</a></li>
-                    <li><a href="/Branches/315321-advanced-computer-network.html">Advanced Computer Network (315321)</a></li>
+                    <li><a href="/Branches/315321-advanced-computer-network.html">Advanced Computer Network (315321)</a>
+                    </li>
                     <li><a href="/Branches/315325-cloud-computing.html">Cloud Computing (315325)</a></li>
                     <li><a href="/Branches/315326-data-analytics.html">Data Analytics (315326)</a></li>
-                    <li><a href="/Branches/315002-entrepreneurship-development.html">Entrepreneurship Development (315002)</a></li>
-                    <li><a href="/Branches/315003-seminar-project-initiation.html">Seminar and Project Initiation (315003)</a></li>
+                    <li><a href="/Branches/315002-entrepreneurship-development.html">Entrepreneurship Development
+                            (315002)</a></li>
+                    <li><a href="/Branches/315003-seminar-project-initiation.html">Seminar and Project Initiation
+                            (315003)</a></li>
                     <li><a href="/Branches/315004-internship.html">Internship (12 Weeks) (315004)</a></li>
                 </ul>
             </section>
