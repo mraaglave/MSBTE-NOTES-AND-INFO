@@ -116,9 +116,10 @@
     <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
         <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
             <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
-                    <path
-                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" role="img">
+                    <title>MSBTE Notes & Info</title>
+                    <rect x="2" y="3" width="8" height="18" rx="1" />
+                    <rect x="14" y="3" width="8" height="18" rx="1" />
                 </svg>
                 MSBTE Notes & Info
             </a>
@@ -128,8 +129,10 @@
                 <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
             </div>
             <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+            <button id="mobileMenuButton" onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation menu">≡</button>
         </div>
         <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2" aria-hidden="true">
             <a href="/about.html" class="block py-2">About</a>
             <a href="/contact.html" class="block py-2">Contact</a>
             <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
@@ -138,9 +141,16 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
+    <main role="main" class="max-w-4xl mx-auto px-4 py-12">
         <header class="text-center mb-12">
             <h1 class="text-4xl font-bold text-blue-600 font-display">Sitemap</h1>
             <p class="mt-2 text-gray-600">A complete index of all pages on our website.</p>
+
+            <!-- Search Bar -->
+            <div class="mt-6 relative max-w-lg mx-auto">
+                <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                <input type="text" id="sitemapSearch" placeholder="Search for a page..." class="w-full pl-12 pr-4 py-2 border rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+            </div>
         </header>
 
         <div class="bg-white p-8 rounded-lg shadow-md">
