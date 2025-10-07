@@ -1,0 +1,1561 @@
+{
+    "title": "Java Programming - MSBTE 314317 (K Scheme) - 4th Semester - Question Bank (150 Qs)",
+    "file_name": "java-programming-314317.json",
+    "units": [
+        {
+            "unit": "Unit I - Basic Syntactical Constructs in Java",
+            "questions": [
+                {
+                    "id": "U1-Q1",
+                    "type": "mcq",
+                    "question": "Which of the following is not a Java keyword?",
+                    "options": [
+                        "static",
+                        "Boolean",
+                        "void",
+                        "private"
+                    ],
+                    "answer": "Boolean",
+                    "explanation": "'Boolean' is a wrapper class; Java keyword for primitive type is 'boolean' (lowercase)."
+                },
+                {
+                    "id": "U1-Q2",
+                    "type": "mcq",
+                    "question": "What is the default value of an instance variable of type int in Java?",
+                    "options": [
+                        "0",
+                        "null",
+                        "0.0",
+                        "Undefined"
+                    ],
+                    "answer": "0",
+                    "explanation": "Instance numeric types default to 0; object references default to null."
+                },
+                {
+                    "id": "U1-Q3",
+                    "type": "short_answer",
+                    "question": "Define a constructor in Java.",
+                    "answer": "A constructor is a special method that initializes a newly created object and has the same name as the class with no return type.",
+                    "explanation": "Constructors set initial state and may be overloaded; they do not have a return type."
+                },
+                {
+                    "id": "U1-Q4",
+                    "type": "mcq",
+                    "question": "Which operator is used for reference comparison in Java?",
+                    "options": [
+                        "==",
+                        "equals()",
+                        "compareTo()",
+                        "equalsIgnoreCase()"
+                    ],
+                    "answer": "==",
+                    "explanation": "The '==' operator compares object references (addresses); equals() compares logical equality if overridden."
+                },
+                {
+                    "id": "U1-Q5",
+                    "type": "short_answer",
+                    "question": "What is autoboxing in Java?",
+                    "answer": "Autoboxing is automatic conversion between primitive types (like int) and their wrapper classes (like Integer).",
+                    "explanation": "Introduced in Java 5 to ease conversion between primitives and wrapper objects."
+                },
+                {
+                    "id": "U1-Q6",
+                    "type": "mcq",
+                    "question": "Which class is mutable among the following?",
+                    "options": [
+                        "String",
+                        "StringBuffer",
+                        "StringBuilder",
+                        "Both B and C"
+                    ],
+                    "answer": "Both B and C",
+                    "explanation": "StringBuffer and StringBuilder are mutable; String is immutable."
+                },
+                {
+                    "id": "U1-Q7",
+                    "type": "mcq",
+                    "question": "Which of the following is true about the main method signature to start a Java program?",
+                    "options": [
+                        "public static void main(String args[])",
+                        "public void main(String[] args)",
+                        "static public int main(String[] args)",
+                        "private static void main(String args[])"
+                    ],
+                    "answer": "public static void main(String args[])",
+                    "explanation": "Standard entry point requires public static void with a String array parameter."
+                },
+                {
+                    "id": "U1-Q8",
+                    "type": "short_answer",
+                    "question": "What is the purpose of the 'final' keyword when applied to a variable?",
+                    "answer": "final makes a variable a constant so its value cannot be changed after initialization.",
+                    "explanation": "Final variables must be initialized once; for objects, the reference can't change (object can mutate)."
+                },
+                {
+                    "id": "U1-Q9",
+                    "type": "mcq",
+                    "question": "Which conversion is NOT allowed implicitly in Java?",
+                    "options": [
+                        "int to long",
+                        "float to double",
+                        "double to float",
+                        "short to int"
+                    ],
+                    "answer": "double to float",
+                    "explanation": "double to float is narrowing and requires explicit cast; others are widening conversions."
+                },
+                {
+                    "id": "U1-Q10",
+                    "type": "short_answer",
+                    "question": "Explain what the 'scope' of a variable means.",
+                    "answer": "Scope defines the region of code where a variable is accessible (local, instance, class/static scope).",
+                    "explanation": "Local variables visible within block/method; instance variables accessible within object methods; static variables via class."
+                },
+                {
+                    "id": "U1-Q11",
+                    "type": "mcq",
+                    "question": "Which of the following is the correct way to declare an array of integers in Java?",
+                    "options": [
+                        "int arr[] = new int[5];",
+                        "int[] arr = new int[5];",
+                        "Both A and B",
+                        "int arr = new int[5];"
+                    ],
+                    "answer": "Both A and B",
+                    "explanation": "Both syntaxes are valid for declaring arrays in Java."
+                },
+                {
+                    "id": "U1-Q12",
+                    "type": "short_answer",
+                    "question": "What is the difference between String and StringBuffer?",
+                    "answer": "String is immutable; StringBuffer is mutable and synchronized (thread-safe).",
+                    "explanation": "Modifying a String creates new objects; StringBuffer allows in-place modifications and is synchronized."
+                },
+                {
+                    "id": "U1-Q13",
+                    "type": "mcq",
+                    "question": "What will be the output of: System.out.println(10 + 20 + \"30\" + 40); ?",
+                    "options": [
+                        "303040",
+                        "304040",
+                        "3040",
+                        "303040.0"
+                    ],
+                    "answer": "303040",
+                    "explanation": "10+20 evaluated first =30, then \"30\" makes subsequent concatenations produce \"3030\" + 40 = \"303040\"."
+                },
+                {
+                    "id": "U1-Q14",
+                    "type": "short_answer",
+                    "question": "What are wrapper classes in Java? Give two examples.",
+                    "answer": "Wrapper classes are object representations of primitive types, e.g., Integer for int, Double for double.",
+                    "explanation": "They allow primitives to be treated as objects and used in collections and generics."
+                },
+                {
+                    "id": "U1-Q15",
+                    "type": "mcq",
+                    "question": "Which keyword is used to inherit a class in Java?",
+                    "options": [
+                        "implements",
+                        "extends",
+                        "inherits",
+                        "super"
+                    ],
+                    "answer": "extends",
+                    "explanation": "extends is used for class-to-class inheritance; implements is for interfaces."
+                },
+                {
+                    "id": "U1-Q16",
+                    "type": "short_answer",
+                    "question": "What is method overloading?",
+                    "answer": "Method overloading is defining multiple methods in the same class with the same name but different parameter lists.",
+                    "explanation": "Return type can differ but signature must vary by parameter types/count/order."
+                },
+                {
+                    "id": "U1-Q17",
+                    "type": "mcq",
+                    "question": "Which of the following statements about 'static' is TRUE?",
+                    "options": [
+                        "Static members belong to instances",
+                        "Static methods can access instance variables directly",
+                        "Static variables belong to the class",
+                        "Static cannot be used with methods"
+                    ],
+                    "answer": "Static variables belong to the class",
+                    "explanation": "Static members are class-level and shared across all instances."
+                },
+                {
+                    "id": "U1-Q18",
+                    "type": "short_answer",
+                    "question": "What is garbage collection in Java?",
+                    "answer": "Garbage collection is automatic memory management that reclaims memory of objects no longer reachable.",
+                    "explanation": "JVM's GC runs to free unused heap objects to avoid memory leaks."
+                },
+                {
+                    "id": "U1-Q19",
+                    "type": "mcq",
+                    "question": "Which of the following is a valid main method parameter declaration?",
+                    "options": [
+                        "String[] args",
+                        "String args[]",
+                        "String... args",
+                        "All of the above"
+                    ],
+                    "answer": "All of the above",
+                    "explanation": "All shown parameter declarations are valid ways to accept command-line arguments."
+                },
+                {
+                    "id": "U1-Q20",
+                    "type": "short_answer",
+                    "question": "Explain the difference between == and equals() when comparing Strings.",
+                    "answer": "== compares reference identity, equals() compares String contents (characters) when overridden.",
+                    "explanation": "Use equals() to check two strings for same sequence of characters, not ==."
+                },
+                {
+                    "id": "U1-Q21",
+                    "type": "mcq",
+                    "question": "Which collection class preserves insertion order and allows null elements?",
+                    "options": [
+                        "HashSet",
+                        "ArrayList",
+                        "TreeSet",
+                        "Hashtable"
+                    ],
+                    "answer": "ArrayList",
+                    "explanation": "ArrayList preserves insertion order and allows nulls; HashSet doesn't guarantee order."
+                },
+                {
+                    "id": "U1-Q22",
+                    "type": "short_answer",
+                    "question": "What is a symbolic constant in Java and how is it declared?",
+                    "answer": "A symbolic constant is a final variable declared using 'final' and usually 'static' (e.g., public static final int MAX=100;).",
+                    "explanation": "final prevents reassignment; static final is common for constants accessible at class level."
+                },
+                {
+                    "id": "U1-Q23",
+                    "type": "mcq",
+                    "question": "Which of these access specifiers allows access from same package only?",
+                    "options": [
+                        "public",
+                        "private",
+                        "protected",
+                        "default (no modifier)"
+                    ],
+                    "answer": "default (no modifier)",
+                    "explanation": "Default (package-private) access restricts visibility to classes within same package."
+                },
+                {
+                    "id": "U1-Q24",
+                    "type": "short_answer",
+                    "question": "What does 'command line arguments' refer to in Java?",
+                    "answer": "Command line arguments are tokens passed to the program on startup accessible through the main method's String[] args parameter.",
+                    "explanation": "They allow users to pass input values when launching the Java program from a shell."
+                },
+                {
+                    "id": "U1-Q25",
+                    "type": "mcq",
+                    "question": "Which of the following is true about local variables in Java?",
+                    "options": [
+                        "They get default values",
+                        "They must be initialized before use",
+                        "They are stored in heap",
+                        "They can be declared static"
+                    ],
+                    "answer": "They must be initialized before use",
+                    "explanation": "Local variables are not initialized by default and must be explicitly assigned before use."
+                }
+            ]
+        },
+        {
+            "unit": "Unit II - Inheritance, Interface and Packages",
+            "questions": [
+                {
+                    "id": "U2-Q1",
+                    "type": "mcq",
+                    "question": "Which type of inheritance is not supported directly by Java for classes?",
+                    "options": [
+                        "Single inheritance",
+                        "Multilevel inheritance",
+                        "Multiple inheritance (class-class)",
+                        "Hierarchical inheritance"
+                    ],
+                    "answer": "Multiple inheritance (class-class)",
+                    "explanation": "Java does not allow multiple inheritance with classes to avoid ambiguity; interfaces can be multiply implemented."
+                },
+                {
+                    "id": "U2-Q2",
+                    "type": "short_answer",
+                    "question": "What is method overriding?",
+                    "answer": "Method overriding is redefining a superclass method in a subclass with the same signature to provide specific implementation.",
+                    "explanation": "Overriding enables runtime polymorphism when methods are invoked on subclass instances via superclass references."
+                },
+                {
+                    "id": "U2-Q3",
+                    "type": "mcq",
+                    "question": "Which keyword is used to refer to the immediate parent class constructor or members?",
+                    "options": [
+                        "this",
+                        "super",
+                        "parent",
+                        "base"
+                    ],
+                    "answer": "super",
+                    "explanation": "'super' accesses parent class members and constructors from a subclass."
+                },
+                {
+                    "id": "U2-Q4",
+                    "type": "short_answer",
+                    "question": "Give two differences between abstract class and interface (pre-Java 8).",
+                    "answer": "Abstract classes can have constructors and instance fields; interfaces (pre-Java 8) can only have abstract methods and constants.",
+                    "explanation": "Abstract classes can store state; interfaces before Java 8 were purely abstract method contracts."
+                },
+                {
+                    "id": "U2-Q5",
+                    "type": "mcq",
+                    "question": "Which statement about interfaces in Java is TRUE (Java 7/8 basic concept)?",
+                    "options": [
+                        "Interfaces can have private instance fields",
+                        "Interfaces can contain method implementations only since Java 1.0",
+                        "A class can implement multiple interfaces",
+                        "Interfaces can be instantiated directly"
+                    ],
+                    "answer": "A class can implement multiple interfaces",
+                    "explanation": "Classes may implement many interfaces enabling multiple inheritance of type."
+                },
+                {
+                    "id": "U2-Q6",
+                    "type": "short_answer",
+                    "question": "What is the purpose of packages in Java?",
+                    "answer": "Packages organize related classes/interfaces, provide namespace management, and control access protection across modules.",
+                    "explanation": "They help avoid naming conflicts and group logically related code."
+                },
+                {
+                    "id": "U2-Q7",
+                    "type": "mcq",
+                    "question": "Which of following is correct about 'final' when applied to a class?",
+                    "options": [
+                        "It prevents class from being instantiated",
+                        "It prevents class from being subclassed",
+                        "It makes class immutable",
+                        "It makes all methods static"
+                    ],
+                    "answer": "It prevents class from being subclassed",
+                    "explanation": "A final class cannot be extended; its methods can still be invoked and objects instantiated."
+                },
+                {
+                    "id": "U2-Q8",
+                    "type": "short_answer",
+                    "question": "Explain the use of 'package' and 'import' keywords with an example.",
+                    "answer": "package declares the class's package (e.g., package com.college;), import brings other packages' classes into scope (e.g., import java.util.List;).",
+                    "explanation": "package groups classes; import avoids fully-qualified names in code."
+                },
+                {
+                    "id": "U2-Q9",
+                    "type": "mcq",
+                    "question": "Which access modifier allows a subclass in a different package to access a member?",
+                    "options": [
+                        "private",
+                        "default",
+                        "protected",
+                        "public"
+                    ],
+                    "answer": "protected",
+                    "explanation": "protected permits access by subclasses and classes in the same package."
+                },
+                {
+                    "id": "U2-Q10",
+                    "type": "short_answer",
+                    "question": "What is multiple inheritance of type in Java?",
+                    "answer": "Multiple inheritance of type allows a class to implement multiple interfaces, thus inheriting multiple type contracts.",
+                    "explanation": "Java supports multiple interface implementation to achieve multiple type inheritance safely."
+                },
+                {
+                    "id": "U2-Q11",
+                    "type": "mcq",
+                    "question": "Which of the following best describes 'super()' when used in subclass constructor?",
+                    "options": [
+                        "Calls sibling constructor",
+                        "Calls parent class's no-arg constructor",
+                        "Calls a static initializer",
+                        "Creates a new object of superclass type"
+                    ],
+                    "answer": "Calls parent class's no-arg constructor",
+                    "explanation": "super() invokes the superclass constructor; must be first statement in subclass constructor."
+                },
+                {
+                    "id": "U2-Q12",
+                    "type": "short_answer",
+                    "question": "How do you create a user-defined package and use it in another class?",
+                    "answer": "Place classes in a folder structure matching package name, declare 'package packname;' at top, compile and import using 'import packname.ClassName;'.",
+                    "explanation": "Use correct package declaration and classpath to access user-defined package classes."
+                },
+                {
+                    "id": "U2-Q13",
+                    "type": "mcq",
+                    "question": "If class A extends B and B extends C, what type of inheritance is this?",
+                    "options": [
+                        "Single inheritance",
+                        "Multiple inheritance",
+                        "Multilevel inheritance",
+                        "Hierarchical inheritance"
+                    ],
+                    "answer": "Multilevel inheritance",
+                    "explanation": "Inheritance chain through multiple levels (C -> B -> A) is multilevel."
+                },
+                {
+                    "id": "U2-Q14",
+                    "type": "short_answer",
+                    "question": "What is 'interface' default method (brief)?",
+                    "answer": "A default method in interface (Java 8+) provides a default implementation allowing interfaces to evolve without breaking implementations.",
+                    "explanation": "Declared with 'default' keyword; implementing classes may override it."
+                },
+                {
+                    "id": "U2-Q15",
+                    "type": "mcq",
+                    "question": "Which is the correct statement to import all classes of package java.util?",
+                    "options": [
+                        "import java.util.*;",
+                        "include java.util.*;",
+                        "using java.util.*;",
+                        "package java.util.*;"
+                    ],
+                    "answer": "import java.util.*;",
+                    "explanation": "import with wildcard brings all public classes/interfaces of package into scope."
+                },
+                {
+                    "id": "U2-Q16",
+                    "type": "short_answer",
+                    "question": "Why might you declare a class abstract?",
+                    "answer": "Declare class abstract if it contains abstract methods (no implementation) or should not be instantiated directly while providing shared code for subclasses.",
+                    "explanation": "Abstract classes define common behavior and allow subclasses to implement specifics."
+                },
+                {
+                    "id": "U2-Q17",
+                    "type": "mcq",
+                    "question": "Which of these members are inherited by subclass?",
+                    "options": [
+                        "private methods",
+                        "private variables",
+                        "protected methods",
+                        "private constructors"
+                    ],
+                    "answer": "protected methods",
+                    "explanation": "Protected and public members are inherited; private members are not directly accessible in subclass."
+                },
+                {
+                    "id": "U2-Q18",
+                    "type": "short_answer",
+                    "question": "Explain 'static import' and give a use-case.",
+                    "answer": "Static import allows direct access to static members without class qualifier, e.g., 'import static java.lang.Math.*;' to use sqrt() directly.",
+                    "explanation": "It improves readability when many static members are used frequently."
+                },
+                {
+                    "id": "U2-Q19",
+                    "type": "mcq",
+                    "question": "What does 'implements' keyword do in a class declaration?",
+                    "options": [
+                        "Creates an instance of interface",
+                        "Indicates class provides implementations for interface methods",
+                        "Extends the interface",
+                        "Imports interface methods"
+                    ],
+                    "answer": "Indicates class provides implementations for interface methods",
+                    "explanation": "implements binds a class to contract specified by interface(s) and requires method implementations."
+                },
+                {
+                    "id": "U2-Q20",
+                    "type": "short_answer",
+                    "question": "What happens if a class implements an interface but does not implement all methods?",
+                    "answer": "The class must be declared abstract or else compilation error occurs until all interface methods are implemented.",
+                    "explanation": "Unimplemented interface methods force the class to be abstract."
+                },
+                {
+                    "id": "U2-Q21",
+                    "type": "mcq",
+                    "question": "Which of the following is not a feature of packages?",
+                    "options": [
+                        "Namespace management",
+                        "Access protection",
+                        "Automatic memory management",
+                        "Organization of related classes"
+                    ],
+                    "answer": "Automatic memory management",
+                    "explanation": "Packages organize code and provide access controls; memory management is JVM responsibility."
+                },
+                {
+                    "id": "U2-Q22",
+                    "type": "short_answer",
+                    "question": "What is 'naming convention' for packages?",
+                    "answer": "Packages typically use reversed domain names in lowercase (e.g., com.company.project) to ensure uniqueness.",
+                    "explanation": "This avoids collisions across organizations and projects."
+                },
+                {
+                    "id": "U2-Q23",
+                    "type": "mcq",
+                    "question": "Which of the following allows a class to expose only a 'contract' without implementation?",
+                    "options": [
+                        "Class",
+                        "Interface",
+                        "Abstract class with implemented methods",
+                        "Enum"
+                    ],
+                    "answer": "Interface",
+                    "explanation": "Interfaces specify method signatures (contracts) while implementations are provided by classes."
+                },
+                {
+                    "id": "U2-Q24",
+                    "type": "short_answer",
+                    "question": "What is the role of the 'package-info.java' file?",
+                    "answer": "package-info.java holds package-level annotations and documentation (package javadoc).",
+                    "explanation": "It documents and annotates package metadata."
+                },
+                {
+                    "id": "U2-Q25",
+                    "type": "mcq",
+                    "question": "When a subclass method calls 'super.method()', what happens?",
+                    "options": [
+                        "Invokes static method",
+                        "Invokes overridden superclass method",
+                        "Invokes sibling class method",
+                        "Creates new object and calls its method"
+                    ],
+                    "answer": "Invokes overridden superclass method",
+                    "explanation": "super.method() calls the parent class's implementation of the method."
+                }
+            ]
+        },
+        {
+            "unit": "Unit III - Exception Handling and Multithreading",
+            "questions": [
+                {
+                    "id": "U3-Q1",
+                    "type": "mcq",
+                    "question": "Which keyword is used to explicitly throw an exception?",
+                    "options": [
+                        "throws",
+                        "throw",
+                        "thrown",
+                        "raise"
+                    ],
+                    "answer": "throw",
+                    "explanation": "throw is used to throw a new exception instance; throws is used in method signature to declare possible exceptions."
+                },
+                {
+                    "id": "U3-Q2",
+                    "type": "short_answer",
+                    "question": "Differentiate between checked and unchecked exceptions.",
+                    "answer": "Checked exceptions must be declared or handled at compile time (e.g., IOException); unchecked exceptions are runtime errors (e.g., NullPointerException) not required to be declared.",
+                    "explanation": "Checked exceptions extend Exception (not RuntimeException); unchecked extend RuntimeException or Error."
+                },
+                {
+                    "id": "U3-Q3",
+                    "type": "mcq",
+                    "question": "What does the 'finally' block guarantee?",
+                    "options": [
+                        "Executes only when exception thrown",
+                        "Executes only when no exception",
+                        "Executes whether or not exception occurred",
+                        "Executes before try block"
+                    ],
+                    "answer": "Executes whether or not exception occurred",
+                    "explanation": "finally runs after try/catch irrespective of exception, useful for cleanup."
+                },
+                {
+                    "id": "U3-Q4",
+                    "type": "short_answer",
+                    "question": "What is the significance of 'throws' clause in method declaration?",
+                    "answer": "throws declares that a method may throw certain checked exceptions which callers must handle or re-declare.",
+                    "explanation": "It informs the compiler and callers about potential checked exceptions."
+                },
+                {
+                    "id": "U3-Q5",
+                    "type": "mcq",
+                    "question": "Which of these is a correct way to create a thread in Java?",
+                    "options": [
+                        "Extend Thread and override run()",
+                        "Implement Runnable and pass to Thread",
+                        "Use ExecutorService",
+                        "All of the above"
+                    ],
+                    "answer": "All of the above",
+                    "explanation": "Multiple ways exist: subclass Thread, implement Runnable, or use higher-level concurrency utilities."
+                },
+                {
+                    "id": "U3-Q6",
+                    "type": "short_answer",
+                    "question": "What is thread synchronization and why is it used?",
+                    "answer": "Synchronization controls access to shared resources to prevent thread interference and ensure data consistency.",
+                    "explanation": "Synchronized blocks/methods serialize access to critical sections to avoid race conditions."
+                },
+                {
+                    "id": "U3-Q7",
+                    "type": "mcq",
+                    "question": "Which method causes the current thread to pause execution for specified milliseconds?",
+                    "options": [
+                        "sleep()",
+                        "wait()",
+                        "yield()",
+                        "pause()"
+                    ],
+                    "answer": "sleep()",
+                    "explanation": "Thread.sleep(ms) suspends current thread for given time; wait() is used with object monitors."
+                },
+                {
+                    "id": "U3-Q8",
+                    "type": "short_answer",
+                    "question": "Explain the life cycle states of a Thread briefly.",
+                    "answer": "New (created), Runnable (ready or running), Blocked/Waiting (paused for monitor/condition), Timed Waiting (sleep/wait with timeout), Terminated (completed).",
+                    "explanation": "Thread transitions via start(), wait/notify, sleep(), join(), and run completion."
+                },
+                {
+                    "id": "U3-Q9",
+                    "type": "mcq",
+                    "question": "Which exception is thrown when you try to divide by zero using integer arithmetic?",
+                    "options": [
+                        "ArithmeticException",
+                        "NullPointerException",
+                        "NumberFormatException",
+                        "IllegalArgumentException"
+                    ],
+                    "answer": "ArithmeticException",
+                    "explanation": "Integer division by zero raises ArithmeticException at runtime."
+                },
+                {
+                    "id": "U3-Q10",
+                    "type": "short_answer",
+                    "question": "What does 'throw new IllegalArgumentException(\"msg\")' do?",
+                    "answer": "It creates and throws an IllegalArgumentException with message 'msg' to indicate invalid method arguments.",
+                    "explanation": "It signals caller about invalid parameters and stops normal flow unless caught."
+                },
+                {
+                    "id": "U3-Q11",
+                    "type": "mcq",
+                    "question": "Which method is used to notify a single waiting thread from synchronized block?",
+                    "options": [
+                        "notify()",
+                        "notifyAll()",
+                        "wake()",
+                        "signal()"
+                    ],
+                    "answer": "notify()",
+                    "explanation": "notify() wakes one waiting thread; notifyAll() wakes all waiting threads on the object's monitor."
+                },
+                {
+                    "id": "U3-Q12",
+                    "type": "short_answer",
+                    "question": "What is a custom (user-defined) exception and how is it created?",
+                    "answer": "A custom exception is a class extending Exception or RuntimeException; create by extending and providing constructors, e.g., class MyException extends Exception {}",
+                    "explanation": "Used to represent application-specific error conditions."
+                },
+                {
+                    "id": "U3-Q13",
+                    "type": "mcq",
+                    "question": "Which keyword ensures a block of code is executed even if an exception occurs?",
+                    "options": [
+                        "finally",
+                        "ensure",
+                        "always",
+                        "last"
+                    ],
+                    "answer": "finally",
+                    "explanation": "finally always executes after try/catch for cleanup activities."
+                },
+                {
+                    "id": "U3-Q14",
+                    "type": "short_answer",
+                    "question": "What is deadlock in multithreading?",
+                    "answer": "Deadlock occurs when two or more threads are blocked forever waiting for resources held by each other, preventing progress.",
+                    "explanation": "Occurs due to circular resource dependency and lack of proper ordering or timeouts."
+                },
+                {
+                    "id": "U3-Q15",
+                    "type": "mcq",
+                    "question": "Which interface must be implemented to use a thread pool via Executors (basic)?",
+                    "options": [
+                        "Callable",
+                        "Runnable",
+                        "Comparator",
+                        "Serializable"
+                    ],
+                    "answer": "Runnable",
+                    "explanation": "Runnable tasks can be submitted to ExecutorService; Callable is also used when tasks return values."
+                },
+                {
+                    "id": "U3-Q16",
+                    "type": "short_answer",
+                    "question": "What is the difference between Runnable and Callable?",
+                    "answer": "Runnable's run() doesn't return a result or throw checked exceptions; Callable's call() returns a value and may throw checked exceptions.",
+                    "explanation": "Use Callable for tasks needing results and exception handling."
+                },
+                {
+                    "id": "U3-Q17",
+                    "type": "mcq",
+                    "question": "Which of these is true about synchronized methods?",
+                    "options": [
+                        "They acquire object or class lock",
+                        "They are faster than unsynchronized",
+                        "They can be static only",
+                        "They cannot call other synchronized methods"
+                    ],
+                    "answer": "They acquire object or class lock",
+                    "explanation": "Instance synchronized methods acquire object's monitor; static synchronized methods acquire class-level lock."
+                },
+                {
+                    "id": "U3-Q18",
+                    "type": "short_answer",
+                    "question": "How does 'volatile' keyword help in multithreading?",
+                    "answer": "volatile ensures reads/writes to a variable go directly to main memory, guaranteeing visibility across threads but not atomicity.",
+                    "explanation": "Use volatile for visibility of simple flags; for compound actions use synchronization/atomic types."
+                },
+                {
+                    "id": "U3-Q19",
+                    "type": "mcq",
+                    "question": "Which exception must a method declare if it performs file I/O operations (checked exception example)?",
+                    "options": [
+                        "IOException",
+                        "RuntimeException",
+                        "NullPointerException",
+                        "ArithmeticException"
+                    ],
+                    "answer": "IOException",
+                    "explanation": "IO operations commonly throw checked IOException which must be handled or declared."
+                },
+                {
+                    "id": "U3-Q20",
+                    "type": "short_answer",
+                    "question": "What is the purpose of Thread.join()?",
+                    "answer": "join() allows one thread to wait until another thread completes its execution.",
+                    "explanation": "It synchronizes threads by pausing current thread until the joined thread terminates."
+                },
+                {
+                    "id": "U3-Q21",
+                    "type": "mcq",
+                    "question": "Which class would you use for atomic integer operations without synchronization?",
+                    "options": [
+                        "AtomicInteger",
+                        "Integer",
+                        "SynchronizedInteger",
+                        "VolatileInteger"
+                    ],
+                    "answer": "AtomicInteger",
+                    "explanation": "java.util.concurrent.atomic.AtomicInteger provides lock-free thread-safe operations."
+                },
+                {
+                    "id": "U3-Q22",
+                    "type": "short_answer",
+                    "question": "What is the effect of catching Throwable instead of Exception?",
+                    "answer": "Catching Throwable catches all errors and exceptions, including serious Errors (like OutOfMemoryError), which is discouraged.",
+                    "explanation": "Errors represent unrecoverable JVM conditions and should not be caught generally."
+                },
+                {
+                    "id": "U3-Q23",
+                    "type": "mcq",
+                    "question": "Which method should be overridden when extending Thread class?",
+                    "options": [
+                        "start()",
+                        "run()",
+                        "init()",
+                        "main()"
+                    ],
+                    "answer": "run()",
+                    "explanation": "run() contains the code executed by the new thread; start() initiates the thread and calls run()."
+                },
+                {
+                    "id": "U3-Q24",
+                    "type": "short_answer",
+                    "question": "Give a brief code snippet showing how to handle checked exception using try-catch.",
+                    "answer": "Example: try { FileInputStream f = new FileInputStream(\"a.txt\"); } catch (FileNotFoundException e) { e.printStackTrace(); }",
+                    "explanation": "Wrap operations that throw checked exceptions in try and catch to handle errors gracefully."
+                },
+                {
+                    "id": "U3-Q25",
+                    "type": "mcq",
+                    "question": "Which of the following is NOT a thread state?",
+                    "options": [
+                        "New",
+                        "Runnable",
+                        "Sleeping",
+                        "Terminated"
+                    ],
+                    "answer": "Sleeping",
+                    "explanation": "Sleeping is not an official Thread.State; Timed_Waiting or BLOCKED/WAITING are official states."
+                }
+            ]
+        },
+        {
+            "unit": "Unit IV - Event handling using Abstract Window Toolkit (AWT) & Swing Components",
+            "questions": [
+                {
+                    "id": "U4-Q1",
+                    "type": "mcq",
+                    "question": "Which package contains Swing components?",
+                    "options": [
+                        "java.awt",
+                        "javax.swing",
+                        "java.io",
+                        "java.swingx"
+                    ],
+                    "answer": "javax.swing",
+                    "explanation": "Swing components are in javax.swing package; AWT is in java.awt."
+                },
+                {
+                    "id": "U4-Q2",
+                    "type": "short_answer",
+                    "question": "What is the difference between AWT and Swing?",
+                    "answer": "AWT is heavyweight and relies on native peers, while Swing is lightweight, written in Java, and offers more components and pluggable look-and-feel.",
+                    "explanation": "Swing extends AWT event model but provides richer, platform-independent components."
+                },
+                {
+                    "id": "U4-Q3",
+                    "type": "mcq",
+                    "question": "Which layout manager places components in five regions (North, South, East, West, Center)?",
+                    "options": [
+                        "FlowLayout",
+                        "BorderLayout",
+                        "GridLayout",
+                        "CardLayout"
+                    ],
+                    "answer": "BorderLayout",
+                    "explanation": "BorderLayout divides container into five regions supporting component placement."
+                },
+                {
+                    "id": "U4-Q4",
+                    "type": "short_answer",
+                    "question": "What is an ActionListener and how is it used?",
+                    "answer": "ActionListener is an interface with actionPerformed(ActionEvent) method; add to buttons/menus to handle action events.",
+                    "explanation": "Implement interface and register listener to components to receive action events like button clicks."
+                },
+                {
+                    "id": "U4-Q5",
+                    "type": "mcq",
+                    "question": "Which Swing component is used to accept single line text input?",
+                    "options": [
+                        "JTextArea",
+                        "JTextField",
+                        "JLabel",
+                        "JEditorPane"
+                    ],
+                    "answer": "JTextField",
+                    "explanation": "JTextField is for single-line text; JTextArea is for multi-line."
+                },
+                {
+                    "id": "U4-Q6",
+                    "type": "short_answer",
+                    "question": "What is delegation event model in Java GUI?",
+                    "answer": "Delegation model separates event source and listener; listeners (delegates) register with sources to receive event objects.",
+                    "explanation": "This model improves performance by notifying interested listeners only."
+                },
+                {
+                    "id": "U4-Q7",
+                    "type": "mcq",
+                    "question": "Which listener would you use to detect key presses on a component?",
+                    "options": [
+                        "MouseListener",
+                        "TextListener",
+                        "KeyListener",
+                        "ItemListener"
+                    ],
+                    "answer": "KeyListener",
+                    "explanation": "KeyListener receives keyPressed, keyReleased, keyTyped events for keyboard input."
+                },
+                {
+                    "id": "U4-Q8",
+                    "type": "short_answer",
+                    "question": "How do you show a message dialog in Swing?",
+                    "answer": "Use JOptionPane.showMessageDialog(parentComponent, \"Message\"); to display simple message dialogs.",
+                    "explanation": "JOptionPane provides ready-made dialogs for messages, input, and confirmations."
+                },
+                {
+                    "id": "U4-Q9",
+                    "type": "mcq",
+                    "question": "Which container is typically the top-level window for a Swing application?",
+                    "options": [
+                        "JPanel",
+                        "JFrame",
+                        "JComponent",
+                        "JButton"
+                    ],
+                    "answer": "JFrame",
+                    "explanation": "JFrame is a top-level window with decorations (title bar, close button) used for main application windows."
+                },
+                {
+                    "id": "U4-Q10",
+                    "type": "short_answer",
+                    "question": "What is the use of layout managers in GUI design?",
+                    "answer": "Layout managers control component placement/resizing within containers across different screen sizes and platforms.",
+                    "explanation": "They automate component layout instead of absolute positioning for responsiveness."
+                },
+                {
+                    "id": "U4-Q11",
+                    "type": "mcq",
+                    "question": "Which component provides a drop-down list of choices in Swing?",
+                    "options": [
+                        "JList",
+                        "JComboBox",
+                        "JTable",
+                        "JTree"
+                    ],
+                    "answer": "JComboBox",
+                    "explanation": "JComboBox displays a single selection from a drop-down list; JList shows multiple items."
+                },
+                {
+                    "id": "U4-Q12",
+                    "type": "short_answer",
+                    "question": "Explain the difference between repaint() and paintComponent().",
+                    "answer": "repaint() requests a component redraw by scheduling a call; paintComponent(Graphics g) contains actual painting code invoked by the painting system.",
+                    "explanation": "Override paintComponent for custom rendering; call repaint to request update."
+                },
+                {
+                    "id": "U4-Q13",
+                    "type": "mcq",
+                    "question": "Which event is generated when a user selects a menu item?",
+                    "options": [
+                        "MouseEvent",
+                        "KeyEvent",
+                        "ActionEvent",
+                        "AdjustmentEvent"
+                    ],
+                    "answer": "ActionEvent",
+                    "explanation": "Selecting menu items triggers ActionEvent handled by ActionListener."
+                },
+                {
+                    "id": "U4-Q14",
+                    "type": "short_answer",
+                    "question": "What is a JMenuBar and how is it used?",
+                    "answer": "JMenuBar is a container for JMenu objects; set it on JFrame using setJMenuBar(menuBar) to add menus to the window.",
+                    "explanation": "It organizes top-level menus like File, Edit, View in GUI applications."
+                },
+                {
+                    "id": "U4-Q15",
+                    "type": "mcq",
+                    "question": "Which Swing component is used to display tabbed panes?",
+                    "options": [
+                        "JPanel",
+                        "JTabbedPane",
+                        "JScrollPane",
+                        "JSplitPane"
+                    ],
+                    "answer": "JTabbedPane",
+                    "explanation": "JTabbedPane creates multiple tabs each containing different components or panels."
+                },
+                {
+                    "id": "U4-Q16",
+                    "type": "short_answer",
+                    "question": "Describe how to handle mouse click events on a component.",
+                    "answer": "Implement MouseListener and override mouseClicked (or use MouseAdapter) then register with component using addMouseListener().",
+                    "explanation": "MouseAdapter simplifies implementation by providing empty method bodies to override selectively."
+                },
+                {
+                    "id": "U4-Q17",
+                    "type": "mcq",
+                    "question": "Which layout arranges components in a grid of equal-sized cells?",
+                    "options": [
+                        "GridLayout",
+                        "FlowLayout",
+                        "BoxLayout",
+                        "BorderLayout"
+                    ],
+                    "answer": "GridLayout",
+                    "explanation": "GridLayout places components in rows and columns with equal cell sizes."
+                },
+                {
+                    "id": "U4-Q18",
+                    "type": "short_answer",
+                    "question": "What is an ItemListener used for?",
+                    "answer": "ItemListener listens for item selection/deselection events on components like CheckBox or JComboBox (itemStateChanged).",
+                    "explanation": "Useful for tracking changes in selection state of items."
+                },
+                {
+                    "id": "U4-Q19",
+                    "type": "mcq",
+                    "question": "Which component would you use to present tabular data?",
+                    "options": [
+                        "JTable",
+                        "JList",
+                        "JTree",
+                        "JTextArea"
+                    ],
+                    "answer": "JTable",
+                    "explanation": "JTable displays data in rows and columns and supports cell renderers/editors."
+                },
+                {
+                    "id": "U4-Q20",
+                    "type": "short_answer",
+                    "question": "How do you make a Swing GUI thread-safe at startup?",
+                    "answer": "Create and show GUI on the Event Dispatch Thread using SwingUtilities.invokeLater(() -> createAndShowGUI());",
+                    "explanation": "Swing components should be constructed and manipulated on EDT to avoid race conditions."
+                },
+                {
+                    "id": "U4-Q21",
+                    "type": "mcq",
+                    "question": "Which of following is true about JFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)?",
+                    "options": [
+                        "Hides the frame",
+                        "Exits the application when window closed",
+                        "Minimizes the frame",
+                        "Does nothing"
+                    ],
+                    "answer": "Exits the application when window closed",
+                    "explanation": "EXIT_ON_CLOSE terminates the JVM when the frame is closed."
+                },
+                {
+                    "id": "U4-Q22",
+                    "type": "short_answer",
+                    "question": "What is a JScrollPane and when is it used?",
+                    "answer": "JScrollPane provides scrollbars for components that may exceed visible area like large JTextArea or JTable.",
+                    "explanation": "Wrap components in JScrollPane to allow scrolling when content is larger than view."
+                },
+                {
+                    "id": "U4-Q23",
+                    "type": "mcq",
+                    "question": "Which event listener would you implement to handle changes in text components (simple)?",
+                    "options": [
+                        "ActionListener",
+                        "TextListener",
+                        "KeyListener",
+                        "DocumentListener"
+                    ],
+                    "answer": "DocumentListener",
+                    "explanation": "DocumentListener is more precise for text changes in Swing (tracks insert/remove/changed in Document)."
+                },
+                {
+                    "id": "U4-Q24",
+                    "type": "short_answer",
+                    "question": "Explain how to create a simple calculator using GridLayout and buttons (brief steps).",
+                    "answer": "Create JFrame, set GridLayout for button area, add JTextField for display, add numeric and operator JButton components, register ActionListeners to handle input and compute results.",
+                    "explanation": "Use listeners to update display and perform calculations when operators or equals pressed."
+                },
+                {
+                    "id": "U4-Q25",
+                    "type": "mcq",
+                    "question": "Which Swing component would you use for hierarchical display of nodes (like folders)?",
+                    "options": [
+                        "JTable",
+                        "JTree",
+                        "JList",
+                        "JComboBox"
+                    ],
+                    "answer": "JTree",
+                    "explanation": "JTree displays hierarchical data such as file-system structures."
+                }
+            ]
+        },
+        {
+            "unit": "Unit V - Basics of Network Programming",
+            "questions": [
+                {
+                    "id": "U5-Q1",
+                    "type": "mcq",
+                    "question": "Which class is used to get the IP address and host name of the local or remote host?",
+                    "options": [
+                        "Socket",
+                        "InetAddress",
+                        "URLConnection",
+                        "URL"
+                    ],
+                    "answer": "InetAddress",
+                    "explanation": "InetAddress provides methods to get host name and IP address."
+                },
+                {
+                    "id": "U5-Q2",
+                    "type": "short_answer",
+                    "question": "Differentiate TCP and UDP in brief.",
+                    "answer": "TCP is connection-oriented, reliable, and stream-based; UDP is connectionless, faster but unreliable and datagram-based.",
+                    "explanation": "Use TCP for guaranteed delivery; UDP for low-latency or simple message exchange."
+                },
+                {
+                    "id": "U5-Q3",
+                    "type": "mcq",
+                    "question": "Which class is used to create a server socket that listens for client connections (TCP)?",
+                    "options": [
+                        "Socket",
+                        "ServerSocket",
+                        "DatagramSocket",
+                        "URLConnection"
+                    ],
+                    "answer": "ServerSocket",
+                    "explanation": "ServerSocket listens for incoming TCP connections; Socket represents client/server connection."
+                },
+                {
+                    "id": "U5-Q4",
+                    "type": "short_answer",
+                    "question": "What is a DatagramPacket used for?",
+                    "answer": "DatagramPacket represents data packets sent/received via DatagramSocket for UDP communication.",
+                    "explanation": "It encapsulates payload, destination address, and port for UDP datagrams."
+                },
+                {
+                    "id": "U5-Q5",
+                    "type": "mcq",
+                    "question": "Which class is typically used to read content from a URL?",
+                    "options": [
+                        "InetAddress",
+                        "URL",
+                        "URLClassLoader",
+                        "ServerSocket"
+                    ],
+                    "answer": "URL",
+                    "explanation": "URL provides openStream() and connection methods to fetch resource content over network."
+                },
+                {
+                    "id": "U5-Q6",
+                    "type": "short_answer",
+                    "question": "How do you create a simple TCP client socket to connect to server at host 'host' and port 5000?",
+                    "answer": "Socket client = new Socket(\"host\", 5000);",
+                    "explanation": "Instantiating Socket establishes TCP connection to specified host and port if reachable."
+                },
+                {
+                    "id": "U5-Q7",
+                    "type": "mcq",
+                    "question": "Which method of InetAddress returns the local host address?",
+                    "options": [
+                        "getByName(\"localhost\")",
+                        "getLocalHost()",
+                        "getAllByName()",
+                        "getLoopbackAddress()"
+                    ],
+                    "answer": "getLocalHost()",
+                    "explanation": "InetAddress.getLocalHost() returns local host address and name."
+                },
+                {
+                    "id": "U5-Q8",
+                    "type": "short_answer",
+                    "question": "What is URLConnection used for?",
+                    "answer": "URLConnection manages communication to a URL and can be used to read from or write to the resource represented by the URL.",
+                    "explanation": "It provides methods to get input and output streams, content type, and metadata."
+                },
+                {
+                    "id": "U5-Q9",
+                    "type": "mcq",
+                    "question": "Which socket type should be used for connectionless communication?",
+                    "options": [
+                        "Socket",
+                        "ServerSocket",
+                        "DatagramSocket",
+                        "MulticastSocket"
+                    ],
+                    "answer": "DatagramSocket",
+                    "explanation": "DatagramSocket supports UDP connectionless datagram communication."
+                },
+                {
+                    "id": "U5-Q10",
+                    "type": "short_answer",
+                    "question": "Explain how to retrieve hostname and IP address using InetAddress.",
+                    "answer": "Use InetAddress inet = InetAddress.getByName(\"host\"); then inet.getHostName() and inet.getHostAddress().",
+                    "explanation": "getByName resolves host and returns InetAddress for network queries."
+                },
+                {
+                    "id": "U5-Q11",
+                    "type": "mcq",
+                    "question": "Which class would you use to create an HTTP connection and read response headers?",
+                    "options": [
+                        "Socket",
+                        "ServerSocket",
+                        "HttpURLConnection",
+                        "DatagramSocket"
+                    ],
+                    "answer": "HttpURLConnection",
+                    "explanation": "HttpURLConnection is subclass of URLConnection for HTTP-specific features (response codes, headers)."
+                },
+                {
+                    "id": "U5-Q12",
+                    "type": "short_answer",
+                    "question": "What port range is called 'well-known' ports?",
+                    "answer": "Ports 0–1023 are well-known ports reserved for common services.",
+                    "explanation": "Reserved services like HTTP(80), FTP(21), SSH(22) use well-known ports."
+                },
+                {
+                    "id": "U5-Q13",
+                    "type": "mcq",
+                    "question": "Which of the following is true for ServerSocket.accept()?",
+                    "options": [
+                        "It is non-blocking",
+                        "It returns a DatagramSocket",
+                        "It blocks until a client connects and returns a Socket",
+                        "It closes server socket"
+                    ],
+                    "answer": "It blocks until a client connects and returns a Socket",
+                    "explanation": "accept() waits for incoming connection and returns a Socket for communication."
+                },
+                {
+                    "id": "U5-Q14",
+                    "type": "short_answer",
+                    "question": "What is the role of port number in networking?",
+                    "answer": "Port number identifies a specific application/service on a host, allowing multiple services to run simultaneously on same IP.",
+                    "explanation": "IP identifies host; port identifies service endpoint on that host."
+                },
+                {
+                    "id": "U5-Q15",
+                    "type": "mcq",
+                    "question": "Which class supports multicast operations?",
+                    "options": [
+                        "DatagramSocket",
+                        "MulticastSocket",
+                        "ServerSocket",
+                        "Socket"
+                    ],
+                    "answer": "MulticastSocket",
+                    "explanation": "MulticastSocket extends DatagramSocket with multicast group membership capabilities."
+                },
+                {
+                    "id": "U5-Q16",
+                    "type": "short_answer",
+                    "question": "Briefly describe how to send a UDP packet in Java.",
+                    "answer": "Create DatagramSocket, create DatagramPacket with data and destination InetAddress/port, then socket.send(packet).",
+                    "explanation": "DatagramPacket encapsulates payload and destination for UDP send/receive."
+                },
+                {
+                    "id": "U5-Q17",
+                    "type": "mcq",
+                    "question": "Which method returns the content length from a URLConnection?",
+                    "options": [
+                        "getContentLength()",
+                        "getLength()",
+                        "getSize()",
+                        "getFileSize()"
+                    ],
+                    "answer": "getContentLength()",
+                    "explanation": "URLConnection.getContentLength() returns the content length in bytes (or -1 if not known)."
+                },
+                {
+                    "id": "U5-Q18",
+                    "type": "short_answer",
+                    "question": "What is a proxy server and why might a client use one?",
+                    "answer": "A proxy server intermediates client requests to the internet, used for caching, filtering, anonymity, or corporate network policies.",
+                    "explanation": "Clients route requests via proxy to manage performance, control and security."
+                },
+                {
+                    "id": "U5-Q19",
+                    "type": "mcq",
+                    "question": "Which class/feature should be used to download a web page content as a stream?",
+                    "options": [
+                        "SocketInputStream",
+                        "URL.openStream()",
+                        "ServerSocket.open()",
+                        "InetAddress.fetch()"
+                    ],
+                    "answer": "URL.openStream()",
+                    "explanation": "URL.openStream() returns InputStream to read resource content from a URL."
+                },
+                {
+                    "id": "U5-Q20",
+                    "type": "short_answer",
+                    "question": "Explain how to extract components from URL using java.net.URL.",
+                    "answer": "Use methods like getProtocol(), getHost(), getPort(), getPath(), getQuery() to obtain URL parts.",
+                    "explanation": "URL class parses and provides access to structural components of a URL."
+                },
+                {
+                    "id": "U5-Q21",
+                    "type": "mcq",
+                    "question": "Which class should be used to open a connection and set request method to GET?",
+                    "options": [
+                        "URLConnection",
+                        "ServerSocket",
+                        "HttpURLConnection",
+                        "Socket"
+                    ],
+                    "answer": "HttpURLConnection",
+                    "explanation": "Use HttpURLConnection and call setRequestMethod(\"GET\") for HTTP GET requests."
+                },
+                {
+                    "id": "U5-Q22",
+                    "type": "short_answer",
+                    "question": "What is the significance of using Buffered streams over raw Input/Output streams in networking?",
+                    "answer": "Buffered streams add buffering which reduces network calls and improves I/O performance by reading/writing larger blocks.",
+                    "explanation": "Buffering minimizes system calls and network latency by grouping small reads/writes."
+                },
+                {
+                    "id": "U5-Q23",
+                    "type": "mcq",
+                    "question": "Which exception commonly occurs when host cannot be resolved?",
+                    "options": [
+                        "UnknownHostException",
+                        "SocketException",
+                        "IOException",
+                        "InterruptedException"
+                    ],
+                    "answer": "UnknownHostException",
+                    "explanation": "UnknownHostException indicates DNS lookup failure or unknown host name."
+                },
+                {
+                    "id": "U5-Q24",
+                    "type": "short_answer",
+                    "question": "Write a brief client-server interaction sequence for TCP sockets.",
+                    "answer": "Server creates ServerSocket and calls accept(); client creates Socket(host,port); server accept() returns Socket; both obtain streams and exchange data; then close sockets.",
+                    "explanation": "This demonstrates connection establishment, data exchange, and termination."
+                },
+                {
+                    "id": "U5-Q25",
+                    "type": "mcq",
+                    "question": "Which of the following is returned by URLConnection.getInputStream()?",
+                    "options": [
+                        "OutputStream",
+                        "InputStream",
+                        "Reader",
+                        "Socket"
+                    ],
+                    "answer": "InputStream",
+                    "explanation": "getInputStream() returns InputStream to read resource bytes from server."
+                }
+            ]
+        },
+        {
+            "unit": "Unit VI - Interacting with Database (JDBC)",
+            "questions": [
+                {
+                    "id": "U6-Q1",
+                    "type": "mcq",
+                    "question": "Which class is used to register JDBC drivers and establish database connections?",
+                    "options": [
+                        "DriverManager",
+                        "ConnectionManager",
+                        "DriverLoader",
+                        "DBConnector"
+                    ],
+                    "answer": "DriverManager",
+                    "explanation": "DriverManager.getConnection(url, user, pass) loads registered drivers and returns Connection."
+                },
+                {
+                    "id": "U6-Q2",
+                    "type": "short_answer",
+                    "question": "Name the four types of JDBC drivers briefly.",
+                    "answer": "Type 1: JDBC-ODBC bridge, Type 2: native API, Type 3: network protocol, Type 4: pure Java (thin) driver.",
+                    "explanation": "Type 4 drivers are platform independent and most commonly used in production."
+                },
+                {
+                    "id": "U6-Q3",
+                    "type": "mcq",
+                    "question": "Which JDBC interface is used to execute an SQL query and return a ResultSet?",
+                    "options": [
+                        "Statement",
+                        "PreparedStatement",
+                        "CallableStatement",
+                        "ResultSetMetaData"
+                    ],
+                    "answer": "Statement",
+                    "explanation": "Statement.executeQuery(sql) returns ResultSet; PreparedStatement can also execute queries with parameters."
+                },
+                {
+                    "id": "U6-Q4",
+                    "type": "short_answer",
+                    "question": "What are PreparedStatements and why are they preferred over Statements?",
+                    "answer": "PreparedStatement precompiles SQL, allows parameter binding, improves performance, and prevents SQL injection.",
+                    "explanation": "They are efficient for repeated queries and safer for user input."
+                },
+                {
+                    "id": "U6-Q5",
+                    "type": "mcq",
+                    "question": "Which method of ResultSet moves the cursor to the next row?",
+                    "options": [
+                        "next()",
+                        "previous()",
+                        "first()",
+                        "move()"
+                    ],
+                    "answer": "next()",
+                    "explanation": "ResultSet.next() advances cursor to next row and returns false when no more rows."
+                },
+                {
+                    "id": "U6-Q6",
+                    "type": "short_answer",
+                    "question": "Explain two-tier and three-tier JDBC architecture briefly.",
+                    "answer": "Two-tier: client directly connects to DB via JDBC; Three-tier: client communicates with middle-tier server (application server) which interacts with DB, enabling scalability and separation of concerns.",
+                    "explanation": "Three-tier adds middleware for business logic and reduced DB coupling from clients."
+                },
+                {
+                    "id": "U6-Q7",
+                    "type": "mcq",
+                    "question": "Which interface provides metadata about the ResultSet columns?",
+                    "options": [
+                        "DatabaseMetaData",
+                        "ResultSetMetaData",
+                        "DriverManager",
+                        "ConnectionMetaData"
+                    ],
+                    "answer": "ResultSetMetaData",
+                    "explanation": "ResultSetMetaData gives info like column count, types, and labels."
+                },
+                {
+                    "id": "U6-Q8",
+                    "type": "short_answer",
+                    "question": "How do you load a JDBC driver (classic way)?",
+                    "answer": "Class.forName(\"com.mysql.cj.jdbc.Driver\"); which loads and registers the driver class (older approach).",
+                    "explanation": "Recent JDBC versions auto-register drivers via Service Provider mechanism, but Class.forName still works."
+                },
+                {
+                    "id": "U6-Q9",
+                    "type": "mcq",
+                    "question": "Which Connection method is used to disable auto-commit for transaction control?",
+                    "options": [
+                        "setAutoCommit(false)",
+                        "setCommitMode(false)",
+                        "disableAutoCommit()",
+                        "beginTransaction()"
+                    ],
+                    "answer": "setAutoCommit(false)",
+                    "explanation": "Disabling auto-commit allows manual commit/rollback via commit() and rollback()."
+                },
+                {
+                    "id": "U6-Q10",
+                    "type": "short_answer",
+                    "question": "Write the sequence of steps to perform an SQL SELECT query using JDBC.",
+                    "answer": "Load driver, get Connection via DriverManager.getConnection, create Statement or PreparedStatement, executeQuery to get ResultSet, iterate ResultSet, close resources.",
+                    "explanation": "Always close ResultSet, Statement, and Connection in finally block or use try-with-resources."
+                },
+                {
+                    "id": "U6-Q11",
+                    "type": "mcq",
+                    "question": "Which exception type is commonly caught for JDBC operations?",
+                    "options": [
+                        "SQLException",
+                        "ClassNotFoundException",
+                        "IOException",
+                        "FileNotFoundException"
+                    ],
+                    "answer": "SQLException",
+                    "explanation": "JDBC operations throw SQLException for database access errors and other SQL related issues."
+                },
+                {
+                    "id": "U6-Q12",
+                    "type": "short_answer",
+                    "question": "What is ResultSet.TYPE_SCROLL_INSENSITIVE used for?",
+                    "answer": "It creates a scrollable ResultSet that is not sensitive to underlying DB changes after creation.",
+                    "explanation": "Allows navigation methods like previous(), absolute() without reflecting later DB updates."
+                },
+                {
+                    "id": "U6-Q13",
+                    "type": "mcq",
+                    "question": "Which method is used to execute an update/insert/delete SQL command?",
+                    "options": [
+                        "executeUpdate()",
+                        "executeQuery()",
+                        "execute()",
+                        "update()"
+                    ],
+                    "answer": "executeUpdate()",
+                    "explanation": "executeUpdate returns number of affected rows for DML statements."
+                },
+                {
+                    "id": "U6-Q14",
+                    "type": "short_answer",
+                    "question": "How to use PreparedStatement to insert a record with parameters (brief)?",
+                    "answer": "PreparedStatement ps = con.prepareStatement(\"INSERT INTO emp(id,name) VALUES(?,?)\"); ps.setInt(1,id); ps.setString(2,name); ps.executeUpdate();",
+                    "explanation": "Use parameter placeholders and setXXX methods to bind values safely."
+                },
+                {
+                    "id": "U6-Q15",
+                    "type": "mcq",
+                    "question": "Which JDBC interface provides information about the database as a whole (product name, version)?",
+                    "options": [
+                        "DatabaseMetaData",
+                        "ResultSetMetaData",
+                        "DriverManager",
+                        "ConnectionInfo"
+                    ],
+                    "answer": "DatabaseMetaData",
+                    "explanation": "DatabaseMetaData helps fetch DB capabilities and driver info."
+                },
+                {
+                    "id": "U6-Q16",
+                    "type": "short_answer",
+                    "question": "What is try-with-resources and how is it useful in JDBC?",
+                    "answer": "Try-with-resources automatically closes AutoCloseable resources like Connection/Statement/ResultSet when block exits, preventing resource leaks.",
+                    "explanation": "Simplifies cleanup and ensures proper closing even on exceptions."
+                },
+                {
+                    "id": "U6-Q17",
+                    "type": "mcq",
+                    "question": "Which method of ResultSet is used to retrieve a column value as String?",
+                    "options": [
+                        "getString()",
+                        "getValue()",
+                        "getText()",
+                        "getObject()"
+                    ],
+                    "answer": "getString()",
+                    "explanation": "getString(columnIndexOrName) returns column value converted to String."
+                },
+                {
+                    "id": "U6-Q18",
+                    "type": "short_answer",
+                    "question": "What is connection pooling and why use it?",
+                    "answer": "Connection pooling reuses a set of pre-created database connections to reduce overhead of establishing connections repeatedly, improving performance.",
+                    "explanation": "Avoids expensive connection creation on each DB operation, especially for web apps."
+                },
+                {
+                    "id": "U6-Q19",
+                    "type": "mcq",
+                    "question": "Which of following is correct to retrieve auto-generated keys after insert?",
+                    "options": [
+                        "executeUpdate(sql, Statement.RETURN_GENERATED_KEYS) then getGeneratedKeys()",
+                        "executeQuery(sql) then getGeneratedKeys()",
+                        "No support in JDBC",
+                        "Use executeInsert()"
+                    ],
+                    "answer": "executeUpdate(sql, Statement.RETURN_GENERATED_KEYS) then getGeneratedKeys()",
+                    "explanation": "Use RETURN_GENERATED_KEYS flag and call getGeneratedKeys() to fetch generated key(s)."
+                },
+                {
+                    "id": "U6-Q20",
+                    "type": "short_answer",
+                    "question": "Why prefer PreparedStatement for repeated queries?",
+                    "answer": "PreparedStatement is precompiled by DB, reducing parsing overhead for repeated executions and improving performance.",
+                    "explanation": "Also helps prevent SQL injection and supports parameterization."
+                },
+                {
+                    "id": "U6-Q21",
+                    "type": "mcq",
+                    "question": "Which JDBC URL format is commonly used for MySQL (connector/J)?",
+                    "options": [
+                        "jdbc:mysql://host:port/dbname",
+                        "jdbc:mysqldb://host/db",
+                        "mysql://host:port/db",
+                        "db:mysql://host/dbname"
+                    ],
+                    "answer": "jdbc:mysql://host:port/dbname",
+                    "explanation": "Standard JDBC URL format begins with jdbc:subprotocol://host:port/database."
+                },
+                {
+                    "id": "U6-Q22",
+                    "type": "short_answer",
+                    "question": "What is getConnection pooling advantage when using DataSource vs DriverManager?",
+                    "answer": "DataSource can provide connection pooling and JNDI-managed connections, offering better performance and manageability than DriverManager.",
+                    "explanation": "Application servers typically provide DataSource implementations with pooling."
+                },
+                {
+                    "id": "U6-Q23",
+                    "type": "mcq",
+                    "question": "Which method in Connection is used to permanently save transaction changes to database?",
+                    "options": [
+                        "commit()",
+                        "save()",
+                        "apply()",
+                        "flush()"
+                    ],
+                    "answer": "commit()",
+                    "explanation": "commit finalizes transaction when auto-commit is disabled."
+                },
+                {
+                    "id": "U6-Q24",
+                    "type": "short_answer",
+                    "question": "Explain how to retrieve multiple rows from ResultSet (brief code idea).",
+                    "answer": "ResultSet rs = stmt.executeQuery(sql); while (rs.next()) { int id = rs.getInt(\"id\"); String name = rs.getString(\"name\"); // process }",
+                    "explanation": "Iterate rs.next() to move cursor row by row and fetch column values."
+                },
+                {
+                    "id": "U6-Q25",
+                    "type": "mcq",
+                    "question": "Which method of Statement executes SQL that may return multiple result sets or update counts?",
+                    "options": [
+                        "execute()",
+                        "executeQuery()",
+                        "executeUpdate()",
+                        "run()"
+                    ],
+                    "answer": "execute()",
+                    "explanation": "execute() handles general SQL and you can inspect results via getResultSet() or getUpdateCount()."
+                }
+            ]
+        }
+    ],
+    "notes": "Each question includes an answer and a one-line explanation. The set contains a mix of MCQs and short-answer questions (150 total, 25 per unit). Use the 'type' field to render MCQ inputs or short-answer text areas in your quiz application."
+}
