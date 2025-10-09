@@ -30,13 +30,13 @@
     <meta property="og:description" content="Master MSBTE K-Scheme Java Programming (314317) with our interactive flashcards and MCQs. Covers all 6 units for comprehensive exam preparation." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://msbtenotes-info.netlify.app/Branches/314317-java-programming.html" />
-    <meta property="og:image" content="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" />
+    <meta property="og:image" content="https://msbtenotes-info.netlify.app/resourse/branch-resourse/advanced-java-notes.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Java Programming (314317) Flashcards & MCQs | MSBTE K-Scheme" />
     <meta name="twitter:description" content="Master MSBTE K-Scheme Java Programming (314317) with our interactive flashcards and MCQs. Covers all 6 units for comprehensive exam preparation." />
-    <meta name="twitter:image" content="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" />
+    <meta name="twitter:image" content="https://msbtenotes-info.netlify.app/resourse/branch-resourse/advanced-java-notes.png" />
 
     <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
@@ -71,7 +71,7 @@
         },
         "headline": "Interactive Study Guide for MSBTE 314317 Java Programming (K-Scheme)",
         "description": "A comprehensive study page for MSBTE's K-Scheme Java Programming (314317) course, featuring 150 interactive flashcards and a dynamic MCQ quiz to test your knowledge on all six units.",
-        "image": "https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
+        "image": "https://msbtenotes-info.netlify.app/resourse/branch-resourse/advanced-java-notes.png",
         "author": {
             "@type": "Organization",
             "name": "MSBTE Notes & Info Team"
@@ -666,6 +666,9 @@
 
         <!-- Article Body -->
         <article class="max-w-4xl mx-auto px-4">
+            <img src="/resourse/branch-resourse/advanced-java-notes.png"
+                alt="Interactive Flashcards for MSBTE Java Programming (314317)"
+                class="rounded-2xl w-full shadow-xl mb-8" loading="lazy">
             <div class="prose prose-blue max-w-none mb-12">
                 <p>
                     Mastering Java Programming (314317) for the MSBTE K-Scheme requires a solid grasp of numerous concepts, from basic syntax to advanced topics like JDBC and networking. To help you prepare effectively, we've created this set of 150 interactive flashcards covering all six units of the syllabus.
@@ -831,6 +834,34 @@
         </svg>
     </button>
 
+    <!-- YouTube Subscription Popup Modal -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 p-4">
+        <div class="bg-white rounded-2xl shadow-lg max-w-sm w-full p-6 relative text-center">
+
+            <!-- Close Button -->
+            <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700" aria-label="Close popup">
+                ✖
+            </button>
+
+            <!-- YouTube Icon -->
+            <svg class="w-16 h-16 mx-auto mb-4 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+
+            <!-- Content -->
+            <h2 class="text-xl font-bold text-blue-600 mb-2 font-display">
+                Enjoying the Content?
+            </h2>
+            <p class="text-gray-600 mb-4">
+                Subscribe to our YouTube channel for video tutorials, exam tips, and more free resources to help you succeed!
+            </p>
+            <a href="https://www.youtube.com/@msbte-notes-and-info?sub_confirmation=1" target="_blank" rel="noopener noreferrer"
+                class="inline-block bg-red-600 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-red-700 transition">
+                Subscribe Now 🚀
+            </a>
+        </div>
+    </div>
+
     <script>
         function toggleMobileMenu() {
             document.getElementById('mobileNav').classList.toggle('hidden');
@@ -856,6 +887,25 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Popup functionality
+        let popupShown = false;
+
+        function showPopup() {
+            if (!popupShown) {
+                document.getElementById("popup").classList.remove("hidden");
+                popupShown = true;
+            }
+        }
+
+        function closePopup() {
+            document.getElementById("popup").classList.add("hidden");
+        }
+
+        // Show popup after 10 seconds of inactivity/scrolling
+        setTimeout(() => {
+            showPopup();
+        }, 10000);
     </script>
 
 </body>
