@@ -5,7 +5,7 @@
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 22 Sep 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Oct 2025 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
         <item>
@@ -13,7 +13,7 @@
             <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</link>
             <description>Download your MSBTE Winter 2025 exam hall ticket. Official link and step-by-step guide to get your admit card using your enrollment or seat number.</description>
             <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</guid>
-            <pubDate>Thu, 20 Nov 2025 12:00:00 GMT</pubDate>
+            <pubDate>Sat, 11 Oct 2025 12:00:00 GMT</pubDate>
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" medium="image">
                 <media:title type="plain">MSBTE Winter 2025 Hall Ticket Download</media:title>
             </media:content>
@@ -26,6 +26,16 @@
             <pubDate>Mon, 22 Sep 2025 12:00:00 GMT</pubDate>
             <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/advanced-java-notes.png" medium="image">
                 <media:title type="plain">Java Programming (314317) Notes, Flashcards &amp; Resources</media:title>
+            </media:content>
+        </item>
+        <item>
+            <title>Free Basic DSA Course with Certificate</title>
+            <link>https://msbtenotes-info.netlify.app/Courses/DSA-Basic.html</link>
+            <description>Enroll in our free Data Structures &amp; Algorithms (DSA) course with certificate. Learn core concepts and problem-solving to crack interviews.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Courses/DSA-Basic.html</guid>
+            <pubDate>Mon, 22 Sep 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
+                <media:title type="plain">Free Basic DSA Course with Certificate</media:title>
             </media:content>
         </item>
         <item>
