@@ -208,6 +208,25 @@
             opacity: 0.5;
             cursor: not-allowed;
         }
+        @keyframes scroll-x {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .scroller {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+        .scroller-inner {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: scroll-x 40s linear infinite;
+        }
+        .scroller:hover .scroller-inner {
+            animation-play-state: paused;
+        }
+
     </style>
 </head>
 
@@ -288,29 +307,26 @@
 
     <!-- Recommended Books Section -->
     <section id="books" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-10 text-blue-600">Recommended Books for K-Scheme</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- OS Book -->
-                <a href="https://amzn.to/4qbctkG" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg transition">
-                    <img src="https://m.media-amazon.com/images/I/51GaFEJLjKL._SY445_SX342_ControlCacheEqualizer_.jpg" alt="OPERATING SYSTEM (COURSE CODE : 315319)" class="w-full h-64 object-contain mb-4 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-800">OPERATING SYSTEM (315319) - Nirali Prakashan</h3>
-                </a>
-                <!-- FY Diploma Set -->
-                <a href="https://amzn.to/4o0ODqx" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg transition">
-                    <img src="https://m.media-amazon.com/images/I/61gWvcroT8L._SY385_.jpg" alt="(Set of 4 Books) FIRST YEAR DIPLOMA ENGINEERING" class="w-full h-64 object-contain mb-4 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-800">First Year Diploma Engg. (Set of 4) - K Scheme</h3>
-                </a>
-                <!-- SE Book -->
-                <a href="https://amzn.to/3WOqirM" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg transition">
-                    <img src="https://m.media-amazon.com/images/I/514Q9-LUA2L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="SOFTWARE ENGINEERING (COURSE CODE : 315323)" class="w-full h-64 object-contain mb-4 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-800">SOFTWARE ENGINEERING (315323) - Nirali Prakashan</h3>
-                </a>
-                <!-- Data Analytics Book -->
-                <a href="https://amzn.to/47hpUH0" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg transition">
-                    <img src="https://m.media-amazon.com/images/I/419xKu0Ql0L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="DATA ANALYTICS (COURSE CODE 315326)" class="w-full h-64 object-contain mb-4 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-800">DATA ANALYTICS (315326) - Nirali Prakashan</h3>
-                </a>
+            <div class="scroller">
+                <div class="scroller-inner">
+                    <!-- Original Book Items -->
+                    <a href="https://amzn.to/4qbctkG" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/51GaFEJLjKL._SY445_SX342_ControlCacheEqualizer_.jpg" alt="OPERATING SYSTEM (315319)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">OPERATING SYSTEM (315319)</h3></a>
+                    <a href="https://amzn.to/4o0ODqx" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/61gWvcroT8L._SY385_.jpg" alt="FIRST YEAR DIPLOMA ENGINEERING Set" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">First Year Diploma Engg. (Set of 4)</h3></a>
+                    <a href="https://amzn.to/3WOqirM" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/514Q9-LUA2L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="SOFTWARE ENGINEERING (315323)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">SOFTWARE ENGINEERING (315323)</h3></a>
+                    <a href="https://amzn.to/47hpUH0" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/419xKu0Ql0L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="DATA ANALYTICS (315326)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">DATA ANALYTICS (315326)</h3></a>
+                    <a href="https://amzn.to/4qiZSvZ" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/71pZ4sL6gYL._SY522_.jpg" alt="Data Structures Using Python" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">Data Structures Using Python - AI & DS</h3></a>
+                    <a href="https://amzn.to/47gmNz5" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/81VJvRzZ2UL._SY522_.jpg" alt="Data Communication and Computer Network" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">Data Communication & Computer Network</h3></a>
+                    
+                    <!-- Duplicated Book Items for seamless scroll -->
+                    <a href="https://amzn.to/4qbctkG" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/51GaFEJLjKL._SY445_SX342_ControlCacheEqualizer_.jpg" alt="OPERATING SYSTEM (315319)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">OPERATING SYSTEM (315319)</h3></a>
+                    <a href="https://amzn.to/4o0ODqx" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/61gWvcroT8L._SY385_.jpg" alt="FIRST YEAR DIPLOMA ENGINEERING Set" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">First Year Diploma Engg. (Set of 4)</h3></a>
+                    <a href="https://amzn.to/3WOqirM" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/514Q9-LUA2L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="SOFTWARE ENGINEERING (315323)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">SOFTWARE ENGINEERING (315323)</h3></a>
+                    <a href="https://amzn.to/47hpUH0" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/419xKu0Ql0L._SY445_SX342_ControlCacheEqualizer_.jpg" alt="DATA ANALYTICS (315326)" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">DATA ANALYTICS (315326)</h3></a>
+                    <a href="https://amzn.to/4qiZSvZ" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/71pZ4sL6gYL._SY522_.jpg" alt="Data Structures Using Python" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">Data Structures Using Python - AI & DS</h3></a>
+                    <a href="https://amzn.to/47gmNz5" target="_blank" rel="noopener sponsored" class="block bg-gray-50 p-4 rounded-xl shadow-md w-64 flex-shrink-0"><img src="https://m.media-amazon.com/images/I/81VJvRzZ2UL._SY522_.jpg" alt="Data Communication and Computer Network" class="w-full h-56 object-contain mb-4 rounded-lg"><h3 class="text-xs font-semibold text-gray-800">Data Communication & Computer Network</h3></a>
+                </div>
             </div>
         </div>
     </section>
