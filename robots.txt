@@ -1,5 +1,6 @@
 # Allow all crawlers full access
 User-agent: *
+Allow: /
 
 # Disallow crawling of verification files
 Disallow: /googlef85124961115b472.html

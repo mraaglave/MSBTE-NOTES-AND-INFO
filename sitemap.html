@@ -143,12 +143,14 @@
 
             <!-- Search Bar -->
             <div class="mt-6 relative max-w-lg mx-auto">
+                <label for="sitemapSearch" class="sr-only">Search for a page</label>
                 <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                 <input type="text" id="sitemapSearch" placeholder="Search for a page..." class="w-full pl-12 pr-4 py-2 border rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
             </div>
         </header>
 
         <div class="space-y-8">
+
 
             <!-- Main Pages -->
             <section class="sitemap-section">
@@ -159,6 +161,7 @@
                     <li><a href="/contact.html">Contact Us</a></li>
                     <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="/internships.html">Internships & Courses</a></li>
+                    <li><a href="/sitemap.html">Sitemap</a></li>
                     <li><a href="/links.html">Important Links</a></li>
                 </ul>
             </section>
@@ -180,6 +183,7 @@
             <section class="sitemap-section">
                 <h2>Notes & Resources</h2>
                 <ul class="sitemap-list">
+                    <li><a href="/Notes/dte-lab-manual.html">Digital Techniques (313303) Lab Manual | Blank & Solved PDF</a></li>
                     <li><a href="/Branches/314317-java-programming.html">Java Programming (314317) Notes, Flashcards & Resources</a></li>
                     <li><a href="/Notes/advanced-java-notes.html">Advanced Java Handwritten Notes</a></li>
                     <li><a href="/Notes/msbte-k-scheme-question-banks.html">K-Scheme Question Bank Hub</a></li>
@@ -276,7 +280,13 @@
 
     <script>
         function toggleMobileMenu() {
-            document.getElementById('mobileNav').classList.toggle('hidden');
+            const menu = document.getElementById('mobileNav');
+            menu.classList.toggle('hidden');
+            const isExpanded = !menu.classList.contains('hidden');
+            document.getElementById('mobileMenuButton').setAttribute('aria-expanded', isExpanded);
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('hidden'));
+            });
         }
 
         document.getElementById('sitemapSearch').addEventListener('input', function (event) {

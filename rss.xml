@@ -5,9 +5,19 @@
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 11 Oct 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Oct 2025 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</title>
+            <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</link>
+            <description>Get the official MSBTE Winter 2025 theory exam timetable. Download the PDF, check exam dates for all branches, and find preparation tips. Your complete guide to the diploma exam schedule.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</guid>
+            <pubDate>Sat, 18 Oct 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-timetable.png" medium="image">
+                <media:title type="plain">MSBTE Winter 2025 Theory Examination Timetable</media:title>
+            </media:content>
+        </item>
         <item>
             <title>MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</title>
             <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</link>
@@ -36,16 +46,6 @@
             <pubDate>Mon, 22 Sep 2025 12:00:00 GMT</pubDate>
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Free Basic DSA Course with Certificate</media:title>
-            </media:content>
-        </item>
-        <item>
-            <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</title>
-            <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</link>
-            <description>Get the official MSBTE Winter 2025 theory exam timetable. Download the PDF, check exam dates for all branches, and find preparation tips. Your complete guide to the diploma exam schedule.</description>
-            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</guid>
-            <pubDate>Thu, 25 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-timetable.png" medium="image">
-                <media:title type="plain">MSBTE Winter 2025 Theory Examination Timetable</media:title>
             </media:content>
         </item>
 
@@ -116,6 +116,17 @@
             </media:content>
         </item>
         <item>
+            <title>MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</title>
+            <link>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</link>
+            <description>Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
+            <pubDate>Sun, 14 Sep 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image">
+                <media:title type="plain">MSBTE IT Engineering Question Bank (K-Scheme) | All Semesters</media:title>
+                <media:description type="plain">Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</media:description>
+            </media:content>
+        </item>
+        <item>
             <title>MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</title>
             <link>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</link>
             <description>Download MSBTE K-Scheme Electronics &amp; Telecommunication (E&amp;TC) question banks for all semesters. Get unit test papers for subjects like Analog Electronics, Digital Communication, and more.</description>
@@ -124,17 +135,6 @@
             <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image">
                 <media:title type="plain">MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</media:title>
                 <media:description type="plain">Download MSBTE K-Scheme Electronics &amp; Telecommunication (E&amp;TC) question banks for all semesters. Get unit test papers for subjects like Analog Electronics, Digital Communication, and more.</media:description>
-            </media:content>
-        </item>
-        <item>
-            <title>MSBTE IT Engineering Question Bank (K-Scheme) | All Semesters</title>
-            <link>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</link>
-            <description>Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</description>
-            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
-            <pubDate>Sun, 14 Sep 2025 12:00:00 GMT</pubDate>
-            <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image">
-                <media:title type="plain">MSBTE IT Engineering Question Bank (K-Scheme) | All Semesters</media:title>
-                <media:description type="plain">Download MSBTE K-Scheme Information Technology (IT) question banks for all semesters. Get unit test papers for subjects like DSU, DBMS, OOP, and more.</media:description>
             </media:content>
         </item>
         <item>
