@@ -2,10 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('resource-grid');
     const searchInput = document.getElementById('search-input');
     const filterContainer = document.getElementById('filter-buttons');
+    const sortDropdown = document.getElementById('sort-dropdown');
     const noResults = document.getElementById('no-results');
     const loadingSpinner = document.getElementById('loading-spinner');
 
+    const paginationContainer = document.getElementById('pagination-container');
+
     let resources = [];
+    let currentPage = 1;
+    const itemsPerPage = 9; // 9 items per page for a 3-column grid
 
     const categories = [
         { id: 'all', name: 'All' },
@@ -106,8 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterAndRender() {
         const searchTerm = searchInput.value.toLowerCase();
         const category = filterContainer.querySelector('.active')?.dataset.filter || 'all';
+        const sortValue = sortDropdown.value;
 
-        const filtered = resources.filter(resource => {
+        let filtered = resources.filter(resource => {
             const matchesCategory = category === 'all' || resource.category === category;
             const matchesSearch = resource.title.toLowerCase().includes(searchTerm) ||
                 resource.description.toLowerCase().includes(searchTerm) ||
@@ -115,7 +121,63 @@ document.addEventListener('DOMContentLoaded', () => {
             return matchesCategory && matchesSearch;
         });
 
-        renderResources(filtered, searchTerm);
+        // Sorting logic
+        switch (sortValue) {
+            case 'title-asc':
+                filtered.sort((a, b) => a.title.localeCompare(b.title));
+                break;
+            case 'title-desc':
+                filtered.sort((a, b) => b.title.localeCompare(a.title));
+                break;
+            case 'date-asc':
+                filtered.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+                break;
+            case 'date-desc':
+            default:
+                filtered.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+                break;
+        }
+
+        const paginatedItems = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+        renderResources(paginatedItems, searchTerm);
+        renderPagination(filtered.length);
+    }
+
+    function renderPagination(totalItems) {
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        if (totalPages <= 1) return;
+
+        // Previous Button
+        const prevButton = document.createElement('button');
+        prevButton.innerHTML = '&laquo; Prev';
+        prevButton.className = 'pagination-btn';
+        prevButton.setAttribute('aria-label', 'Go to previous page');
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => { if (currentPage > 1) { currentPage--; filterAndRender(); } });
+        paginationContainer.appendChild(prevButton);
+
+        // Page Number Buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.setAttribute('aria-label', `Go to page ${i}`);
+            pageButton.className = 'pagination-btn';
+            if (i === currentPage) { pageButton.classList.add('active'); }
+            pageButton.addEventListener('click', () => { currentPage = i; filterAndRender(); });
+            paginationContainer.appendChild(pageButton);
+        }
+
+        // Next Button
+        const nextButton = document.createElement('button');
+        nextButton.innerHTML = 'Next &raquo;';
+        nextButton.className = 'pagination-btn';
+        nextButton.setAttribute('aria-label', 'Go to next page');
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; filterAndRender(); } });
+        paginationContainer.appendChild(nextButton);
     }
 
     function setupFilters() {
@@ -134,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.classList.contains('filter-btn')) {
                 filterContainer.querySelector('.active').classList.remove('active');
                 e.target.classList.add('active');
+                currentPage = 1; // Reset to first page on filter change
                 filterAndRender();
             }
         });
@@ -141,7 +204,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function init() {
         setupFilters();
-        searchInput.addEventListener('input', filterAndRender);
+        searchInput.addEventListener('input', () => {
+            currentPage = 1; // Reset to first page on search
+            filterAndRender();
+        });
+        sortDropdown.addEventListener('change', () => {
+            currentPage = 1; // Reset to first page on sort change
+            filterAndRender();
+        });
+
         await fetchResources();
         loadingSpinner.classList.add('hidden');
         filterAndRender(); // Use filterAndRender to handle initial state correctly

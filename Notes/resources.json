@@ -5,7 +5,8 @@
         "url": "/Notes/dte-lab-manual.html",
         "thumbnail": "/resourse/branch-resourse/dte-lab-manual.png",
         "category": "lab-manual",
-        "tags": ["DTE", "313303", "Lab", "Solved"]
+        "tags": ["DTE", "313303", "Lab", "Solved"],
+        "dateAdded": "2025-10-22"
     },
     {
         "title": "Java Programming (314317) Resources",
@@ -13,7 +14,8 @@
         "url": "/Branches/314317-java-programming.html",
         "thumbnail": "/resourse/branch-resourse/advanced-java-notes.png",
         "category": "subject-guide",
-        "tags": ["Java", "314317", "Flashcards", "MCQ"]
+        "tags": ["Java", "314317", "Flashcards", "MCQ"],
+        "dateAdded": "2025-10-20"
     },
     {
         "title": "Advanced Java Handwritten Notes",
@@ -21,7 +23,8 @@
         "url": "/Notes/advanced-java-notes.html",
         "thumbnail": "/resourse/blog-resourse/advanced-java-notes.png",
         "category": "notes",
-        "tags": ["Java", "J2EE", "Handwritten", "PDF"]
+        "tags": ["Java", "J2EE", "Handwritten", "PDF"],
+        "dateAdded": "2025-09-18"
     },
     {
         "title": "K-Scheme Question Bank Hub",
@@ -29,7 +32,8 @@
         "url": "/Notes/msbte-k-scheme-question-banks.html",
         "thumbnail": "/resourse/blog-resourse/msbte-k-scheme-question-banks.png",
         "category": "question-bank",
-        "tags": ["K-Scheme", "All Branches", "PDF"]
+        "tags": ["K-Scheme", "All Branches", "PDF"],
+        "dateAdded": "2025-09-17"
     },
     {
         "title": "20 OOP Microproject Ideas",
@@ -37,7 +41,8 @@
         "url": "/Notes/20-microproject-ideas-oop.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-oop.png",
         "category": "micro-project",
-        "tags": ["OOP", "C++", "Java", "Ideas"]
+        "tags": ["OOP", "C++", "Java", "Ideas"],
+        "dateAdded": "2025-09-05"
     },
     {
         "title": "20 DBMS Microproject Ideas",
@@ -45,7 +50,8 @@
         "url": "/Notes/20-microproject-ideas-dbms.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-dbms.png",
         "category": "micro-project",
-        "tags": ["DBMS", "SQL", "Database", "Ideas"]
+        "tags": ["DBMS", "SQL", "Database", "Ideas"],
+        "dateAdded": "2025-09-06"
     },
     {
         "title": "20 OS Microproject Ideas",
@@ -53,7 +59,8 @@
         "url": "/Notes/20-microproject-ideas-os.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-os.png",
         "category": "micro-project",
-        "tags": ["OS", "C++", "Linux", "Ideas"]
+        "tags": ["OS", "C++", "Linux", "Ideas"],
+        "dateAdded": "2025-09-07"
     },
     {
         "title": "20 Software Engineering Microproject Ideas",
@@ -61,7 +68,8 @@
         "url": "/Notes/20-microproject-ideas-se.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-se.png",
         "category": "micro-project",
-        "tags": ["SE", "UML", "SRS", "Ideas"]
+        "tags": ["SE", "UML", "SRS", "Ideas"],
+        "dateAdded": "2025-09-08"
     },
     {
         "title": "20 Computer Networks Microproject Ideas",
@@ -69,7 +77,8 @@
         "url": "/Notes/20-microproject-ideas-cn.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-cn.png",
         "category": "micro-project",
-        "tags": ["CN", "Networking", "Packet Tracer", "Ideas"]
+        "tags": ["CN", "Networking", "Packet Tracer", "Ideas"],
+        "dateAdded": "2025-09-09"
     },
     {
         "title": "20 Python & Web Dev Microproject Ideas",
@@ -77,7 +86,8 @@
         "url": "/Notes/20-microproject-ideas-web.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-web.png",
         "category": "micro-project",
-        "tags": ["Web", "Python", "HTML", "CSS", "JS"]
+        "tags": ["Web", "Python", "HTML", "CSS", "JS"],
+        "dateAdded": "2025-09-10"
     },
     {
         "title": "Digital Techniques (313303) Subject Guide",
@@ -85,7 +95,8 @@
         "url": "/Branches/313303-digital-techniques.html",
         "thumbnail": "/resourse/branch-resourse/313303-digital-techniques.png",
         "category": "subject-guide",
-        "tags": ["DTE", "313303", "Electronics"]
+        "tags": ["DTE", "313303", "Electronics"],
+        "dateAdded": "2025-10-21"
     },
     {
         "title": "Microprocessor (314321) Subject Guide",
@@ -93,7 +104,8 @@
         "url": "/Branches/314321-microprocessor-programming.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["MP", "314321", "Microprocessor"]
+        "tags": ["MP", "314321", "Microprocessor"],
+        "dateAdded": "2025-07-15"
     },
     {
         "title": "Operating System (315319) Subject Guide",
@@ -101,7 +113,8 @@
         "url": "/Branches/315319-operating-system.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["OSY", "315319", "OS"]
+        "tags": ["OSY", "315319", "OS"],
+        "dateAdded": "2025-07-16"
     },
     {
         "title": "Software Engineering (315323) Subject Guide",
@@ -109,7 +122,8 @@
         "url": "/Branches/315323-software-engineering.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["SEN", "315323", "SE"]
+        "tags": ["SEN", "315323", "SE"],
+        "dateAdded": "2025-07-17"
     },
     {
         "title": "Advanced Computer Network (315321) Guide",
@@ -117,7 +131,8 @@
         "url": "/Branches/315321-advanced-computer-network.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["ACN", "315321", "Networking"]
+        "tags": ["ACN", "315321", "Networking"],
+        "dateAdded": "2025-07-18"
     },
     {
         "title": "Cloud Computing (315325) Subject Guide",
@@ -125,7 +140,8 @@
         "url": "/Branches/315325-cloud-computing.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["CCI", "315325", "Cloud"]
+        "tags": ["CCI", "315325", "Cloud"],
+        "dateAdded": "2025-07-19"
     },
     {
         "title": "Data Analytics (315326) Subject Guide",
@@ -133,7 +149,8 @@
         "url": "/Branches/315326-data-analytics.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["DA", "315326", "Analytics"]
+        "tags": ["DA", "315326", "Analytics"],
+        "dateAdded": "2025-07-20"
     },
     {
         "title": "Entrepreneurship Development (315002) Guide",
@@ -141,7 +158,8 @@
         "url": "/Branches/315002-entrepreneurship-development.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["EDE", "315002", "Business"]
+        "tags": ["EDE", "315002", "Business"],
+        "dateAdded": "2025-07-21"
     },
     {
         "title": "MSBTE Computer Engineering Question Bank (K-Scheme)",
@@ -149,7 +167,8 @@
         "url": "/Notes/msbte-computer-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-computer-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Computer", "CO", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["Computer", "CO", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-12"
     },
     {
         "title": "MSBTE IT Engineering Question Bank (K-Scheme)",
@@ -157,7 +176,8 @@
         "url": "/Notes/msbte-it-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-it-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["IT", "Information Technology", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["IT", "Information Technology", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-14"
     },
     {
         "title": "MSBTE Mechanical Engineering Question Bank (K-Scheme)",
@@ -165,7 +185,8 @@
         "url": "/Notes/msbte-mech-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-mech-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Mechanical", "ME", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["Mechanical", "ME", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-15"
     },
     {
         "title": "MSBTE Civil Engineering Question Bank (K-Scheme)",
@@ -173,7 +194,8 @@
         "url": "/Notes/msbte-civil-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-civil-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Civil", "CE", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["Civil", "CE", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-15"
     },
     {
         "title": "MSBTE Electrical Engineering Question Bank (K-Scheme)",
@@ -181,7 +203,8 @@
         "url": "/Notes/msbte-electrical-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-electrical-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Electrical", "EE", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["Electrical", "EE", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-16"
     },
     {
         "title": "MSBTE E&TC Engineering Question Bank (K-Scheme)",
@@ -189,6 +212,7 @@
         "url": "/Notes/msbte-etc-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-etc-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["E&TC", "Electronics", "Question Bank", "K-Scheme", "PDF"]
+        "tags": ["E&TC", "Electronics", "Question Bank", "K-Scheme", "PDF"],
+        "dateAdded": "2025-09-13"
     }
 ]
