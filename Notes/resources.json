@@ -135,15 +135,6 @@
         "dateAdded": "2025-07-18"
     },
     {
-        "title": "Cloud Computing (315325) Subject Guide",
-        "description": "Syllabus and resources for Cloud Computing.",
-        "url": "/Branches/315325-cloud-computing.html",
-        "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
-        "category": "subject-guide",
-        "tags": ["CCI", "315325", "Cloud"],
-        "dateAdded": "2025-07-19"
-    },
-    {
         "title": "Data Analytics (315326) Subject Guide",
         "description": "Syllabus and resources for Data Analytics.",
         "url": "/Branches/315326-data-analytics.html",
@@ -214,5 +205,14 @@
         "category": "question-bank",
         "tags": ["E&TC", "Electronics", "Question Bank", "K-Scheme", "PDF"],
         "dateAdded": "2025-09-13"
+    },
+    {
+        "title": "Cloud Computing (315325) Subject Guide",
+        "description": "A complete resource hub for Cloud Computing (315325) with syllabus, notes, video lectures, and micro-project ideas.",
+        "url": "/Branches/315325-cloud-computing.html",
+        "thumbnail": "/resourse/branch-resourse/cloud-computing-banner.png",
+        "category": "subject-guide",
+        "tags": ["CLC", "315325", "Cloud", "AWS"],
+        "dateAdded": "2025-10-26"
     }
 ]
