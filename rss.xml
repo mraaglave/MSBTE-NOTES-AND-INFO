@@ -5,9 +5,26 @@
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Oct 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Oct 2025 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title>Job Portal - Find Your Next Career Opportunity</title>
+            <link>https://msbtenotes-info.netlify.app/Jobs/index.html</link>
+            <description>Explore the latest job openings for freshers and experienced professionals. Find opportunities in software development, web design, data science, and more on the MSBTE Notes &amp; Info job portal.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Jobs/index.html</guid>
+            <pubDate>Sun, 26 Oct 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
+                <media:title type="plain">Job Portal - Find Your Next Career Opportunity</media:title>
+            </media:content>
+        </item>
+        <item>
+            <title>Bookmarked Jobs</title>
+            <link>https://msbtenotes-info.netlify.app/Jobs/bookmarked-jobs.html</link>
+            <description>View and manage your bookmarked jobs. Keep track of career opportunities you're interested in.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Jobs/bookmarked-jobs.html</guid>
+            <pubDate>Sun, 26 Oct 2025 12:00:00 GMT</pubDate>
+        </item>
         <item>
             <title>MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</title>
             <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</link>
