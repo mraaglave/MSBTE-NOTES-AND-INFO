@@ -7,5 +7,7 @@ Disallow: /googlef85124961115b472.html
 Disallow: /pinterest-9961f.html
 Disallow: /yandex_7a3f92ea9dc08f64.html
 
+# Algolia-Crawler-Verif: 937AFA2AF28FD9D4
+
 # Sitemap location
 Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml
