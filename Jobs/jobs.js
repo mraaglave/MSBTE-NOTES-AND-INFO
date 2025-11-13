@@ -2,7 +2,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
 
-// --- Page Logic ---
+// --- The Page Logic ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById("jobsGrid");
