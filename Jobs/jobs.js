@@ -1,7 +1,3 @@
-// Initialize all AdSense blocks
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-
 // --- Page Logic ---
 
 document.addEventListener('DOMContentLoaded', () => {
