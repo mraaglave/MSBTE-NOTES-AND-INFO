@@ -280,6 +280,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 duplicatedItem.setAttribute("aria-hidden", true);
                 scrollerInner.appendChild(duplicatedItem);
             });
+
+            // Pause animation on hover
+            scroller.addEventListener('mouseenter', () => {
+                scrollerInner.style.animationPlayState = 'paused';
+            });
+            scroller.addEventListener('mouseleave', () => {
+                scrollerInner.style.animationPlayState = 'running';
+            });
         });
     }
 
