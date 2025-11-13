@@ -119,6 +119,53 @@
             box-shadow: var(--card-shadow-hover);
         }
 
+        /* --- Job Card Enhancements --- */
+        .job-card .status-badge {
+            position: absolute;
+            top: -1px;
+            right: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 0 0 0.5rem 0.5rem;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status-hot { background-color: #DC2626; /* red-600 */ }
+        .status-new { background-color: #2563EB; /* blue-600 */ }
+        .status-closing-soon { background-color: #F59E0B; /* amber-500 */ }
+
+        .job-card:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .job-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .job-card-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+
+        .job-card-tag {
+            background-color: var(--primary-blue-light);
+            color: var(--primary-blue);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 9999px;
+        }
+
         /* Focus states for accessibility */
         input:focus, select:focus, button:focus-visible, a:focus-visible {
             outline: 2px solid var(--primary-blue);
