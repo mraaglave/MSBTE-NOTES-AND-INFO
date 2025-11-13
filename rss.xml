@@ -5,9 +5,19 @@
         <link>https://msbtenotes-info.netlify.app/</link>
         <description>Latest updates, notes, and resources from MSBTE Notes &amp; Info.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 26 Oct 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Oct 2025 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title>Cloud Computing (315325) Subject Guide | MSBTE K-Scheme</title>
+            <link>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</link>
+            <description>A complete resource hub for Cloud Computing (315325) with syllabus, notes, video lectures, and micro-project ideas for MSBTE K-Scheme.</description>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</guid>
+            <pubDate>Mon, 27 Oct 2025 12:00:00 GMT</pubDate>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" medium="image">
+                <media:title type="plain">Cloud Computing (315325) Subject Guide</media:title>
+            </media:content>
+        </item>
         <item>
             <title>Job Portal - Find Your Next Career Opportunity</title>
             <link>https://msbtenotes-info.netlify.app/Jobs/index.html</link>
@@ -350,8 +360,8 @@
             <title>Privacy Policy</title>
             <link>https://msbtenotes-info.netlify.app/privacy-policy.html</link>
             <description>Read our updated privacy policy.</description>
-            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/privacy-policy.html</guid>
-            <pubDate>Wed, 27 Aug 2025 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/privacy-policy.html?v=2</guid>
+            <pubDate>Mon, 27 Oct 2025 12:00:00 GMT</pubDate>
             <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
                 <media:title type="plain">Privacy Policy</media:title>
                 <media:description type="plain">Read our updated privacy policy.</media:description>
