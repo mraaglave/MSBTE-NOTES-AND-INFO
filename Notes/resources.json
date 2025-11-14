@@ -214,5 +214,14 @@
         "category": "subject-guide",
         "tags": ["CLC", "315325", "Cloud", "AWS"],
         "dateAdded": "2025-10-26"
+    },
+    {
+        "title": "DBMS Guess Paper (Free Version)",
+        "description": "A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.",
+        "url": "/Blog/dbms-guess-paper-free.html",
+        "thumbnail": "/resourse/blog-resourse/dbms-guess-paper-free.png",
+        "category": "question-bank",
+        "tags": ["DBMS", "313302", "Guess Paper", "K-Scheme"],
+        "dateAdded": "2025-10-26"
     }
 ]
