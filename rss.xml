@@ -22,9 +22,9 @@
         </item>
         <item>
             <title>Job Portal - Find Your Next Career Opportunity</title>
-            <link>https://msbtenotes-info.netlify.app/Jobs/index.html</link>
+            <link>https://msbtenotes-info.netlify.app/Jobs/</link>
             <description>Explore the latest job openings for freshers and experienced professionals. Find opportunities in software development, web design, data science, and more on the MSBTE Notes &amp; Info job portal.</description>
-            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Jobs/index.html</guid>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Jobs/</guid>
             <pubDate>Sun, 26 Oct 2025 12:00:00 GMT</pubDate>
             <category>Jobs</category>
             <author>info.mraaglave@gmail.com (MSBTE Notes &amp;Info Team)</author>
@@ -40,6 +40,9 @@
             <pubDate>Sun, 26 Oct 2025 12:00:00 GMT</pubDate>
             <category>Jobs</category>
             <author>info.mraaglave@gmail.com (MSBTE Notes &amp;Info Team)</author>
+            <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image">
+                <media:title type="plain">Bookmarked Jobs</media:title>
+            </media:content>
         </item>
         <item>
             <title>MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</title>
@@ -347,9 +350,9 @@
         </item>
         <item>
             <title>MSBTE Winter 2025 Exam Form Fill up Dates, Last Date &amp; Official Link</title>
-            <link>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</link>
+            <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-exam-form.html</link>
             <description>Check MSBTE Winter 2025 exam form fill-up dates for newly admitted and regular students. Official link, last date, late fees, and step-by-step guide to confirm your MSBTE exam form online.</description>
-            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</guid>
+            <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-exam-form.html</guid>
             <pubDate>Mon, 01 Sep 2025 12:00:00 GMT</pubDate>
             <category>Blog</category>
             <category>MSBTE Update</category>
