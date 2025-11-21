@@ -401,7 +401,7 @@
 
                     const linkedinShareBtn = document.getElementById('linkedinShare');
                     if (linkedinShareBtn) {
-                        linkedinShareBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${jobUrl}&title=${jobTitle}&summary=${shareText}`;
+                        linkedinShareBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedPageUrl}&title=${jobTitle}&summary=${shareText}`;
                     }
 
                     const copyLinkBtn = document.getElementById('copyLinkBtn');

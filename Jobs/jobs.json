@@ -6,7 +6,12 @@
         "location": "Pune, MH",
         "url": "https://www.tcs.com/careers/india/tcs-bcom-and-bba-hiring-2025",
         "type": "Full-time",
-        "tags": ["Fresher", "Engineering", "IT Services", "B.Tech"],
+        "tags": [
+            "Fresher",
+            "Engineering",
+            "IT Services",
+            "B.Tech"
+        ],
         "posted": "2025-10-22",
         "deadline": "2025-11-15",
         "status": "Hot",
@@ -20,7 +25,13 @@
         "location": "Bengaluru, KA",
         "url": "https://www.amazon.jobs/en/jobs/2711509/software-development-engineer",
         "type": "Full-time",
-        "tags": ["SDE", "Backend", "Java", "Python", "Experienced"],
+        "tags": [
+            "SDE",
+            "Backend",
+            "Java",
+            "Python",
+            "Experienced"
+        ],
         "posted": "2025-10-20",
         "deadline": "2025-11-30",
         "status": "New",
@@ -34,7 +45,12 @@
         "location": "Remote",
         "url": "https://careers.google.com/jobs/results/141498501565342406-software-engineering-intern-bachelors-summer-2025/",
         "type": "Internship",
-        "tags": ["React", "JavaScript", "Web", "Student"],
+        "tags": [
+            "React",
+            "JavaScript",
+            "Web",
+            "Student"
+        ],
         "posted": "2025-10-18",
         "deadline": "2025-11-10",
         "status": "Closing Soon",
@@ -48,7 +64,12 @@
         "location": "Mumbai, MH",
         "url": "https://www.accenture.com/in-en/careers/jobdetails?id=AI-ML05_1_india_13344821",
         "type": "Fresher",
-        "tags": ["Data", "SQL", "Analytics", "Diploma"],
+        "tags": [
+            "Data",
+            "SQL",
+            "Analytics",
+            "Diploma"
+        ],
         "posted": "2025-10-15",
         "deadline": "2025-12-05",
         "status": "",
@@ -62,7 +83,12 @@
         "location": "Hyderabad, TS",
         "url": "https://www.amazon.jobs/en/jobs/2647712/cloud-support-associate",
         "type": "Full-time",
-        "tags": ["Cloud", "AWS", "Support", "Networking"],
+        "tags": [
+            "Cloud",
+            "AWS",
+            "Support",
+            "Networking"
+        ],
         "posted": "2025-10-23",
         "deadline": "2025-11-25",
         "status": "New",
@@ -76,7 +102,12 @@
         "location": "Multiple Locations",
         "url": "https://career.infosys.com/jobdesc?jobReferenceCode=PROGEN-130003",
         "type": "Full-time",
-        "tags": ["Fresher", "IT", "Systems", "Diploma"],
+        "tags": [
+            "Fresher",
+            "IT",
+            "Systems",
+            "Diploma"
+        ],
         "posted": "2025-10-21",
         "deadline": "2025-11-20",
         "status": "",
@@ -90,11 +121,66 @@
         "location": "Work from Home",
         "url": "https://careers.wipro.com/elite-nth-2025",
         "type": "Internship",
-        "tags": ["Web Dev", "PHP", "MySQL", "Student"],
+        "tags": [
+            "Web Dev",
+            "PHP",
+            "MySQL",
+            "Student"
+        ],
         "posted": "2025-10-12",
         "deadline": "2025-11-08",
         "status": "Closing Soon",
         "logo": "https://1000logos.net/wp-content/uploads/2021/09/Wipro-Logo-1.png",
         "description": "Wipro's remote internship program offers hands-on experience in web development. Interns will work with a team of experienced developers on real-world projects using PHP and MySQL."
+    },
+    {
+        "id": "zenoids-webdev-intern-2025",
+        "title": "Internship in Web Development",
+        "company": "Zenoids",
+        "location": "Pune, Mumbai, Hyderabad, New Delhi",
+        "url": "#",
+        "type": "Internship",
+        "tags": [
+            "Frontend",
+            "Backend",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "Laravel",
+            "WordPress",
+            "Shopify",
+            "Unpaid",
+            "Training"
+        ],
+        "posted": "2025-11-17",
+        "deadline": "N/A",
+        "status": "New",
+        "logo": "https://img.naukimg.com/logo_images/groups/v1/7483631.gif",
+        "description": "Zenoids is offering an unpaid Web Development Internship with hands-on training, real project experience, mentorship from senior developers, and exposure to frontend and backend technologies such as HTML, CSS, JavaScript, PHP, Laravel, WordPress, and Shopify. Interns will work on live projects, receive guidance from experienced developers, and build a strong portfolio. Certification is provided only upon full attendance and successful completion."
+    },
+    {
+        "id": "firstcry-graphic-designer-2025",
+        "title": "Graphic Designer",
+        "company": "FirstCry",
+        "location": "Pune",
+        "url": "https://www.naukri.com/job-listings-graphic-designer-firstcry-com-pune-0-to-5-years-141125017486",
+        "type": "Full-time",
+        "tags": [
+            "Graphic Design",
+            "Adobe Illustrator",
+            "Adobe Photoshop",
+            "Corel Draw",
+            "Adobe Creative Suite",
+            "Digital Marketing",
+            "Social Media Design",
+            "BFA",
+            "Diploma"
+        ],
+        "posted": "2025-11-14",
+        "deadline": "N/A",
+        "status": "",
+        "logo": "https://img.naukimg.com/logo_images/groups/v1/366920.gif",
+        "description": "FirstCry.com is hiring creative Graphic Designers for full-time roles in Pune. Responsibilities include designing digital marketing creatives such as social media posts, following design trends, meeting deadlines, and collaborating with the design team. Candidates must have strong design skills and expertise in Adobe Illustrator and Photoshop, with basic After Effects knowledge. BFA, GD Art, Diploma, or equivalent qualifications are preferred."
     }
 ]
