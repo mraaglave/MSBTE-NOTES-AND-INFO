@@ -269,7 +269,7 @@
     <!-- Header -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-            <a href="/index.html" class="flex items-center text-blue-600 font-bold text-xl font-display">
+            <a href="/index.html" aria-label="MSBTE Notes & Info Home" class="flex items-center text-blue-600 font-bold text-xl font-display">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
                     <path
                         d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
@@ -375,12 +375,14 @@
             <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-10">
                 <div class="flex flex-col md:flex-row md:items-center gap-4">
                     <div class="relative flex-1">
+                        <label for="searchInput" class="sr-only">Search for jobs</label>
                         <input id="searchInput" type="text" placeholder="Search by job title, company, or keyword..." class="w-full py-3 pl-12 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-800 placeholder-gray-500 bg-gray-50" />
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                         </svg>
                     </div>
                     <div class="flex items-center gap-3 flex-wrap">
+                        <label for="typeFilter" class="sr-only">Filter by job type</label>
                         <select id="typeFilter" class="py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition w-full md:w-auto text-gray-700 bg-white cursor-pointer">
                             <option value="">All Job Types</option>
                             <option value="Full-time">Full-time</option>
@@ -388,6 +390,7 @@
                             <option value="Internship">Internship</option>
                             <option value="Fresher">Fresher</option>
                         </select>
+                        <label for="sortFilter" class="sr-only">Sort jobs</label>
                         <select id="sortFilter" class="py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition w-full md:w-auto text-gray-700 bg-white cursor-pointer">
                             <option value="latest">Sort by: Latest</option>
                             <option value="deadline">Sort by: Deadline</option>
@@ -401,7 +404,7 @@
             </div>
 
             <!-- Jobs Grid -->
-            <div id="jobsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <div id="jobsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite" aria-atomic="true"></div>
             <p id="noResults" class="text-center text-gray-500 mt-8 hidden col-span-full">No jobs found matching your criteria.</p>
             <div class="text-center mt-12">
                 <button id="loadMoreBtn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 hidden shadow-sm">Load More Jobs</button>
@@ -555,6 +558,7 @@
             <form name="job-alerts" method="POST" data-netlify="true" action="/Jobs/success-redirect.html">
                 <input type="hidden" name="form-name" value="job-alerts" />
                 <div class="flex flex-col sm:flex-row gap-3">
+                    <label for="email-input" class="sr-only">Email Address</label>
                     <input type="email" name="email" placeholder="Enter your email" required class="flex-1 w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-800 placeholder-gray-500 bg-gray-50" />
                     <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-sm">
                         Notify Me
@@ -584,6 +588,32 @@
                     }
                 }, 5000);
             }
+
+            // Focus trapping for popup
+            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            const firstFocusableElement = popup.querySelectorAll(focusableElements)[0];
+            const focusableContent = popup.querySelectorAll(focusableElements);
+            const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+            document.addEventListener('keydown', function(e) {
+                if (popup.style.display !== 'flex') return;
+
+                let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+                if (!isTabPressed) return;
+
+                if (e.shiftKey) { // if shift key pressed for shift + tab combination
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus(); // move focus to the last focusable element
+                        e.preventDefault();
+                    }
+                } else { // if tab key is pressed
+                    if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element
+                        firstFocusableElement.focus(); // move focus to the first focusable element
+                        e.preventDefault();
+                    }
+                }
+            });
+
 
             if (closeBtn) closeBtn.addEventListener('click', () => popup.style.display = 'none');
         });

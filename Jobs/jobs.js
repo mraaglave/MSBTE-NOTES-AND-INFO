@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 class="flex-1 bg-gray-100 text-gray-700 px-4 py-2.5 rounded-lg font-semibold text-center hover:bg-gray-200 transition duration-300 text-sm">
                 View Details
             </a>
-            <a href="${job.url}" target="_blank"
-                class="flex-1 bg-blue-600 text-white px-4 py-2.5 rounded-lg font-semibold text-center hover:bg-blue-700 transition duration-300 text-sm">
+            <a href="./apply-redirect.html?url=${encodeURIComponent(job.url)}" target="_blank"
+                class="flex-1 bg-blue-600 text-white px-4 py-2.5 rounded-lg font-semibold text-center hover:bg-blue-700 transition duration-300 text-sm" rel="noopener noreferrer">
                 Apply Now →
             </a>
             <button aria-label="Bookmark job" class="bookmark-btn p-2.5 rounded-lg hover:bg-gray-100 ${isBookmarked(job.id) ? 'text-yellow-500' : 'text-gray-400'}" data-job-id="${job.id}">
