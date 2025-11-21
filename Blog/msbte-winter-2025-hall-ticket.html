@@ -342,35 +342,16 @@
         </article>
 
         <!-- Related Articles -->
-        <aside class="mt-16">
+        <section id="related-blogs" class="mt-16">
             <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Related Resources</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="/Blog/msbte-winter-2025-timetable.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/msbte-winter-2025-timetable.png" aria-label="MSBTE Winter 2025 Exam Timetable"
-                        alt="MSBTE Winter 2025 Exam Timetable" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700" aria-label="MSBTE Winter 2025 Timetable">MSBTE Winter 2025 Timetable</h3>
-                    </div>
-                </a>
-                <a href="/Blog/Msbte-winter-2025-exam-form.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" aria-label="MSBTE Winter 2025 Exam Form Guide"
-                        alt="MSBTE Winter 2025 Exam Form Guide" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700" aria-label="MSBTE Winter 2025 Exam Form Guide">MSBTE Winter 2025 Exam Form Guide</h3>
-                    </div>
-                </a>
-                <a href="/Notes/msbte-k-scheme-question-banks.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/msbte-k-scheme-question-banks.png" aria-label="MSBTE K-Scheme Question Banks"
-                        alt="MSBTE K-Scheme Question Banks" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700" aria-label="K-Scheme Question Bank Hub">K-Scheme Question Bank Hub</h3>
-                    </div>
-                </a>
+                <!-- Related blog cards will be dynamically loaded here -->
             </div>
-        </aside>
+            <!-- Pagination Container -->
+            <div id="relatedPagination" class="flex justify-center items-center gap-2 mt-10">
+                <!-- Pagination buttons will be dynamically loaded here -->
+            </div>
+        </section>
 
         <!-- Share Section -->
         <div class="text-center mt-10">
@@ -577,6 +558,7 @@
             document.getElementById('mobileNav').classList.toggle('hidden');
         }
     </script>
+    <script src="../related-blogs.js" defer></script>
 </body>
 
 </html>

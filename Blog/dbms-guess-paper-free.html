@@ -362,38 +362,16 @@
         </div>
 
         <!-- Related Articles -->
-        <aside class="mt-16">
-            <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Related Posts</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="/Notes/20-microproject-ideas-dbms.html" 
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/20-microproject-ideas-dbms.png"
-                        alt="20 DBMS Microproject Ideas" title="20 DBMS Microproject Ideas"
-                        class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">20 DBMS Microproject Ideas</h3>
-                    </div>
-                </a>
-                <a href="/Notes/msbte-computer-engg-question-bank.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/msbte-computer-engg-question-bank.png"
-                        alt="MSBTE Computer Engg. Question Bank" title="MSBTE Computer Engg. Question Bank"
-                        class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">MSBTE Computer Engg. Question Bank</h3>
-                    </div>
-                </a>
-                <a href="/Blog/msbte-winter-2025-study-strategies.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/msbte-winter-2025-study-strategies.png"
-                        alt="MSBTE Winter 2025 Study Strategies" title="MSBTE Winter 2025 Study Strategies"
-                        class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">MSBTE Winter 2025 Study Strategies</h3>
-                    </div>
-                </a>
+        <section id="related-blogs" class="mt-16">
+            <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Explore More Articles</h2>
+            <div id="relatedContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related blog cards will be dynamically loaded here -->
             </div>
-        </aside>
+            <!-- Pagination Container -->
+            <div id="relatedPagination" class="flex justify-center items-center gap-2 mt-10">
+                <!-- Pagination buttons will be dynamically loaded here -->
+            </div>
+        </section>
     </article>
 
     <!-- Ad Slot 3 -->
@@ -444,6 +422,7 @@
             document.getElementById('mobileNav').classList.toggle('hidden');
         }
     </script>
+    <script src="../related-blogs.js" defer></script>
 
 </body>
 

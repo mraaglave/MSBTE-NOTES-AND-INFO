@@ -270,33 +270,14 @@
         </section>
 
         <!-- Related Articles -->
-        <section class="mt-16">
-            <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Related Articles</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="/Notes/20-microproject-ideas-oop.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/20-microproject-ideas-oop.png"
-                        alt="20 OOP Microproject Ideas (C++/Java)" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">20 OOP Microproject Ideas (C++/Java)</h3>
-                    </div>
-                </a>
-                <a href="/Notes/20-microproject-ideas-cn.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/20-microproject-ideas-cn.png"
-                        alt="20 Computer Networks Microproject Ideas" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">20 Computer Networks Microproject Ideas</h3>
-                    </div>
-                </a>
-                <a href="/Blog/skills-2025.html"
-                    class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                    <img src="/resourse/blog-resourse/5-skills-for-engg.png"
-                        alt="Top 5 Must-Have Skills for Engineers in 2025" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-blue-700">Top 5 Must-Have Skills for Engineers in 2025</h3>
-                    </div>
-                </a>
+        <section id="related-blogs" class="mt-16">
+            <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Explore More Articles</h2>
+            <div id="relatedContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related blog cards will be dynamically loaded here -->
+            </div>
+            <!-- Pagination Container -->
+            <div id="relatedPagination" class="flex justify-center items-center gap-2 mt-10">
+                <!-- Pagination buttons will be dynamically loaded here -->
             </div>
         </section>
         <div class="text-center mt-10">
@@ -384,6 +365,7 @@
             document.getElementById('mobileNav').classList.toggle('hidden');
         }
     </script>
+    <script src="../related-blogs.js" defer></script>
 
 </body>
 
