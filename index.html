@@ -264,6 +264,13 @@
     }
   </style>
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+  <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" as="style">
+  <link rel="preload" href="blog.js" as="script">
+  <link rel="preload" href="main.js" as="script">
+
   <!-- Favicon and App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="resourse/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="resourse/favicon-32x32.png">

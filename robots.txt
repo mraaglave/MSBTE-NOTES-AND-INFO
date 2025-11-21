@@ -1,13 +1,13 @@
-# Allow all crawlers full access
 User-agent: *
 Allow: /
 
-# Disallow crawling of verification files
+# Block verification files
 Disallow: /googlef85124961115b472.html
 Disallow: /pinterest-9961f.html
 Disallow: /yandex_7a3f92ea9dc08f64.html
 
-# Algolia-Crawler-Verif: 937AFA2AF28FD9D4
+# Block duplicate sitemap file
+Disallow: /sitemap1.xml
 
-# Sitemap location
-Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml
+# Primary Sitemap (canonical domain)
+Sitemap: https://www.msbtenotes-info.netlify.app/sitemap.xml
