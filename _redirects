@@ -1,0 +1,14 @@
+# ------------------------------------------
+# 1. Proper 404 for unknown pages (best for SEO)
+# ------------------------------------------
+/*    /404.html    404
+
+# ------------------------------------------
+# 2. Force HTTPS (SEO requirement)
+# ------------------------------------------
+http://*    https://:splat    301
+
+# ------------------------------------------
+# 3. Force canonical domain (avoid duplicate content)
+# ------------------------------------------
+https://msbtenotes-info.netlify.app/*     https://www.msbtenotes-info.netlify.app/:splat   301
