@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://msbtenotes-info.netlify.app/Jobs/job-detail.html">
 
     <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" id="breadcrumb-structured-data">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -89,12 +89,6 @@
 
         h1, h2, h3, .font-display {
             font-family: var(--font-display);
-        }
-
-        /* --- Text Overflow & Wrapping Fixes --- */
-        h1, h2, h3, .title {
-            overflow-wrap: break-word;
-            word-wrap: break-word; /* Fallback for older browsers */
         }
 
         .bookmark-btn {
@@ -239,6 +233,7 @@
             const jobDetailContainer = document.getElementById('jobDetailContainer');
             const jobNotFound = document.getElementById('jobNotFound');
             const jobTitleBreadcrumb = document.getElementById('jobTitleBreadcrumb');
+            const breadcrumbStructuredData = document.getElementById('breadcrumb-structured-data');
             let bookmarkedJobs = {}; // Stores bookmarked jobs as {id: jobObject}
 
             const urlParams = new URLSearchParams(window.location.search);
@@ -335,8 +330,8 @@
                         </div>
 
                         <div class="text-center my-10 border-t border-gray-200 pt-8">
-                            <p class="text-gray-600 mb-4 text-lg font-semibold">Share this Job</p>
-                            <div class="flex flex-col sm:flex-row sm:justify-center gap-4">
+                            <p class="text-gray-600 mb-4 text-lg font-semibold">Share this Job</p> 
+                            <div class="flex flex-wrap justify-center gap-4">
                                 <!-- WhatsApp -->
                                 <a href="#" id="whatsappShare" target="_blank" rel="noopener noreferrer"
                                     class="flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition shadow-sm">
@@ -378,6 +373,15 @@
                     `;
                     jobTitleBreadcrumb.textContent = job.title;
                     document.title = `${job.title} - Job Details - MSBTE Notes & Info`;
+
+                    // Update breadcrumb structured data for SEO
+                    if (breadcrumbStructuredData) {
+                        const breadcrumbJson = JSON.parse(breadcrumbStructuredData.textContent);
+                        const lastItem = breadcrumbJson.itemListElement[breadcrumbJson.itemListElement.length - 1];
+                        lastItem.name = job.title;
+                        lastItem.item = window.location.href;
+                        breadcrumbStructuredData.textContent = JSON.stringify(breadcrumbJson);
+                    }
 
                     // Add event listener for the bookmark button on the detail page
                     const bookmarkDetailBtn = document.getElementById('bookmarkDetailBtn');
