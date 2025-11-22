@@ -118,6 +118,12 @@
             font-family: 'Clash Display', sans-serif;
         }
 
+        /* --- Text Overflow & Wrapping Fixes --- */
+        h1, h2, h3, .job-title, .title {
+            overflow-wrap: break-word;
+            word-wrap: break-word; /* Fallback for older browsers */
+        }
+
         .job-card {
             background-color: var(--surface-background);
             border: 1px solid var(--border-color);
@@ -170,6 +176,20 @@
             border-radius: 0.5rem;
             padding: 4px;
             flex-shrink: 0;
+        }
+
+        .job-card-info {
+            display: flex;
+            flex-direction: column;
+            min-width: 0; /* Prevents flex item from overflowing */
+        }
+
+        .job-title {
+            font-size: clamp(1.125rem, 5vw, 1.25rem); /* Responsive font size */
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
         }
 
         .job-card-tag {

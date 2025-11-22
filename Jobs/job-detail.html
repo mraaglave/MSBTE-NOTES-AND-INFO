@@ -91,6 +91,12 @@
             font-family: var(--font-display);
         }
 
+        /* --- Text Overflow & Wrapping Fixes --- */
+        h1, h2, h3, .title {
+            overflow-wrap: break-word;
+            word-wrap: break-word; /* Fallback for older browsers */
+        }
+
         .bookmark-btn {
             cursor: pointer;
             transition: color 0.2s ease, transform 0.2s ease;
@@ -284,10 +290,10 @@
                     }
 
                     jobDetailContainer.innerHTML = `
-                        <div class="flex items-center mb-6">
+                        <div class="flex items-start gap-4 mb-6">
                             <img src="${job.logo}" alt="${job.company} Logo" class="h-16 w-16 object-contain rounded-lg p-1 border mr-4 flex-shrink-0">
-                            <div class="flex-grow">
-                                <h1 class="text-3xl font-bold text-blue-700 font-display mb-1">${job.title}</h1>
+                            <div class="flex-grow min-w-0">
+                                <h1 class="text-3xl font-bold text-blue-700 font-display mb-1" style="font-size: clamp(1.5rem, 5vw, 2.25rem); line-height: 1.3;">${job.title}</h1>
                                 <p class="text-xl text-gray-700 inline-block">${job.company}</p>
                             </div>
                             <div class="flex-shrink-0 ml-4 self-start">
