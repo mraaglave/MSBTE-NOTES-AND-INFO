@@ -282,6 +282,9 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
     rel="stylesheet">
+  <!-- Google Material Symbols for Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -344,14 +347,14 @@
 
         <!-- Middle: Desktop Nav -->
         <div class="hidden md:flex space-x-6">
-          <a href="/" class="hover:text-blue-500">Home</a>
-          <a href="#departments" class="hover:text-blue-500">Departments</a>
-          <a href="#notes" class="hover:text-blue-500">Notes</a>
-          <a href="#about" class="hover:text-blue-500">About</a>
-          <a href="#contact" class="hover:text-blue-500">Contact</a>
-          <a href="privacy-policy.html" class="hover:text-blue-500">Privacy Policy</a>
-          <a href="#internships" class="hover:text-blue-500">Internships</a>
-          <a href="#blogs" class="hover:text-blue-500">Blog</a>
+          <a href="/" class="hover:text-blue-500 font-medium">Home</a>
+          <a href="#notes" class="hover:text-blue-500 font-medium">Notes</a>
+          <a href="#departments" class="hover:text-blue-500 font-medium">Departments</a>
+          <a href="#blogs" class="hover:text-blue-500 font-medium">Blog</a>
+          <a href="/internships.html" class="hover:text-blue-500 font-medium">Internships</a>
+          <a href="/Jobs/index.html" class="hover:text-blue-500 font-medium">Jobs</a>
+          <a href="#about" class="hover:text-blue-500 font-medium">About</a>
+          <a href="#contact" class="hover:text-blue-500 font-medium">Contact</a>
         </div>
 
         <!-- Right: Search Icon + Mobile Menu Toggle -->
@@ -375,14 +378,14 @@
 
     <!-- Mobile Menu Panel -->
     <div id="mobileNav" class="mobile-nav md:hidden" aria-hidden="true">
-      <a href="/">Home</a>
-      <a href="#departments">Departments</a>
-      <a href="#notes">Notes</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="#internships">Internships</a>
-      <a href="#blogs">Blog</a>
+      <a href="/" class="font-medium">Home</a>
+      <a href="#notes" class="font-medium">Notes</a>
+      <a href="#departments" class="font-medium">Departments</a>
+      <a href="#blogs" class="font-medium">Blog</a>
+      <a href="/internships.html" class="font-medium">Internships</a>
+      <a href="/Jobs/index.html" class="font-medium">Jobs</a>
+      <a href="#about" class="font-medium">About</a>
+      <a href="#contact" class="font-medium">Contact</a>
     </div>
   </nav>
 
@@ -602,101 +605,37 @@
 
       <!-- Cards Grid -->
       <div id="notesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-        <!-- K-Scheme Hub -->
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">All K-Scheme Question Banks</h3>
-          <span class="badge badge-premium">All Branches</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-secondary w-full mt-3 block">View Hub</a>
-        </div>
-        <!-- Example Cards with class 'note-card' + category -->
-
         <!-- Study Notes -->
         <div class="note-card notes card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Advanced Java Notes</h3>
+          <h3 class="font-semibold mb-2">Advanced Java Handwritten Notes</h3>
           <span class="badge badge-free">Computer</span>
           <span class="badge badge-sem">Handwritten</span>
           <a href="/Notes/advanced-java-notes.html" class="btn-primary w-full mt-3 block">View Now</a>
         </div>
         <div class="note-card notes card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Java Programming Flashcards & MCQs</h3>
+          <h3 class="font-semibold mb-2">Java Programming (K-Scheme)</h3>
           <span class="badge badge-free">Computer</span>
-          <span class="badge badge-sem">K-Scheme</span>
+          <span class="badge badge-sem">Flashcards & MCQs</span>
           <a href="/Branches/314317-java-programming.html" class="btn-primary w-full mt-3 block">View Now</a>
         </div>
-        <!-- Digital Techniques -->
         <div class="note-card notes card-shadow bg-white">
           <h3 class="font-semibold mb-2">Digital Techniques (DTE) Resources</h3>
           <span class="badge badge-free">Computer</span>
           <span class="badge badge-sem">Sem 3</span>
           <a href="/Branches/313303-digital-techniques.html" class="btn-primary w-full mt-3 block">View Now</a>
         </div>
-        <div class="note-card notes card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Java Programming - Notes</h3>
-          <span class="badge badge-free">Computer</span>
-          <span class="badge badge-sem">Sem 3</span>
-          <button class="btn-primary w-full mt-3">Download Free</button>
-        </div>
-        <div class="note-card notes card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Building Construction Notes</h3>
-          <span class="badge badge-free">Civil</span>
-          <span class="badge badge-sem">Sem 4</span>
-          <button class="btn-primary w-full mt-3">Download Free</button>
-        </div>
 
         <!-- Question Papers -->
+        <div class="note-card papers card-shadow bg-white">
+          <h3 class="font-semibold mb-2">All K-Scheme Question Banks</h3>
+          <span class="badge badge-premium">All Branches</span>
+          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-secondary w-full mt-3 block">View Hub</a>
+        </div>
         <div class="note-card papers card-shadow bg-white">
           <h3 class="font-semibold mb-2">DBMS Guess Paper (Free)</h3>
           <span class="badge badge-free">Computer</span>
           <span class="badge badge-sem">K-Scheme</span>
           <a href="/Blog/dbms-guess-paper-free.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Computer Engg. Question Bank</h3>
-          <span class="badge badge-free">Computer</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">E&TC Engg. Question Bank</h3>
-          <span class="badge badge-free">E&TC</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">IT Engg. Question Bank</h3>
-          <span class="badge badge-free">IT</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Mechanical Engg. Question Bank</h3>
-          <span class="badge badge-free">Mechanical</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Civil Engg. Question Bank</h3>
-          <span class="badge badge-free">Civil</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Electrical Engg. Question Bank</h3>
-          <span class="badge badge-free">Electrical</span>
-          <span class="badge badge-sem">K-Scheme</span>
-          <a href="/Notes/msbte-k-scheme-question-banks.html" class="btn-primary w-full mt-3 block">View Now</a>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">2023 Computer Papers</h3>
-          <span class="badge badge-free">Computer</span>
-          <span class="badge badge-sem">Sem 5</span>
-          <button class="btn-primary w-full mt-3">Download Free</button>
-        </div>
-        <div class="note-card papers card-shadow bg-white">
-          <h3 class="font-semibold mb-2">Electrical Past Papers</h3>
-          <span class="badge badge-free">Electrical</span>
-          <span class="badge badge-sem">Sem 6</span>
-          <button class="btn-primary w-full mt-3">Download Free</button>
         </div>
 
         <!-- Answer Sheets -->
@@ -704,13 +643,39 @@
           <h3 class="font-semibold mb-2">Thermodynamics Answer Sheet</h3>
           <span class="badge badge-premium">Mechanical</span>
           <span class="badge badge-sem">Sem 3</span>
-          <button class="btn-secondary w-full mt-3">Get Premium</button>
+          <a href="#" class="btn-secondary w-full mt-3 block">Get Premium</a>
         </div>
         <div class="note-card answers card-shadow bg-white">
           <h3 class="font-semibold mb-2">Power Systems Sample Sheet</h3>
           <span class="badge badge-premium">Electrical</span>
           <span class="badge badge-sem">Sem 5</span>
-          <button class="btn-secondary w-full mt-3">Get Premium</button>
+          <a href="#" class="btn-secondary w-full mt-3 block">Get Premium</a>
+        </div>
+
+        <!-- Micro-Project Ideas -->
+        <div class="note-card other card-shadow bg-white">
+          <h3 class="font-semibold mb-2">20 OOP Microproject Ideas</h3>
+          <span class="badge badge-free">Computer</span>
+          <span class="badge badge-sem">C++/Java</span>
+          <a href="/Notes/20-microproject-ideas-oop.html" class="btn-primary w-full mt-3 block">View Ideas</a>
+        </div>
+        <div class="note-card other card-shadow bg-white">
+          <h3 class="font-semibold mb-2">20 DBMS Microproject Ideas</h3>
+          <span class="badge badge-free">Computer</span>
+          <span class="badge badge-sem">SQL</span>
+          <a href="/Notes/20-microproject-ideas-dbms.html" class="btn-primary w-full mt-3 block">View Ideas</a>
+        </div>
+        <div class="note-card other card-shadow bg-white">
+          <h3 class="font-semibold mb-2">20 OS Microproject Ideas</h3>
+          <span class="badge badge-free">Computer</span>
+          <span class="badge badge-sem">C++/Linux</span>
+          <a href="/Notes/20-microproject-ideas-os.html" class="btn-primary w-full mt-3 block">View Ideas</a>
+        </div>
+        <div class="note-card other card-shadow bg-white">
+          <h3 class="font-semibold mb-2">20 Web Dev Microproject Ideas</h3>
+          <span class="badge badge-free">Computer</span>
+          <span class="badge badge-sem">HTML/CSS/JS</span>
+          <a href="/Notes/20-microproject-ideas-web.html" class="btn-primary w-full mt-3 block">View Ideas</a>
         </div>
 
         <!-- Other Courses (Hidden by Default, Visible on Search) -->
@@ -718,13 +683,13 @@
           <h3 class="font-semibold mb-2">Soft Skills PDF</h3>
           <span class="badge badge-free">General</span>
           <span class="badge badge-sem">Open Elective</span>
-          <button class="btn-primary w-full mt-3">Download</button>
+          <a href="#" class="btn-primary w-full mt-3 block">Download</a>
         </div>
         <div class="note-card other card-shadow bg-white hidden">
           <h3 class="font-semibold mb-2">AI Introduction Notes</h3>
           <span class="badge badge-free">CS</span>
           <span class="badge badge-sem">Sem 6</span>
-          <button class="btn-primary w-full mt-3">Download</button>
+          <a href="#" class="btn-primary w-full mt-3 block">Download</a>
         </div>
       </div>
     </div>
@@ -957,29 +922,33 @@
   <!-- Step 8: Explore Internships Section -->
   <section id="internships" class="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-10 text-indigo-600 font-clash">Explore Internships</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-10 text-indigo-600 font-clash">Career Opportunities</h2>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Empty divs to center wide box on large screens -->
-        <div class="hidden lg:block"></div>
-
-        <!-- Wide Internship Box (Full width on large screens) -->
-        <a href="internships.html" target="_blank" rel="noopener noreferrer"
-          class="lg:col-span-3 bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1 flex flex-col items-center justify-center text-center border border-indigo-200 hover:border-indigo-400">
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Internships & Courses Card -->
+        <a href="/internships.html"
+          class="block bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1 text-center border border-indigo-200 hover:border-indigo-400">
           <div class="text-indigo-600 mb-4">
-            <!-- Internship SVG Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" viewBox="0 0 640 512" fill="currentColor">
               <path
                 d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z" />
             </svg>
           </div>
-
-          <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Click to Explore Internships</h3>
-          <p class="text-gray-600 text-base">Live opportunities for learning & earning while building your future.</p>
+          <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Internships & Courses</h3>
+          <p class="text-gray-600 text-base">Find free and premium programs to build your skills and gain experience.</p>
         </a>
 
-        <div class="hidden lg:block"></div>
+        <!-- Job Portal Card -->
+        <a href="/Jobs/index.html"
+          class="block bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1 text-center border border-purple-200 hover:border-purple-400">
+          <div class="text-purple-600 mb-4">
+            <span class="material-symbols-outlined" style="font-size: 48px;">
+              business_center
+            </span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-700">Job Portal</h3>
+          <p class="text-gray-600 text-base">Discover job openings for freshers and experienced professionals.</p>
+        </a>
       </div>
     </div>
   </section>
