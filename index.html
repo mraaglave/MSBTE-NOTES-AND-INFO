@@ -270,6 +270,7 @@
   <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" as="style">
   <link rel="preload" href="blog.js" as="script">
   <link rel="preload" href="main.js" as="script">
+  <link rel="preload" href="/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" as="image">
 
   <!-- Favicon and App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="resourse/apple-touch-icon.png">
@@ -400,7 +401,7 @@
         <a href="https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ"
           class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center">Join
           WhatsApp Community</a>
-        <a href="#notes"
+        <a href="/notes/index.html"
           class="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center">Browse
           Notes</a>
       </div>
@@ -1052,6 +1053,39 @@
       const container = document.getElementById('reviewScroll');
       container.scrollBy({ left: dir * 320, behavior: 'smooth' });
     }
+
+    // Auto-scroll functionality for the review carousel
+    document.addEventListener('DOMContentLoaded', () => {
+      const reviewContainer = document.getElementById('reviewScroll');
+      if (!reviewContainer) return;
+
+      // Duplicate cards for seamless looping
+      const originalCards = Array.from(reviewContainer.children);
+      originalCards.forEach(card => {
+        reviewContainer.appendChild(card.cloneNode(true));
+      });
+
+      let scrollInterval;
+
+      const startScrolling = () => {
+        scrollInterval = setInterval(() => {
+          const scrollWidth = reviewContainer.scrollWidth;
+          const clientWidth = reviewContainer.clientWidth;
+          // If scrolled to the end of the original set, reset silently
+          if (reviewContainer.scrollLeft >= scrollWidth / 2) {
+            reviewContainer.scrollLeft = 0;
+          }
+          reviewContainer.scrollBy({ left: 1, behavior: 'smooth' });
+        }, 25); // Adjust speed by changing interval time
+      };
+
+      const stopScrolling = () => clearInterval(scrollInterval);
+
+      reviewContainer.addEventListener('mouseover', stopScrolling);
+      reviewContainer.addEventListener('mouseout', startScrolling);
+
+      startScrolling();
+    });
   </script>
   <style>
     .scrollbar-hide::-webkit-scrollbar {

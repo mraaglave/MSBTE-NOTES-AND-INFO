@@ -1,0 +1,804 @@
+{
+    "Ischeme_data": [
+        {
+            "branch": "Chemical Engineering",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_CH_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Chemical Engineering",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/iotmumbai_chemical_Second_semester.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Chemical Engineering",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Chemical_Engineering_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Chemical Engineering",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_Chemical_Engg.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Chemical Engineering",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "22050 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22050-Capstone_Project-Planning_100519.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509-Management_100519.pdf"
+                },
+                {
+                    "subject": "22510 - Heat Transfer Operations",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22510-Heat_Transfer_Operations_100519.pdf"
+                },
+                {
+                    "subject": "22511 - Enviormental Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22511-Enviormnetal_Technology_100519.pdf"
+                },
+                {
+                    "subject": "22512 - Chemical Reaction Engineering",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22512-Chemical_Reaction_Engineering_100519.pdf"
+                },
+                {
+                    "subject": "22513 - Membrane Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22513-Membrane_Technology_100519.pdf"
+                },
+                {
+                    "subject": "22514 - Renewable Energy Technologies",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22514-Renewable_Energy_Technologies_100519.pdf"
+                },
+                {
+                    "subject": "22515 - Numerical Methods in Chemical Engineering",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22515-Numerical_Methods_in_Chemical_Engineering_100519.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Chemical Engineering",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Sixth Semester Scheme (CH)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Sixth_Semester_Scheme_CH_241219.pdf"
+                },
+                {
+                    "subject": "22032 - Entrepreneurship Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22032-Entrepreneurship_Development_241219.pdf"
+                },
+                {
+                    "subject": "22060 - Capstone Project Execution and Report Writing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22060-Capstone_Project_Execution_and_Report_Writing_241219.pdf"
+                },
+                {
+                    "subject": "22608 - Chemical Engineering Drawing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22608-Chemical_Engineering_Drawing_241219.pdf"
+                },
+                {
+                    "subject": "22609 - Mass Transfer Operation",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22609-Mass_Transfer_Operation_241219.pdf"
+                },
+                {
+                    "subject": "22610 - Polymer Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22610-Polymer_Technology_241219.pdf"
+                },
+                {
+                    "subject": "22611 - Petroleum and Petrochemical Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22611-Petroleum_and_Petrochemical_Technology_241219.pdf"
+                },
+                {
+                    "subject": "22612 - Piping in Chemical Engineering",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22612-Piping_in_Chemical_Engineering_241219.pdf"
+                },
+                {
+                    "subject": "22613 - Food and Beverages",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22613-Food_and_Beverages_241219.pdf"
+                },
+                {
+                    "subject": "22614 - Pharmaceutical Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22614-Pharmaceutical_Technology_241219.pdf"
+                },
+                {
+                    "subject": "22615 - Fertilizer Technology",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22615-Fertilizer_Technology_241219.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_CO_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/iotmumbai_computer_second_semester.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Computer_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_computer_technology.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Five Semester Scheme (CO, CM, CW)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Five_Semester_Scheme_CO_CM_CW_100519.pdf"
+                },
+                {
+                    "subject": "22050 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22050-Capstone_Project-Planning_100519.pdf"
+                },
+                {
+                    "subject": "22447 - Enviornmental Studies",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22447-Enviornmental_Studies_100519.pdf"
+                },
+                {
+                    "subject": "22516 - Operating System",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22516-Operating_System_100519.pdf"
+                },
+                {
+                    "subject": "22517 - Advanced Java Programming",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22517-Advanced_Java_Programming_100519.pdf"
+                },
+                {
+                    "subject": "22518 - Software Testing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22518-Software_Testing_100519.pdf"
+                },
+                {
+                    "subject": "22519 - Client Side Scripting Language",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22519-Client_Side_Scripting_Language_100519.pdf"
+                },
+                {
+                    "subject": "22520- Advanced Computer Network",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22520-Advanced_Computer_Network_100519.pdf"
+                },
+                {
+                    "subject": "22521 - Advanced Data Base Managment System",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22521-Advanced_Data_Base_Managment_System_100519.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Computer Technology",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "22032 - Entrepreneurship Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22032-Entrepreneurship_Development_250120.pdf"
+                },
+                {
+                    "subject": "22060 - Capstone Project Execution",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22060-Capstone_Project_Execution_250120.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509-Management_250120.pdf"
+                },
+                {
+                    "subject": "22616 - Programming with Python",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22616-Programming_with_Python_250120.pdf"
+                },
+                {
+                    "subject": "22617 - Mobile Application Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22617-Mobile_Application_Development_250120.pdf"
+                },
+                {
+                    "subject": "22618 - Emerging Trends in Computer Engg",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22618_-_Emerging_Trends_in_Computer_and_Information_Technology_190120231257_030323.pdf"
+                },
+                {
+                    "subject": "22619 - Web Based Application development with PHP",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22619-Web_Based_Application_development_with_PHP_250120.pdf"
+                },
+                {
+                    "subject": "22620 - Network and Information Security",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22620-Network_and_Information_Security_250120.pdf"
+                },
+                {
+                    "subject": "22621 - Data Warehousing and Mining Techniques",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22621-Data_Warehousing_and_Mining_Techniques_250120.pdf"
+                },
+                {
+                    "subject": "Sixth Semester Scheme CM",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Sixth_Semester_Scheme_CO_CM_CW_250120.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_EJ_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/iotmumbai_electronics_and_telecomm_second_sem.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rdSem_Electronics_and_Tele_Group_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_Electronics_telecommunication.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Five Semester Scheme (EJ)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Five_Semester_Scheme_EJ_040719.pdf"
+                },
+                {
+                    "subject": "22447 - Enviornmental Studies",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22447_Enviornmental_Studies_040719.pdf"
+                },
+                {
+                    "subject": "22531 -Control System and PLC",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22531_Control_Systems_and_PLC_040719.pdf"
+                },
+                {
+                    "subject": "22532 - Embedded Systems",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22532_Embedded_Systems_040719.pdf"
+                },
+                {
+                    "subject": "22533 - Mobile and Wireless Communication",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22533_Mobile_and_Wireless_Communication_040719.pdf"
+                },
+                {
+                    "subject": "22535 - Microwave and Radar",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22535_Microwave_and_Radar_040719.pdf"
+                },
+                {
+                    "subject": "22058 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22058_Capstone_Project-Planning_040719.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electronics and Telecommunication",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Sixth Semester Scheme (EJ, ET, EQ, EN, EQ)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Sixth_Semester_Scheme_EJ_ET_EQ_EN_EQ.pdf"
+                },
+                {
+                    "subject": "22060 - Capstone Project Execution and Report Writing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22060_Capstone_Project_Execution_and_Report_Writing.pdf"
+                },
+                {
+                    "subject": "22062 - VLSI with VHDL",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22062_VLSI_with_VHDL.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509_Management.pdf"
+                },
+                {
+                    "subject": "22634 - Computer Networking and Data Communication",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22634_Computer_Networking_and_Data_Communication.pdf"
+                },
+                {
+                    "subject": "22636 - Emerging Trends in Electronics",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22636_Emerging_Trends_in_Electronics_120120231617_030323.pdf"
+                },
+                {
+                    "subject": "22643 - Mechatronics",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22643_Mechatronics.pdf"
+                },
+                {
+                    "subject": "22647 - Optical Network and Satellite Communication",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22647_Optical_Network_and_Satellite_Communication.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_IF_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/iotmumbai__information_tech_second_semester.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Information_Technology_Curriculum_051019.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Fourth Semester Scheme IF",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/4th_Sem_Scheme_IF_240719.pdf"
+                },
+                {
+                    "subject": "22034 - GUI Application Development Using VB.Net",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22034-GUI_Application_Development_Using_VB_Net_240719.pdf"
+                },
+                {
+                    "subject": "22412 - Java Programming",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22412-Java_Programming_240719.pdf"
+                },
+                {
+                    "subject": "22413 - Software Enginering",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22413-Software_Enginering_240719.pdf"
+                },
+                {
+                    "subject": "22416 - Database Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22416-Database_Management_240719.pdf"
+                },
+                {
+                    "subject": "22417 - Computer Network",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22417-Computer_Network_240719.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Five Semester Scheme (IF)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Five_Semester_Scheme_IF_050719.pdf"
+                },
+                {
+                    "subject": "22032 - Entrepreneurship Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22032-Entrepreneurship_Development_050719.pdf"
+                },
+                {
+                    "subject": "22058 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22058-Capstone_Project-Planning_050719.pdf"
+                },
+                {
+                    "subject": "22447 - Enviornmental Studies",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22447-Enviornmental_Studies_050719.pdf"
+                },
+                {
+                    "subject": "22516 - Operating System",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22516-Operating_System_050719.pdf"
+                },
+                {
+                    "subject": "22517 - Advanced Java Programming",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22517-Advanced_Java_Programming_050719.pdf"
+                },
+                {
+                    "subject": "22519 - Client Side Scripting Language",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22519-Client_Side_Scripting_Language_050719.pdf"
+                },
+                {
+                    "subject": "22520- Advanced Computer Network",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22520-Advanced_Computer_Network_050719.pdf"
+                },
+                {
+                    "subject": "22522 - Open Source Operating System & Scripting Language",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22522-Open_Source_Operating_System_and_Scripting_Language_050719.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Information Technology",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Sixth Semester Scheme (IF)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Sixth_Semester_Scheme_IF_241219.pdf"
+                },
+                {
+                    "subject": "22060 - Capstone Project Execution",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22060-Capstone_Project_Execution_241219.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509-Management_241219.pdf"
+                },
+                {
+                    "subject": "22617 - Mobile Application Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22617-Mobile_Application_Development_241219.pdf"
+                },
+                {
+                    "subject": "22618 - Emerging Trends in Computer Engg",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22618_-_Emerging_Trends_in_Computer_and_Information_Technology_190120231257_030323.pdf"
+                },
+                {
+                    "subject": "22619 - Web Based Application development with PHP",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22619-Web_Based_Application_development_with_PHP_241219.pdf"
+                },
+                {
+                    "subject": "22620 - Network and Information Security",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22620-Network_and_Information_Security_241219.pdf"
+                },
+                {
+                    "subject": "22622 - Wireless and Mobile Network",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22622-Wireless_and_Mobile_Network_241219.pdf"
+                },
+                {
+                    "subject": "22624 - Cloud Computing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22624-Cloud_Computing_241219.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_ME_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/iotmumbai_mechanical_second_sem.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Mechanical_Engineering_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_mechanical_engg.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Five Semester Scheme (ME)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Five_Semester_Scheme_ME_170519.pdf"
+                },
+                {
+                    "subject": "22050 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22050-Capstone_Project-Planning_170519.pdf"
+                },
+                {
+                    "subject": "22053 - Solid Modeling and Additive Manufacturing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22053-Solid_Modeling_and_Additive_Manufacturing_170519.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509-Management_170519.pdf"
+                },
+                {
+                    "subject": "22562 - Power Engineering and Refrigeration",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22562-Power_Engineering_and_Refrigeration_170519.pdf"
+                },
+                {
+                    "subject": "22563 - Advanced Manufacturing Processes",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22563-Advanced_Manufacturing_Processes_170519.pdf"
+                },
+                {
+                    "subject": "22564 - Elements of Machine Design",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22564-Elements_of_Machine_Design_170519.pdf"
+                },
+                {
+                    "subject": "22565 - Tool Engineering (Elective)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22565-Tool_Engineering_Elective_170519.pdf"
+                },
+                {
+                    "subject": "22566 - Power Plant Engineering (Elective)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22566-Power_Plant_Engineering_Elective_170519.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Mechanical Engineering",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Third Year Sixth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Mechanical_Third_Year_6_Sem_250120.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_CE_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IoTMumbai_CE2I_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Civil_Group_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_civil_engg.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Third Year Fifth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Civil_Engineering_Third_Year_Fifth_Semester_250120.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Civil Engineering",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Third Year Sixth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Civil_Engineering_Third_Year_Sixth_Semester_250120.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "First Year First Semester",
+            "subjects": [
+                {
+                    "subject": "First Year First Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_EE_Syllabus_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "First Year Second Semester",
+            "subjects": [
+                {
+                    "subject": "First Year Second Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IoTMumbai_EE2I_June_2018.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "Second Year Third Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Third Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/IOTMumbai_3rd_Sem_Electrical_Group_Curriculum.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "Second Year Fourth Semester",
+            "subjects": [
+                {
+                    "subject": "Second Year Fourth Semester",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Syllabus/Second_Year_Fourth_electrical_engg.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "Third Year Fifth Semester",
+            "subjects": [
+                {
+                    "subject": "Five Semester Scheme (EE, EP, EU)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Five_Semester_Scheme _EE_EP_EU_051019.pdf"
+                },
+                {
+                    "subject": "22032 - Entrepreneurship Development",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22032-Entrepreneurship_Development_051019.pdf"
+                },
+                {
+                    "subject": "22058 - Capstone Project - Planning",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22058-Capstone_Project-Planning_051019.pdf"
+                },
+                {
+                    "subject": "22509 - Management",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22509-Management_051019.pdf"
+                },
+                {
+                    "subject": "22523 - Industrial AC Machines",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22523-Industrial_AC_Machines_051019.pdf"
+                },
+                {
+                    "subject": "22524 - Switchgear And Protection",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22524-Switchgear_And_Protection_051019.pdf"
+                },
+                {
+                    "subject": "22525 - Energy Conservation and Audit",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22525-Energy_Conservation_and_Audit_051019.pdf"
+                },
+                {
+                    "subject": "22526 - Elements of Industrial Automation",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22526-Elements_of_Industrial_Automation_051019.pdf"
+                },
+                {
+                    "subject": "22527 - Power Electronic Applications",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22527-Power_Electronic_Applications_051019.pdf"
+                },
+                {
+                    "subject": "22528 - Wind Power Technologies",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22528-Wind_Power_Technologies_051019.pdf"
+                },
+                {
+                    "subject": "22529 - Power System Analysis",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22529-Power_System_Analysis_051019.pdf"
+                },
+                {
+                    "subject": "22530 - Illumination and Electrification of Buildings",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22530-Illumination_and_Electrification_of_Buildings_051019.pdf"
+                }
+            ]
+        },
+        {
+            "branch": "Electrical Engineering",
+            "semester": "Third Year Sixth Semester",
+            "subjects": [
+                {
+                    "subject": "Sixth Semester Scheme (EE, EP, EU)",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/Sixth_Semester_Scheme_EE_EP_EU.pdf"
+                },
+                {
+                    "subject": "22060 - Capstone Project Execution",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22060_Capstone_Project_Execution.pdf"
+                },
+                {
+                    "subject": "22625 - Maintenance of Electrical Equipment",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22625_Maintenance_of_Electrical_Equipment.pdf"
+                },
+                {
+                    "subject": "22626 - Utilisation of Electrical Energy",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22626_Utilisation_of_Electrical_Energy.pdf"
+                },
+                {
+                    "subject": "22627 - Electrical Estimation and Contractiing",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22627_Electrical_Estimation_and_Contractiing.pdf"
+                },
+                {
+                    "subject": "22628 - Emerging Trends in Electrical Engineering",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22628_Emerging%20Trends_in_ElectricalEngineering_170120231709_030323.pdf"
+                },
+                {
+                    "subject": "22629 - Industrial Drives and Control",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22629_Industria_Drives_and_Control.pdf"
+                },
+                {
+                    "subject": "22632 - Power System Operation and Control",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22632_Power_System_Operation_and_Control.pdf"
+                },
+                {
+                    "subject": "22633 - Electric Substation Practices",
+                    "link": "https://iotmumbai.bharatividyapeeth.edu/media/pdf/22633_Electric_Substation_Practices.pdf"
+                }
+            ]
+        }
+    ]
+}
