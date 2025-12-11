@@ -1,11 +1,31 @@
 [
     {
+        "title": "DSA Handwritten Notes",
+        "description": "Comprehensive handwritten notes for Data Structures & Algorithms covering arrays, linked lists, stacks, queues, trees, graphs, sorting, and searching.",
+        "url": "/Notes/dsa-handwritten-notes.html",
+        "thumbnail": "/resourse/course-resourse/DSA-Basic-thumbnail.png",
+        "category": "notes",
+        "tags": [
+            "DSA",
+            "Data Structures",
+            "Algorithms",
+            "Handwritten",
+            "PDF"
+        ],
+        "dateAdded": "2025-12-11"
+    },
+    {
         "title": "Digital Techniques (313303) Lab Manual",
         "description": "Blank and solved lab manual for DTE, covering all practicals.",
         "url": "/Notes/dte-lab-manual.html",
         "thumbnail": "/resourse/branch-resourse/dte-lab-manual.png",
         "category": "lab-manual",
-        "tags": ["DTE", "313303", "Lab", "Solved"],
+        "tags": [
+            "DTE",
+            "313303",
+            "Lab",
+            "Solved"
+        ],
         "dateAdded": "2025-10-22"
     },
     {
@@ -14,7 +34,12 @@
         "url": "/Branches/314317-java-programming.html",
         "thumbnail": "/resourse/branch-resourse/advanced-java-notes.png",
         "category": "subject-guide",
-        "tags": ["Java", "314317", "Flashcards", "MCQ"],
+        "tags": [
+            "Java",
+            "314317",
+            "Flashcards",
+            "MCQ"
+        ],
         "dateAdded": "2025-10-20"
     },
     {
@@ -23,7 +48,12 @@
         "url": "/Notes/advanced-java-notes.html",
         "thumbnail": "/resourse/blog-resourse/advanced-java-notes.png",
         "category": "notes",
-        "tags": ["Java", "J2EE", "Handwritten", "PDF"],
+        "tags": [
+            "Java",
+            "J2EE",
+            "Handwritten",
+            "PDF"
+        ],
         "dateAdded": "2025-09-18"
     },
     {
@@ -32,7 +62,11 @@
         "url": "/Notes/msbte-k-scheme-question-banks.html",
         "thumbnail": "/resourse/blog-resourse/msbte-k-scheme-question-banks.png",
         "category": "question-bank",
-        "tags": ["K-Scheme", "All Branches", "PDF"],
+        "tags": [
+            "K-Scheme",
+            "All Branches",
+            "PDF"
+        ],
         "dateAdded": "2025-09-17"
     },
     {
@@ -41,7 +75,12 @@
         "url": "/Notes/20-microproject-ideas-oop.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-oop.png",
         "category": "micro-project",
-        "tags": ["OOP", "C++", "Java", "Ideas"],
+        "tags": [
+            "OOP",
+            "C++",
+            "Java",
+            "Ideas"
+        ],
         "dateAdded": "2025-09-05"
     },
     {
@@ -50,7 +89,12 @@
         "url": "/Notes/20-microproject-ideas-dbms.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-dbms.png",
         "category": "micro-project",
-        "tags": ["DBMS", "SQL", "Database", "Ideas"],
+        "tags": [
+            "DBMS",
+            "SQL",
+            "Database",
+            "Ideas"
+        ],
         "dateAdded": "2025-09-06"
     },
     {
@@ -59,7 +103,12 @@
         "url": "/Notes/20-microproject-ideas-os.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-os.png",
         "category": "micro-project",
-        "tags": ["OS", "C++", "Linux", "Ideas"],
+        "tags": [
+            "OS",
+            "C++",
+            "Linux",
+            "Ideas"
+        ],
         "dateAdded": "2025-09-07"
     },
     {
@@ -68,7 +117,12 @@
         "url": "/Notes/20-microproject-ideas-se.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-se.png",
         "category": "micro-project",
-        "tags": ["SE", "UML", "SRS", "Ideas"],
+        "tags": [
+            "SE",
+            "UML",
+            "SRS",
+            "Ideas"
+        ],
         "dateAdded": "2025-09-08"
     },
     {
@@ -77,7 +131,12 @@
         "url": "/Notes/20-microproject-ideas-cn.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-cn.png",
         "category": "micro-project",
-        "tags": ["CN", "Networking", "Packet Tracer", "Ideas"],
+        "tags": [
+            "CN",
+            "Networking",
+            "Packet Tracer",
+            "Ideas"
+        ],
         "dateAdded": "2025-09-09"
     },
     {
@@ -86,7 +145,13 @@
         "url": "/Notes/20-microproject-ideas-web.html",
         "thumbnail": "/resourse/blog-resourse/20-microproject-ideas-web.png",
         "category": "micro-project",
-        "tags": ["Web", "Python", "HTML", "CSS", "JS"],
+        "tags": [
+            "Web",
+            "Python",
+            "HTML",
+            "CSS",
+            "JS"
+        ],
         "dateAdded": "2025-09-10"
     },
     {
@@ -95,7 +160,11 @@
         "url": "/Branches/313303-digital-techniques.html",
         "thumbnail": "/resourse/branch-resourse/313303-digital-techniques.png",
         "category": "subject-guide",
-        "tags": ["DTE", "313303", "Electronics"],
+        "tags": [
+            "DTE",
+            "313303",
+            "Electronics"
+        ],
         "dateAdded": "2025-10-21"
     },
     {
@@ -104,7 +173,11 @@
         "url": "/Branches/314321-microprocessor-programming.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["MP", "314321", "Microprocessor"],
+        "tags": [
+            "MP",
+            "314321",
+            "Microprocessor"
+        ],
         "dateAdded": "2025-07-15"
     },
     {
@@ -113,7 +186,11 @@
         "url": "/Branches/315319-operating-system.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["OSY", "315319", "OS"],
+        "tags": [
+            "OSY",
+            "315319",
+            "OS"
+        ],
         "dateAdded": "2025-07-16"
     },
     {
@@ -122,7 +199,11 @@
         "url": "/Branches/315323-software-engineering.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["SEN", "315323", "SE"],
+        "tags": [
+            "SEN",
+            "315323",
+            "SE"
+        ],
         "dateAdded": "2025-07-17"
     },
     {
@@ -131,7 +212,11 @@
         "url": "/Branches/315321-advanced-computer-network.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["ACN", "315321", "Networking"],
+        "tags": [
+            "ACN",
+            "315321",
+            "Networking"
+        ],
         "dateAdded": "2025-07-18"
     },
     {
@@ -140,7 +225,11 @@
         "url": "/Branches/315326-data-analytics.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["DA", "315326", "Analytics"],
+        "tags": [
+            "DA",
+            "315326",
+            "Analytics"
+        ],
         "dateAdded": "2025-07-20"
     },
     {
@@ -149,7 +238,11 @@
         "url": "/Branches/315002-entrepreneurship-development.html",
         "thumbnail": "/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png",
         "category": "subject-guide",
-        "tags": ["EDE", "315002", "Business"],
+        "tags": [
+            "EDE",
+            "315002",
+            "Business"
+        ],
         "dateAdded": "2025-07-21"
     },
     {
@@ -158,7 +251,13 @@
         "url": "/Notes/msbte-computer-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-computer-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Computer", "CO", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "Computer",
+            "CO",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-12"
     },
     {
@@ -167,7 +266,13 @@
         "url": "/Notes/msbte-it-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-it-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["IT", "Information Technology", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "IT",
+            "Information Technology",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-14"
     },
     {
@@ -176,7 +281,13 @@
         "url": "/Notes/msbte-mech-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-mech-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Mechanical", "ME", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "Mechanical",
+            "ME",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-15"
     },
     {
@@ -185,7 +296,13 @@
         "url": "/Notes/msbte-civil-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-civil-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Civil", "CE", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "Civil",
+            "CE",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-15"
     },
     {
@@ -194,7 +311,13 @@
         "url": "/Notes/msbte-electrical-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-electrical-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["Electrical", "EE", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "Electrical",
+            "EE",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-16"
     },
     {
@@ -203,7 +326,13 @@
         "url": "/Notes/msbte-etc-engg-question-bank.html",
         "thumbnail": "/resourse/blog-resourse/msbte-etc-engg-question-bank.png",
         "category": "question-bank",
-        "tags": ["E&TC", "Electronics", "Question Bank", "K-Scheme", "PDF"],
+        "tags": [
+            "E&TC",
+            "Electronics",
+            "Question Bank",
+            "K-Scheme",
+            "PDF"
+        ],
         "dateAdded": "2025-09-13"
     },
     {
@@ -212,7 +341,12 @@
         "url": "/Branches/315325-cloud-computing.html",
         "thumbnail": "/resourse/branch-resourse/cloud-computing-banner.png",
         "category": "subject-guide",
-        "tags": ["CLC", "315325", "Cloud", "AWS"],
+        "tags": [
+            "CLC",
+            "315325",
+            "Cloud",
+            "AWS"
+        ],
         "dateAdded": "2025-10-26"
     },
     {
@@ -221,7 +355,12 @@
         "url": "/Blog/dbms-guess-paper-free.html",
         "thumbnail": "/resourse/blog-resourse/dbms-guess-paper-free.png",
         "category": "question-bank",
-        "tags": ["DBMS", "313302", "Guess Paper", "K-Scheme"],
+        "tags": [
+            "DBMS",
+            "313302",
+            "Guess Paper",
+            "K-Scheme"
+        ],
         "dateAdded": "2025-10-26"
     }
 ]
