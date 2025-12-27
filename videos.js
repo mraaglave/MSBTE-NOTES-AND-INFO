@@ -1,40 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchVideos();
+  fetchVideos();
 });
 
 async function fetchVideos() {
-    try {
-        const response = await fetch('videos.json');
-        const videos = await response.json();
-        renderVideos(videos);
-    } catch (error) {
-        console.error('Error fetching videos:', error);
-        document.getElementById('videosGrid').innerHTML = '<p class="text-center col-span-full text-red-500">Failed to load videos. Please try again later.</p>';
-    }
+  try {
+    const response = await fetch('videos.json');
+    const videos = await response.json();
+    renderVideos(videos);
+  } catch (error) {
+    console.error('Error fetching videos:', error);
+    document.getElementById('videosGrid').innerHTML = `
+            <div class="col-span-full text-center py-12">
+                <div class="text-red-500 text-xl font-bold mb-2">Unavailable to Load Videos</div>
+                <p class="text-gray-600 mb-4">Please check your internet connection or try again later.</p>
+                <button onclick="location.reload()" class="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+                    Retry
+                </button>
+            </div>
+        `;
+  }
 }
 
 function renderVideos(videos) {
-    const grid = document.getElementById('videosGrid');
-    grid.innerHTML = '';
+  const grid = document.getElementById('videosGrid');
+  grid.innerHTML = '';
 
-    videos.forEach(video => {
+  videos.forEach(video => {
 
-        const card = document.createElement('div');
-        card.className = 'group flex flex-col h-full bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100';
+    const card = document.createElement('div');
+    card.className = 'group flex flex-col h-full bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100';
 
-        // SEO Schema for Video Object
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "name": video.title,
-            "description": video.description,
-            "thumbnailUrl": [video.thumbnail],
-            "uploadDate": video.date,
-            "contentUrl": `https://www.youtube.com/watch?v=${video.videoId}`,
-            "embedUrl": `https://www.youtube.com/embed/${video.videoId}`
-        };
+    // SEO Schema for Video Object
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": video.title,
+      "description": video.description,
+      "thumbnailUrl": [video.thumbnail],
+      "uploadDate": video.date,
+      "contentUrl": `https://www.youtube.com/watch?v=${video.videoId}`,
+      "embedUrl": `https://www.youtube.com/embed/${video.videoId}`
+    };
 
-        card.innerHTML = `
+    card.innerHTML = `
       <script type="application/ld+json">${JSON.stringify(schema)}</script>
       <div class="relative overflow-hidden aspect-w-16 aspect-h-9 bg-gray-200">
         <a href="https://www.youtube.com/watch?v=${video.videoId}" target="_blank" rel="noopener noreferrer" class="block w-full h-full">
@@ -82,6 +90,6 @@ function renderVideos(videos) {
         </div>
       </div>
     `;
-        grid.appendChild(card);
-    });
+    grid.appendChild(card);
+  });
 }
