@@ -10,4 +10,4 @@ Disallow: /yandex_7a3f92ea9dc08f64.html
 Disallow: /sitemap1.xml
 
 # Primary Sitemap (canonical domain)
-Sitemap: https://www.msbtenotes-info.netlify.app/sitemap.xml
+Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml

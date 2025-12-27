@@ -4,33 +4,141 @@
   <!-- Main Pages -->
   <url>
     <loc>https://msbtenotes-info.netlify.app/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://msbtenotes-info.netlify.app/videos.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/internships.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Jobs/index.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Branch/Subject Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/Computer.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/Civil.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/Mechanical-Engineering.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/Information-Technology.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/Branches/314317-java-programming.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Branches/313303-digital-techniques.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/314004-python-programming.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/314005-ui-ux-design.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/314318-data-communication-network.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/314321-microprocessor-programming.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315319-operating-system.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315321-advanced-computer-network.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315323-software-engineering.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315326-data-analytics.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/314301-environmental-education.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315002-entrepreneurship-development.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315003-seminar-project-initiation.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Branches/315004-internship.html</loc>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -38,127 +146,175 @@
   <!-- Notes & Resources -->
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/dsa-handwritten-notes.html</loc>
-    <lastmod>2025-12-11</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</loc>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Blog Pages -->
   <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</loc>
-    <lastmod>2025-12-10</lastmod>
+    <loc>https://msbtenotes-info.netlify.app/Blog/index.html</loc>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</loc>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Scheme Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/scheme/index.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/scheme/i-scheme.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/scheme/k-scheme.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Static/Info Pages -->
   <url>
-    <loc>https://msbtenotes-info.netlify.app/privacy-policy.html</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://msbtenotes-info.netlify.app/about.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/contact.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://msbtenotes-info.netlify.app/privacy-policy.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/links.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
