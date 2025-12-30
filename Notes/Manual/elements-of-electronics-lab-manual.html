@@ -48,32 +48,82 @@
             height: 100%
         }
     </style>
-    <link rel="icon" href="/resourse/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/resourse/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/resourse/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/resourse/favicon-16x16.png">
+    <link rel="manifest" href="/resourse/site.webmanifest">
+    <link rel="icon" href="/resourse/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resourse/favicon.ico">
     <link rel="stylesheet" href="/style.css">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script>function toggleMobileMenu() { document.getElementById('mobileNav').classList.toggle('hidden') }</script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
     <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16"><a href="/"
-                class="flex items-center text-blue-600 font-bold text-xl font-display">MSBTE Notes & Info</a>
-            <div class="hidden md:flex space-x-6"><a href="/about.html" class="hover:text-blue-600">About</a><a
-                    href="/contact.html" class="hover:text-blue-600">Contact</a></div><button
-                onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
+                MSBTE Notes & Info
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/about.html" class="hover:text-blue-600">About</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
         </div>
-        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2"><a href="/about.html"
-                class="block py-2">About</a><a href="/contact.html" class="block py-2">Contact</a></div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+            <a href="/about.html" class="block py-2">About</a>
+            <a href="/contact.html" class="block py-2">Contact</a>
+            <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
+        </div>
     </nav>
-    <div class="max-w-7xl mx-auto px-4 py-4 pt-20">
-        <nav aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1">
-                <li><a href="/" class="text-sm text-gray-700 hover:text-blue-600">Home</a></li>
-                <li><span class="mx-2">/</span><a href="/Notes/"
-                        class="text-sm text-gray-700 hover:text-blue-600">Notes</a></li>
-                <li><span class="mx-2">/</span><span class="text-sm text-gray-500">Elements of Electronics Lab
-                        Manual</span></li>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 pt-20">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                <li class="inline-flex items-center">
+                    <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <a href="/Notes/"
+                            class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Notes & Resources
+                            Hub</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Elements of Electronics Lab
+                            Manual</span>
+                    </div>
+                </li>
             </ol>
         </nav>
     </div>
@@ -132,10 +182,11 @@
         </div>
     </div>
     <footer class="bg-blue-600 text-white py-10 mt-16">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div>
                 <h3 class="text-xl font-semibold mb-4">About Us</h3>
-                <p class="text-sm">Free study materials for MSBTE diploma students.</p>
+                <p class="text-sm">We provide free and premium study materials, notes, and guidance for MSBTE diploma
+                    engineering students across all departments.</p>
             </div>
             <div>
                 <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
@@ -143,17 +194,31 @@
                     <li><a href="/" class="hover:underline">Home</a></li>
                     <li><a href="/about.html" class="hover:underline">About</a></li>
                     <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                <p class="text-sm">📧 info.mraaglave@gmail.com</p><a
-                    href="https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ" target="_blank"
-                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold">Join
-                    WhatsApp</a>
+                <p class="text-sm mb-2">📧 info.mraaglave@gmail.com</p>
+                <p class="text-sm mb-2">📱 +91 70832 36221</p>
+                <a href="https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ" target="_blank" rel="noopener noreferrer"
+                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">Join
+                    WhatsApp Community</a>
             </div>
         </div>
         <div class="text-center mt-10 text-sm text-blue-100">
+            <p>
+                <a href="/sitemap.html" class="hover:underline">Sitemap</a> |
+                <a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a> |
+                <a href="/contact.html" class="hover:underline">Contact</a>
+            </p>
+            <div class="flex justify-center mt-8">
+                <a href="https://www.producthunt.com/products/msbte-notes-info/reviews/new?utm_source=badge-product_review&utm_medium=badge"
+                    target="_blank"><img
+                        src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1131454&theme=light"
+                        alt="MSBTE Notes & Info | Product Hunt" style="width:250px;height:54px;" width="250"
+                        height="54" /></a>
+            </div>
             <p>&copy; 2025 MSBTE Notes & Info. All rights reserved.</p>
         </div>
     </footer>
