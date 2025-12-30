@@ -362,5 +362,244 @@
             "K-Scheme"
         ],
         "dateAdded": "2025-10-26"
+    },
+    {
+        "title": "Engineering Mechanics (312312) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Engineering Mechanics with all practicals.",
+        "url": "/Notes/Manual/engineering-mechanics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/engineering-mechanics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312312",
+            "Engineering Mechanics",
+            "2nd Semester",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Building Material and Construction (312338) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Building Material and Construction.",
+        "url": "/Notes/Manual/building-material-construction-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/building-material-construction-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312338",
+            "Building Material",
+            "Civil",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Applied Science Physics (312308) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Applied Science Physics.",
+        "url": "/Notes/Manual/applied-science-physics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/applied-science-physics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312308",
+            "Physics",
+            "2nd Semester",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Applied Science Chemistry (312308) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Applied Science Chemistry.",
+        "url": "/Notes/Manual/applied-science-chemistry-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/applied-science-chemistry-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312308",
+            "Chemistry",
+            "2nd Semester",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Programming in C (312303) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Programming in C with all practicals.",
+        "url": "/Notes/Manual/programming-in-c-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/programming-in-c-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312303",
+            "Programming in C",
+            "PIC",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Web Page Designing (312004) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Web Page Designing with HTML and CSS.",
+        "url": "/Notes/Manual/web-page-designing-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/web-page-designing-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312004",
+            "Web Page Designing",
+            "HTML",
+            "CSS",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Basic Electrical and Electronics Engineering (312302) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Basic Electrical and Electronics Engineering.",
+        "url": "/Notes/Manual/basic-electrical-electronics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/basic-electrical-electronics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312302",
+            "BEE",
+            "Electrical",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Fundamentals of Electrical Engineering (312310) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Fundamentals of Electrical Engineering.",
+        "url": "/Notes/Manual/fundamentals-electrical-engineering-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/fundamentals-electrical-engineering-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312310",
+            "FEE",
+            "Electrical",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Basic Mechanical Engineering (312006) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Basic Mechanical Engineering.",
+        "url": "/Notes/Manual/basic-mechanical-engineering-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/basic-mechanical-engineering-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312006",
+            "BME",
+            "Mechanical",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Basic Electronics (312314) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Basic Electronics.",
+        "url": "/Notes/Manual/basic-electronics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/basic-electronics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312314",
+            "Basic Electronics",
+            "Electronics",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Electronic Materials & Components (312316) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Electronic Materials & Components.",
+        "url": "/Notes/Manual/electronic-materials-components-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/electronic-materials-components-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312316",
+            "EMC",
+            "Electronics",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Elements of Electrical Engineering (312315) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Elements of Electrical Engineering.",
+        "url": "/Notes/Manual/elements-electrical-engineering-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/elements-electrical-engineering-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312315",
+            "EEE",
+            "Electrical",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Solid Fluid Operations (312342) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Solid Fluid Operations.",
+        "url": "/Notes/Manual/solid-fluid-operations-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/solid-fluid-operations-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312342",
+            "SFO",
+            "Chemical Engineering",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Surveying (312339) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Surveying.",
+        "url": "/Notes/Manual/surveying-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/surveying-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312339",
+            "Surveying",
+            "Civil",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Elements of Electronics (312309) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Elements of Electronics.",
+        "url": "/Notes/Manual/elements-of-electronics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/elements-of-electronics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312309",
+            "EOE",
+            "Electronics",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Linux Basics (312001) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Linux Basics with commands and shell scripting.",
+        "url": "/Notes/Manual/linux-basics-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/linux-basics-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312001",
+            "Linux",
+            "LNX",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
+    },
+    {
+        "title": "Fundamental of Chemical Engineering and Materials (312341) Lab Manual",
+        "description": "MSBTE K-Scheme lab manual for Fundamental of Chemical Engineering and Materials.",
+        "url": "/Notes/Manual/chemical-engineering-materials-lab-manual.html",
+        "thumbnail": "/resourse/branch-resourse/chemical-engineering-materials-lab-manual.png",
+        "category": "lab-manual",
+        "tags": [
+            "312341",
+            "FCE",
+            "Chemical Engineering",
+            "K-Scheme"
+        ],
+        "dateAdded": "2025-12-30"
     }
 ]
