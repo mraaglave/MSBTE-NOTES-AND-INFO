@@ -237,6 +237,7 @@
         </div>
     </footer>
     <script>const pageUrl = encodeURIComponent(window.location.href); const shareMessage = encodeURIComponent("Check out this MSBTE Lab Manual:"); document.getElementById('whatsappShare').href = `https://api.whatsapp.com/send?text=${shareMessage}%20${pageUrl}`; document.getElementById('telegramShare').href = `https://t.me/share/url?url=${pageUrl}&text=${shareMessage}`; function copyLink(button) { navigator.clipboard.writeText(window.location.href).then(() => { const textSpan = button.querySelector('#copyLinkText'); textSpan.textContent = "Copied!"; setTimeout(() => { textSpan.textContent = "Copy Link" }, 2000) }) }</script>
+<script src="../../whatsapp-popup.js" defer></script>
 </body>
 
 </html>

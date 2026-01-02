@@ -231,6 +231,7 @@
         document.getElementById('telegramShare').href = `https://t.me/share/url?url=${pageUrl}&text=${shareMessage}`;
         function copyLink(button) { navigator.clipboard.writeText(window.location.href).then(() => { const textSpan = button.querySelector('#copyLinkText'); const originalText = textSpan.textContent; textSpan.textContent = "Copied!"; setTimeout(() => { textSpan.textContent = originalText; }, 2000); }, () => { alert("Failed to copy the link."); }); }
     </script>
+<script src="../../whatsapp-popup.js" defer></script>
 </body>
 
 </html>
