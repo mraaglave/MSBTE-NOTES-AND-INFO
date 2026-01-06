@@ -48,31 +48,47 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!term.trim()) {
                 return text;
             }
-            // Escape special characters in the term for the regex
             const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`(${escapedTerm})`, 'gi');
             return text.replace(regex, `<mark>$1</mark>`);
         };
 
-        filteredResources.forEach(resource => {
+        filteredResources.forEach((resource, index) => {
             const card = document.createElement('div');
-            card.className = 'note-card'; // Use the global .note-card style
+            card.className = 'bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full note-card-enter';
+            card.style.animationDelay = `${index * 50}ms`; // Staggered animation
 
             const highlightedTitle = highlightText(resource.title, searchTerm);
             const highlightedDescription = highlightText(resource.description, searchTerm);
 
-            const tagsHTML = resource.tags.map(tag => `<span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${highlightText(tag, searchTerm)}</span>`).join(' ');
+            // Pastel tags
+            const tagsHTML = resource.tags.map(tag => `
+                <span class="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-md bg-blue-50 text-blue-600 border border-blue-100">
+                    ${highlightText(tag, searchTerm)}
+                </span>
+            `).join('');
+
             const hasSpecificThumbnail = resource.thumbnail && !resource.thumbnail.includes('MSBTE%20NOTES%20AND%20INFORMATION.png');
 
             let imageHTML;
             if (hasSpecificThumbnail) {
-                imageHTML = `<img src="${resource.thumbnail}" alt="${resource.title}" class="rounded-lg mb-4 w-full h-40 object-cover" loading="lazy">`;
+                imageHTML = `
+                    <div class="h-48 w-full overflow-hidden bg-gray-50 border-b border-gray-100 group">
+                        <img src="${resource.thumbnail}" alt="${resource.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    </div>
+                `;
             } else {
                 const colors = [
-                    ['#a855f7', '#6366f1'], ['#f59e0b', '#ef4444'], ['#10b981', '#059669'],
-                    ['#3b82f6', '#2563eb'], ['#ec4899', '#d946ef']
+                    ['#EEF2FF', '#4F46E5'], // Indigo
+                    ['#ECFDF5', '#10B981'], // Emerald
+                    ['#EFF6FF', '#3B82F6'], // Blue
+                    ['#FAF5FF', '#A855F7'], // Purple
+                    ['#FFF1F2', '#F43F5E']  // Rose
                 ];
-                const colorPair = colors[Math.floor(Math.random() * colors.length)];
+                // Deterministic color based on title length
+                const colorIndex = resource.title.length % colors.length;
+                const [bgColor, iconColor] = colors[colorIndex];
+
                 const iconPaths = {
                     'notes': 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
                     'question-bank': 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
@@ -83,22 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const iconPath = iconPaths[resource.category] || iconPaths['notes'];
 
                 imageHTML = `
-                    <div class="rounded-lg mb-4 w-full h-40 flex items-center justify-center text-white p-4" style="background: linear-gradient(135deg, ${colorPair[0]}, ${colorPair[1]})">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${iconPath}"></path></svg>
-                            <span class="text-sm font-semibold break-words">${highlightedTitle}</span>
+                    <div class="h-48 w-full flex items-center justify-center border-b border-gray-100" style="background-color: ${bgColor}">
+                        <div class="text-center p-4">
+                            <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center bg-white shadow-sm">
+                                <svg class="w-6 h-6" style="color: ${iconColor}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${iconPath}"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wide" style="color: ${iconColor}">${resource.category.replace('-', ' ')}</span>
                         </div>
                     </div>
                 `;
             }
 
             card.innerHTML = `
-                <a href="${resource.url}" class="flex flex-col h-full">
+                <a href="${resource.url}" class="flex flex-col h-full group">
                     ${imageHTML}
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-lg font-semibold text-blue-600 mb-2">${highlightedTitle}</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">${highlightedDescription}</p>
-                        <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">
+                    <div class="p-5 flex-grow flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">${highlightedTitle}</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-3">${highlightedDescription}</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
                             ${tagsHTML}
                         </div>
                     </div>
