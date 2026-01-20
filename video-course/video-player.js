@@ -156,6 +156,11 @@ function updateVideoInfo(index) {
                 <span>•</span>
                 <span>video ${index + 1} of ${videoData.length}</span>
             </div>
+            
+            <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-500 leading-relaxed opacity-75">
+                 Disclaimer: This course section is for educational purposes only. All rights belong to the original creators/teachers. 
+                 If anyone has an issue regarding this, please email us: <a href="mailto:info.mraaglave@gmail.com" class="text-blue-400 hover:underline">info.mraaglave@gmail.com</a>
+            </div>
         `;
 
         // Check if truncation is needed
