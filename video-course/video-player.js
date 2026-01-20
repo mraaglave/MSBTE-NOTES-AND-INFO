@@ -223,11 +223,22 @@ function renderPlaylist() {
         // Insert Ad placeholder every 5 videos (Responsive logic)
         if (index > 0 && index % 5 === 0) {
             const adDiv = document.createElement('div');
-            adDiv.className = "w-full bg-gray-50 p-2 border-b border-gray-100 flex justify-center";
-            adDiv.innerHTML = `<div class="text-xs text-gray-400 uppercase tracking-wider">Advertisement</div>
-                               <!-- Ad Code Placeholder -->
-                               <div class="w-full h-16 bg-gray-200 rounded mt-1"></div>`;
+            adDiv.className = "w-full bg-gray-50 p-2 border-b border-gray-100 text-center";
+            adDiv.innerHTML = `<div class="text-xs text-gray-400 uppercase tracking-wider mb-2">Advertisement</div>
+                               <ins class="adsbygoogle"
+                                    style="display:block"
+                                    data-ad-client="ca-pub-9227354288966999"
+                                    data-ad-slot="1275037071"
+                                    data-ad-format="auto"
+                                    data-full-width-responsive="true"></ins>`;
             listContainer.appendChild(adDiv);
+
+            // Push the new ad unit to AdSense
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log("AdSense error: ", e);
+            }
         }
 
         listContainer.appendChild(btn);
