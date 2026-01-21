@@ -228,13 +228,14 @@ function renderPlaylist() {
         // Insert Ad placeholder every 5 videos (Responsive logic)
         if (index > 0 && index % 5 === 0) {
             const adDiv = document.createElement('div');
-            adDiv.className = "w-full bg-gray-50 p-2 border-b border-gray-100 text-center";
+            // Added min-h-[250px] to ensure space is reserved and visible
+            adDiv.className = "w-full bg-gray-50 p-2 border-b border-gray-100 text-center min-h-[250px] flex flex-col items-center justify-center";
             adDiv.innerHTML = `<div class="text-xs text-gray-400 uppercase tracking-wider mb-2">Advertisement</div>
                                <ins class="adsbygoogle"
-                                    style="display:block"
+                                    style="display:block; width: 100%;"
                                     data-ad-client="ca-pub-9227354288966999"
                                     data-ad-slot="1275037071"
-                                    data-ad-format="auto"
+                                    data-ad-format="rectangle"
                                     data-full-width-responsive="true"></ins>`;
             listContainer.appendChild(adDiv);
 
@@ -242,7 +243,7 @@ function renderPlaylist() {
             try {
                 (window.adsbygoogle = window.adsbygoogle || []).push({});
             } catch (e) {
-                console.log("AdSense error: ", e);
+                console.error("AdSense push error: ", e);
             }
         }
 
