@@ -157,11 +157,30 @@ function updateVideoInfo(index) {
                 <span>video ${index + 1} of ${videoData.length}</span>
             </div>
             
+            <div class="mt-6">
+                 <div class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 text-center">Advertisement</div>
+                 <div class="min-h-[100px] w-full bg-gray-900/50 rounded flex items-center justify-center overflow-hidden">
+                     <ins class="adsbygoogle"
+                         style="display:block; width: 100%;"
+                         data-ad-client="ca-pub-9227354288966999"
+                         data-ad-slot="1275037071"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                 </div>
+            </div>
+
             <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-500 leading-relaxed opacity-75">
                  Disclaimer: This course section is for educational purposes only. All rights belong to the original creators/teachers. 
                  If anyone has an issue regarding this, please email us: <a href="mailto:info.mraaglave@gmail.com" class="text-blue-400 hover:underline">info.mraaglave@gmail.com</a>
             </div>
         `;
+
+        // Push ad for the new unit
+        try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.error("Info Ad push error:", e);
+        }
 
         // Check if truncation is needed
         setTimeout(() => {
