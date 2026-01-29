@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
 <channel>
-  <title>MSBTE Notes & Info</title>
+  <title>MSBTE Notes &amp; Info</title>
   <link>https://msbtenotes-info.netlify.app</link>
   <description>Free MSBTE diploma engineering notes, question papers, syllabus, and study materials for I Scheme and K Scheme.</description>
   <language>en-us</language>
@@ -9,7 +9,7 @@
   <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
   <image>
       <url>https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png</url>
-      <title>MSBTE Notes & Info</title>
+      <title>MSBTE Notes &amp; Info</title>
       <link>https://msbtenotes-info.netlify.app</link>
   </image>
   <item>
@@ -18,510 +18,510 @@
     <description>Discover the top engineering colleges in Pune including COEP, PICT, VIT, AIT, and IIIT. Compare placements and highlights.</description>
     <pubDate>Sun, 04 Jan 2026 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/top-engineering-colleges-pune.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025: Your Guide to Photocopy &amp; Re-Evaluation</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-photocopy-reevaluation.html</link>
     <description>Complete guide on MSBTE Winter 2025 Photocopy &amp; Re-Evaluation process with Digital Evaluation updates.</description>
     <pubDate>Fri, 02 Jan 2026 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-photocopy-reevaluation.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" type="image/png" length="0" /></item>
   <item>
     <title>100+ Microproject Ideas for 4th Sem Computer Engineering (MSBTE K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</link>
     <description>Get 100+ innovative microproject ideas for MSBTE 4th Sem Computer Engineering (Java, Python, DCN, MIC).</description>
     <pubDate>Fri, 02 Jan 2026 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" type="image/png" length="0" /></item>
   <item>
     <title>🔴 MSBTE Result Update 2025 | Result Declared Today at 2:00 PM</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</link>
     <description>Breaking: MSBTE Winter 2025 Result will be declared TODAY 2nd January at 2:00 PM. Check official links and steps to view your result.</description>
     <pubDate>Fri, 02 Jan 2026 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" type="image/jpeg" length="0" /></item>
   <item>
     <title>Engineering Mechanics (312312) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/engineering-mechanics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Engineering Mechanics with all practicals.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/engineering-mechanics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/engineering-mechanics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/engineering-mechanics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Building Material and Construction (312338) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/building-material-construction-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Building Material and Construction.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/building-material-construction-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/building-material-construction-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/building-material-construction-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Applied Science Physics (312308) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/applied-science-physics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Applied Science Physics.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/applied-science-physics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/applied-science-physics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/applied-science-physics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Applied Science Chemistry (312308) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/applied-science-chemistry-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Applied Science Chemistry.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/applied-science-chemistry-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/applied-science-chemistry-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/applied-science-chemistry-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Programming in C (312303) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/programming-in-c-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Programming in C with all practicals.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/programming-in-c-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Web Page Designing (312004) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/web-page-designing-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Web Page Designing with HTML and CSS.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/web-page-designing-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/web-page-designing-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/web-page-designing-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Basic Electrical and Electronics Engineering (312302) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/basic-electrical-electronics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Basic Electrical and Electronics Engineering.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/basic-electrical-electronics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-electrical-electronics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-electrical-electronics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Fundamentals of Electrical Engineering (312310) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/fundamentals-electrical-engineering-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Fundamentals of Electrical Engineering.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/fundamentals-electrical-engineering-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/fundamentals-electrical-engineering-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/fundamentals-electrical-engineering-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Basic Mechanical Engineering (312006) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/basic-mechanical-engineering-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Basic Mechanical Engineering.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/basic-mechanical-engineering-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-mechanical-engineering-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-mechanical-engineering-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Basic Electronics (312314) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/basic-electronics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Basic Electronics.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/basic-electronics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-electronics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/basic-electronics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Electronic Materials &amp; Components (312316) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/electronic-materials-components-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Electronic Materials &amp; Components.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/electronic-materials-components-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/electronic-materials-components-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/electronic-materials-components-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Elements of Electrical Engineering (312315) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/elements-electrical-engineering-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Elements of Electrical Engineering.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/elements-electrical-engineering-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/elements-electrical-engineering-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/elements-electrical-engineering-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Solid Fluid Operations (312342) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/solid-fluid-operations-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Solid Fluid Operations.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/solid-fluid-operations-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/solid-fluid-operations-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/solid-fluid-operations-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Surveying (312339) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/surveying-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Surveying.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/surveying-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/surveying-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/surveying-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Elements of Electronics (312309) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/elements-of-electronics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Elements of Electronics.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/elements-of-electronics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/elements-of-electronics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/elements-of-electronics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Linux Basics (312001) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/linux-basics-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Linux Basics with commands and shell scripting.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/linux-basics-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/linux-basics-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/linux-basics-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Fundamental of Chemical Engineering and Materials (312341) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/Manual/chemical-engineering-materials-lab-manual.html</link>
     <description>MSBTE K-Scheme lab manual for Fundamental of Chemical Engineering and Materials.</description>
     <pubDate>Tue, 30 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/Manual/chemical-engineering-materials-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/chemical-engineering-materials-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/chemical-engineering-materials-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Result OUT: Revaluation, Photocopy &amp; Grace Marks Rules Explained</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</link>
     <description>Complete guide on MSBTE Winter 2025 Result - Check result, apply for revaluation, understand photocopy vs revaluation, grace marks eligibility, and what to do after result.</description>
     <pubDate>Fri, 26 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" type="image/png" length="0" /></item>
   <item>
     <title>DSA Handwritten Notes</title>
     <link>https://msbtenotes-info.netlify.app/Notes/dsa-handwritten-notes.html</link>
     <description>Comprehensive handwritten notes for Data Structures &amp; Algorithms covering arrays, linked lists, stacks, queues, trees, graphs, sorting, and searching.</description>
     <pubDate>Thu, 11 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/dsa-handwritten-notes.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/course-resourse/DSA-Basic-thumbnail.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/course-resourse/DSA-Basic-thumbnail.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Result Date &amp; How to Check</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</link>
     <description>Check MSBTE Winter 2025 result date, checking process, and mark sheet details.</description>
     <pubDate>Wed, 10 Dec 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" type="image/png" length="0" /></item>
   <item>
     <title>DATABASE MANAGEMENT SYSTEM – Guss Paper (Free Version)</title>
     <link>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</link>
     <description>A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.</description>
     <pubDate>Sun, 26 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" type="image/png" length="0" /></item>
   <item>
     <title>Cloud Computing (315325) - Complete Study Guide for MSBTE K-Scheme</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</link>
     <description>A complete resource hub for Cloud Computing with syllabus, notes, video lectures, and micro-project ideas.</description>
     <pubDate>Sun, 26 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" type="image/png" length="0" /></item>
   <item>
     <title>Cloud Computing (315325) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</link>
     <description>A complete resource hub for Cloud Computing (315325) with syllabus, notes, video lectures, and micro-project ideas.</description>
     <pubDate>Sun, 26 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" type="image/png" length="0" /></item>
   <item>
     <title>DBMS Guess Paper (Free Version)</title>
     <link>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</link>
     <description>A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.</description>
     <pubDate>Sun, 26 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</link>
     <description>जुनी मेहनत आणि नवी स्मार्टनेस वापरून MSBTE परीक्षेत यश कसे मिळवायचे ते शिका.</description>
     <pubDate>Sat, 25 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" type="image/png" length="0" /></item>
   <item>
     <title>Digital Techniques (313303) Lab Manual</title>
     <link>https://msbtenotes-info.netlify.app/Notes/dte-lab-manual.html</link>
     <description>Blank and solved lab manual for DTE, covering all practicals.</description>
     <pubDate>Wed, 22 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/dte-lab-manual.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/dte-lab-manual.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/dte-lab-manual.png" type="image/png" length="0" /></item>
   <item>
     <title>Digital Techniques (313303) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/313303-digital-techniques.html</link>
     <description>A complete resource hub for DTE with notes, syllabus, and manuals.</description>
     <pubDate>Tue, 21 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/313303-digital-techniques.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/Branches/media/313303-digital-techniques.svg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/Branches/media/313303-digital-techniques.svg" type="image/jpeg" length="0" /></item>
   <item>
     <title>Java Programming (314317) Resources</title>
     <link>https://msbtenotes-info.netlify.app/Branches/314317-java-programming.html</link>
     <description>Interactive flashcards, MCQs, and notes for K-Scheme Java.</description>
     <pubDate>Mon, 20 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/314317-java-programming.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/Branches/media/314317-java-programming.svg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/Branches/media/314317-java-programming.svg" type="image/jpeg" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</link>
     <description>Download the official theory exam timetable and get key preparation tips for your diploma exams.</description>
     <pubDate>Sat, 18 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-timetable.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-timetable.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</title>
     <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</link>
     <description>Official guide to download your admit card using your enrollment or seat number.</description>
     <pubDate>Sat, 11 Oct 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" type="image/png" length="0" /></item>
   <item>
     <title>Advanced Java Handwritten Notes - Free PDF Download</title>
     <link>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</link>
     <description>Download free handwritten notes covering Servlets, JSP, JDBC, and more for your exam preparation.</description>
     <pubDate>Thu, 18 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" type="image/png" length="0" /></item>
   <item>
     <title>Advanced Java Handwritten Notes</title>
     <link>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</link>
     <description>Free PDF notes covering Servlets, JSP, and JDBC for J2EE.</description>
     <pubDate>Thu, 18 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</link>
     <description>Your central hub for all K-Scheme question banks for every department.</description>
     <pubDate>Wed, 17 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" type="image/png" length="0" /></item>
   <item>
     <title>K-Scheme Question Bank Hub</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</link>
     <description>Central hub for all K-Scheme question banks for all branches.</description>
     <pubDate>Wed, 17 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for Electrical Engineering.</description>
     <pubDate>Tue, 16 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Electrical Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Electrical Engineering (EE) question bank PDFs for all semesters. Get official unit test papers for AC/DC Machines, Switchgear, and more.</description>
     <pubDate>Tue, 16 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</title>
     <link>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</link>
     <description>Learn the history and significance of Engineer's Day and discover resources to fuel your own engineering journey.</description>
     <pubDate>Mon, 15 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for Civil Engineering.</description>
     <pubDate>Mon, 15 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for Mechanical Engineering.</description>
     <pubDate>Mon, 15 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Mechanical Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Mechanical Engineering (ME) question bank PDFs for all semesters. Get official unit test papers for SOM, Thermal Engineering, TOM, and more.</description>
     <pubDate>Mon, 15 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Civil Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Civil Engineering (CE) question bank PDFs for all semesters. Get official unit test papers for SOM, Surveying, Concrete Technology, and more.</description>
     <pubDate>Mon, 15 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for IT Engineering.</description>
     <pubDate>Sun, 14 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE IT Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Information Technology (IT) question bank PDFs for all semesters. Get official unit test papers for OOP, DCN, Java, and more.</description>
     <pubDate>Sun, 14 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for E&amp;TC Engineering.</description>
     <pubDate>Sat, 13 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE E&amp;TC Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Electronics &amp; Telecommunication (E&amp;TC) question bank PDFs for all semesters. Get unit test papers for Analog Electronics, Digital Communication, and more.</description>
     <pubDate>Sat, 13 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</link>
     <description>Download semester-wise K-Scheme question banks for Computer Engineering.</description>
     <pubDate>Fri, 12 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Computer Engineering Question Bank (K-Scheme)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</link>
     <description>Download free MSBTE K-Scheme Computer Engineering (CO) question bank PDFs for all semesters. Get official unit test papers for DSU, DBMS, OSY, ACN, and more.</description>
     <pubDate>Fri, 12 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" type="image/png" length="0" /></item>
   <item>
     <title>Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</title>
     <link>https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</link>
     <description>Compete for a ₹20 Lakh prize pool in this national skill test.</description>
     <pubDate>Thu, 11 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best Python &amp; Web Development Microproject Ideas for Beginners</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</link>
     <description>Beginner-friendly projects using HTML, CSS, JS, and Python.</description>
     <pubDate>Wed, 10 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Python &amp; Web Dev Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</link>
     <description>Beginner-friendly projects using HTML, CSS, JavaScript, and Python.</description>
     <pubDate>Wed, 10 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best Computer Networks Microproject Ideas for Diploma Students</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</link>
     <description>Master networking with Packet Tracer, subnetting, and socket programming.</description>
     <pubDate>Tue, 09 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Computer Networks Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</link>
     <description>Master networking with Packet Tracer, subnetting, and socket programming.</description>
     <pubDate>Tue, 09 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best Software Engineering Microproject Ideas for Diploma Students</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</link>
     <description>Learn to create SRS documents, UML diagrams, test plans, and more.</description>
     <pubDate>Mon, 08 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Software Engineering Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</link>
     <description>Learn to create SRS, UML diagrams, and test plans with these project ideas.</description>
     <pubDate>Mon, 08 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best Operating System Microproject Ideas for Diploma Students (C++/Linux)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</link>
     <description>Projects on scheduling, deadlock detection, and memory management.</description>
     <pubDate>Sun, 07 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" type="image/png" length="0" /></item>
   <item>
     <title>20 OS Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</link>
     <description>Projects on scheduling, deadlock, and memory management using C++/Linux.</description>
     <pubDate>Sun, 07 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best DBMS Microproject Ideas for Diploma Students (SQL)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</link>
     <description>Master SQL with projects on normalization, joins, and transactions.</description>
     <pubDate>Sat, 06 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" type="image/png" length="0" /></item>
   <item>
     <title>20 DBMS Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</link>
     <description>SQL-based project ideas for Database Management Systems.</description>
     <pubDate>Sat, 06 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" type="image/png" length="0" /></item>
   <item>
     <title>20 Best OOP Microproject Ideas for Diploma Students (C++/Java)</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</link>
     <description>Practice encapsulation, inheritance, and polymorphism with C++/Java.</description>
     <pubDate>Fri, 05 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" type="image/png" length="0" /></item>
   <item>
     <title>20 OOP Microproject Ideas</title>
     <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</link>
     <description>Project ideas for Object-Oriented Programming using C++ and Java.</description>
     <pubDate>Fri, 05 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" type="image/png" length="0" /></item>
   <item>
     <title>Top 5 Must-Have Skills Every Engineer Needs in 2025 to Succeed</title>
     <link>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</link>
     <description>A roadmap covering coding, AI tools, cloud, and adaptability.</description>
     <pubDate>Tue, 02 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" type="image/png" length="0" /></item>
   <item>
     <title>MSBTE Winter 2025 Exam Form Fill up Dates &amp; Official Link</title>
     <link>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</link>
     <description>Deadlines, late fees, and step-by-step guide for students.</description>
     <pubDate>Mon, 01 Sep 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" type="image/png" length="0" /></item>
   <item>
     <title>Five Free Certificate Courses to Advance Your Career Toward MAANG-Level Roles</title>
     <link>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</link>
     <description>Certificates in AI, ML, Cloud, and more from top companies.</description>
     <pubDate>Sat, 30 Aug 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-Free-Certificate-Courses.PNG" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-Free-Certificate-Courses.PNG" type="image/png" length="0" /></item>
   <item>
     <title>Entrepreneurship Development (315002) Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315002-entrepreneurship-development.html</link>
     <description>Syllabus and resources for Entrepreneurship Development.</description>
     <pubDate>Mon, 21 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315002-entrepreneurship-development.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" type="image/png" length="0" /></item>
   <item>
     <title>Data Analytics (315326) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315326-data-analytics.html</link>
     <description>Syllabus and resources for Data Analytics.</description>
     <pubDate>Sun, 20 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315326-data-analytics.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" type="image/png" length="0" /></item>
   <item>
     <title>Advanced Computer Network (315321) Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315321-advanced-computer-network.html</link>
     <description>Syllabus and resources for Advanced Computer Network.</description>
     <pubDate>Fri, 18 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315321-advanced-computer-network.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png" type="image/png" length="0" /></item>
   <item>
     <title>Software Engineering (315323) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315323-software-engineering.html</link>
     <description>Syllabus and resources for Software Engineering.</description>
     <pubDate>Thu, 17 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315323-software-engineering.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/Branches/media/315323-software-engineering.svg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/Branches/media/315323-software-engineering.svg" type="image/jpeg" length="0" /></item>
   <item>
     <title>Operating System (315319) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/315319-operating-system.html</link>
     <description>Syllabus and resources for Operating System.</description>
     <pubDate>Wed, 16 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/315319-operating-system.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/Branches/media/315319-operating-system.svg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/Branches/media/315319-operating-system.svg" type="image/jpeg" length="0" /></item>
   <item>
     <title>Microprocessor (314321) Subject Guide</title>
     <link>https://msbtenotes-info.netlify.app/Branches/314321-microprocessor-programming.html</link>
     <description>Syllabus and resources for Microprocessor Programming.</description>
     <pubDate>Tue, 15 Jul 2025 00:00:00 +0530</pubDate>
     <guid>https://msbtenotes-info.netlify.app/Branches/314321-microprocessor-programming.html</guid>
-  </item>
+  <media:content url="https://msbtenotes-info.netlify.app/Branches/media/314321-microprocessor-programming.svg" medium="image" /><enclosure url="https://msbtenotes-info.netlify.app/Branches/media/314321-microprocessor-programming.svg" type="image/jpeg" length="0" /></item>
 </channel>
 </rss>
