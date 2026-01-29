@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5G5CCD95W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-H5G5CCD95W');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem</title>
+
+    <meta name="description"
+        content="Download free Programming in C (312303) notes PDF for MSBTE K-Scheme Semester 2. Includes unit-wise study material, important questions, question bank, and solved examples for Computer Engineering." />
+    <meta name="keywords"
+        content="Programming in C Notes PDF, 312303 Notes, MSBTE K-Scheme Notes, Computer Engineering 2nd Semester Notes, Programming in C Question Bank, PIC Important Questions 2026, MSBTE Diploma Notes, C Programming Unit Wise Notes" />
+    <meta name="author" content="MSBTE Notes & Info Team" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem" />
+    <meta property="og:description"
+        content="Download free Programming in C (312303) detailed notes and question bank for MSBTE K-Scheme. Essential study material for Computer Engineering students." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html" />
+    <meta property="og:image"
+        content="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="MSBTE Notes & Info" />
+
+    <!-- Preload Font for CLS Performance -->
+    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" as="style" />
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html"
+    },
+    "headline": "Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem",
+    "description": "Download free Programming in C (312303) notes PDF for MSBTE K-Scheme Semester 2. Includes unit-wise study material and important questions.",
+    "image": "https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png",
+    "author": {
+        "@type": "Person",
+        "name": "MSBTE Notes & Info Team",
+        "url": "https://msbtenotes-info.netlify.app/about.html"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "MSBTE Notes & Info",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png"
+        }
+    },
+    "datePublished": "2026-01-29T18:00:00+05:30",
+    "dateModified": "2026-01-29T18:00:00+05:30",
+    "articleSection": "Education, Engineering, Notes",
+    "keywords": "C Programming, MSBTE Notes, Diploma Engineering"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the subject code for Programming in C?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The subject code for Programming in C in MSBTE K-Scheme is 312303."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which branches study this subject?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is studied by Computer Engineering, AI, DS, IT, and related branches in Semester 2."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227354288966999"
+        crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/resourse/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/resourse/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/resourse/favicon-16x16.png">
+    <link rel="manifest" href="/resourse/site.webmanifest">
+    <link rel="icon" href="/resourse/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resourse/favicon.ico">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 pt-16">
+
+    <!-- Header -->
+    <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-9xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="/" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
+                    <path
+                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
+                </svg>
+                MSBTE Notes & Info
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/about.html" class="hover:text-blue-600">About</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy.html" class="hover:text-blue-600">Privacy</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
+        </div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2">
+            <a href="/about.html" class="block py-2">About</a>
+            <a href="/contact.html" class="block py-2">Contact</a>
+            <a href="/privacy-policy.html" class="block py-2">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                <li class="inline-flex items-center">
+                    <a href="/"
+                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">Home</a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <span class="mx-2 text-gray-400">/</span>
+                        <a href="/Blog/"
+                            class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Blog</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <span class="mx-2 text-gray-400">/</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 max-w-xs truncate">Programming in C
+                            Notes</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="max-w-4xl mx-auto px-4 pt-10 pb-8 text-left">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 font-display leading-tight">Programming in C (312303):
+            Detailed Notes & Question Bank</h1>
+        <p class="mt-3 text-gray-600">Published by <span class="font-semibold">MSBTE Notes Team</span> ∙ <time
+                datetime="2026-01-29">January 29, 2026</time> ∙ 20 min read</p>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-4">
+        <!-- Hero Image -->
+        <img src="/resourse/blog-resourse/programming-in-c-312303.png" alt="Programming in C Banner"
+            class="w-full h-auto rounded-2xl shadow-xl mb-10 object-cover aspect-video" loading="eager" />
+
+        <section class="max-w-none prose prose-blue">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8" role="alert">
+                <p class="font-bold text-blue-800">Course Rationale</p>
+                <p class="text-blue-700">This course is designed to build a strong foundation in procedure-oriented
+                    programming. It covers algorithms, data structures, control flow, functions, and pointers—essential
+                    skills for any aspiring computer engineer.</p>
+            </div>
+
+            <div class="mb-10 text-center">
+                <a href="/resourse/doc/programming-in-c.pdf" download
+                    class="inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:-translate-y-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Full Notes PDF
+                </a>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Unit I: Basics of ‘C’ Programming</h2>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">1.1 Fundamentals of Algorithms</h3>
+            <p>An <strong>algorithm</strong> is a step-by-step procedure to solve a specific problem. It acts as a
+                blueprint for your code. Before writing any program, it is crucial to define the logic clearly.</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong>Pseudocode:</strong> Writing the logic in simple English-like statements (e.g., "Set X =
+                    5").</li>
+                <li><strong>Flowcharts:</strong> Graphical representation using standard symbols (Ovals for Start/Stop,
+                    Parallelograms for Input/Output, Rectangles for Process, Diamonds for Decision).</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">1.2 Structure of a C Program</h3>
+            <p>A C program has a specific structure that the compiler expects:</p>
+            <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                #include &lt;stdio.h&gt; // Header File: Contains standard Input/Output functions
+
+                int main() { // Main Function: Execution starts here
+                printf("Hello!"); // Statement
+                return 0; // Return value
+                }
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">1.3 Variables, Constants, and Data Types</h3>
+            <p><strong>Variables</strong> are named storage locations in memory (e.g., <code>int age = 20;</code>). <br>
+                <strong>Constants</strong> are fixed values that do not change during execution (e.g.,
+                <code>const float PI = 3.14;</code>).
+            </p>
+            <p class="mb-2"><strong>Basic Data Types:</strong></p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                <li><code>int</code>: Integers (whole numbers). Size: 2 or 4 bytes.</li>
+                <li><code>float</code>: Decimal numbers. Size: 4 bytes.</li>
+                <li><code>char</code>: Single characters. Size: 1 byte.</li>
+                <li><code>double</code>: Large decimal numbers. Size: 8 bytes.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">1.4 Input and Output Functions</h3>
+            <p>The <code>stdio.h</code> library provides functions for communication with the user:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><code>printf("formatting string", variables);</code>: Used to display output to the screen.</li>
+                <li><code>scanf("format specifier", &variable);</code>: Used to take input from the user. Note the usage
+                    of <code>&</code> (address-of operator).</li>
+            </ul>
+
+            <hr class="my-8 border-gray-200">
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Unit II: Control Structures</h2>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">2.1 Conditional Branching</h3>
+            <p>Decision-making structures allow the program to execute code blocks based on conditions:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><code>if (condition) { ... }</code>: Executes code if the condition is true.</li>
+                <li><code>if-else</code>: Executes the 'if' block if true, otherwise executes the 'else' block.</li>
+                <li><code>else-if ladder</code>: Checks multiple conditions in sequence.</li>
+                <li><code>switch</code>: Selects one of many code blocks to be executed (often used for menu-driven
+                    programs).</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">2.2 Loops (Iterative Statements)</h3>
+            <p>Loops are used to repeat a block of code multiple times:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><code>while loop</code>: Entry-controlled. Checks condition first, then executes.</li>
+                <li><code>do-while loop</code>: Exit-controlled. Executes once, then checks condition. Essential for
+                    menu-driven programs.</li>
+                <li><code>for loop</code>: Best when the number of iterations is known (Initialization; Condition;
+                    Update).</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">2.3 Jump Statements</h3>
+            <p>Used to transfer control unconditionally:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><code>break;</code>: Exits the loop or switch immediately.</li>
+                <li><code>continue;</code>: Skips the current iteration and moves to the next one.</li>
+                <li><code>goto label;</code>: Jumps to a labeled part of the code (generally discouraged).</li>
+            </ul>
+
+            <hr class="my-8 border-gray-200">
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Unit III: Arrays & Structures</h2>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">3.1 Arrays</h3>
+            <p>An <strong>Array</strong> is a collection of elements of the <em>same data type</em> stored in contiguous
+                memory locations.</p>
+            <p><strong>One-Dimensional Array:</strong> List of items (e.g., Marks of 5 students).
+                <br><code>int marks[5];</code>
+            </p>
+            <p><strong>Two-Dimensional Array:</strong> Grid or Matrix format (Rows x Columns).
+                <br><code>int matrix[3][3];</code>
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">3.2 Strings</h3>
+            <p>In C, a String is simply a <strong>character array</strong> terminated by a null character
+                <code>'\0'</code>. <br>
+                Common operations include finding length (<code>strlen</code>), copying (<code>strcpy</code>), and
+                concatenating (<code>strcat</code>).
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">3.3 Structures</h3>
+            <p>A <strong>Structure</strong> allows you to combine data of <em>different types</em> under a single name.
+                Consider a student record:</p>
+            <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                struct Student {
+                int roll_no;
+                char name[20];
+                float percentage;
+                };
+            </div>
+            <p class="mt-2 text-gray-700">We can create an <strong>Array of Structures</strong> to store records for
+                multiple students efficiently.</p>
+
+            <hr class="my-8 border-gray-200">
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Unit IV: Functions</h2>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">4.1 Need for Functions</h3>
+            <p>Functions allow modularity. They break large programs into smaller, manageable, and reusable pieces
+                ("Divide and Conquer").</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">4.2 Types of Functions</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong>Library Functions:</strong> Pre-defined functions (e.g., <code>printf()</code>,
+                    <code>sqrt()</code>, <code>strlen()</code>).
+                </li>
+                <li><strong>User-Defined Functions:</strong> Functions created by the programmer to perform specific
+                    tasks.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">4.3 Parameter Passing</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong>Call by Value:</strong> Value of arguments is copied. Changes in the function <em>do
+                        not</em> affect the original variable.</li>
+                <li><strong>Call by Reference:</strong> Address of arguments is passed. Changes <em>do</em> affect the
+                    original variable.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">4.4 Recursion</h3>
+            <p>Recursion occurs when a function calls itself. It needs a <strong>base case</strong> to stop infinite
+                looping. Example: Factorial calculation (<code>5! = 5 * 4!</code>).</p>
+
+            <hr class="my-8 border-gray-200">
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Unit V: Pointers</h2>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">5.1 Introduction to Pointers</h3>
+            <p>A <strong>Pointer</strong> is a variable that stores the <strong>memory address</strong> of another
+                variable. It is a powerful feature for direct memory manipulation.</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><code>&</code> (Address-of Operator): Returns the address of a variable.</li>
+                <li><code>*</code> (Dereference Operator): Accesses the value stored at the address.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">5.2 Pointer Arithmetic</h3>
+            <p>We can perform addition and subtraction on pointers. Incrementing an integer pointer (<code>ptr++</code>)
+                moves it forward by 4 bytes (depending on system architecture), pointing to the next integer location.
+            </p>
+
+            <hr class="my-8 border-gray-200">
+
+            <h2 class="text-2xl font-bold font-display text-gray-900 mb-4">Exam Question Bank (Important)</h2>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Unit I: Basics</h3>
+                    <ul class="list-decimal pl-5 space-y-1 text-gray-700">
+                        <li>Define Algorithm and Flowchart. Draw the flowchart symbols.</li>
+                        <li>Explain the structure of a C program with an example.</li>
+                        <li>Differentiate between 'Variables' and 'Constants'.</li>
+                        <li>Explain the usage of bitwise operators in C.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Unit II: Control Structures</h3>
+                    <ul class="list-decimal pl-5 space-y-1 text-gray-700">
+                        <li>Differentiate between 'while' and 'do-while' loop.</li>
+                        <li>Explain specific use cases for the 'break' and 'continue' statements.</li>
+                        <li>Write a program to demonstrate the 'switch case' statement for a simple calculator.</li>
+                        <li>Explain the 'if-else ladder' with syntax and example.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Unit III: Arrays & Structures</h3>
+                    <ul class="list-decimal pl-5 space-y-1 text-gray-700">
+                        <li>What is a two-dimensional array? How is it initialized?</li>
+                        <li>Differentiate between 'Array' and 'Structure'.</li>
+                        <li>Write a program to find the length of a string without using library functions.</li>
+                        <li>Explain 'Array of Structures' with an application example.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Unit IV: Functions</h3>
+                    <ul class="list-decimal pl-5 space-y-1 text-gray-700">
+                        <li>Explain 'Call by Value' vs 'Call by Reference'.</li>
+                        <li>What is Recursion? Write a recursive function to find the factorial of a number.</li>
+                        <li>Explain scope of variables: Local vs Global.</li>
+                        <li>List any four string handling library functions with syntax.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Unit V: Pointers</h3>
+                    <ul class="list-decimal pl-5 space-y-1 text-gray-700">
+                        <li>What is a Pointer? Explain how to declare and initialize it.</li>
+                        <li>Explain pointer arithmetic with an example.</li>
+                        <li>How do you access structure members using a pointer?</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="my-12 prose prose-blue max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 font-display mb-6">❓ Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
+                    <h3 class="font-bold text-gray-800">Q: Is this subject difficult?</h3>
+                    <p class="text-gray-600 mt-2">A: C is a logical language. If you focus on understanding the logic
+                        (Algorithms/Flowcharts) first, the coding part becomes easy.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
+                    <h3 class="font-bold text-gray-800">Q: What is the paper pattern?</h3>
+                    <p class="text-gray-600 mt-2">A: The theory paper is of 70 marks. Unit II and III carry the highest
+                        weightage (16 marks each).</p>
+                </div>
+                <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
+                    <h3 class="font-bold text-gray-800">Q: Do we need a laptop for this course?</h3>
+                    <p class="text-gray-600 mt-2">A: While beneficial, you can also practice basic C programs on mobile
+                        using online compilers like Programiz or apps like Coding C.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related-blogs" class="mt-16">
+            <h2 class="text-3xl font-bold text-blue-600 font-display mb-8 text-center">Explore More Articles</h2>
+            <div id="relatedContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related blog cards dynamically loaded -->
+            </div>
+            <div id="relatedPagination" class="flex justify-center items-center gap-2 mt-10">
+                <!-- Pagination -->
+            </div>
+        </section>
+
+        <!-- Share Section -->
+        <div class="text-center mt-10">
+            <p class="text-gray-600 mb-4 text-lg font-semibold">Share this content 📤</p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#" id="whatsappShare"
+                    class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5" fill="currentColor">
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="#" id="telegramShare"
+                    class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="h-5 w-5" fill="currentColor">
+                        <path
+                            d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
+                    </svg>
+                    Telegram
+                </a>
+                <button onclick="copyLink()"
+                    class="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5" fill="currentColor">
+                        <path
+                            d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z" />
+                    </svg>
+                    Copy Link
+                </button>
+            </div>
+        </div>
+
+        <script>
+            const pageUrl = encodeURIComponent(window.location.href);
+            const message = encodeURIComponent("Programming in C (312303) MSBTE Notes & Question Bank: ");
+
+            document.getElementById('whatsappShare').href = `https://api.whatsapp.com/send?text=${message}%20${pageUrl}`;
+            document.getElementById('telegramShare').href = `https://t.me/share/url?url=${pageUrl}&text=${message}`;
+
+            function copyLink() {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Link copied to clipboard!");
+                });
+            }
+        </script>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white mt-16 py-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                <p class="text-sm">We provide free and premium study materials, notes, and guidance for MSBTE diploma
+                    engineering students across all departments.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="/about.html" class="hover:underline">About</a></li>
+                    <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                <p class="text-sm mb-2">📧 info.mraaglave@gmail.com</p>
+                <p class="text-sm mb-2">📱 +91 70832 36221</p>
+                <a href="https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ" target="_blank"
+                    class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">Join
+                    WhatsApp Community</a>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <a href="https://www.producthunt.com/products/msbte-notes-info/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-msbte&#0045;notes&#0045;info"
+                target="_blank"><img
+                    src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1131454&theme=light"
+                    alt="MSBTE&#0032;Notes&#0032;&#0038;&#0032;Info - we&#0032;provide&#0032;free&#0032;&#0038;&#0032;premium&#0032;study&#0032;materials&#0032;&#0038;&#0032;notes&#0032;for&#0032;msbte&#0032; | Product Hunt"
+                    style="width: 250px; height: 54px;" width="250" height="54" /></a>
+        </div>
+        <div class="text-center mt-10 text-sm text-blue-100">
+            &copy; 2026 MSBTE Notes & Info. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+    </script>
+    <script src="../whatsapp-popup.js" defer></script>
+    <script src="../related-blogs.js" defer></script>
+</body>
+
+</html>
