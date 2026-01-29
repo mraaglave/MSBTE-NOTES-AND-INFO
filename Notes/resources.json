@@ -1,5 +1,545 @@
 [
     {
+        "title": "Basic Science (Chemistry) - Semester - 1",
+        "description": "Download Basic Science (Chemistry) notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/basic-science-chemistry-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/basic-science-chemistry-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "Basic Science (Chemistry)",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Basic Mathematics - Semester - 1",
+        "description": "Download Basic Mathematics notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/basic-mathematics-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/basic-mathematics-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "Basic Mathematics",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Basic Science - Semester - 1",
+        "description": "Download Basic Science notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/basic-science-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/basic-science-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "Basic Science",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Engineering Graphics - Semester - 1",
+        "description": "Download Engineering Graphics notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/engineering-graphics-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/engineering-graphics-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "Engineering Graphics",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "English - Semester - 1",
+        "description": "Download English notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/english-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/english-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "English",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Fundamentals ICT - Semester - 1",
+        "description": "Download Fundamentals ICT notes, manuals, and study materials for Semester - 1, First Year Diploma.",
+        "url": "/Notes/fundamentals-ict-semester---1.html",
+        "thumbnail": "/resourse/note-thumbs/fundamentals-ict-semester---1.svg",
+        "category": "notes",
+        "tags": [
+            "Fundamentals ICT",
+            "Semester - 1",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Applied Mathematics - Semester - 2",
+        "description": "Download Applied Mathematics notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/applied-mathematics-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/applied-mathematics-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Applied Mathematics",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Basic Electronic - Semester - 2",
+        "description": "Download Basic Electronic notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/basic-electronic-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/basic-electronic-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Basic Electronic",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Programming in C - Semester - 2",
+        "description": "Download Programming in C notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/programming-in-c-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/programming-in-c-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Programming in C",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Computer Peripherals and Hardware Maintenance - Semester - 2",
+        "description": "Download Computer Peripherals and Hardware Maintenance notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/computer-peripherals-and-hardware-maintenance-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/computer-peripherals-and-hardware-maintenance-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Computer Peripherals and Hardware Maintenance",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Elements of Electrical Engineering - Semester - 2",
+        "description": "Download Elements of Electrical Engineering notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/elements-of-electrical-engineering-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/elements-of-electrical-engineering-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Elements of Electrical Engineering",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Web Page Designing with HTML - Semester - 2",
+        "description": "Download Web Page Designing with HTML notes, manuals, and study materials for Semester - 2, First Year Diploma.",
+        "url": "/Notes/web-page-designing-with-html-semester---2.html",
+        "thumbnail": "/resourse/note-thumbs/web-page-designing-with-html-semester---2.svg",
+        "category": "notes",
+        "tags": [
+            "Web Page Designing with HTML",
+            "Semester - 2",
+            "First Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Computer Graphics - Semester - 3",
+        "description": "Download Computer Graphics notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
+        "url": "/Notes/computer-graphics-semester---3.html",
+        "thumbnail": "/resourse/note-thumbs/computer-graphics-semester---3.svg",
+        "category": "notes",
+        "tags": [
+            "Computer Graphics",
+            "Semester - 3",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Database Management System - Semester - 3",
+        "description": "Download Database Management System notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
+        "url": "/Notes/database-management-system-semester---3.html",
+        "thumbnail": "/resourse/note-thumbs/database-management-system-semester---3.svg",
+        "category": "notes",
+        "tags": [
+            "Database Management System",
+            "Semester - 3",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Data Structures Using C - Semester - 3",
+        "description": "Download Data Structures Using C notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
+        "url": "/Notes/data-structures-using-c-semester---3.html",
+        "thumbnail": "/resourse/note-thumbs/data-structures-using-c-semester---3.svg",
+        "category": "notes",
+        "tags": [
+            "Data Structures Using C",
+            "Semester - 3",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Digital Electronics - Semester - 3",
+        "description": "Download Digital Electronics notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
+        "url": "/Notes/digital-electronics-semester---3.html",
+        "thumbnail": "/resourse/note-thumbs/digital-electronics-semester---3.svg",
+        "category": "notes",
+        "tags": [
+            "Digital Electronics",
+            "Semester - 3",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Object Oriented Programming in C++ - Semester - 3",
+        "description": "Download Object Oriented Programming in C++ notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
+        "url": "/Notes/object-oriented-programming-in-c-semester---3.html",
+        "thumbnail": "/resourse/note-thumbs/object-oriented-programming-in-c-semester---3.svg",
+        "category": "notes",
+        "tags": [
+            "Object Oriented Programming in C++",
+            "Semester - 3",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "GUI Application Development using VB.Net - Semester - 4",
+        "description": "Download GUI Application Development using VB.Net notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/gui-application-development-using-vbnet-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/gui-application-development-using-vbnet-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "GUI Application Development using VB.Net",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Data Communication and Computer Network - Semester - 4",
+        "description": "Download Data Communication and Computer Network notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/data-communication-and-computer-network-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/data-communication-and-computer-network-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "Data Communication and Computer Network",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Java Programming - Semester - 4",
+        "description": "Download Java Programming notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/java-programming-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/java-programming-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "Java Programming",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Microprocessor - Semester - 4",
+        "description": "Download Microprocessor notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/microprocessor-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/microprocessor-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "Microprocessor",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Software Engineering - Semester - 4",
+        "description": "Download Software Engineering notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/software-engineering-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/software-engineering-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "Software Engineering",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Advanced Java Programming - Semester - 5",
+        "description": "Download Advanced Java Programming notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/advanced-java-programming-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/advanced-java-programming-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Advanced Java Programming",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Computer Network - Semester - 5",
+        "description": "Download Computer Network notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/computer-network-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/computer-network-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Computer Network",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Client Side Scripting Language - Semester - 5",
+        "description": "Download Client Side Scripting Language notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/client-side-scripting-language-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/client-side-scripting-language-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Client Side Scripting Language",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Software Testing - Semester - 5",
+        "description": "Download Software Testing notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/software-testing-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/software-testing-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Software Testing",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Environmental Studies - Semester - 5",
+        "description": "Download Environmental Studies notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/environmental-studies-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/environmental-studies-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Environmental Studies",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Operating System - Semester - 5",
+        "description": "Download Operating System notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
+        "url": "/Notes/operating-system-semester---5.html",
+        "thumbnail": "/resourse/note-thumbs/operating-system-semester---5.svg",
+        "category": "notes",
+        "tags": [
+            "Operating System",
+            "Semester - 5",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Environmental Studies - Semester - 4",
+        "description": "Download Environmental Studies notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
+        "url": "/Notes/environmental-studies-semester---4.html",
+        "thumbnail": "/resourse/note-thumbs/environmental-studies-semester---4.svg",
+        "category": "notes",
+        "tags": [
+            "Environmental Studies",
+            "Semester - 4",
+            "Second Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Web Based Application Development using PHP - Semester - 6",
+        "description": "Download Web Based Application Development using PHP notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/web-based-application-development-using-php-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/web-based-application-development-using-php-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Web Based Application Development using PHP",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Programming with Python - Semester - 6",
+        "description": "Download Programming with Python notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/programming-with-python-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/programming-with-python-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Programming with Python",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Entrepreneurship Development - Semester - 6",
+        "description": "Download Entrepreneurship Development notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/entrepreneurship-development-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/entrepreneurship-development-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Entrepreneurship Development",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Entrepreneurship Development And Project Management - Semester - 6",
+        "description": "Download Entrepreneurship Development And Project Management notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/entrepreneurship-development-and-project-management-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/entrepreneurship-development-and-project-management-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Entrepreneurship Development And Project Management",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Management - Semester - 6",
+        "description": "Download Management notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/management-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/management-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Management",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "Mobile Application Development - Semester - 6",
+        "description": "Download Mobile Application Development notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/mobile-application-development-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/mobile-application-development-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "Mobile Application Development",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
+        "title": "EProgramming with Python - Semester - 6",
+        "description": "Download EProgramming with Python notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
+        "url": "/Notes/eprogramming-with-python-semester---6.html",
+        "thumbnail": "/resourse/note-thumbs/eprogramming-with-python-semester---6.svg",
+        "category": "notes",
+        "tags": [
+            "EProgramming with Python",
+            "Semester - 6",
+            "Third Year Diploma",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-01-29"
+    },
+    {
         "title": "DSA Handwritten Notes",
         "description": "Comprehensive handwritten notes for Data Structures & Algorithms covering arrays, linked lists, stacks, queues, trees, graphs, sorting, and searching.",
         "url": "/Notes/dsa-handwritten-notes.html",
