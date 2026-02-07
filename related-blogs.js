@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     let allBlogPosts = [];
 
+    // Dynamic Root Path Logic
+    const scriptTag = document.getElementById('related-blogs-script');
+    const rootPath = scriptTag ? (scriptTag.getAttribute('data-root') || '../') : '../';
+
     // Function to get the current page's ID from its canonical URL
     function getCurrentPageId() {
         const canonicalLink = document.querySelector("link[rel='canonical']");
@@ -19,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch blog posts from JSON
     async function fetchBlogPosts() {
         try {
-            // Adjust the path to blogs.json relative to the blog post's location
-            const response = await fetch('../blogs.json');
+            // Adjust the path to blogs.json using dynamic root
+            const response = await fetch(`${rootPath}blogs.json`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Sort posts by date (newest first)
             allBlogPosts.sort((a, b) => new Date(b.dateAndReadTime.split('·')[0].trim()) - new Date(a.dateAndReadTime.split('·')[0].trim()));
-            
+
             renderBlogPosts();
             renderPagination();
         } catch (error) {
@@ -53,10 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         postsToRender.forEach(post => {
             const blogCard = document.createElement('a');
-            blogCard.href = post.url.startsWith('/') ? `..${post.url}` : post.url; // Adjust URL for relative path
+            // Adjust URL for dynamic root
+            // If post.url starts with /, remove the leading slash effectively by using rootPath (which should end in /)
+            // But wait, rootPath usually is '../' or '../../'.
+            // If post.url is '/Blog/post.html', we want '../Blog/post.html'.
+            // So `${rootPath}${post.url.substring(1)}` if it starts with slash.
+
+            const relativeUrl = post.url.startsWith('/') ? `${rootPath}${post.url.substring(1)}` : `${rootPath}${post.url}`;
+            const relativeImage = post.image.startsWith('/') ? `${rootPath}${post.image.substring(1)}` : `${rootPath}${post.image}`;
+
+            blogCard.href = relativeUrl;
             blogCard.className = 'block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden';
             blogCard.innerHTML = `
-                <img src="..${post.image}" alt="${post.imageAlt}" class="w-full h-40 object-cover" loading="lazy">
+                <img src="${relativeImage}" alt="${post.imageAlt}" class="w-full h-40 object-cover" loading="lazy">
                 <div class="p-4">
                     <h3 class="font-semibold text-blue-700">${post.shortTitle}</h3>
                 </div>

@@ -15,11 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFilter = 'notes'; // Default to Study Notes as per original design
     let currentSearch = '';
 
+    // Dynamic Root Path Logic
+    const scriptTag = document.getElementById('home-notes-script');
+    const rootPath = scriptTag ? (scriptTag.getAttribute('data-root') || './') : './';
+
     // Fetch Data
     async function fetchResources() {
         try {
-            // We use the same JSON source
-            const response = await fetch('/Notes/resources.json');
+            // We use the same JSON source with dynamic root
+            const response = await fetch(`${rootPath}Notes/resources.json`);
             if (!response.ok) throw new Error('Failed to load resources');
             const data = await response.json();
             allResources = data;
