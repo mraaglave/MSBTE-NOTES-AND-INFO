@@ -5,13 +5,20 @@ body {
   font-family: 'Inter', sans-serif;
   scroll-padding-top: 5rem;
 }
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* prevents section from hiding under fixed navbar */
+  scroll-padding-top: 5rem;
+  /* prevents section from hiding under fixed navbar */
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Clash Display', sans-serif;
   font-weight: 600;
 }
@@ -21,14 +28,14 @@ h1, h2, h3, h4, h5, h6 {
 .card-shadow {
   background-color: white;
   padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 10px 40px rgba(0, 0, 0, 0.02);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .card-shadow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Button Styles */
@@ -130,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     z-index: 50;
   }
 
@@ -142,19 +149,35 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .mobile-nav a:hover {
-    background: #f1f5f9;
+    background: #f8fafc;
+    color: #2563eb;
   }
+}
+
+/* Horizontal Scroll for Mobile Pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Responsive Typography */
 @media (max-width: 640px) {
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3 {
     font-size: 1.5rem;
   }
+
   .card-shadow {
     padding: 1rem;
   }
 }
+
 .filter-btn {
   background-color: white;
   border: 1px solid #d1d5db;
@@ -164,14 +187,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   transition: 0.2s ease;
 }
+
 /* Enhanced Card Styles */
 .note-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
   background: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -179,8 +203,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .note-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
 }
 
 .note-card h3 {
@@ -215,7 +239,8 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   padding: 0.5rem 1rem;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -246,13 +271,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .filter-btn.active {
-  background-color: #2563eb; /* blue-600 */
+  background-color: #2563eb;
+  /* blue-600 */
   color: white;
   border-color: transparent;
 }
 
 input:focus {
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3); /* blue glow */
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  /* blue glow */
 }
 
 /* Footer styles */
@@ -273,6 +300,7 @@ footer .bg-white {
   background-color: #ffffff;
   color: #1e40af;
 }
+
 #about svg {
   transition: transform 0.3s ease;
 }
