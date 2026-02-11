@@ -161,7 +161,7 @@
                     <span class="material-symbols-outlined pl-6 text-slate-400">location_on</span>
                     <input type="text" id="districtSearch" onkeyup="filterDistricts()"
                         placeholder="Search district (e.g. Pune, Mumbai)..."
-                        class="w-full pl-4 pr-6 py-5 text-lg text-slate-900 focus:outline-none placeholder-slate-400">
+                        class="w-full pl-4 pr-6 py-5 text-lg text-gray-900 focus:outline-none placeholder-gray-400">
                 </div>
             </div>
         </div>
@@ -936,82 +936,96 @@
     <!-- Dynamic logic commented out since grid was removed -->
     <!-- <script src="colleges.js"></script> -->
     <script>
-        // Pagination State
-        const itemsPerPage = 6;
+        // Pagination & Search State
+        const itemsPerPage = 9;
         let currentPage = 1;
         let allCards = [];
         let filteredCards = [];
+        let grid;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('districtGrid');
-            // Cache all card elements
-            allCards = Array.from(grid.children);
+        // Initialize immediately if script is at bottom
+        function init() {
+            grid = document.getElementById('districtGrid');
+            if (grid) {
+                // Add card class for better identification if not present
+                Array.from(grid.children).forEach(card => card.classList.add('district-card'));
+                allCards = Array.from(grid.children);
+                filterDistricts();
+            }
+        }
 
-            // Initialize view
-            filterDistricts();
-        });
+        // Run on load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
 
         function toggleMobileMenu() {
-            document.getElementById('mobileNav').classList.toggle('hidden');
+            const menu = document.getElementById('mobileNav');
+            if (menu) menu.classList.toggle('hidden');
         }
 
         function filterDistricts() {
             const input = document.getElementById('districtSearch');
+            if (!input) return;
             const filter = input.value.toUpperCase();
 
-            // Filter the master list
-            filteredCards = allCards.filter(card => {
-                const title = card.querySelector('h3');
-                const districtTag = card.querySelector('.bg-blue-600');
-
-                let textMatch = false;
-                if (title) {
-                    const txtTitle = title.textContent || title.innerText;
-                    if (txtTitle.toUpperCase().indexOf(filter) > -1) textMatch = true;
-                }
-                if (districtTag) {
-                    const txtTag = districtTag.textContent || districtTag.innerText;
-                    if (txtTag.toUpperCase().indexOf(filter) > -1) textMatch = true;
-                }
-                return textMatch;
-            });
-
-            // Reset to page 1 on search
-            currentPage = 1;
-
-            // Update Counts
-            const resultsText = document.getElementById('resultsCount');
-            if (resultsText) {
-                resultsText.innerText = `${filteredCards.length} District${filteredCards.length !== 1 ? 's' : ''} Available`;
+            // Safety check for allCards
+            if (!allCards || allCards.length === 0) {
+                const tempGrid = document.getElementById('districtGrid');
+                if (tempGrid) allCards = Array.from(tempGrid.children);
             }
 
-            // Render
+            // More robust search across entire card text
+            filteredCards = allCards.filter(card => {
+                const text = card.innerText || card.textContent || "";
+                return text.toUpperCase().indexOf(filter) > -1;
+            });
+
+            currentPage = 1;
+            updateCounts();
             displayPage(currentPage);
             renderPaginationControls();
         }
 
+        function updateCounts() {
+            const resultsText = document.getElementById('resultsCount');
+            if (resultsText) {
+                resultsText.innerText = `${filteredCards.length} District${filteredCards.length !== 1 ? 's' : ''} Available`;
+            }
+        }
+
         function displayPage(page) {
-            const grid = document.getElementById('districtGrid');
-            grid.innerHTML = ""; // Clear current display
+            if (!grid) grid = document.getElementById('districtGrid');
+            grid.innerHTML = "";
 
             const start = (page - 1) * itemsPerPage;
             const end = start + itemsPerPage;
             const pageItems = filteredCards.slice(start, end);
 
+            if (pageItems.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-20 text-center">
+                        <span class="material-symbols-outlined text-6xl text-slate-200 mb-4">search_off</span>
+                        <h3 class="text-xl font-bold text-slate-400">No districts found matching your search.</h3>
+                        <p class="text-slate-400">Try adjusting your filters or search terms.</p>
+                    </div>`;
+                return;
+            }
+
             pageItems.forEach(card => {
                 grid.appendChild(card);
             });
-
-            // Scroll to top of grid logic could go here if needed
         }
 
         function renderPaginationControls() {
             const container = document.getElementById('paginationControls');
+            if (!container) return;
             container.innerHTML = "";
 
             const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-
-            if (totalPages <= 1) return; // Hide controls if single page
+            if (totalPages <= 1) return;
 
             // Previous Button
             const prevBtn = document.createElement('button');
@@ -1023,6 +1037,7 @@
                     currentPage--;
                     displayPage(currentPage);
                     renderPaginationControls();
+                    window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
                 }
             };
             container.appendChild(prevBtn);
@@ -1040,6 +1055,7 @@
                     currentPage = i;
                     displayPage(currentPage);
                     renderPaginationControls();
+                    window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
                 };
                 container.appendChild(pageBtn);
             }
@@ -1054,6 +1070,7 @@
                     currentPage++;
                     displayPage(currentPage);
                     renderPaginationControls();
+                    window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
                 }
             };
             container.appendChild(nextBtn);
