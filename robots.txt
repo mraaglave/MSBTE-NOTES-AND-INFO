@@ -11,3 +11,6 @@ Disallow: /sitemap1.xml
 
 # Primary Sitemap (canonical domain)
 Sitemap: https://msbtenotes-info.netlify.app/sitemap.xml
+
+# LLM Context
+Sitemap: https://msbtenotes-info.netlify.app/llms.txt
