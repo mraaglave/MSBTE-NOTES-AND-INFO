@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" 
+     xmlns:media="http://search.yahoo.com/mrss/" 
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MSBTE Notes & Info Blog</title>
+    <title>MSBTE Notes &amp; Info Blog</title>
     <link>https://msbtenotes-info.netlify.app</link>
     <description>Latest updates, scholarship guides, and academic news for MSBTE students.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Feb 2026 07:20:53 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 07:24:55 -0000</lastBuildDate>
+    <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png</url>
-      <title>MSBTE Notes & Info</title>
+      <title>MSBTE Notes &amp; Info</title>
       <link>https://msbtenotes-info.netlify.app</link>
     </image>
     <item>
       <title>SPPU Result OUT For Winter Session 2025; Download UG and PG Marksheet PDF at unipune.ac.in</title>
       <link>https://msbtenotes-info.netlify.app/Blog/sppu-result-winter-2025.html</link>
-      <description>SPPU Winter Session 2025 Result declared! Access direct links for 14 courses including B.E., M.Com, B.Com, B.A.LL.B, BBA & more. Download UG/PG marksheet PDF, check revaluation process & grace marks details.</description>
+      <description>SPPU Winter Session 2025 Result declared! Access direct links for 14 courses including B.E., M.Com, B.Com, B.A.LL.B, BBA &amp; more. Download UG/PG marksheet PDF, check revaluation process &amp; grace marks details.</description>
       <pubDate>Mon, 09 Feb 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/sppu-result-winter-2025.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_result_winter_2025.jpg" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/sppu-result-winter-2025.html</guid>
+      <category>SPPU Result</category>
+      <category>Winter 2025</category>
+      <category>Marksheet Download</category>
+      <category>Savitribai Phule Pune University</category>
+      <category>SPPU B.E. Result</category>
+      <category>SPPU M.Com Result</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_result_winter_2025.jpg" medium="image" type="image/jpeg">
+        <media:title type="plain">SPPU Result OUT For Winter Session 2025; Download UG and PG Marksheet PDF at unipune.ac.in</media:title>
+        <media:description type="plain">SPPU Winter Session 2025 Result declared! Access direct links for 14 courses including B.E., M.Com, B.Com, B.A.LL.B, BBA &amp; more. Download UG/PG marksheet PDF, check revaluation process &amp; grace marks details.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_result_winter_2025.jpg" type="image/jpeg" length="0" />
     </item>
     <item>
@@ -25,53 +40,101 @@
       <link>https://msbtenotes-info.netlify.app/Notes/Manual/312303-pic-programming-in-c-manual-answers.html</link>
       <description>Complete solved lab manual for PIC Programming in C (312303). Access all 25 practical answers for MSBTE K-Scheme.</description>
       <pubDate>Fri, 06 Feb 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/Manual/312303-pic-programming-in-c-manual-answers.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/Manual/312303-pic-programming-in-c-manual-answers.html</guid>
+      <category>PIC Manual</category>
+      <category>312303</category>
+      <category>Solved Lab Manual</category>
+      <category>MSBTE</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" medium="image" type="image/png">
+        <media:title type="plain">312303 PIC Programming in C Manual Answers | MSBTE K-Scheme</media:title>
+        <media:description type="plain">Complete solved lab manual for PIC Programming in C (312303). Access all 25 practical answers for MSBTE K-Scheme.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MahaDBT Scholarship Errors & Solutions 2026: Troubleshoot Issues</title>
+      <title>MahaDBT Scholarship Errors &amp; Solutions 2026: Troubleshoot Issues</title>
       <link>https://msbtenotes-info.netlify.app/Blog/mahadbt-scholarship-error-solutions.html</link>
       <description>Troubleshoot common MahaDBT scholarship errors like 'Account Closed', 'Aadhaar Not Seeded', and 'KYC Pending' with our complete solution guide.</description>
       <pubDate>Sat, 31 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/mahadbt-scholarship-error-solutions.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/mahadbt-errors-thumbnail.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/mahadbt-scholarship-error-solutions.html</guid>
+      <category>MahaDBT Errors</category>
+      <category>Scholarship Rejected</category>
+      <category>Account Closed</category>
+      <category>Aadhaar Seeding</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/mahadbt-errors-thumbnail.png" medium="image" type="image/png">
+        <media:title type="plain">MahaDBT Scholarship Errors &amp; Solutions 2026: Troubleshoot Issues</media:title>
+        <media:description type="plain">Troubleshoot common MahaDBT scholarship errors like 'Account Closed', 'Aadhaar Not Seeded', and 'KYC Pending' with our complete solution guide.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/mahadbt-errors-thumbnail.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>Aaple Sarkar DBT Portal (Mahadbt) 2026: Login, Registration & New Rules</title>
+      <title>Aaple Sarkar DBT Portal (Mahadbt) 2026: Login, Registration &amp; New Rules</title>
       <link>https://msbtenotes-info.netlify.app/Blog/aaple-sarkar-dbt-portal-guide.html</link>
-      <description>Official Aaple Sarkar DBT Portal (Mahadbt) 2026 guide. Direct link for Login & Registration. Apply for Post Matric Scholarship, check application status, and get Aadhaar linking help.</description>
+      <description>Official Aaple Sarkar DBT Portal (Mahadbt) 2026 guide. Direct link for Login &amp; Registration. Apply for Post Matric Scholarship, check application status, and get Aadhaar linking help.</description>
       <pubDate>Sat, 31 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/aaple-sarkar-dbt-portal-guide.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/aaple-sarkar-dbt-thumbnail.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/aaple-sarkar-dbt-portal-guide.html</guid>
+      <category>Mahadbt Login</category>
+      <category>Aaple Sarkar DBT</category>
+      <category>Scholarship 2026</category>
+      <category>Registration</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/aaple-sarkar-dbt-thumbnail.png" medium="image" type="image/png">
+        <media:title type="plain">Aaple Sarkar DBT Portal (Mahadbt) 2026: Login, Registration &amp; New Rules</media:title>
+        <media:description type="plain">Official Aaple Sarkar DBT Portal (Mahadbt) 2026 guide. Direct link for Login &amp; Registration. Apply for Post Matric Scholarship, check application status, and get Aadhaar linking help.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/aaple-sarkar-dbt-thumbnail.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>Post Matric Scholarship to OBC Students (2025-26): Eligibility & Benefits</title>
+      <title>Post Matric Scholarship to OBC Students (2025-26): Eligibility &amp; Benefits</title>
       <link>https://msbtenotes-info.netlify.app/Blog/post-matric-scholarship-obc.html</link>
-      <description>Apply for Post Matric Scholarship to OBC Students. Get 50-100% fee waiver & maintenance allowance. Check eligibility & documents.</description>
+      <description>Apply for Post Matric Scholarship to OBC Students. Get 50-100% fee waiver &amp; maintenance allowance. Check eligibility &amp; documents.</description>
       <pubDate>Fri, 30 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/post-matric-scholarship-obc.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/obc-scholarship-thumbnail.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/post-matric-scholarship-obc.html</guid>
+      <category>OBC Scholarship</category>
+      <category>Mahadbt</category>
+      <category>Scholarship</category>
+      <category>MSBTE</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/obc-scholarship-thumbnail.png" medium="image" type="image/png">
+        <media:title type="plain">Post Matric Scholarship to OBC Students (2025-26): Eligibility &amp; Benefits</media:title>
+        <media:description type="plain">Apply for Post Matric Scholarship to OBC Students. Get 50-100% fee waiver &amp; maintenance allowance. Check eligibility &amp; documents.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/obc-scholarship-thumbnail.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Academic Calendar 2025-26: Key Dates for Exams & Terms</title>
+      <title>MSBTE Academic Calendar 2025-26: Key Dates for Exams &amp; Terms</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-academic-calendar-2025-26.html</link>
-      <description>MSBTE Academic Calendar 2025-26 Released: Check Winter 2025 & Summer 2026 exam dates, term start/end schedule, and class test timetable for Diploma students.</description>
+      <description>MSBTE Academic Calendar 2025-26 Released: Check Winter 2025 &amp; Summer 2026 exam dates, term start/end schedule, and class test timetable for Diploma students.</description>
       <pubDate>Fri, 30 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-academic-calendar-2025-26.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-academic-calendar-2025-26.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-academic-calendar-2025-26.html</guid>
+      <category>MSBTE</category>
+      <category>Exam Date</category>
+      <category>Academic Calendar</category>
+      <category>Winter 2025</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-academic-calendar-2025-26.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Academic Calendar 2025-26: Key Dates for Exams &amp; Terms</media:title>
+        <media:description type="plain">MSBTE Academic Calendar 2025-26 Released: Check Winter 2025 &amp; Summer 2026 exam dates, term start/end schedule, and class test timetable for Diploma students.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-academic-calendar-2025-26.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>UGC Reforms 2026: New Rules for PhD, Faculty & Foreign Campuses</title>
+      <title>UGC Reforms 2026: New Rules for PhD, Faculty &amp; Foreign Campuses</title>
       <link>https://msbtenotes-info.netlify.app/Blog/ugc-new-rules-2026.html</link>
       <description>Breakdown of UGC's 2026 reforms: New Anti-Discrimination rules, Direct PhD after 4-year UG, Faculty recruitment changes, and Foreign University campuses in India.</description>
       <pubDate>Fri, 30 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/ugc-new-rules-2026.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ugc-new-rules-2026.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/ugc-new-rules-2026.html</guid>
+      <category>UGC</category>
+      <category>Education News</category>
+      <category>PhD Rules</category>
+      <category>India</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ugc-new-rules-2026.png" medium="image" type="image/png">
+        <media:title type="plain">UGC Reforms 2026: New Rules for PhD, Faculty &amp; Foreign Campuses</media:title>
+        <media:description type="plain">Breakdown of UGC's 2026 reforms: New Anti-Discrimination rules, Direct PhD after 4-year UG, Faculty recruitment changes, and Foreign University campuses in India.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ugc-new-rules-2026.png" type="image/png" length="0" />
     </item>
     <item>
@@ -79,17 +142,34 @@
       <link>https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html</link>
       <description>Download free Programming in C (312303) notes PDF for MSBTE K-Scheme Semester 2. Includes unit-wise study material, important questions, and solved examples.</description>
       <pubDate>Wed, 28 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/programming-in-c-312303.html</guid>
+      <category>C Programming</category>
+      <category>Notes</category>
+      <category>MSBTE</category>
+      <category>Diploma</category>
+      <category>PDF Download</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" medium="image" type="image/png">
+        <media:title type="plain">Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem</media:title>
+        <media:description type="plain">Download free Programming in C (312303) notes PDF for MSBTE K-Scheme Semester 2. Includes unit-wise study material, important questions, and solved examples.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>NITI Aayog Internship 2026 Apply Online - Eligibility & Date</title>
+      <title>NITI Aayog Internship 2026 Apply Online - Eligibility &amp; Date</title>
       <link>https://msbtenotes-info.netlify.app/Blog/niti-aayog-internship-2026.html</link>
-      <description>Apply online for NITI Aayog Internship 2026. Official government internship for Engineering, Management, Law & Policy students. Check eligibility, stipend, and direct link.</description>
+      <description>Apply online for NITI Aayog Internship 2026. Official government internship for Engineering, Management, Law &amp; Policy students. Check eligibility, stipend, and direct link.</description>
       <pubDate>Wed, 28 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/niti-aayog-internship-2026.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/niti-aayog-internship-2026.png" medium="image" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/niti-aayog-internship-2026.html</guid>
+      <category>Internship</category>
+      <category>Government</category>
+      <category>NITI Aayog</category>
+      <category>Career</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/niti-aayog-internship-2026.png" medium="image" type="image/png">
+        <media:title type="plain">NITI Aayog Internship 2026 Apply Online - Eligibility &amp; Date</media:title>
+        <media:description type="plain">Apply online for NITI Aayog Internship 2026. Official government internship for Engineering, Management, Law &amp; Policy students. Check eligibility, stipend, and direct link.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/niti-aayog-internship-2026.png" type="image/png" length="0" />
     </item>
     <item>
@@ -97,287 +177,415 @@
       <link>https://msbtenotes-info.netlify.app/Blog/computer-engineering-diploma-notes.html</link>
       <description>Download all semester subject notes, books, and manuals for MSBTE Computer Engineering Diploma (K-Scheme). Access free PDFs for Sem 1 to 6.</description>
       <pubDate>Wed, 28 Jan 2026 18:30:00 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/computer-engineering-diploma-notes.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" medium="image" />
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" type="image/jpeg" length="0" />
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/computer-engineering-diploma-notes.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" medium="image" type="image/svg+xml">
+        <media:title type="plain">Computer Engineering Diploma All Semester Subject Notes and Books</media:title>
+        <media:description type="plain">Download all semester subject notes, books, and manuals for MSBTE Computer Engineering Diploma (K-Scheme). Access free PDFs for Sem 1 to 6.</media:description>
+      </media:content>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" type="image/svg+xml" length="0" />
     </item>
     <item>
       <title>Ajit Pawar Death News: Maharashtra Deputy CM Dies in Tragic Plane Crash in Baramati</title>
       <link>https://msbtenotes-info.netlify.app/Blog/ajit-pawar-death-news.html</link>
       <description>Maharashtra Deputy CM Ajit Pawar dies in a tragic plane crash in Baramati. Read the latest updates on the crash investigation, 3-day state mourning, and funeral details.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/ajit-pawar-death-news.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ajit-pawar-death-news.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/ajit-pawar-death-news.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ajit-pawar-death-news.png" medium="image" type="image/png">
+        <media:title type="plain">Ajit Pawar Death News: Maharashtra Deputy CM Dies in Tragic Plane Crash in Baramati</media:title>
+        <media:description type="plain">Maharashtra Deputy CM Ajit Pawar dies in a tragic plane crash in Baramati. Read the latest updates on the crash investigation, 3-day state mourning, and funeral details.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ajit-pawar-death-news.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Top Engineering Colleges in Pune 2026 | Best Options for Engineering Aspirants</title>
       <link>https://msbtenotes-info.netlify.app/Blog/top-engineering-colleges-pune.html</link>
       <description>Discover the top engineering colleges in Pune including COEP, PICT, VIT, AIT, and IIIT. Compare placements and highlights.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/top-engineering-colleges-pune.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/top-engineering-colleges-pune.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" medium="image" type="image/png">
+        <media:title type="plain">Top Engineering Colleges in Pune 2026 | Best Options for Engineering Aspirants</media:title>
+        <media:description type="plain">Discover the top engineering colleges in Pune including COEP, PICT, VIT, AIT, and IIIT. Compare placements and highlights.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025: Your Guide to Photocopy & Re-Evaluation</title>
+      <title>MSBTE Winter 2025: Your Guide to Photocopy &amp; Re-Evaluation</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-photocopy-reevaluation.html</link>
-      <description>Complete guide on MSBTE Winter 2025 Photocopy & Re-Evaluation process with Digital Evaluation updates.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-photocopy-reevaluation.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" medium="image" />
+      <description>Complete guide on MSBTE Winter 2025 Photocopy &amp; Re-Evaluation process with Digital Evaluation updates.</description>
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-photocopy-reevaluation.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025: Your Guide to Photocopy &amp; Re-Evaluation</media:title>
+        <media:description type="plain">Complete guide on MSBTE Winter 2025 Photocopy &amp; Re-Evaluation process with Digital Evaluation updates.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" type="image/png" length="0" />
     </item>
     <item>
       <title>100+ Microproject Ideas for 4th Sem Computer Engineering (MSBTE K-Scheme)</title>
       <link>https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</link>
       <description>Get 100+ innovative microproject ideas for MSBTE 4th Sem Computer Engineering (Java, Python, DCN, MIC).</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" medium="image" type="image/png">
+        <media:title type="plain">100+ Microproject Ideas for 4th Sem Computer Engineering (MSBTE K-Scheme)</media:title>
+        <media:description type="plain">Get 100+ innovative microproject ideas for MSBTE 4th Sem Computer Engineering (Java, Python, DCN, MIC).</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" type="image/png" length="0" />
     </item>
     <item>
       <title>🔴 MSBTE Result Update 2025 | Result Declared Today at 2:00 PM</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</link>
       <description>Breaking: MSBTE Winter 2025 Result will be declared TODAY 2nd January at 2:00 PM. Check official links and steps to view your result.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" medium="image" type="image/jpeg">
+        <media:title type="plain">🔴 MSBTE Result Update 2025 | Result Declared Today at 2:00 PM</media:title>
+        <media:description type="plain">Breaking: MSBTE Winter 2025 Result will be declared TODAY 2nd January at 2:00 PM. Check official links and steps to view your result.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" type="image/jpeg" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025 Result OUT: Revaluation, Photocopy & Grace Marks Rules Explained</title>
+      <title>MSBTE Winter 2025 Result OUT: Revaluation, Photocopy &amp; Grace Marks Rules Explained</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</link>
       <description>Complete guide on MSBTE Winter 2025 Result - Check result, apply for revaluation, understand photocopy vs revaluation, grace marks eligibility, and what to do after result.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result-revaluation-guide.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Result OUT: Revaluation, Photocopy &amp; Grace Marks Rules Explained</media:title>
+        <media:description type="plain">Complete guide on MSBTE Winter 2025 Result - Check result, apply for revaluation, understand photocopy vs revaluation, grace marks eligibility, and what to do after result.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025 Result Date & How to Check</title>
+      <title>MSBTE Winter 2025 Result Date &amp; How to Check</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</link>
       <description>Check MSBTE Winter 2025 result date, checking process, and mark sheet details.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-result.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Result Date &amp; How to Check</media:title>
+        <media:description type="plain">Check MSBTE Winter 2025 result date, checking process, and mark sheet details.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" type="image/png" length="0" />
     </item>
     <item>
       <title>DATABASE MANAGEMENT SYSTEM – Guss Paper (Free Version)</title>
       <link>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</link>
       <description>A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/dbms-guess-paper-free.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" medium="image" type="image/png">
+        <media:title type="plain">DATABASE MANAGEMENT SYSTEM – Guss Paper (Free Version)</media:title>
+        <media:description type="plain">A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Cloud Computing (315325) - Complete Study Guide for MSBTE K-Scheme</title>
       <link>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</link>
       <description>A complete resource hub for Cloud Computing with syllabus, notes, video lectures, and micro-project ideas.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Branches/315325-cloud-computing.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" medium="image" type="image/png">
+        <media:title type="plain">Cloud Computing (315325) - Complete Study Guide for MSBTE K-Scheme</media:title>
+        <media:description type="plain">A complete resource hub for Cloud Computing with syllabus, notes, video lectures, and micro-project ideas.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</link>
       <description>जुनी मेहनत आणि नवी स्मार्टनेस वापरून MSBTE परीक्षेत यश कसे मिळवायचे ते शिका.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-study-strategies.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</media:title>
+        <media:description type="plain">जुनी मेहनत आणि नवी स्मार्टनेस वापरून MSBTE परीक्षेत यश कसे मिळवायचे ते शिका.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates & Schedule</title>
+      <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</link>
       <description>Download the official theory exam timetable and get key preparation tips for your diploma exams.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/time-table-2025.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-timetable.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/time-table-2025.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</media:title>
+        <media:description type="plain">Download the official theory exam timetable and get key preparation tips for your diploma exams.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/time-table-2025.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025 Hall Ticket Download | Official Link & Guide</title>
+      <title>MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</link>
       <description>Official guide to download your admit card using your enrollment or seat number.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-winter-2025-hall-ticket.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</media:title>
+        <media:description type="plain">Official guide to download your admit card using your enrollment or seat number.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</title>
       <link>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</link>
       <description>Learn the history and significance of Engineer's Day and discover resources to fuel your own engineering journey.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/engineering-day-2025.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" medium="image" type="image/png">
+        <media:title type="plain">Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</media:title>
+        <media:description type="plain">Learn the history and significance of Engineer's Day and discover resources to fuel your own engineering journey.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Advanced Java Handwritten Notes - Free PDF Download</title>
       <link>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</link>
       <description>Download free handwritten notes covering Servlets, JSP, JDBC, and more for your exam preparation.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" medium="image" type="image/png">
+        <media:title type="plain">Advanced Java Handwritten Notes - Free PDF Download</media:title>
+        <media:description type="plain">Download free handwritten notes covering Servlets, JSP, JDBC, and more for your exam preparation.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&TC)</title>
+      <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</link>
       <description>Your central hub for all K-Scheme question banks for every department.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-k-scheme-question-banks.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</media:title>
+        <media:description type="plain">Your central hub for all K-Scheme question banks for every department.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</link>
       <description>Download semester-wise K-Scheme question banks for Electrical Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-electrical-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for Electrical Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</link>
       <description>Download semester-wise K-Scheme question banks for Civil Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-civil-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for Civil Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</link>
       <description>Download semester-wise K-Scheme question banks for Mechanical Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-mech-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for Mechanical Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</link>
       <description>Download semester-wise K-Scheme question banks for IT Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-it-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for IT Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Electronics & Telecomm. Question Bank (K-Scheme) | All Semesters</title>
+      <title>MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</link>
-      <description>Download semester-wise K-Scheme question banks for E&TC Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image" />
+      <description>Download semester-wise K-Scheme question banks for E&amp;TC Engineering.</description>
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-etc-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for E&amp;TC Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
       <title>MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</title>
       <link>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</link>
       <description>Download semester-wise K-Scheme question banks for Computer Engineering.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/msbte-computer-engg-question-bank.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</media:title>
+        <media:description type="plain">Download semester-wise K-Scheme question banks for Computer Engineering.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</title>
       <link>https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</link>
       <description>Compete for a ₹20 Lakh prize pool in this national skill test.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/naukri-young-turks-2025.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" medium="image" type="image/png">
+        <media:title type="plain">Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</media:title>
+        <media:description type="plain">Compete for a ₹20 Lakh prize pool in this national skill test.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>20 Best Python & Web Development Microproject Ideas for Beginners</title>
+      <title>20 Best Python &amp; Web Development Microproject Ideas for Beginners</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</link>
       <description>Beginner-friendly projects using HTML, CSS, JS, and Python.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-web.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best Python &amp; Web Development Microproject Ideas for Beginners</media:title>
+        <media:description type="plain">Beginner-friendly projects using HTML, CSS, JS, and Python.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" type="image/png" length="0" />
     </item>
     <item>
       <title>20 Best Computer Networks Microproject Ideas for Diploma Students</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</link>
       <description>Master networking with Packet Tracer, subnetting, and socket programming.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-cn.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best Computer Networks Microproject Ideas for Diploma Students</media:title>
+        <media:description type="plain">Master networking with Packet Tracer, subnetting, and socket programming.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" type="image/png" length="0" />
     </item>
     <item>
       <title>20 Best Software Engineering Microproject Ideas for Diploma Students</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</link>
       <description>Learn to create SRS documents, UML diagrams, test plans, and more.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-se.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best Software Engineering Microproject Ideas for Diploma Students</media:title>
+        <media:description type="plain">Learn to create SRS documents, UML diagrams, test plans, and more.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" type="image/png" length="0" />
     </item>
     <item>
       <title>20 Best Operating System Microproject Ideas for Diploma Students (C++/Linux)</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</link>
       <description>Projects on scheduling, deadlock detection, and memory management.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-os.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best Operating System Microproject Ideas for Diploma Students (C++/Linux)</media:title>
+        <media:description type="plain">Projects on scheduling, deadlock detection, and memory management.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" type="image/png" length="0" />
     </item>
     <item>
       <title>20 Best DBMS Microproject Ideas for Diploma Students (SQL)</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</link>
       <description>Master SQL with projects on normalization, joins, and transactions.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-dbms.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best DBMS Microproject Ideas for Diploma Students (SQL)</media:title>
+        <media:description type="plain">Master SQL with projects on normalization, joins, and transactions.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" type="image/png" length="0" />
     </item>
     <item>
       <title>20 Best OOP Microproject Ideas for Diploma Students (C++/Java)</title>
       <link>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</link>
       <description>Practice encapsulation, inheritance, and polymorphism with C++/Java.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Notes/20-microproject-ideas-oop.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" medium="image" type="image/png">
+        <media:title type="plain">20 Best OOP Microproject Ideas for Diploma Students (C++/Java)</media:title>
+        <media:description type="plain">Practice encapsulation, inheritance, and polymorphism with C++/Java.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Top 5 Must-Have Skills Every Engineer Needs in 2025 to Succeed</title>
       <link>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</link>
       <description>A roadmap covering coding, AI tools, cloud, and adaptability.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/skills-2025.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/skills-2025.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" medium="image" type="image/png">
+        <media:title type="plain">Top 5 Must-Have Skills Every Engineer Needs in 2025 to Succeed</media:title>
+        <media:description type="plain">A roadmap covering coding, AI tools, cloud, and adaptability.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" type="image/png" length="0" />
     </item>
     <item>
-      <title>MSBTE Winter 2025 Exam Form Fill up Dates & Official Link</title>
+      <title>MSBTE Winter 2025 Exam Form Fill up Dates &amp; Official Link</title>
       <link>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</link>
       <description>Deadlines, late fees, and step-by-step guide for students.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/Msbte-winter-2025-exam-form.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Winter 2025 Exam Form Fill up Dates &amp; Official Link</media:title>
+        <media:description type="plain">Deadlines, late fees, and step-by-step guide for students.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" type="image/png" length="0" />
     </item>
     <item>
       <title>Five Free Certificate Courses to Advance Your Career Toward MAANG-Level Roles</title>
       <link>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</link>
       <description>Certificates in AI, ML, Cloud, and more from top companies.</description>
-      <pubDate>Wed, 11 Feb 2026 07:20:53 -0000</pubDate>
-      <guid>https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</guid>
-      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5 Free Certificate Courses.PNG" medium="image" />
+      <pubDate>Wed, 11 Feb 2026 07:24:55 -0000</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/5-Free-Courses.html</guid>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5 Free Certificate Courses.PNG" medium="image" type="image/png">
+        <media:title type="plain">Five Free Certificate Courses to Advance Your Career Toward MAANG-Level Roles</media:title>
+        <media:description type="plain">Certificates in AI, ML, Cloud, and more from top companies.</media:description>
+      </media:content>
       <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5 Free Certificate Courses.PNG" type="image/png" length="0" />
     </item>
   </channel>
