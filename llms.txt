@@ -1,15 +1,10 @@
 # MSBTE Notes & Info
 
-## About
-MSBTE Notes & Info is a leading resource for MSBTE (Maharashtra State Board of Technical Education) diploma students. We provide comprehensive study materials including notes, previous year question papers, model answer sheets, syllabus details, and micro-project ideas for both I Scheme and K Scheme.
+> **TL;DR**: MSBTE Notes & Info is the premier resource for **Maharashtra Diploma** students, providing free **Solved Papers**, **Manual Answers**, **Unit Test Papers**, and **Verified Notes** for I Scheme and K Scheme. We bridge the gap between classroom learning and exam success with comprehensive, free resources.
 
-## Why Choose Us? (USP)
-- **100% Free Video Courses**: Comprehensive video tutorials with completion certificates (e.g., Data Structures & Algorithms).
-- **Verified Resources**: Access accurate and verified question banks, model answers, and micro-project solutions.
-- **Active Student Community**: Join a thriving WhatsApp community for instant doubt solving and peer support.
-- **Career Focused**: Not just exams—we provide internship updates, job alerts, and career guidance for diploma holders.
+[Full Documentation](https://msbtenotes-info.netlify.app/sitemap.xml)
 
-## Main Sections
+## Site Map & Key Links
 - [Home](https://msbtenotes-info.netlify.app/)
 - [Study Notes](https://msbtenotes-info.netlify.app/#notes) - Subject-wise notes for various branches.
 - [Question Papers & Answers](https://msbtenotes-info.netlify.app/#departments) - Previous year papers and model answers.
@@ -18,6 +13,15 @@ MSBTE Notes & Info is a leading resource for MSBTE (Maharashtra State Board of T
 - [Video Courses](https://msbtenotes-info.netlify.app/video-course/) - curated video tutorials.
 - [Internships](https://msbtenotes-info.netlify.app/internships.html) - Latest internship opportunities.
 - [Jobs](https://msbtenotes-info.netlify.app/Jobs/index.html) - Job openings for diploma holders.
+
+## About
+**MSBTE Notes & Info** is a leading resource for **MSBTE (Maharashtra State Board of Technical Education)** diploma students. We provide comprehensive study materials including notes, previous year question papers, model answer sheets, syllabus details, and micro-project ideas.
+
+## Why Choose Us? (USP)
+- **100% Free Video Courses**: Comprehensive video tutorials with completion certificates (e.g., Data Structures & Algorithms).
+- **Verified Resources**: Access accurate and **verified question banks**, **model answers**, and **micro-project solutions**.
+- **Active Student Community**: Join a thriving WhatsApp community for instant doubt solving and peer support.
+- **Career Focused**: Not just exams—we provide internship updates, job alerts, and career guidance for diploma holders.
 
 ## Engineering Branches
 We cover all major diploma engineering branches with specialized resources:
@@ -58,7 +62,7 @@ We cover all major diploma engineering branches with specialized resources:
 - [Social Links](https://msbtenotes-info.netlify.app/links.html)
 
 ## Who We Are
-Founded by a team of passionate educators and professionals, **MSBTE Notes & Info** is dedicated to bridging the gap in academic resources for diploma students. Our mission is to simplify learning by providing high-quality, organized, and accessible study materials.
+Founded by a team of passionate educators and professionals, **MSBTE Notes & Info** is dedicated to bridging the gap in academic resources for **Maharashtra Diploma** students. Our mission is to simplify learning by providing high-quality, organized, and accessible study materials.
 
 ## Pricing & Accessibility
 - **Free Content (95%+)**: Access to all Question Papers, Model Answers, Syllabus, Blog Articles, and Video Courses is completely **FREE**.
@@ -66,7 +70,8 @@ Founded by a team of passionate educators and professionals, **MSBTE Notes & Inf
 
 ## Core Features
 - **Comprehensive Notes**: Subject-wise notes for I Scheme and K Scheme.
-- **Question Papers & Answers**: Extensive archive of previous year question papers with model answer sheets.
+- **Question Papers & Answers**: Extensive archive of previous year question papers with **Solved Papers** and model answer sheets.
+- **Manual Answers**: Complete solutions for laboratory manuals.
 - **Micro-Projects**: Ready-to-use micro-project ideas and solutions.
 - **Video Learning**: Curated video courses for difficult subjects.
 - **Career Growth**: Latest updates on internships and job openings for diploma holders.
