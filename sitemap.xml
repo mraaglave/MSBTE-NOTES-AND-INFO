@@ -27,6 +27,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/autonomous-engineering-colleges-maharashtra.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Branch/Subject Pages -->
   <url>
     <loc>https://msbtenotes-info.netlify.app/Branches/Computer.html</loc>
