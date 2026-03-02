@@ -29,6 +29,12 @@
 
   <!-- Blog Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/top-5-engineering-colleges-maharashtra.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-exam-roadmap.html</loc>
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
