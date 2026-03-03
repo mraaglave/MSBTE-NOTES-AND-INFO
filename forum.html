@@ -15,6 +15,15 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://msbtenotes-info.netlify.app/forum.html">
 
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="resourse/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resourse/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resourse/favicon-16x16.png">
+    <link rel="manifest" href="resourse/site.webmanifest">
+    <link rel="icon" href="resourse/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resourse/favicon.ico">
+
+
     <!-- ═══ OPEN GRAPH (Facebook / WhatsApp / LinkedIn) ══════════════ -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MSBTE Notes &amp; Info">
@@ -409,7 +418,8 @@
                 </div>
 
                 <!-- Input Bar (flex-none = always pinned to bottom, never pushed away) -->
-                <div class="flex-none px-3 py-3 md:px-4 md:py-3 bg-white border-t border-gray-200 z-20">
+                <div class="flex-none px-3 py-3 pb-6 md:px-4 md:py-4 md:pb-6 bg-white border-t border-gray-200 z-20"
+                    style="padding-bottom: max(16px, env(safe-area-inset-bottom));">
                     <form id="messageForm" class="flex gap-2 items-center" onsubmit="sendMessage(event)">
                         <input type="text" id="messageInput" placeholder="Type your message..." required
                             autocomplete="off"
