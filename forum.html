@@ -314,9 +314,9 @@
             <!-- Create Group Modal -->
             <div id="modal-create-group"
                 class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
-                style="display:none">
+                style="display:none" role="dialog" aria-modal="true" aria-labelledby="createGroupTitle" tabindex="-1">
                 <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
-                    <h3 class="text-xl font-bold font-display mb-4">Create Group</h3>
+                    <h3 id="createGroupTitle" class="text-xl font-bold font-display mb-4">Create Group</h3>
                     <div class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Group Name</label>
@@ -345,9 +345,9 @@
             <!-- Join Group Modal -->
             <div id="modal-join-group"
                 class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
-                style="display:none">
+                style="display:none" role="dialog" aria-modal="true" aria-labelledby="joinGroupTitle" tabindex="-1">
                 <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl flex flex-col max-h-[80vh]">
-                    <h3 class="text-xl font-bold font-display mb-4">Join a Group</h3>
+                    <h3 id="joinGroupTitle" class="text-xl font-bold font-display mb-4">Join a Group</h3>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Join Private Group using
@@ -384,7 +384,7 @@
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
                 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-                import { getDatabase, ref, push, onChildAdded, onValue, serverTimestamp, query, orderByChild, equalTo, limitToLast, set, get, remove } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+                import { getDatabase, ref, push, onChildAdded, onValue, serverTimestamp, query, orderByChild, equalTo, limitToLast, set, get, remove, update } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 
                 const firebaseConfig = {
                     apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
@@ -553,9 +553,21 @@
                         }
 
                         if (isCreator) {
-                            chatHeaderActions.innerHTML = `<button onclick="deleteGroup('${chatId}')" class="text-xs text-red-500 hover:bg-red-50 px-2 py-1 rounded transition">Delete Group</button>`;
+                            const btn = document.createElement('button');
+                            btn.className = 'text-xs text-red-500 hover:bg-red-50 px-2 py-1 rounded transition';
+                            btn.textContent = 'Delete Group';
+                            btn.dataset.chatId = chatId;
+                            btn.addEventListener('click', () => deleteGroup(btn.dataset.chatId));
+                            chatHeaderActions.innerHTML = '';
+                            chatHeaderActions.appendChild(btn);
                         } else {
-                            chatHeaderActions.innerHTML = `<button onclick="leaveGroup('${chatId}')" class="text-xs text-gray-500 hover:bg-gray-100 px-2 py-1 rounded transition">Leave Group</button>`;
+                            const btn = document.createElement('button');
+                            btn.className = 'text-xs text-gray-500 hover:bg-gray-100 px-2 py-1 rounded transition';
+                            btn.textContent = 'Leave Group';
+                            btn.dataset.chatId = chatId;
+                            btn.addEventListener('click', () => leaveGroup(btn.dataset.chatId));
+                            chatHeaderActions.innerHTML = '';
+                            chatHeaderActions.appendChild(btn);
                         }
                     }
 
@@ -601,10 +613,17 @@
 
                     const username = msg.username || 'Anonymous';
 
-                    msgDiv.innerHTML = `
-                <div class="meta">${username} • ${timeStr}</div>
-                <div class="bubble">${escapeHTML(msg.content)}</div>
-            `;
+                    // Build DOM safely to avoid XSS from username or content
+                    const metaDiv = document.createElement('div');
+                    metaDiv.className = 'meta';
+                    metaDiv.textContent = `${username} • ${timeStr}`;
+
+                    const bubbleDiv = document.createElement('div');
+                    bubbleDiv.className = 'bubble';
+                    bubbleDiv.textContent = msg.content; // textContent auto-escapes HTML
+
+                    msgDiv.appendChild(metaDiv);
+                    msgDiv.appendChild(bubbleDiv);
 
                     // Clear loading or placeholder text
                     if (messagesList.children.length === 1 && (messagesList.firstElementChild.textContent.includes("Loading") || messagesList.firstElementChild.textContent.includes("No messages"))) {
@@ -687,14 +706,23 @@
                     }
                 }
 
-                function generateInviteCode() {
+                // Generates a unique invite code by checking for collisions in Firebase
+                async function generateInviteCode() {
                     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    let code = '';
-                    for (let i = 0; i < 6; i++) {
-                        if (i === 3) code += '-';
-                        code += chars.charAt(Math.floor(Math.random() * chars.length));
-                    }
-                    return code; // e.g., 'ABC-XYZ'
+                    let code;
+                    let attempts = 0;
+                    do {
+                        code = '';
+                        for (let i = 0; i < 6; i++) {
+                            if (i === 3) code += '-';
+                            code += chars.charAt(Math.floor(Math.random() * chars.length));
+                        }
+                        // Check for collision using the same lookup used by joinPrivateGroup
+                        const existing = await get(query(ref(db, 'groups'), orderByChild('inviteCode'), equalTo(code)));
+                        if (!existing.exists()) break;
+                        attempts++;
+                    } while (attempts < 10);
+                    return code;
                 }
 
                 window.closeModals = function () {
@@ -704,15 +732,40 @@
                     document.getElementById('joinPrivateGroupError').classList.add('hidden');
                 };
 
+                // Focus trap & Escape key for modals
+                document.addEventListener('keydown', (e) => {
+                    const createModal = document.getElementById('modal-create-group');
+                    const joinModal = document.getElementById('modal-join-group');
+                    const isModalOpen = createModal.style.display === 'flex' || joinModal.style.display === 'flex';
+                    if (e.key === 'Escape' && isModalOpen) {
+                        closeModals();
+                    }
+                });
+
+                let _lastFocusedElement = null;
+
                 window.showCreateGroupModal = function () {
+                    _lastFocusedElement = document.activeElement;
                     closeModals();
-                    document.getElementById('modal-create-group').style.display = 'flex';
+                    const modal = document.getElementById('modal-create-group');
+                    modal.style.display = 'flex';
+                    modal.focus();
                 };
 
                 window.showJoinGroupModal = function () {
+                    _lastFocusedElement = document.activeElement;
                     closeModals();
-                    document.getElementById('modal-join-group').style.display = 'flex';
+                    const modal = document.getElementById('modal-join-group');
+                    modal.style.display = 'flex';
+                    modal.focus();
                     loadPublicGroups();
+                };
+
+                // Restore focus on close
+                const _origCloseModals = window.closeModals;
+                window.closeModals = function () {
+                    _origCloseModals();
+                    if (_lastFocusedElement) { _lastFocusedElement.focus(); _lastFocusedElement = null; }
                 };
 
                 window.createGroup = async function () {
@@ -735,35 +788,32 @@
                             return;
                         }
 
-                        // Create the group
+                        // Create the group ref
                         const newGroupRef = push(ref(db, 'groups'));
                         const groupId = newGroupRef.key;
 
                         let inviteCode = null;
                         if (visibility === 'private') {
-                            inviteCode = generateInviteCode();
+                            inviteCode = await generateInviteCode();
                         }
 
-                        await set(newGroupRef, {
+                        // Atomic multi-path update — all succeed or all fail
+                        const updates = {};
+                        updates[`groups/${groupId}`] = {
                             name: name,
                             visibility: visibility,
                             inviteCode: inviteCode,
                             creatorId: currentUser.uid,
                             createdAt: serverTimestamp()
-                        });
-
-                        // Attach group to user's createdGroup record
-                        await set(ref(db, `users/${currentUser.uid}/createdGroup`), groupId);
-
-                        // Add user as member of the group
-                        await set(ref(db, `group_members/${groupId}/${currentUser.uid}`), true);
-
-                        // Add group to user's joined list
-                        await set(ref(db, `user_groups/${currentUser.uid}/${groupId}`), {
+                        };
+                        updates[`users/${currentUser.uid}/createdGroup`] = groupId;
+                        updates[`group_members/${groupId}/${currentUser.uid}`] = true;
+                        updates[`user_groups/${currentUser.uid}/${groupId}`] = {
                             name: name,
                             isCreator: true,
                             inviteCode: inviteCode || null
-                        });
+                        };
+                        await update(ref(db), updates);
 
                         closeModals();
                         switchContext(groupId, name, true, inviteCode);
@@ -910,18 +960,24 @@
                 window.deleteGroup = async function (groupId) {
                     if (!confirm("WARNING: Are you sure you want to DELETE this group? This action cannot be undone.")) return;
                     try {
-                        // Delete the group metadata
-                        await remove(ref(db, `groups/${groupId}`));
+                        // First, fetch all members so we can clean up user_groups for every member
+                        const membersSnap = await get(ref(db, `group_members/${groupId}`));
 
-                        // Delete user's createdGroup record
-                        await remove(ref(db, `users/${currentUser.uid}/createdGroup`));
+                        // Build atomic multi-path delete
+                        const updates = {};
+                        updates[`groups/${groupId}`] = null;
+                        updates[`users/${currentUser.uid}/createdGroup`] = null;
+                        updates[`group_messages/${groupId}`] = null;
+                        updates[`group_members/${groupId}`] = null; // Removes entire members node
 
-                        // Note: To be fully clean, we should delete all messages and remove it from all members' user_groups.
-                        // In a production app, this would be done via Cloud Functions to clean up orphaned data securely.
-                        // For this demo, we'll remove it from the creator's list and the main group node.
-                        await remove(ref(db, `user_groups/${currentUser.uid}/${groupId}`));
-                        await remove(ref(db, `group_messages/${groupId}`));
+                        // Remove groupId from every member's user_groups
+                        if (membersSnap.exists()) {
+                            membersSnap.forEach(memberChild => {
+                                updates[`user_groups/${memberChild.key}/${groupId}`] = null;
+                            });
+                        }
 
+                        await update(ref(db), updates);
                         switchContext('general', 'General Chat');
                     } catch (e) {
                         console.error(e);
