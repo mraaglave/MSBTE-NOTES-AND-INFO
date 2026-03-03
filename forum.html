@@ -332,6 +332,7 @@
             <script type="module">
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+                import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app-check.js";
                 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
                 import { getDatabase, ref, push, onChildAdded, onValue, serverTimestamp, query, orderByChild, equalTo, limitToLast, set, get, remove, update } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 
@@ -347,6 +348,20 @@
 
                 const app = initializeApp(firebaseConfig);
                 const analytics = getAnalytics(app);
+
+                // ── Layer 1: Firebase App Check ──────────────────────────────────────────
+                // Attaches a reCAPTCHA v3 token to every Firebase request so that bots
+                // hitting the Realtime Database directly (without a valid attestation)
+                // are automatically rejected by Firebase security rules.
+                try {
+                    initializeAppCheck(app, {
+                        provider: new ReCaptchaV3Provider('6LftA34sAAAAAGAYDgjQ4RCsCUeBmE6GQvgauRPm'),
+                        isTokenAutoRefreshEnabled: true
+                    });
+                } catch (e) {
+                    console.warn('App Check init failed (likely localhost dev mode):', e.message);
+                }
+
                 const auth = getAuth(app);
                 const db = getDatabase(app);
 
@@ -606,10 +621,49 @@
                     }
                 }
 
+                // ── Layer 2: Content / Sensitivity Filter ────────────────────────────────
+                // Blocks messages containing profanity or ad-policy-violating content
+                // BEFORE they reach Firebase. Words are stored as regex fragments so
+                // l33t-speak substitutions (e.g. "sh1t") are also caught.
+                const BLOCKED_PATTERNS = [
+                    // Adult / profanity
+                    /\bf+[u*@]+c+k+s?\b/i, /\bs+h+[i1!]+t+s?\b/i, /\bb+[i1]+t+c+h+e?s?\b/i,
+                    /\ba+s+s+h+o+l+e+s?\b/i, /\bd+[i1]+c+k+s?\b/i, /\bp+[u*]+s+s+[yi]\b/i,
+                    /\bc+[u*]+n+t+s?\b/i, /\bb+[a@]+s+t+[a@]+r+d+s?\b/i,
+                    /\bm+[o0]+t+h+e+r+f+[u*]+c+k/i, /\bn+[i1]+g+g+[ae]+r/i,
+                    /\bs+[e3]+x+[yu]\b/i, /\bp+[o0]+r+n/i, /\bn+[u*]+d+e/i,
+                    /\bx+x+x/i, /\be+s+c+[o0]+r+t/i, /\bx+-?r+[a@]+t+e+d/i,
+                    // Spam / scam phrases
+                    /\bclick\s+here\s+to\s+(win|earn|claim)/i,
+                    /\b(earn|make)\s+\$?\d+\s*(per\s*(day|hour)|daily|fast)/i,
+                    /\bwhatsapp\s*(group|link|num)/i,
+                    /\b(t\.?me|telegram\.?me)\/\S+/i,
+                    /\bjoin\s+my\s+(group|channel|class)/i,
+                ];
+
+                function isContentSafe(text) {
+                    for (const pattern of BLOCKED_PATTERNS) {
+                        if (pattern.test(text)) return false;
+                    }
+                    return true;
+                }
+
                 window.sendMessage = async function (e) {
                     e.preventDefault();
                     const content = messageInput.value.trim();
                     if (!content || !currentUser) return;
+
+                    // ── Content filter check ────────────────────────────────────────────
+                    if (!isContentSafe(content)) {
+                        // Flash red border on input instead of an intrusive alert
+                        messageInput.style.borderColor = '#ef4444';
+                        messageInput.placeholder = '⚠️ Message contains prohibited content.';
+                        setTimeout(() => {
+                            messageInput.style.borderColor = '';
+                            messageInput.placeholder = 'Type your message...';
+                        }, 3000);
+                        return;
+                    }
 
                     const username = currentUser.email.split('@')[0];
                     messageInput.value = '';
