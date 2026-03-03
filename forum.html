@@ -100,6 +100,16 @@
         [id^="modal-"].modal-open {
             backdrop-filter: blur(2px);
         }
+
+        /* Delete button — only visible on hover over own message */
+        .message.own .msg-delete {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        .message.own:hover .msg-delete {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -528,7 +538,7 @@
 
                     const listener = onChildAdded(messagesRef, (snapshot) => {
                         const msg = snapshot.val();
-                        appendMessageToUI(msg);
+                        appendMessageToUI(msg, snapshot.key);
                         scrollToBottom();
                     }, (error) => {
                         console.error("Error fetching messages:", error);
@@ -540,7 +550,7 @@
                     unsubscribeMessages = listener;
                 }
 
-                function appendMessageToUI(msg) {
+                function appendMessageToUI(msg, msgKey) {
                     const isOwn = currentUser && msg.userId === currentUser.uid;
                     const msgDiv = document.createElement('div');
                     msgDiv.className = `message ${isOwn ? 'own' : 'other'}`;
@@ -566,12 +576,34 @@
                     msgDiv.appendChild(metaDiv);
                     msgDiv.appendChild(bubbleDiv);
 
+                    // Show delete button only on own messages
+                    if (isOwn && msgKey) {
+                        const delBtn = document.createElement('button');
+                        delBtn.className = 'msg-delete mt-1 text-red-400 hover:text-red-600 transition flex items-center gap-1 text-xs';
+                        delBtn.title = 'Delete message';
+                        delBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg> Delete`;
+                        delBtn.addEventListener('click', () => deleteMessage(msgKey, msgDiv));
+                        msgDiv.appendChild(delBtn);
+                    }
+
                     // Clear loading or placeholder text
                     if (messagesList.children.length === 1 && (messagesList.firstElementChild.textContent.includes("Loading") || messagesList.firstElementChild.textContent.includes("No messages"))) {
                         messagesList.innerHTML = '';
                     }
 
                     messagesList.appendChild(msgDiv);
+                }
+
+                async function deleteMessage(msgKey, msgDiv) {
+                    if (!confirm('Delete this message?')) return;
+                    const chatPath = currentChatId === 'general' ? 'forum_messages' : `group_messages/${currentChatId}`;
+                    try {
+                        await remove(ref(db, `${chatPath}/${msgKey}`));
+                        msgDiv.remove(); // immediately remove from UI
+                    } catch (e) {
+                        console.error('Failed to delete message:', e);
+                        alert('Could not delete message.');
+                    }
                 }
 
                 window.sendMessage = async function (e) {
