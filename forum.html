@@ -192,6 +192,29 @@
             background: #94a3b8;
         }
 
+        /* ── Strict Mobile Viewport Fix ──
+           Forces body to exact screen dimensions so input isn't pushed off-screen.
+           100dvh respects mobile browser address/nav bars. */
+        body,
+        html {
+            height: 100%;
+            height: -webkit-fill-available;
+            margin: 0;
+            overflow: hidden;
+            /* Stop whole page scrolling; child divs handle scroll */
+        }
+
+        body {
+            /* Fallback to standard vh, override with dvh if browser supports it */
+            height: 100vh;
+        }
+
+        @supports (height: 100dvh) {
+            body {
+                height: 100dvh;
+            }
+        }
+
         /* Force modals to absolute front regardless of any parent stacking context */
         [id^="modal-"] {
             z-index: 9999 !important;
@@ -216,10 +239,10 @@
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900 flex flex-col h-screen overflow-hidden font-sans">
+<body class="bg-gray-100 text-gray-900 flex flex-col font-sans">
 
     <!-- Simple Navbar -->
-    <nav class="bg-white shadow z-50 flex-none">
+    <nav class="bg-white shadow z-50 flex-none h-[64px] border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="index.html" class="flex items-center text-blue-600 font-bold text-xl font-display">
@@ -235,7 +258,8 @@
         </div>
     </nav>
 
-    <main class="flex-grow flex flex-col w-full h-full relative">
+    <!-- Main Container must strictly fill remaining space and no more -->
+    <main class="flex-grow flex flex-col w-full relative h-[calc(100%-64px)] overflow-hidden">
 
         <!-- Initial Auth Screen Container -->
         <div id="authContainer" class="absolute inset-0 z-40 bg-gray-50 flex flex-col items-center justify-center p-4">
