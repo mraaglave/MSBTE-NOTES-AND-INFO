@@ -299,8 +299,8 @@
                         <input type="text" id="messageInput" placeholder="Type your message..." required
                             autocomplete="off"
                             class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-                        <button type="submit"
-                            class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition shadow-md flex items-center justify-center w-12 h-12">
+                        <button type="submit" id="sendMessageBtn"
+                            class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition shadow-md flex items-center justify-center w-12 h-12 disabled:opacity-50 disabled:cursor-not-allowed">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -309,10 +309,6 @@
                     </form>
                 </div>
             </div>
-
-        </div>
-        </div>
-        </div>
     </main>
 
     <!-- Modals (Moved to Body level to fix z-index issues) -->
@@ -630,7 +626,10 @@
             if (!content || !currentUser) return;
 
             const username = currentUser.email.split('@')[0];
-            messageInput.value = '';
+            const btn = document.getElementById('sendMessageBtn');
+
+            messageInput.disabled = true;
+            btn.disabled = true;
 
             const chatPath = currentChatId === 'general' ? 'forum_messages' : `group_messages/${currentChatId}`;
 
@@ -641,24 +640,28 @@
                     content: content,
                     createdAt: serverTimestamp()
                 });
+                messageInput.value = '';
             } catch (error) {
                 console.error("Error sending message:", error);
                 alert("Failed to send message. Enable Developer Tools to check console.");
+            } finally {
+                messageInput.disabled = false;
+                btn.disabled = false;
+                messageInput.focus();
             }
         };
 
         // UI Helpers
         function scrollToBottom() {
-            messagesList.scrollTop = messagesList.scrollHeight;
+            requestAnimationFrame(() => {
+                messagesList.scrollTop = messagesList.scrollHeight;
+            });
         }
 
         function escapeHTML(str) {
-            return str
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
         }
 
         function showError(msg) {
