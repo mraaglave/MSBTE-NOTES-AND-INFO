@@ -88,6 +88,18 @@
         #messages-list::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+
+        /* Force modals to absolute front regardless of any parent stacking context */
+        [id^="modal-"] {
+            z-index: 9999 !important;
+            position: fixed !important;
+            pointer-events: auto !important;
+        }
+
+        /* Subtle backdrop blur for a premium look */
+        [id^="modal-"].modal-open {
+            backdrop-filter: blur(2px);
+        }
     </style>
 </head>
 
@@ -303,75 +315,6 @@
                             </svg>
                         </button>
                     </form>
-                </div>
-            </div>
-
-            <!-- Modals (outside #forumMain so they cover the sidebar too) -->
-            <!-- Create Group Modal -->
-            <div id="modal-create-group"
-                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
-                style="display:none" role="dialog" aria-modal="true" aria-labelledby="createGroupTitle" tabindex="-1">
-                <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
-                    <h3 id="createGroupTitle" class="text-xl font-bold font-display mb-4">Create Group</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Group Name</label>
-                            <input type="text" id="createGroupName" placeholder="e.g. Study Group A"
-                                class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Visibility</label>
-                            <select id="createGroupVisibility"
-                                class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                                <option value="public">Public (Anyone can see and join)</option>
-                                <option value="private">Private (Invite code required)</option>
-                            </select>
-                        </div>
-                        <div id="createGroupError" class="text-red-500 text-sm hidden"></div>
-                    </div>
-                    <div class="mt-6 flex gap-3 justify-end">
-                        <button onclick="closeModals()"
-                            class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
-                        <button onclick="createGroup()"
-                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Create</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Join Group Modal -->
-            <div id="modal-join-group"
-                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
-                style="display:none" role="dialog" aria-modal="true" aria-labelledby="joinGroupTitle" tabindex="-1">
-                <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl flex flex-col max-h-[80vh]">
-                    <h3 id="joinGroupTitle" class="text-xl font-bold font-display mb-4">Join a Group</h3>
-
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Join Private Group using
-                            Code</label>
-                        <div class="flex gap-2">
-                            <input type="text" id="joinGroupCode" placeholder="Enter Invite Code"
-                                class="flex-grow px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                            <button onclick="joinPrivateGroup()"
-                                class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 whitespace-nowrap">Join</button>
-                        </div>
-                        <div id="joinPrivateGroupError" class="text-red-500 text-sm mt-1 hidden"></div>
-                    </div>
-
-                    <div class="relative flex py-2 items-center">
-                        <div class="flex-grow border-t border-gray-200"></div>
-                        <span class="flex-shrink-0 mx-4 text-gray-400 text-sm">OR DISCOVER PUBLIC</span>
-                        <div class="flex-grow border-t border-gray-200"></div>
-                    </div>
-
-                    <div class="flex-grow overflow-y-auto mt-2 border rounded-lg p-2 space-y-2 max-h-48"
-                        id="public-groups-list">
-                        <div class="text-center text-sm text-gray-500 py-4">Loading public groups...</div>
-                    </div>
-
-                    <div class="mt-6 flex justify-end">
-                        <button onclick="closeModals()"
-                            class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Close</button>
-                    </div>
                 </div>
             </div>
 
@@ -984,6 +927,77 @@
                 };
 
             </script>
+
+            <!-- =====================================================================
+         MODALS — placed at the very end of body to escape all stacking contexts
+         ===================================================================== -->
+
+            <!-- Create Group Modal -->
+            <div id="modal-create-group" class="fixed inset-0 bg-gray-900 bg-opacity-50 items-center justify-center p-4"
+                style="display:none" role="dialog" aria-modal="true" aria-labelledby="createGroupTitle" tabindex="-1">
+                <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
+                    <h3 id="createGroupTitle" class="text-xl font-bold font-display mb-4">Create Group</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Group Name</label>
+                            <input type="text" id="createGroupName" placeholder="e.g. Study Group A"
+                                class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Visibility</label>
+                            <select id="createGroupVisibility"
+                                class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="public">Public (Anyone can see and join)</option>
+                                <option value="private">Private (Invite code required)</option>
+                            </select>
+                        </div>
+                        <div id="createGroupError" class="text-red-500 text-sm hidden"></div>
+                    </div>
+                    <div class="mt-6 flex gap-3 justify-end">
+                        <button onclick="closeModals()"
+                            class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
+                        <button onclick="createGroup()"
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Create</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join Group Modal -->
+            <div id="modal-join-group" class="fixed inset-0 bg-gray-900 bg-opacity-50 items-center justify-center p-4"
+                style="display:none" role="dialog" aria-modal="true" aria-labelledby="joinGroupTitle" tabindex="-1">
+                <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl flex flex-col max-h-[80vh]">
+                    <h3 id="joinGroupTitle" class="text-xl font-bold font-display mb-4">Join a Group</h3>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Join Private Group using
+                            Code</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="joinGroupCode" placeholder="Enter Invite Code"
+                                class="flex-grow px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                            <button onclick="joinPrivateGroup()"
+                                class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 whitespace-nowrap">Join</button>
+                        </div>
+                        <div id="joinPrivateGroupError" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <div class="relative flex py-2 items-center">
+                        <div class="flex-grow border-t border-gray-200"></div>
+                        <span class="flex-shrink-0 mx-4 text-gray-400 text-sm">OR DISCOVER PUBLIC</span>
+                        <div class="flex-grow border-t border-gray-200"></div>
+                    </div>
+
+                    <div class="flex-grow overflow-y-auto mt-2 border rounded-lg p-2 space-y-2 max-h-48"
+                        id="public-groups-list">
+                        <div class="text-center text-sm text-gray-500 py-4">Loading public groups...</div>
+                    </div>
+
+                    <div class="mt-6 flex justify-end">
+                        <button onclick="closeModals()"
+                            class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Close</button>
+                    </div>
+                </div>
+            </div>
+
 </body>
 
 </html>
