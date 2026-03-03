@@ -26,9 +26,13 @@
             flex-direction: column;
             gap: 12px;
             padding: 16px;
-            /* Push messages to bottom when few exist */
-            justify-content: flex-end;
-            min-height: 100%;
+            /* Do NOT use justify-content:flex-end — it breaks overflow-y scroll. */
+            /* Use a flex spacer (.msg-spacer) injected at the top instead. */
+        }
+
+        /* Grows when few messages exist (pushes them down), collapses when content overflows */
+        .msg-spacer {
+            flex: 1;
         }
 
         /* Use dynamic viewport height on mobile so the input stays above the keyboard */
@@ -318,6 +322,8 @@
                     </div>
                     <!-- Scrollable message list -->
                     <div id="messages-list" class="absolute inset-0 overflow-y-auto z-10 flex flex-col">
+                        <!-- Spacer pushes messages to bottom; collapses when list overflows so scroll works -->
+                        <div class="msg-spacer"></div>
                         <div class="text-center text-gray-400 py-10 m-auto">Loading messages...</div>
                     </div>
                 </div>
