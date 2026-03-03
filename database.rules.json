@@ -1,0 +1,48 @@
+﻿{
+  "rules": {
+    "users": {
+      "": {
+         ".read": " === auth.uid",
+         ".write": " === auth.uid"
+      }
+    },
+    "forum_messages": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "": {
+        ".validate": "newData.hasChildren(['userId', 'content', 'createdAt']) && newData.child('userId').val() === auth.uid"
+      }
+    },
+    "groups": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["inviteCode", "createdAt"],
+      "": {
+        ".write": "(!data.exists() && newData.child('creatorId').val() === auth.uid) || (data.exists() && data.child('creatorId').val() === auth.uid)"
+      }
+    },
+    "group_members": {
+      "": {
+        ".read": "auth != null",
+        "": {
+          ".write": " === auth.uid || root.child('groups').child().child('creatorId').val() === auth.uid"
+        }
+      }
+    },
+    "user_groups": {
+      "": {
+        ".read": " === auth.uid",
+        ".write": " === auth.uid"
+      }
+    },
+    "group_messages": {
+      "": {
+        ".read": "root.child('group_members').child().child(auth.uid).exists()",
+        ".write": "root.child('group_members').child().child(auth.uid).exists()",
+        "": {
+          ".validate": "newData.hasChildren(['userId', 'content', 'createdAt']) && newData.child('userId').val() === auth.uid"
+        }
+      }
+    }
+  }
+}

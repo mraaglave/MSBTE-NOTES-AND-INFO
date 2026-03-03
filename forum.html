@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Forum - MSBTE Notes & Info</title>
+    <meta name="description"
+        content="Join the MSBTE Notes & Info student forum to chat and discuss with other diploma students.">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase Config will be loaded below -->
+    <style>
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        #messages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-right: 8px;
+        }
+
+        .message {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.own {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+
+        .message.other {
+            align-self: flex-start;
+            align-items: flex-start;
+        }
+
+        .bubble {
+            padding: 10px 16px;
+            border-radius: 16px;
+            font-size: 15px;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .message.own .bubble {
+            background-color: #2563eb;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.other .bubble {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            border-bottom-left-radius: 4px;
+        }
+
+        .meta {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        /* Custom scrollbar */
+        #messages-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #messages-list::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        #messages-list::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        #messages-list::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 flex flex-col h-screen overflow-hidden font-sans">
+
+    <!-- Simple Navbar -->
+    <nav class="bg-white shadow z-50 flex-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center text-blue-600 font-bold text-xl font-display">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Home
+                </a>
+                <div class="font-display font-bold text-lg text-gray-800 hidden sm:block">MSBTE Student Forum</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col w-full h-full relative">
+
+        <!-- Initial Auth Screen Container -->
+        <div id="authContainer" class="absolute inset-0 z-40 bg-gray-50 flex flex-col items-center justify-center p-4">
+            <!-- Headers -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-5xl font-display font-extrabold text-blue-600 mb-2">Student Forum</h1>
+                <p class="text-gray-600">Chat with other students, safely and securely.</p>
+            </div>
+
+            <!-- Auth UI -->
+            <div id="authTitle"
+                class="text-center text-gray-700 bg-white p-8 rounded-2xl shadow border border-gray-100 w-full max-w-md">
+                <h2 class="text-2xl font-bold mb-6 font-display">Join the Chat</h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <input type="email" id="email" placeholder="Email address"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <input type="password" id="password" placeholder="Password"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button onclick="login()"
+                            class="flex-1 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">Login</button>
+                        <button onclick="signup()"
+                            class="flex-1 bg-white text-blue-600 border border-blue-600 font-bold py-3 rounded-lg hover:bg-blue-50 transition">Sign
+                            Up</button>
+                    </div>
+
+                    <div class="relative flex py-2 items-center">
+                        <div class="flex-grow border-t border-gray-200"></div>
+                        <span class="flex-shrink-0 mx-4 text-gray-400 text-sm">or</span>
+                        <div class="flex-grow border-t border-gray-200"></div>
+                    </div>
+
+                    <button onclick="loginWithGoogle()"
+                        class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition shadow-sm">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        Continue with Google
+                    </button>
+                </div>
+
+                <p id="authError"
+                    class="mt-4 text-red-500 text-sm hidden bg-red-50 p-3 rounded-lg border border-red-100">
+                </p>
+            </div>
+
+            <!-- Chat UI (Hidden Initially) -->
+            <div id="forumMain" class="hidden w-full h-full bg-white flex overflow-hidden relative shadow-inner">
+
+                <!-- Mobile Sidebar Backdrop -->
+                <div id="sidebarBackdrop" onclick="toggleSidebar()"
+                    class="absolute inset-0 bg-gray-900 bg-opacity-50 z-20 hidden md:hidden"></div>
+
+                <!-- Sidebar for Groups -->
+                <div id="chatSidebar"
+                    class="absolute md:relative inset-y-0 left-0 z-30 w-72 flex-shrink-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out border-r border-gray-100 bg-white md:bg-gray-50 flex flex-col shadow-xl md:shadow-none">
+                    <div class="p-4 border-b border-gray-200 bg-white flex justify-between items-center">
+                        <div class="min-w-0">
+                            <h3 class="font-bold text-gray-900 font-display text-lg">Chats</h3>
+                            <p class="text-xs text-gray-500 truncate">User: <span id="userEmailDisplay"
+                                    class="font-semibold text-blue-600"></span></p>
+                        </div>
+                        <button onclick="toggleSidebar()" class="md:hidden text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="p-3">
+                        <button onclick="switchContext('general', 'General Chat')" id="btn-general-chat"
+                            class="w-full text-left px-3 py-2 rounded-lg bg-blue-100 text-blue-700 font-medium mb-2 transition flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+                                </path>
+                            </svg>
+                            General Chat
+                        </button>
+
+                        <div class="flex items-center justify-between mt-4 mb-2 px-1">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">My Groups</span>
+                            <div class="flex gap-1">
+                                <button onclick="showCreateGroupModal()" class="text-gray-400 hover:text-blue-600 p-1"
+                                    title="Create Group">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="showJoinGroupModal()" class="text-gray-400 hover:text-blue-600 p-1"
+                                    title="Join Group">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="my-groups-list" class="space-y-1 overflow-y-auto flex-grow h-48">
+                            <!-- Group items injected here -->
+                            <div class="text-xs text-gray-400 italic px-2">No groups joined yet...</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto p-4 border-t border-gray-200">
+                        <button onclick="logout()"
+                            class="w-full text-center text-sm font-medium text-red-500 hover:text-red-700 px-3 py-2 rounded-lg hover:bg-red-50 transition border border-red-100">Log
+                            out</button>
+                    </div>
+                </div>
+
+                <!-- Main Chat Area -->
+                <div class="flex-grow flex flex-col relative min-w-0">
+                    <!-- Chat Header -->
+                    <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-white">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <button onclick="toggleSidebar()"
+                                class="md:hidden text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-lg transition mr-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                            <div id="chat-header-icon"
+                                class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 id="chat-header-title" class="font-bold text-gray-900">General Chat</h3>
+                                <p id="chat-header-subtitle" class="text-xs text-gray-500">Public Forum</p>
+                            </div>
+                        </div>
+                        <div id="chat-header-actions">
+                            <!-- Delete button for group creator goes here -->
+                        </div>
+                    </div>
+
+                    <!-- Messages Area -->
+                    <div class="flex-grow relative bg-gray-50 overflow-hidden">
+                        <!-- Background Pattern for authenticity -->
+                        <div class="absolute inset-0 z-0 opacity-5"
+                            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+                        </div>
+
+                        <div id="messages-list" class="absolute inset-0 p-4 overflow-y-auto z-10 flex flex-col gap-3">
+                            <div class="text-center text-gray-400 py-10 mt-auto mb-auto">Loading messages...</div>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="px-3 py-3 md:p-4 bg-gray-100 border-t border-gray-200 z-20">
+                        <form id="messageForm" class="flex gap-2" onsubmit="sendMessage(event)">
+                            <input type="text" id="messageInput" placeholder="Type your message..." required
+                                autocomplete="off"
+                                class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            <button type="submit"
+                                class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition shadow-md flex items-center justify-center w-12 h-12">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modals -->
+                <!-- Create Group Modal -->
+                <div id="modal-create-group"
+                    class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[60] hidden flex items-center justify-center p-4">
+                    <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
+                        <h3 class="text-xl font-bold font-display mb-4">Create Group</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Group Name</label>
+                                <input type="text" id="createGroupName" placeholder="e.g. Study Group A"
+                                    class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Visibility</label>
+                                <select id="createGroupVisibility"
+                                    class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                                    <option value="public">Public (Anyone can see and join)</option>
+                                    <option value="private">Private (Invite code required)</option>
+                                </select>
+                            </div>
+                            <div id="createGroupError" class="text-red-500 text-sm hidden"></div>
+                        </div>
+                        <div class="mt-6 flex gap-3 justify-end">
+                            <button onclick="closeModals()"
+                                class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
+                            <button onclick="createGroup()"
+                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Create</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Join Group Modal -->
+                <div id="modal-join-group"
+                    class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[60] hidden flex items-center justify-center p-4">
+                    <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl flex flex-col max-h-[80vh]">
+                        <h3 class="text-xl font-bold font-display mb-4">Join a Group</h3>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Join Private Group using
+                                Code</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="joinGroupCode" placeholder="Enter Invite Code"
+                                    class="flex-grow px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                                <button onclick="joinPrivateGroup()"
+                                    class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 whitespace-nowrap">Join</button>
+                            </div>
+                            <div id="joinPrivateGroupError" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <div class="relative flex py-2 items-center">
+                            <div class="flex-grow border-t border-gray-200"></div>
+                            <span class="flex-shrink-0 mx-4 text-gray-400 text-sm">OR DISCOVER PUBLIC</span>
+                            <div class="flex-grow border-t border-gray-200"></div>
+                        </div>
+
+                        <div class="flex-grow overflow-y-auto mt-2 border rounded-lg p-2 space-y-2 max-h-48"
+                            id="public-groups-list">
+                            <div class="text-center text-sm text-gray-500 py-4">Loading public groups...</div>
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <button onclick="closeModals()"
+                                class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firebase Logic -->
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+                    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+                    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+                    import { getDatabase, ref, push, onChildAdded, onValue, serverTimestamp, query, orderByChild, equalTo, limitToLast, set, get, remove } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
+                        authDomain: "msbte-notes-info.firebaseapp.com",
+                        projectId: "msbte-notes-info",
+                        storageBucket: "msbte-notes-info.firebasestorage.app",
+                        messagingSenderId: "497397765847",
+                        appId: "1:497397765847:web:5ff2d9910dfe14c22a8292",
+                        measurementId: "G-QJXDTZXDZ2"
+                    };
+
+                    const app = initializeApp(firebaseConfig);
+                    const analytics = getAnalytics(app);
+                    const auth = getAuth(app);
+                    const db = getDatabase(app);
+
+                    // Core variables
+                    let currentUser = null;
+                    let unsubscribeMessages = null;
+                    let currentChatId = 'general';
+                    let currentChatName = 'General Chat';
+                    let myGroupsListener = null;
+
+                    // Elements
+                    const authContainerScreen = document.getElementById('authContainer');
+                    const authContainer = document.getElementById('authTitle');
+                    const forumContainer = document.getElementById('forumMain');
+                    const messagesList = document.getElementById('messages-list');
+                    const userEmailDisplay = document.getElementById('userEmailDisplay');
+                    const authError = document.getElementById('authError');
+                    const authSuccess = document.getElementById('authSuccess');
+                    const emailInput = document.getElementById('email');
+                    const passwordInput = document.getElementById('password');
+                    const messageInput = document.getElementById('messageInput');
+                    const myGroupsList = document.getElementById('my-groups-list');
+                    const chatHeaderTitle = document.getElementById('chat-header-title');
+                    const chatHeaderSubtitle = document.getElementById('chat-header-subtitle');
+                    const chatHeaderActions = document.getElementById('chat-header-actions');
+
+                    // Watch Authentication State
+                    onAuthStateChanged(auth, (user) => {
+                        if (user) {
+                            handleLogin(user);
+                        } else {
+                            handleLogout();
+                        }
+                    });
+
+                    function handleLogin(user) {
+                        currentUser = user;
+                        authContainerScreen.classList.add('hidden');
+                        forumContainer.classList.remove('hidden');
+                        userEmailDisplay.textContent = user.email.split('@')[0];
+
+                        switchContext('general', 'General Chat');
+                        listenToMyGroups();
+                    }
+
+                    function handleLogout() {
+                        currentUser = null;
+                        authContainerScreen.classList.remove('hidden');
+                        forumContainer.classList.add('hidden');
+
+                        if (unsubscribeMessages) unsubscribeMessages();
+                        if (myGroupsListener) myGroupsListener();
+
+                        messagesList.innerHTML = '';
+                        myGroupsList.innerHTML = '<div class="text-xs text-gray-400 italic px-2">No groups joined yet...</div>';
+                        currentChatId = 'general';
+                    }
+
+                    // Attach auth methods to window because onclick is strictly in the HTML
+                    window.loginWithGoogle = async function () {
+                        clearMessages();
+                        const provider = new GoogleAuthProvider();
+                        try {
+                            await signInWithPopup(auth, provider);
+                            showSuccess("Google Sign-in successful!");
+                        } catch (error) {
+                            showError(error.message);
+                        }
+                    };
+
+                    window.login = async function () {
+                        clearMessages();
+                        const email = emailInput.value.trim();
+                        const password = passwordInput.value;
+                        if (!email || !password) return showError("Please enter email and password");
+
+                        try {
+                            await signInWithEmailAndPassword(auth, email, password);
+                        } catch (error) {
+                            showError(error.message);
+                        }
+                    };
+
+                    window.signup = async function () {
+                        clearMessages();
+                        const email = emailInput.value.trim();
+                        const password = passwordInput.value;
+                        if (!email || !password) return showError("Please enter email and password");
+
+                        try {
+                            await createUserWithEmailAndPassword(auth, email, password);
+                            showSuccess("Signup successful! You can now chat.");
+                        } catch (error) {
+                            showError(error.message);
+                        }
+                    };
+
+                    window.logout = async function () {
+                        try {
+                            await signOut(auth);
+                        } catch (error) {
+                            console.error("Logout Error:", error);
+                        }
+                    };
+
+                    // --- Chat & Group Logic ---
+
+                    window.switchContext = function (chatId, chatName, isCreator = false, inviteCode = null) {
+                        currentChatId = chatId;
+                        currentChatName = chatName;
+
+                        chatHeaderTitle.textContent = chatName;
+
+                        // Highlight active button
+                        document.querySelectorAll('#my-groups-list button, #btn-general-chat').forEach(btn => {
+                            btn.classList.remove('bg-blue-100', 'text-blue-700');
+                            btn.classList.add('text-gray-700', 'hover:bg-gray-100');
+                        });
+
+                        if (chatId === 'general') {
+                            document.getElementById('btn-general-chat').classList.add('bg-blue-100', 'text-blue-700');
+                            document.getElementById('btn-general-chat').classList.remove('text-gray-700', 'hover:bg-gray-100');
+                            chatHeaderSubtitle.textContent = 'Public Forum';
+                            chatHeaderActions.innerHTML = '';
+                        } else {
+                            const groupBtn = document.getElementById(`btn-group-${chatId}`);
+                            if (groupBtn) {
+                                groupBtn.classList.add('bg-blue-100', 'text-blue-700');
+                                groupBtn.classList.remove('text-gray-700', 'hover:bg-gray-100');
+                            }
+                            if (inviteCode) {
+                                chatHeaderSubtitle.innerHTML = `Private Group &bull; Code: <span class="font-bold text-gray-800 bg-gray-100 px-1 rounded">${inviteCode}</span>`;
+                            } else {
+                                chatHeaderSubtitle.textContent = `Public Group`;
+                            }
+
+                            if (isCreator) {
+                                chatHeaderActions.innerHTML = `<button onclick="deleteGroup('${chatId}')" class="text-xs text-red-500 hover:bg-red-50 px-2 py-1 rounded transition">Delete Group</button>`;
+                            } else {
+                                chatHeaderActions.innerHTML = `<button onclick="leaveGroup('${chatId}')" class="text-xs text-gray-500 hover:bg-gray-100 px-2 py-1 rounded transition">Leave Group</button>`;
+                            }
+                        }
+
+                        messagesList.innerHTML = '<div class="text-center text-gray-500 py-4">Loading conversation...</div>';
+                        subscribeToMessages();
+                        closeModals();
+                        closeSidebarOnMobile();
+                    };
+
+                    function subscribeToMessages() {
+                        if (unsubscribeMessages) {
+                            unsubscribeMessages();
+                        }
+
+                        const chatPath = currentChatId === 'general' ? 'forum_messages' : `group_messages/${currentChatId}`;
+                        const messagesRef = query(ref(db, chatPath), orderByChild('createdAt'), limitToLast(100));
+
+                        const listener = onChildAdded(messagesRef, (snapshot) => {
+                            const msg = snapshot.val();
+                            appendMessageToUI(msg);
+                            scrollToBottom();
+                        }, (error) => {
+                            console.error("Error fetching messages:", error);
+                            if (error.code.includes('PERMISSION_DENIED')) {
+                                messagesList.innerHTML = '<div class="bg-red-50 text-red-800 p-4 border border-red-200 rounded-lg text-sm mb-4"><strong>Developer Note:</strong> Firebase Database rules are blocking access. Make sure your rules allow authenticated users to read/write.</div>';
+                            }
+                        });
+
+                        unsubscribeMessages = listener;
+                    }
+
+                    function appendMessageToUI(msg) {
+                        const isOwn = currentUser && msg.userId === currentUser.uid;
+                        const msgDiv = document.createElement('div');
+                        msgDiv.className = `message ${isOwn ? 'own' : 'other'}`;
+
+                        // Format timestamp (handles Firebase serverTimestamp latency gracefully)
+                        let timeStr = 'Just now';
+                        if (msg.createdAt) {
+                            const date = new Date(msg.createdAt);
+                            timeStr = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        }
+
+                        const username = msg.username || 'Anonymous';
+
+                        msgDiv.innerHTML = `
+                <div class="meta">${username} • ${timeStr}</div>
+                <div class="bubble">${escapeHTML(msg.content)}</div>
+            `;
+
+                        // Clear loading or placeholder text
+                        if (messagesList.children.length === 1 && (messagesList.firstElementChild.textContent.includes("Loading") || messagesList.firstElementChild.textContent.includes("No messages"))) {
+                            messagesList.innerHTML = '';
+                        }
+
+                        messagesList.appendChild(msgDiv);
+                    }
+
+                    window.sendMessage = async function (e) {
+                        e.preventDefault();
+                        const content = messageInput.value.trim();
+                        if (!content || !currentUser) return;
+
+                        const username = currentUser.email.split('@')[0];
+                        messageInput.value = '';
+
+                        const chatPath = currentChatId === 'general' ? 'forum_messages' : `group_messages/${currentChatId}`;
+
+                        try {
+                            await push(ref(db, chatPath), {
+                                userId: currentUser.uid,
+                                username: username,
+                                content: content,
+                                createdAt: serverTimestamp()
+                            });
+                        } catch (error) {
+                            console.error("Error sending message:", error);
+                            alert("Failed to send message. Enable Developer Tools to check console.");
+                        }
+                    };
+
+                    // UI Helpers
+                    function scrollToBottom() {
+                        messagesList.scrollTop = messagesList.scrollHeight;
+                    }
+
+                    function escapeHTML(str) {
+                        return str
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;");
+                    }
+
+                    function showError(msg) {
+                        authError.textContent = msg;
+                        authError.classList.remove('hidden');
+                        authSuccess.classList.add('hidden');
+                    }
+
+                    function showSuccess(msg) {
+                        authSuccess.textContent = msg;
+                        authSuccess.classList.remove('hidden');
+                        authError.classList.add('hidden');
+                    }
+
+                    function clearMessages() {
+                        authError.classList.add('hidden');
+                        authSuccess.classList.add('hidden');
+                    }
+
+                    // --- Modals & Group Actions ---
+                    window.toggleSidebar = function (forceClose = false) {
+                        const sidebar = document.getElementById('chatSidebar');
+                        const backdrop = document.getElementById('sidebarBackdrop');
+                        if (forceClose === true || !sidebar.classList.contains('-translate-x-full')) {
+                            sidebar.classList.add('-translate-x-full');
+                            backdrop.classList.add('hidden');
+                        } else {
+                            sidebar.classList.remove('-translate-x-full');
+                            backdrop.classList.remove('hidden');
+                        }
+                    };
+
+                    function closeSidebarOnMobile() {
+                        if (window.innerWidth < 768) {
+                            window.toggleSidebar(true);
+                        }
+                    }
+
+                    function generateInviteCode() {
+                        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        let code = '';
+                        for (let i = 0; i < 6; i++) {
+                            if (i === 3) code += '-';
+                            code += chars.charAt(Math.floor(Math.random() * chars.length));
+                        }
+                        return code; // e.g., 'ABC-XYZ'
+                    }
+
+                    window.closeModals = function () {
+                        document.getElementById('modal-create-group').classList.add('hidden');
+                        document.getElementById('modal-join-group').classList.add('hidden');
+                        document.getElementById('createGroupError').classList.add('hidden');
+                        document.getElementById('joinPrivateGroupError').classList.add('hidden');
+                    };
+
+                    window.showCreateGroupModal = function () {
+                        closeModals();
+                        document.getElementById('modal-create-group').classList.remove('hidden');
+                    };
+
+                    window.showJoinGroupModal = function () {
+                        closeModals();
+                        document.getElementById('modal-join-group').classList.remove('hidden');
+                        loadPublicGroups();
+                    };
+
+                    window.createGroup = async function () {
+                        const name = document.getElementById('createGroupName').value.trim();
+                        const visibility = document.getElementById('createGroupVisibility').value;
+                        const errorDiv = document.getElementById('createGroupError');
+
+                        if (!name) {
+                            errorDiv.textContent = "Please enter a group name.";
+                            errorDiv.classList.remove('hidden');
+                            return;
+                        }
+
+                        try {
+                            // Check if user already created a group
+                            const userSnapshot = await get(ref(db, `users/${currentUser.uid}/createdGroup`));
+                            if (userSnapshot.exists()) {
+                                errorDiv.textContent = "You have already created a group. Maximum 1 group per user.";
+                                errorDiv.classList.remove('hidden');
+                                return;
+                            }
+
+                            // Create the group
+                            const newGroupRef = push(ref(db, 'groups'));
+                            const groupId = newGroupRef.key;
+
+                            let inviteCode = null;
+                            if (visibility === 'private') {
+                                inviteCode = generateInviteCode();
+                            }
+
+                            await set(newGroupRef, {
+                                name: name,
+                                visibility: visibility,
+                                inviteCode: inviteCode,
+                                creatorId: currentUser.uid,
+                                createdAt: serverTimestamp()
+                            });
+
+                            // Attach group to user's createdGroup record
+                            await set(ref(db, `users/${currentUser.uid}/createdGroup`), groupId);
+
+                            // Add user as member of the group
+                            await set(ref(db, `group_members/${groupId}/${currentUser.uid}`), true);
+
+                            // Add group to user's joined list
+                            await set(ref(db, `user_groups/${currentUser.uid}/${groupId}`), {
+                                name: name,
+                                isCreator: true,
+                                inviteCode: inviteCode || null
+                            });
+
+                            closeModals();
+                            switchContext(groupId, name, true, inviteCode);
+
+                        } catch (e) {
+                            console.error(e);
+                            errorDiv.textContent = "Error creating group. " + e.message;
+                            errorDiv.classList.remove('hidden');
+                        }
+                    };
+
+                    function listenToMyGroups() {
+                        if (!currentUser) return;
+
+                        const userGroupsRef = ref(db, `user_groups/${currentUser.uid}`);
+                        myGroupsListener = onValue(userGroupsRef, (snapshot) => {
+                            myGroupsList.innerHTML = '';
+                            const groups = snapshot.val();
+                            if (groups) {
+                                Object.entries(groups).forEach(([groupId, details]) => {
+                                    const btn = document.createElement('button');
+                                    btn.id = `btn-group-${groupId}`;
+                                    btn.className = 'w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium transition truncate text-sm flex justify-between items-center group';
+                                    btn.onclick = () => switchContext(groupId, details.name, details.isCreator, details.inviteCode);
+
+                                    btn.innerHTML = `
+                            <span class="truncate">${escapeHTML(details.name)}</span>
+                            ${details.isCreator ? '<span class="text-[10px] bg-blue-100 text-blue-800 px-1 py-0.5 rounded ml-1">Admin</span>' : ''}
+                        `;
+                                    myGroupsList.appendChild(btn);
+                                });
+                            } else {
+                                myGroupsList.innerHTML = '<div class="text-xs text-gray-400 italic px-2">No groups joined yet...</div>';
+                            }
+                        });
+                    }
+
+                    async function loadPublicGroups() {
+                        const listDiv = document.getElementById('public-groups-list');
+                        listDiv.innerHTML = '<div class="text-center text-sm text-gray-500 py-4">Loading public groups...</div>';
+
+                        try {
+                            const snapshot = await get(ref(db, 'groups'));
+                            if (snapshot.exists()) {
+                                listDiv.innerHTML = '';
+                                let foundPublic = false;
+                                snapshot.forEach(childSnapshot => {
+                                    const group = childSnapshot.val();
+                                    if (group.visibility === 'public') {
+                                        foundPublic = true;
+                                        const div = document.createElement('div');
+                                        div.className = "flex justify-between items-center p-2 bg-gray-50 rounded border";
+                                        div.innerHTML = `
+                                <div class="truncate pr-2">
+                                    <h4 class="font-bold text-sm text-gray-800 truncate">${escapeHTML(group.name)}</h4>
+                                    <p class="text-[10px] text-gray-500">Public Group</p>
+                                </div>
+                                <button onclick="joinPublicGroup('${childSnapshot.key}', '${escapeHTML(group.name).replace(/'/g, "\\'")}')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded hover:bg-gray-50 text-blue-600 transition">Join</button>
+                            `;
+                                        listDiv.appendChild(div);
+                                    }
+                                });
+
+                                if (!foundPublic) {
+                                    listDiv.innerHTML = '<div class="text-center text-sm text-gray-500 py-4">No public groups found.</div>';
+                                }
+                            } else {
+                                listDiv.innerHTML = '<div class="text-center text-sm text-gray-500 py-4">No public groups found.</div>';
+                            }
+                        } catch (e) {
+                            listDiv.innerHTML = '<div class="text-center text-sm text-red-500 py-4">Error loading groups.</div>';
+                        }
+                    }
+
+                    window.joinPublicGroup = async function (groupId, groupName) {
+                        await doJoinGroup(groupId, groupName);
+                    };
+
+                    window.joinPrivateGroup = async function () {
+                        const inviteCode = document.getElementById('joinGroupCode').value.trim().toUpperCase();
+                        const errorDiv = document.getElementById('joinPrivateGroupError');
+                        if (!inviteCode) {
+                            errorDiv.textContent = "Please enter an invite code.";
+                            errorDiv.classList.remove('hidden');
+                            return;
+                        }
+
+                        try {
+                            // Find group by inviteCode
+                            const groupsQuery = query(ref(db, 'groups'), orderByChild('inviteCode'), equalTo(inviteCode));
+                            const snapshot = await get(groupsQuery);
+
+                            if (!snapshot.exists()) {
+                                errorDiv.textContent = "Group not found. Invalid code.";
+                                errorDiv.classList.remove('hidden');
+                                return;
+                            }
+
+                            // Get the first matched group (invite code should be unique enough for our scale)
+                            let groupId;
+                            let groupData;
+                            snapshot.forEach(child => {
+                                groupId = child.key;
+                                groupData = child.val();
+                            });
+
+                            await doJoinGroup(groupId, groupData.name, groupData.inviteCode);
+                        } catch (e) {
+                            errorDiv.textContent = "Error: " + e.message;
+                            errorDiv.classList.remove('hidden');
+                        }
+                    };
+
+                    async function doJoinGroup(groupId, groupName, inviteCode = null) {
+                        try {
+                            await set(ref(db, `group_members/${groupId}/${currentUser.uid}`), true);
+                            await set(ref(db, `user_groups/${currentUser.uid}/${groupId}`), {
+                                name: groupName,
+                                isCreator: false,
+                                inviteCode: inviteCode || null
+                            });
+                            closeModals();
+                            switchContext(groupId, groupName, false, inviteCode);
+                        } catch (e) {
+                            console.error("Error joining group:", e);
+                            alert("Failed to join group.");
+                        }
+                    }
+
+                    window.leaveGroup = async function (groupId) {
+                        if (!confirm("Are you sure you want to leave this group?")) return;
+                        try {
+                            await remove(ref(db, `group_members/${groupId}/${currentUser.uid}`));
+                            await remove(ref(db, `user_groups/${currentUser.uid}/${groupId}`));
+                            switchContext('general', 'General Chat');
+                        } catch (e) {
+                            console.error(e);
+                            alert("Failed to leave group.");
+                        }
+                    };
+
+                    window.deleteGroup = async function (groupId) {
+                        if (!confirm("WARNING: Are you sure you want to DELETE this group? This action cannot be undone.")) return;
+                        try {
+                            // Delete the group metadata
+                            await remove(ref(db, `groups/${groupId}`));
+
+                            // Delete user's createdGroup record
+                            await remove(ref(db, `users/${currentUser.uid}/createdGroup`));
+
+                            // Note: To be fully clean, we should delete all messages and remove it from all members' user_groups.
+                            // In a production app, this would be done via Cloud Functions to clean up orphaned data securely.
+                            // For this demo, we'll remove it from the creator's list and the main group node.
+                            await remove(ref(db, `user_groups/${currentUser.uid}/${groupId}`));
+                            await remove(ref(db, `group_messages/${groupId}`));
+
+                            switchContext('general', 'General Chat');
+                        } catch (e) {
+                            console.error(e);
+                            alert("Failed to delete group.");
+                        }
+                    };
+
+                </script>
+</body>
+
+</html>
