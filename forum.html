@@ -554,11 +554,27 @@
                         }
                     }
 
-                    messagesList.innerHTML = '<div class="text-center text-gray-500 py-4">Loading conversation...</div>';
+                    // Reset messages list but keep the flex spacer
+                    resetMessagesList('Loading conversation...');
                     subscribeToMessages();
                     closeModals();
                     closeSidebarOnMobile();
                 };
+
+                // Always call this instead of messagesList.innerHTML = '...'
+                // to preserve the .msg-spacer that makes bottom-align + scroll work
+                function resetMessagesList(placeholderText = '') {
+                    messagesList.innerHTML = '';
+                    const spacer = document.createElement('div');
+                    spacer.className = 'msg-spacer';
+                    messagesList.appendChild(spacer);
+                    if (placeholderText) {
+                        const ph = document.createElement('div');
+                        ph.className = 'text-center text-gray-400 py-10 m-auto placeholder-msg';
+                        ph.textContent = placeholderText;
+                        messagesList.appendChild(ph);
+                    }
+                }
 
                 function subscribeToMessages() {
                     if (unsubscribeMessages) {
@@ -574,8 +590,12 @@
                         scrollToBottom();
                     }, (error) => {
                         console.error("Error fetching messages:", error);
-                        if (error.code.includes('PERMISSION_DENIED')) {
-                            messagesList.innerHTML = '<div class="bg-red-50 text-red-800 p-4 border border-red-200 rounded-lg text-sm mb-4"><strong>Developer Note:</strong> Firebase Database rules are blocking access. Make sure your rules allow authenticated users to read/write.</div>';
+                        if (error.code && error.code.includes('PERMISSION_DENIED')) {
+                            resetMessagesList();
+                            const errDiv = document.createElement('div');
+                            errDiv.className = 'bg-red-50 text-red-800 p-4 border border-red-200 rounded-lg text-sm m-4';
+                            errDiv.innerHTML = '<strong>Developer Note:</strong> Firebase rules are blocking access.';
+                            messagesList.appendChild(errDiv);
                         }
                     });
 
@@ -618,10 +638,9 @@
                         msgDiv.appendChild(delBtn);
                     }
 
-                    // Clear loading or placeholder text
-                    if (messagesList.children.length === 1 && (messagesList.firstElementChild.textContent.includes("Loading") || messagesList.firstElementChild.textContent.includes("No messages"))) {
-                        messagesList.innerHTML = '';
-                    }
+                    // Remove placeholder if present (but keep the .msg-spacer)
+                    const placeholder = messagesList.querySelector('.placeholder-msg');
+                    if (placeholder) placeholder.remove();
 
                     messagesList.appendChild(msgDiv);
                 }
