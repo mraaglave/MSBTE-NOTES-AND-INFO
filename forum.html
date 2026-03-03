@@ -310,10 +310,11 @@
                 </div>
             </div>
 
-            <!-- Modals -->
+            <!-- Modals (outside #forumMain so they cover the sidebar too) -->
             <!-- Create Group Modal -->
             <div id="modal-create-group"
-                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[100] hidden flex items-center justify-center p-4">
+                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
+                style="display:none">
                 <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
                     <h3 class="text-xl font-bold font-display mb-4">Create Group</h3>
                     <div class="space-y-4">
@@ -343,7 +344,8 @@
 
             <!-- Join Group Modal -->
             <div id="modal-join-group"
-                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[100] hidden flex items-center justify-center p-4">
+                class="fixed inset-0 bg-gray-900 bg-opacity-50 z-[200] hidden items-center justify-center p-4"
+                style="display:none">
                 <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl flex flex-col max-h-[80vh]">
                     <h3 class="text-xl font-bold font-display mb-4">Join a Group</h3>
 
@@ -696,20 +698,20 @@
                 }
 
                 window.closeModals = function () {
-                    document.getElementById('modal-create-group').classList.add('hidden');
-                    document.getElementById('modal-join-group').classList.add('hidden');
+                    document.getElementById('modal-create-group').style.display = 'none';
+                    document.getElementById('modal-join-group').style.display = 'none';
                     document.getElementById('createGroupError').classList.add('hidden');
                     document.getElementById('joinPrivateGroupError').classList.add('hidden');
                 };
 
                 window.showCreateGroupModal = function () {
                     closeModals();
-                    document.getElementById('modal-create-group').classList.remove('hidden');
+                    document.getElementById('modal-create-group').style.display = 'flex';
                 };
 
                 window.showJoinGroupModal = function () {
                     closeModals();
-                    document.getElementById('modal-join-group').classList.remove('hidden');
+                    document.getElementById('modal-join-group').style.display = 'flex';
                     loadPublicGroups();
                 };
 
