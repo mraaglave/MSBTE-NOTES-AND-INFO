@@ -12,6 +12,9 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Google reCAPTCHA v2 -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- Firebase Config will be loaded below -->
     <style>
         .font-display {
@@ -131,6 +134,12 @@
                         <input type="password" id="password" placeholder="Password"
                             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
                     </div>
+
+                    <!-- reCAPTCHA Widget -->
+                    <div class="flex justify-center py-2">
+                        <div class="g-recaptcha" data-sitekey="6LftA34sAAAAAGAYDgjQ4RCsCUeBmE6GQvgauRPm"></div>
+                    </div>
+
                     <div class="flex gap-3 pt-2">
                         <button onclick="login()"
                             class="flex-1 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">Login</button>
@@ -446,19 +455,33 @@
                 }
 
                 // Attach auth methods to window because onclick is strictly in the HTML
+                function verifyRecaptcha() {
+                    const response = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+                    if (response.length === 0) {
+                        showError("Please complete the reCAPTCHA verification.");
+                        return false;
+                    }
+                    return true;
+                }
+
                 window.loginWithGoogle = async function () {
                     clearMessages();
+                    if (!verifyRecaptcha()) return;
+
                     const provider = new GoogleAuthProvider();
                     try {
                         await signInWithPopup(auth, provider);
                         showSuccess("Google Sign-in successful!");
                     } catch (error) {
+                        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
                         showError(error.message);
                     }
                 };
 
                 window.login = async function () {
                     clearMessages();
+                    if (!verifyRecaptcha()) return;
+
                     const email = emailInput.value.trim();
                     const password = passwordInput.value;
                     if (!email || !password) return showError("Please enter email and password");
@@ -466,12 +489,15 @@
                     try {
                         await signInWithEmailAndPassword(auth, email, password);
                     } catch (error) {
+                        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
                         showError(error.message);
                     }
                 };
 
                 window.signup = async function () {
                     clearMessages();
+                    if (!verifyRecaptcha()) return;
+
                     const email = emailInput.value.trim();
                     const password = passwordInput.value;
                     if (!email || !password) return showError("Please enter email and password");
@@ -480,6 +506,7 @@
                         await createUserWithEmailAndPassword(auth, email, password);
                         showSuccess("Signup successful! You can now chat.");
                     } catch (error) {
+                        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
                         showError(error.message);
                     }
                 };
