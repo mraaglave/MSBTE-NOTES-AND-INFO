@@ -25,7 +25,17 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            padding-right: 8px;
+            padding: 16px;
+            /* Push messages to bottom when few exist */
+            justify-content: flex-end;
+            min-height: 100%;
+        }
+
+        /* Use dynamic viewport height on mobile so the input stays above the keyboard */
+        @supports (height: 100dvh) {
+            body {
+                height: 100dvh;
+            }
         }
 
         .message {
@@ -270,9 +280,10 @@
             </div>
 
             <!-- Main Chat Area -->
-            <div class="flex-grow flex flex-col relative min-w-0">
-                <!-- Chat Header -->
-                <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-white">
+            <div class="flex-grow flex flex-col min-w-0 overflow-hidden">
+                <!-- Chat Header (flex-none = never shrinks) -->
+                <div
+                    class="flex-none flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white shadow-sm">
                     <div class="flex items-center gap-2 md:gap-3">
                         <button onclick="toggleSidebar()"
                             class="md:hidden text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-lg transition mr-1">
@@ -295,30 +306,30 @@
                         </div>
                     </div>
                     <div id="chat-header-actions">
-                        <!-- Delete button for group creator goes here -->
+                        <!-- Delete / Leave button goes here -->
                     </div>
                 </div>
 
-                <!-- Messages Area -->
+                <!-- Messages Area (flex-grow = takes all available height, scrolls internally) -->
                 <div class="flex-grow relative bg-gray-50 overflow-hidden">
-                    <!-- Background Pattern for authenticity -->
+                    <!-- Subtle background pattern -->
                     <div class="absolute inset-0 z-0 opacity-5"
                         style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
                     </div>
-
-                    <div id="messages-list" class="absolute inset-0 p-4 overflow-y-auto z-10 flex flex-col gap-3">
-                        <div class="text-center text-gray-400 py-10 mt-auto mb-auto">Loading messages...</div>
+                    <!-- Scrollable message list -->
+                    <div id="messages-list" class="absolute inset-0 overflow-y-auto z-10 flex flex-col">
+                        <div class="text-center text-gray-400 py-10 m-auto">Loading messages...</div>
                     </div>
                 </div>
 
-                <!-- Input Area -->
-                <div class="px-3 py-3 md:p-4 bg-gray-100 border-t border-gray-200 z-20">
-                    <form id="messageForm" class="flex gap-2" onsubmit="sendMessage(event)">
+                <!-- Input Bar (flex-none = always pinned to bottom, never pushed away) -->
+                <div class="flex-none px-3 py-3 md:px-4 md:py-3 bg-white border-t border-gray-200 z-20">
+                    <form id="messageForm" class="flex gap-2 items-center" onsubmit="sendMessage(event)">
                         <input type="text" id="messageInput" placeholder="Type your message..." required
                             autocomplete="off"
-                            class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm">
                         <button type="submit"
-                            class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition shadow-md flex items-center justify-center w-12 h-12">
+                            class="flex-shrink-0 bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 active:scale-95 transition shadow-md flex items-center justify-center w-11 h-11">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
