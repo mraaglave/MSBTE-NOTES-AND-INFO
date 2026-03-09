@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- ═══ PRIMARY SEO ══════════════════════════════════════════════ -->
+    <title>Form Submitted Successfully | MSBTE Notes & Info</title>
+    <meta name="description" content="Thank you for submitting your detailed student form to MSBTE Notes & Info.">
+    <meta name="robots" content="noindex, follow"> <!-- Avoid indexing the success page -->
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="../resourse/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../resourse/apple-touch-icon.png">
+
+    <!-- ═══ ASSETS & STYLES ═════════════════════════════════════════ -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+
+    <style>
+        .font-display {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        /* Success Icon Animation */
+        @keyframes scale-up-center {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes draw-check {
+            0% {
+                stroke-dasharray: 0, 100;
+                opacity: 0;
+            }
+
+            50% {
+                stroke-dasharray: 0, 100;
+                opacity: 1;
+            }
+
+            100% {
+                stroke-dasharray: 100, 100;
+                opacity: 1;
+            }
+        }
+
+        .success-icon-container {
+            animation: scale-up-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        .success-check {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+            animation: draw-check 0.8s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-50 text-gray-900 font-sans antialiased relative min-h-screen flex flex-col justify-center overflow-x-hidden">
+
+    <!-- Background Design (Decorative) -->
+    <div
+        class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-100 rounded-full blur-[100px] z-0 pointer-events-none opacity-60">
+    </div>
+    <div
+        class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-green-100 rounded-full blur-[100px] z-0 pointer-events-none opacity-60">
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="w-full max-w-lg mx-auto p-4 sm:p-6 lg:p-8 relative z-10 flex-grow flex items-center justify-center">
+
+        <div
+            class="w-full bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden p-8 sm:p-12 border border-gray-100 text-center">
+
+            <div
+                class="success-icon-container w-24 h-24 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-6 shadow-inner ring-8 ring-green-50">
+                <svg class="w-12 h-12 text-green-500 success-check" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl font-display font-bold text-gray-800 mb-3 tracking-tight">Submission
+                Successful!</h1>
+
+            <p class="text-gray-500 text-sm sm:text-base mb-8">
+                Thank you for submitting your details. Your data has been securely forwarded to our system.
+            </p>
+
+            <div class="space-y-4">
+                <a href="../index.html"
+                    class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] text-center">
+                    Return to Homepage
+                </a>
+
+                <a href="student-data.html"
+                    class="block w-full bg-white hover:bg-gray-50 text-gray-700 font-bold py-3.5 px-6 rounded-xl border border-gray-200 transition-all duration-200 active:scale-[0.98] text-center">
+                    Submit Another Response
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

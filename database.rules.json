@@ -2,8 +2,8 @@
   "rules": {
     "users": {
       "": {
-         ".read": " === auth.uid",
-         ".write": " === auth.uid"
+        ".read": " === auth.uid",
+        ".write": " === auth.uid"
       }
     },
     "forum_messages": {
@@ -16,7 +16,10 @@
     "groups": {
       ".read": "auth != null",
       ".write": "auth != null",
-      ".indexOn": ["inviteCode", "createdAt"],
+      ".indexOn": [
+        "inviteCode",
+        "createdAt"
+      ],
       "": {
         ".write": "(!data.exists() && newData.child('creatorId').val() === auth.uid) || (data.exists() && data.child('creatorId').val() === auth.uid)"
       }
