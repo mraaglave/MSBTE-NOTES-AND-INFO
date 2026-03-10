@@ -38,7 +38,6 @@ function cleanup() {
         const originalCount = data.length;
         data = data.filter(item => !item.url.includes('---'));
         fs.writeFileSync(JSON_FILE, JSON.stringify(data, null, 4), 'utf-8');
-        console.log("Cleanup: Removed " + (originalCount - data.length) + " bad entries from resources.json, " + removedHtml + " HTML files, " + removedSvg + " SVG files.");
     }
 }
 
@@ -47,7 +46,7 @@ function createSlug(text) {
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, '')
         .replace(/\s+/g, '-')
-        .replace(/-+/g, '-') // collapse multiple dashes into one
+        .replace(/-+/g, '-')
         .replace(/^-+|-+$/g, '');
 }
 
@@ -181,24 +180,40 @@ function processCsvSync() {
                 scheme: row[schemeIdx] ? row[schemeIdx].trim() : '',
                 semester: row[semIdx] ? row[semIdx].trim() : '',
                 branches: new Set(),
-                resources: []
+                groups: [] // Store arrays of grouped resources
             };
         }
         
-        if (row[branchIdx]) {
-            subjects[coreSub].branches.add(row[branchIdx].trim());
+        const branchName = row[branchIdx] ? row[branchIdx].trim() : '';
+        if (branchName) {
+            subjects[coreSub].branches.add(branchName);
         }
         
+        let yearLevel = "First Year";
+        const currentSem = row[semIdx] ? row[semIdx].trim() : '';
+        if (currentSem.includes("Second Year") || currentSem.includes("Third") || currentSem.includes("Fourth")) {
+            if (currentSem.includes("Second Year")) yearLevel = "Second Year";
+            else if (currentSem.includes("Third Year")) yearLevel = "Third Year";
+        }
+
         const resType = extractResourceType(testName);
         const pdfUrl = row[pdfIdx] ? row[pdfIdx].trim() : '';
         const driveLink = row[driveIdx] ? row[driveIdx].trim() : '';
         
-        // Deduplicate solely based on the resource type (e.g. "Unit Test - 1")
-        // because different branches might have different backup drive links for the same PDF.
-        const isDuplicate = subjects[coreSub].resources.some(r => r.type === resType);
-        
-        if (!isDuplicate && (pdfUrl || driveLink)) {
-            subjects[coreSub].resources.push({
+        if (!pdfUrl && !driveLink) continue;
+
+        const groupTitle = `${currentSem} - ${branchName}`;
+
+        // Find if this specific branch group already exists for this subject
+        let groupObj = subjects[coreSub].groups.find(g => g.title === groupTitle);
+        if (!groupObj) {
+            groupObj = { title: groupTitle, yearLevel: yearLevel, resources: [] };
+            subjects[coreSub].groups.push(groupObj);
+        }
+
+        const isDuplicate = groupObj.resources.some(r => r.type === resType);
+        if (!isDuplicate) {
+            groupObj.resources.push({
                 type: resType,
                 pdf: pdfUrl,
                 drive: driveLink
@@ -232,16 +247,51 @@ function generateSeoText(subject, branchesStr, scheme, semester) {
     '    ';
 }
 
+function processIdenticalGroups(groups) {
+    // We group together branches that have IDENTICAL resources to save UI space.
+    // Hash the resources array to find matches.
+    const mergedGroups = [];
+    
+    for (const group of groups) {
+        // Create a unique hash string based on the resources
+        const hash = group.resources.map(r => r.type + '|' + r.pdf + '|' + r.drive).join('||');
+        
+        const existing = mergedGroups.find(mg => mg.hash === hash);
+        if (existing) {
+            // Found a matching group (e.g., Computer Tech matches Info Tech exactly)
+            // Combine their titles by extracting the branch.
+            // Title format: "First Year First Semester - Computer Technology"
+            const parts1 = existing.groups[0].title.split(' - ');
+            const parts2 = group.title.split(' - ');
+            
+            if (parts1[0] === parts2[0]) {
+                // Same semester, append branch
+                existing.branchNames.push(parts2[1]);
+            } else {
+                existing.groups.push(group);
+            }
+        } else {
+            const branchName = group.title.split(' - ')[1];
+            mergedGroups.push({
+                hash: hash,
+                baseSemester: group.title.split(' - ')[0],
+                branchNames: [branchName],
+                resources: group.resources,
+                groups: [group]
+            });
+        }
+    }
+    return mergedGroups;
+}
+
 function main() {
     if (!fs.existsSync(CSV_FILE)) {
         console.error("Error: CSV_FILE not found.");
         return;
     }
 
-    // 1. Run cleanup
     cleanup();
     
-    // 2. Load template and parse CSV
     const template = fs.readFileSync(TEMPLATE_FILE, 'utf-8');
     const subjects = processCsvSync();
     
@@ -251,13 +301,11 @@ function main() {
             resourcesJson = JSON.parse(fs.readFileSync(JSON_FILE, 'utf-8'));
         }
     } catch (e) {
-        console.warn("Could not parse JSON. Starting fresh.");
         resourcesJson = [];
     }
 
     const newEntries = [];
     const currentDate = new Date().toISOString().split('T')[0];
-
     const subjectKeys = Object.keys(subjects);
     
     for (let i = 0; i < subjectKeys.length; i++) {
@@ -275,22 +323,33 @@ function main() {
 
         const thumbUrl = generateSvg(subject, slug, i);
         
-        let resourcesHtml = '<div class="grid gap-6 mt-6">';
-        for (const res of data.resources) {
-            const driveBtn = res.drive && res.drive.startsWith('http') ? '<a href="' + res.drive + '" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold transition flex items-center justify-center gap-2">Backup (Drive)</a>' : '';
-            const pdfBtn = res.pdf && res.pdf.startsWith('http') ? '<a href="' + res.pdf + '" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition flex items-center justify-center gap-2">View/Download PDF</a>' : '';
-            resourcesHtml += '\n' +
-            '            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">\n' +
-            '                <h4 class="text-lg font-bold text-gray-900 mb-4">' + res.type + '</h4>\n' +
-            '                <div class="flex flex-wrap gap-3">\n' +
-            '                    ' + pdfBtn + '\n' +
-            '                    ' + driveBtn + '\n' +
-            '                </div>\n' +
-            '            </div>\n' +
-            '            ';
+        let resourcesHtml = '';
+
+        // Merge identical branches into consolidated groups
+        const mergedGroups = processIdenticalGroups(data.groups);
+
+        for (const mg of mergedGroups) {
+            const headingText = `${mg.baseSemester} (${mg.branchNames.join(', ')})`;
+            resourcesHtml += `\n<h3 class="text-2xl font-bold text-gray-800 mt-10 mb-6 border-b pb-2 font-display">${headingText}</h3>\n`;
+            resourcesHtml += '<div class="grid md:grid-cols-2 gap-6">';
+            
+            for (const res of mg.resources) {
+                const pdfBtn = res.pdf && res.pdf.startsWith('http') ? `<a href="${res.pdf}" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 shadow-sm w-full sm:w-auto">View PDF</a>` : '';
+                const driveBtn = res.drive && res.drive.startsWith('http') ? `<a href="${res.drive}" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 border border-gray-200 w-full sm:w-auto">Backup (Drive)</a>` : '';
+                
+                resourcesHtml += `
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition flex flex-col justify-between">
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">${res.type}</h4>
+                    <div class="flex flex-row gap-3">
+                        ${pdfBtn}
+                        ${driveBtn}
+                    </div>
+                </div>
+                `;
+            }
+            resourcesHtml += '</div>';
         }
-        resourcesHtml += '</div>';
-        
+
         resourcesHtml += generateSeoText(subject, branchesStr, data.scheme, data.semester);
 
         let htmlContent = template.replace(/\{\{TITLE_TAG\}\}/g, subject + ' Question Banks & PDFs - MSBTE ' + data.scheme);
@@ -308,9 +367,6 @@ function main() {
 
         const pageUrl = '/Notes/' + slug + '.html';
         fs.writeFileSync(path.join(NOTES_DIR, slug + '.html'), htmlContent, 'utf-8');
-
-        // Close the Active Document from VS Code before replacing it! The user has basic-electrical.html open
-        // VS Code handles file updates externally fine, just updating it.
 
         const entryData = {
             title: subject + ' - ' + data.semester + ' Question Bank',
@@ -330,15 +386,13 @@ function main() {
         }
     }
 
-    console.log("Generated " + subjectKeys.length + " clean pages and SVGs.");
+    console.log("Generated " + subjectKeys.length + " perfectly grouped pages.");
 
     if (newEntries.length > 0 || resourcesJson.length > 0) {
         const finalList = [...newEntries, ...resourcesJson];
         const uniqueMap = new Map();
         finalList.forEach(item => uniqueMap.set(item.url, item));
-        
         fs.writeFileSync(JSON_FILE, JSON.stringify(Array.from(uniqueMap.values()), null, 4), 'utf-8');
-        console.log("Updated JSON. Total resources now: " + uniqueMap.size);
     }
 }
 
