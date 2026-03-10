@@ -1,5 +1,620 @@
 [
     {
+        "title": "311305 - Basic Physics - First Year First Semester Question Bank",
+        "description": "Download 311305 - Basic Physics question banks, model answers, and study materials for First Year First Semester, First Year.",
+        "url": "/Notes/311305-basic-physics.html",
+        "thumbnail": "/resourse/note-thumbs/311305-basic-physics.svg",
+        "category": "question-bank",
+        "tags": [
+            "311305 - Basic Physics",
+            "First Year First Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "311303 - Communication Skills (English) - First Year First Semester Question Bank",
+        "description": "Download 311303 - Communication Skills (English) question banks, model answers, and study materials for First Year First Semester, First Year.",
+        "url": "/Notes/311303-communication-skills-english.html",
+        "thumbnail": "/resourse/note-thumbs/311303-communication-skills-english.svg",
+        "category": "question-bank",
+        "tags": [
+            "311303 - Communication Skills (English)",
+            "First Year First Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "311305 - Basic Chemistry - First Year First Semester Question Bank",
+        "description": "Download 311305 - Basic Chemistry question banks, model answers, and study materials for First Year First Semester, First Year.",
+        "url": "/Notes/311305-basic-chemistry.html",
+        "thumbnail": "/resourse/note-thumbs/311305-basic-chemistry.svg",
+        "category": "question-bank",
+        "tags": [
+            "311305 - Basic Chemistry",
+            "First Year First Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "311302 - Basic Mathematics - First Year First Semester Question Bank",
+        "description": "Download 311302 - Basic Mathematics question banks, model answers, and study materials for First Year First Semester, First Year.",
+        "url": "/Notes/311302-basic-mathematics.html",
+        "thumbnail": "/resourse/note-thumbs/311302-basic-mathematics.svg",
+        "category": "question-bank",
+        "tags": [
+            "311302 - Basic Mathematics",
+            "First Year First Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312301 - Applied Mathematics - First Year Second Semester Question Bank",
+        "description": "Download 312301 - Applied Mathematics question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312301-applied-mathematics.html",
+        "thumbnail": "/resourse/note-thumbs/312301-applied-mathematics.svg",
+        "category": "question-bank",
+        "tags": [
+            "312301 - Applied Mathematics",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312302 - Basic Electrical and Electronics Engineering - First Year Second Semester Question Bank",
+        "description": "Download 312302 - Basic Electrical and Electronics Engineering question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312302-basic-electrical-and-electronics-engineering.html",
+        "thumbnail": "/resourse/note-thumbs/312302-basic-electrical-and-electronics-engineering.svg",
+        "category": "question-bank",
+        "tags": [
+            "312302 - Basic Electrical and Electronics Engineering",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312303 - Programming in C - First Year Second Semester Question Bank",
+        "description": "Download 312303 - Programming in C question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312303-programming-in-c.html",
+        "thumbnail": "/resourse/note-thumbs/312303-programming-in-c.svg",
+        "category": "question-bank",
+        "tags": [
+            "312303 - Programming in C",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313303 - Digital Techniques - Second Year Third Semester Question Bank",
+        "description": "Download 313303 - Digital Techniques question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313303-digital-techniques.html",
+        "thumbnail": "/resourse/note-thumbs/313303-digital-techniques.svg",
+        "category": "question-bank",
+        "tags": [
+            "313303 - Digital Techniques",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313301 - Data Structure Using C - Second Year Third Semester Question Bank",
+        "description": "Download 313301 - Data Structure Using C question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313301-data-structure-using-c.html",
+        "thumbnail": "/resourse/note-thumbs/313301-data-structure-using-c.svg",
+        "category": "question-bank",
+        "tags": [
+            "313301 - Data Structure Using C",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313302 - Database Management System - Second Year Third Semester Question Bank",
+        "description": "Download 313302 - Database Management System question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313302-database-management-system.html",
+        "thumbnail": "/resourse/note-thumbs/313302-database-management-system.svg",
+        "category": "question-bank",
+        "tags": [
+            "313302 - Database Management System",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313304 - Object Oriented Programming Using C++ - Second Year Third Semester Question Bank",
+        "description": "Download 313304 - Object Oriented Programming Using C++ question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313304-object-oriented-programming-using-c.html",
+        "thumbnail": "/resourse/note-thumbs/313304-object-oriented-programming-using-c.svg",
+        "category": "question-bank",
+        "tags": [
+            "313304 - Object Oriented Programming Using C++",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314318 - Data Communication and Computer Network - Second Year Fourth Semester Question Bank",
+        "description": "Download 314318 - Data Communication and Computer Network question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314318-data-communication-and-computer-network.html",
+        "thumbnail": "/resourse/note-thumbs/314318-data-communication-and-computer-network.svg",
+        "category": "question-bank",
+        "tags": [
+            "314318 - Data Communication and Computer Network",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314321 - Microprocessor Programming - Second Year Fourth Semester Question Bank",
+        "description": "Download 314321 - Microprocessor Programming question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314321-microprocessor-programming.html",
+        "thumbnail": "/resourse/note-thumbs/314321-microprocessor-programming.svg",
+        "category": "question-bank",
+        "tags": [
+            "314321 - Microprocessor Programming",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314317 - Java Programming - Second Year Fourth Semester Question Bank",
+        "description": "Download 314317 - Java Programming question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314317-java-programming.html",
+        "thumbnail": "/resourse/note-thumbs/314317-java-programming.svg",
+        "category": "question-bank",
+        "tags": [
+            "314317 - Java Programming",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314301 - Environmental Education and Sustainability - Second Year Fourth Semester Question Bank",
+        "description": "Download 314301 - Environmental Education and Sustainability question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314301-environmental-education-and-sustainability.html",
+        "thumbnail": "/resourse/note-thumbs/314301-environmental-education-and-sustainability.svg",
+        "category": "question-bank",
+        "tags": [
+            "314301 - Environmental Education and Sustainability",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315319 - Operating System - Third Year Fifth Semester Question Bank",
+        "description": "Download 315319 - Operating System question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315319-operating-system.html",
+        "thumbnail": "/resourse/note-thumbs/315319-operating-system.svg",
+        "category": "question-bank",
+        "tags": [
+            "315319 - Operating System",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315323 - Software Engineering - Third Year Fifth Semester Question Bank",
+        "description": "Download 315323 - Software Engineering question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315323-software-engineering.html",
+        "thumbnail": "/resourse/note-thumbs/315323-software-engineering.svg",
+        "category": "question-bank",
+        "tags": [
+            "315323 - Software Engineering",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315321 - Advance Computer Network - Third Year Fifth Semester Question Bank",
+        "description": "Download 315321 - Advance Computer Network question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315321-advance-computer-network.html",
+        "thumbnail": "/resourse/note-thumbs/315321-advance-computer-network.svg",
+        "category": "question-bank",
+        "tags": [
+            "315321 - Advance Computer Network",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315326 - Data Analytics - Third Year Fifth Semester Question Bank",
+        "description": "Download 315326 - Data Analytics question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315326-data-analytics.html",
+        "thumbnail": "/resourse/note-thumbs/315326-data-analytics.svg",
+        "category": "question-bank",
+        "tags": [
+            "315326 - Data Analytics",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315301 - Management - Third Year Sixth Semester Question Bank",
+        "description": "Download 315301 - Management question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/315301-management.html",
+        "thumbnail": "/resourse/note-thumbs/315301-management.svg",
+        "category": "question-bank",
+        "tags": [
+            "315301 - Management",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316313 - Emerging Trends in Computer Engineering and IT - Third Year Sixth Semester Question Bank",
+        "description": "Download 316313 - Emerging Trends in Computer Engineering and IT question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316313-emerging-trends-in-computer-engineering-and-it.html",
+        "thumbnail": "/resourse/note-thumbs/316313-emerging-trends-in-computer-engineering-and-it.svg",
+        "category": "question-bank",
+        "tags": [
+            "316313 - Emerging Trends in Computer Engineering and IT",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316314 - Software Testing - Third Year Sixth Semester Question Bank",
+        "description": "Download 316314 - Software Testing question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316314-software-testing.html",
+        "thumbnail": "/resourse/note-thumbs/316314-software-testing.svg",
+        "category": "question-bank",
+        "tags": [
+            "316314 - Software Testing",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316315 - Digital Forensic and Hacking Techniques - Third Year Sixth Semester Question Bank",
+        "description": "Download 316315 - Digital Forensic and Hacking Techniques question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316315-digital-forensic-and-hacking-techniques.html",
+        "thumbnail": "/resourse/note-thumbs/316315-digital-forensic-and-hacking-techniques.svg",
+        "category": "question-bank",
+        "tags": [
+            "316315 - Digital Forensic and Hacking Techniques",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316317 - Network and Information Security - Third Year Sixth Semester Question Bank",
+        "description": "Download 316317 - Network and Information Security question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316317-network-and-information-security.html",
+        "thumbnail": "/resourse/note-thumbs/316317-network-and-information-security.svg",
+        "category": "question-bank",
+        "tags": [
+            "316317 - Network and Information Security",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312316 - Electronic Materials and Components - First Year Second Semester Question Bank",
+        "description": "Download 312316 - Electronic Materials and Components question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312316-electronic-materials-and-components.html",
+        "thumbnail": "/resourse/note-thumbs/312316-electronic-materials-and-components.svg",
+        "category": "question-bank",
+        "tags": [
+            "312316 - Electronic Materials and Components",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312314 - Basic Electronics - First Year Second Semester Question Bank",
+        "description": "Download 312314 - Basic Electronics question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312314-basic-electronics.html",
+        "thumbnail": "/resourse/note-thumbs/312314-basic-electronics.svg",
+        "category": "question-bank",
+        "tags": [
+            "312314 - Basic Electronics",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "312315 - Elements of Electrical Engineering - First Year Second Semester Question Bank",
+        "description": "Download 312315 - Elements of Electrical Engineering question banks, model answers, and study materials for First Year Second Semester, First Year.",
+        "url": "/Notes/312315-elements-of-electrical-engineering.html",
+        "thumbnail": "/resourse/note-thumbs/312315-elements-of-electrical-engineering.svg",
+        "category": "question-bank",
+        "tags": [
+            "312315 - Elements of Electrical Engineering",
+            "First Year Second Semester",
+            "First Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313324 - Analog Electronics - Second Year Third Semester Question Bank",
+        "description": "Download 313324 - Analog Electronics question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313324-analog-electronics.html",
+        "thumbnail": "/resourse/note-thumbs/313324-analog-electronics.svg",
+        "category": "question-bank",
+        "tags": [
+            "313324 - Analog Electronics",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313325 - Circuits & Networks - Second Year Third Semester Question Bank",
+        "description": "Download 313325 - Circuits & Networks question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313325-circuits-networks.html",
+        "thumbnail": "/resourse/note-thumbs/313325-circuits-networks.svg",
+        "category": "question-bank",
+        "tags": [
+            "313325 - Circuits & Networks",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "313326 - Principles of Electronic Communication - Second Year Third Semester Question Bank",
+        "description": "Download 313326 - Principles of Electronic Communication question banks, model answers, and study materials for Second Year Third Semester, Second Year.",
+        "url": "/Notes/313326-principles-of-electronic-communication.html",
+        "thumbnail": "/resourse/note-thumbs/313326-principles-of-electronic-communication.svg",
+        "category": "question-bank",
+        "tags": [
+            "313326 - Principles of Electronic Communication",
+            "Second Year Third Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314326 - Digital Communication Systems - Second Year Fourth Semester Question Bank",
+        "description": "Download 314326 - Digital Communication Systems question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314326-digital-communication-systems.html",
+        "thumbnail": "/resourse/note-thumbs/314326-digital-communication-systems.svg",
+        "category": "question-bank",
+        "tags": [
+            "314326 - Digital Communication Systems",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314327 - Consumer Electronic Systems - Second Year Fourth Semester Question Bank",
+        "description": "Download 314327 - Consumer Electronic Systems question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314327-consumer-electronic-systems.html",
+        "thumbnail": "/resourse/note-thumbs/314327-consumer-electronic-systems.svg",
+        "category": "question-bank",
+        "tags": [
+            "314327 - Consumer Electronic Systems",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314328 - Microcontroller & Applications - Second Year Fourth Semester Question Bank",
+        "description": "Download 314328 - Microcontroller & Applications question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314328-microcontroller-applications.html",
+        "thumbnail": "/resourse/note-thumbs/314328-microcontroller-applications.svg",
+        "category": "question-bank",
+        "tags": [
+            "314328 - Microcontroller & Applications",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "314363 - Basic Power Electronics - Second Year Fourth Semester Question Bank",
+        "description": "Download 314363 - Basic Power Electronics question banks, model answers, and study materials for Second Year Fourth Semester, Second Year.",
+        "url": "/Notes/314363-basic-power-electronics.html",
+        "thumbnail": "/resourse/note-thumbs/314363-basic-power-electronics.svg",
+        "category": "question-bank",
+        "tags": [
+            "314363 - Basic Power Electronics",
+            "Second Year Fourth Semester",
+            "Second Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315338 - Embedded System - Third Year Fifth Semester Question Bank",
+        "description": "Download 315338 - Embedded System question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315338-embedded-system.html",
+        "thumbnail": "/resourse/note-thumbs/315338-embedded-system.svg",
+        "category": "question-bank",
+        "tags": [
+            "315338 - Embedded System",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315339 - Mobile & Wireless Communication - Third Year Fifth Semester Question Bank",
+        "description": "Download 315339 - Mobile & Wireless Communication question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315339-mobile-wireless-communication.html",
+        "thumbnail": "/resourse/note-thumbs/315339-mobile-wireless-communication.svg",
+        "category": "question-bank",
+        "tags": [
+            "315339 - Mobile & Wireless Communication",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "315342 - Microwave Engineering & Radar System - Third Year Fifth Semester Question Bank",
+        "description": "Download 315342 - Microwave Engineering & Radar System question banks, model answers, and study materials for Third Year Fifth Semester, Third Year.",
+        "url": "/Notes/315342-microwave-engineering-radar-system.html",
+        "thumbnail": "/resourse/note-thumbs/315342-microwave-engineering-radar-system.svg",
+        "category": "question-bank",
+        "tags": [
+            "315342 - Microwave Engineering & Radar System",
+            "Third Year Fifth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316337 - Emerging Trends in Electronics - Third Year Sixth Semester Question Bank",
+        "description": "Download 316337 - Emerging Trends in Electronics question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316337-emerging-trends-in-electronics.html",
+        "thumbnail": "/resourse/note-thumbs/316337-emerging-trends-in-electronics.svg",
+        "category": "question-bank",
+        "tags": [
+            "316337 - Emerging Trends in Electronics",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316332 - Optical Network and Satellite Communication - Third Year Sixth Semester Question Bank",
+        "description": "Download 316332 - Optical Network and Satellite Communication question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316332-optical-network-and-satellite-communication.html",
+        "thumbnail": "/resourse/note-thumbs/316332-optical-network-and-satellite-communication.svg",
+        "category": "question-bank",
+        "tags": [
+            "316332 - Optical Network and Satellite Communication",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316338 - Computer Network & Data Communication - Third Year Sixth Semester Question Bank",
+        "description": "Download 316338 - Computer Network & Data Communication question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316338-computer-network-data-communication.html",
+        "thumbnail": "/resourse/note-thumbs/316338-computer-network-data-communication.svg",
+        "category": "question-bank",
+        "tags": [
+            "316338 - Computer Network & Data Communication",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
+        "title": "316340 - VLSI Applications - Third Year Sixth Semester Question Bank",
+        "description": "Download 316340 - VLSI Applications question banks, model answers, and study materials for Third Year Sixth Semester, Third Year.",
+        "url": "/Notes/316340-vlsi-applications.html",
+        "thumbnail": "/resourse/note-thumbs/316340-vlsi-applications.svg",
+        "category": "question-bank",
+        "tags": [
+            "316340 - VLSI Applications",
+            "Third Year Sixth Semester",
+            "Third Year",
+            "MSBTE",
+            "K-Scheme"
+        ],
+        "dateAdded": "2026-03-10"
+    },
+    {
         "title": "312303 PIC Programming in C Manual Answers",
         "description": "Complete solved lab manual for PIC Programming in C (312303). Access all 25 practical answers for MSBTE K-Scheme with PDF preview.",
         "url": "/Notes/Manual/312303-pic-programming-in-c-manual-answers.html",
@@ -13,546 +628,6 @@
             "MSBTE"
         ],
         "dateAdded": "2026-02-07"
-    },
-    {
-        "title": "Basic Science (Chemistry) - Semester - 1",
-        "description": "Download Basic Science (Chemistry) notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/basic-science-chemistry-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/basic-science-chemistry-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "Basic Science (Chemistry)",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Basic Mathematics - Semester - 1",
-        "description": "Download Basic Mathematics notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/basic-mathematics-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/basic-mathematics-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "Basic Mathematics",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Basic Science - Semester - 1",
-        "description": "Download Basic Science notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/basic-science-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/basic-science-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "Basic Science",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Engineering Graphics - Semester - 1",
-        "description": "Download Engineering Graphics notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/engineering-graphics-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/engineering-graphics-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "Engineering Graphics",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "English - Semester - 1",
-        "description": "Download English notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/english-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/english-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "English",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Fundamentals ICT - Semester - 1",
-        "description": "Download Fundamentals ICT notes, manuals, and study materials for Semester - 1, First Year Diploma.",
-        "url": "/Notes/fundamentals-ict-semester---1.html",
-        "thumbnail": "/resourse/note-thumbs/fundamentals-ict-semester---1.svg",
-        "category": "notes",
-        "tags": [
-            "Fundamentals ICT",
-            "Semester - 1",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Applied Mathematics - Semester - 2",
-        "description": "Download Applied Mathematics notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/applied-mathematics-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/applied-mathematics-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Applied Mathematics",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Basic Electronic - Semester - 2",
-        "description": "Download Basic Electronic notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/basic-electronic-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/basic-electronic-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Basic Electronic",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Programming in C - Semester - 2",
-        "description": "Download Programming in C notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/programming-in-c-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/programming-in-c-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Programming in C",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Computer Peripherals and Hardware Maintenance - Semester - 2",
-        "description": "Download Computer Peripherals and Hardware Maintenance notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/computer-peripherals-and-hardware-maintenance-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/computer-peripherals-and-hardware-maintenance-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Computer Peripherals and Hardware Maintenance",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Elements of Electrical Engineering - Semester - 2",
-        "description": "Download Elements of Electrical Engineering notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/elements-of-electrical-engineering-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/elements-of-electrical-engineering-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Elements of Electrical Engineering",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Web Page Designing with HTML - Semester - 2",
-        "description": "Download Web Page Designing with HTML notes, manuals, and study materials for Semester - 2, First Year Diploma.",
-        "url": "/Notes/web-page-designing-with-html-semester---2.html",
-        "thumbnail": "/resourse/note-thumbs/web-page-designing-with-html-semester---2.svg",
-        "category": "notes",
-        "tags": [
-            "Web Page Designing with HTML",
-            "Semester - 2",
-            "First Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Computer Graphics - Semester - 3",
-        "description": "Download Computer Graphics notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
-        "url": "/Notes/computer-graphics-semester---3.html",
-        "thumbnail": "/resourse/note-thumbs/computer-graphics-semester---3.svg",
-        "category": "notes",
-        "tags": [
-            "Computer Graphics",
-            "Semester - 3",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Database Management System - Semester - 3",
-        "description": "Download Database Management System notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
-        "url": "/Notes/database-management-system-semester---3.html",
-        "thumbnail": "/resourse/note-thumbs/database-management-system-semester---3.svg",
-        "category": "notes",
-        "tags": [
-            "Database Management System",
-            "Semester - 3",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Data Structures Using C - Semester - 3",
-        "description": "Download Data Structures Using C notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
-        "url": "/Notes/data-structures-using-c-semester---3.html",
-        "thumbnail": "/resourse/note-thumbs/data-structures-using-c-semester---3.svg",
-        "category": "notes",
-        "tags": [
-            "Data Structures Using C",
-            "Semester - 3",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Digital Electronics - Semester - 3",
-        "description": "Download Digital Electronics notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
-        "url": "/Notes/digital-electronics-semester---3.html",
-        "thumbnail": "/resourse/note-thumbs/digital-electronics-semester---3.svg",
-        "category": "notes",
-        "tags": [
-            "Digital Electronics",
-            "Semester - 3",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Object Oriented Programming in C++ - Semester - 3",
-        "description": "Download Object Oriented Programming in C++ notes, manuals, and study materials for Semester - 3, Second Year Diploma.",
-        "url": "/Notes/object-oriented-programming-in-c-semester---3.html",
-        "thumbnail": "/resourse/note-thumbs/object-oriented-programming-in-c-semester---3.svg",
-        "category": "notes",
-        "tags": [
-            "Object Oriented Programming in C++",
-            "Semester - 3",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "GUI Application Development using VB.Net - Semester - 4",
-        "description": "Download GUI Application Development using VB.Net notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/gui-application-development-using-vbnet-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/gui-application-development-using-vbnet-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "GUI Application Development using VB.Net",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Data Communication and Computer Network - Semester - 4",
-        "description": "Download Data Communication and Computer Network notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/data-communication-and-computer-network-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/data-communication-and-computer-network-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "Data Communication and Computer Network",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Java Programming - Semester - 4",
-        "description": "Download Java Programming notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/java-programming-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/java-programming-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "Java Programming",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Microprocessor - Semester - 4",
-        "description": "Download Microprocessor notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/microprocessor-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/microprocessor-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "Microprocessor",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Software Engineering - Semester - 4",
-        "description": "Download Software Engineering notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/software-engineering-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/software-engineering-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "Software Engineering",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Advanced Java Programming - Semester - 5",
-        "description": "Download Advanced Java Programming notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/advanced-java-programming-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/advanced-java-programming-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Advanced Java Programming",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Computer Network - Semester - 5",
-        "description": "Download Computer Network notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/computer-network-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/computer-network-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Computer Network",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Client Side Scripting Language - Semester - 5",
-        "description": "Download Client Side Scripting Language notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/client-side-scripting-language-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/client-side-scripting-language-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Client Side Scripting Language",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Software Testing - Semester - 5",
-        "description": "Download Software Testing notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/software-testing-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/software-testing-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Software Testing",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Environmental Studies - Semester - 5",
-        "description": "Download Environmental Studies notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/environmental-studies-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/environmental-studies-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Environmental Studies",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Operating System - Semester - 5",
-        "description": "Download Operating System notes, manuals, and study materials for Semester - 5, Third Year Diploma.",
-        "url": "/Notes/operating-system-semester---5.html",
-        "thumbnail": "/resourse/note-thumbs/operating-system-semester---5.svg",
-        "category": "notes",
-        "tags": [
-            "Operating System",
-            "Semester - 5",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Environmental Studies - Semester - 4",
-        "description": "Download Environmental Studies notes, manuals, and study materials for Semester - 4, Second Year Diploma.",
-        "url": "/Notes/environmental-studies-semester---4.html",
-        "thumbnail": "/resourse/note-thumbs/environmental-studies-semester---4.svg",
-        "category": "notes",
-        "tags": [
-            "Environmental Studies",
-            "Semester - 4",
-            "Second Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Web Based Application Development using PHP - Semester - 6",
-        "description": "Download Web Based Application Development using PHP notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/web-based-application-development-using-php-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/web-based-application-development-using-php-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Web Based Application Development using PHP",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Programming with Python - Semester - 6",
-        "description": "Download Programming with Python notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/programming-with-python-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/programming-with-python-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Programming with Python",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Entrepreneurship Development - Semester - 6",
-        "description": "Download Entrepreneurship Development notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/entrepreneurship-development-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/entrepreneurship-development-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Entrepreneurship Development",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Entrepreneurship Development And Project Management - Semester - 6",
-        "description": "Download Entrepreneurship Development And Project Management notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/entrepreneurship-development-and-project-management-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/entrepreneurship-development-and-project-management-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Entrepreneurship Development And Project Management",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Management - Semester - 6",
-        "description": "Download Management notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/management-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/management-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Management",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "Mobile Application Development - Semester - 6",
-        "description": "Download Mobile Application Development notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/mobile-application-development-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/mobile-application-development-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "Mobile Application Development",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
-    },
-    {
-        "title": "EProgramming with Python - Semester - 6",
-        "description": "Download EProgramming with Python notes, manuals, and study materials for Semester - 6, Third Year Diploma.",
-        "url": "/Notes/eprogramming-with-python-semester---6.html",
-        "thumbnail": "/resourse/note-thumbs/eprogramming-with-python-semester---6.svg",
-        "category": "notes",
-        "tags": [
-            "EProgramming with Python",
-            "Semester - 6",
-            "Third Year Diploma",
-            "MSBTE",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-29"
     },
     {
         "title": "DSA Handwritten Notes",
@@ -1191,7 +1266,7 @@
         "category": "subject-guide",
         "tags": [
             "311302",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1205,7 +1280,7 @@
         "category": "subject-guide",
         "tags": [
             "311305",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1219,7 +1294,7 @@
         "category": "subject-guide",
         "tags": [
             "311303",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1233,7 +1308,7 @@
         "category": "subject-guide",
         "tags": [
             "311008",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1247,7 +1322,7 @@
         "category": "subject-guide",
         "tags": [
             "311002",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1261,7 +1336,7 @@
         "category": "subject-guide",
         "tags": [
             "311001",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1275,7 +1350,7 @@
         "category": "subject-guide",
         "tags": [
             "311003",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 1",
             "K-Scheme"
         ],
@@ -1302,7 +1377,7 @@
         "category": "subject-guide",
         "tags": [
             "312001",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1316,7 +1391,7 @@
         "category": "subject-guide",
         "tags": [
             "312002",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1330,7 +1405,7 @@
         "category": "subject-guide",
         "tags": [
             "312003",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1344,7 +1419,7 @@
         "category": "subject-guide",
         "tags": [
             "312004",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1358,7 +1433,7 @@
         "category": "subject-guide",
         "tags": [
             "312301",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1372,7 +1447,7 @@
         "category": "subject-guide",
         "tags": [
             "312302",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1386,7 +1461,7 @@
         "category": "subject-guide",
         "tags": [
             "312303",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 2",
             "K-Scheme"
         ],
@@ -1413,7 +1488,7 @@
         "category": "subject-guide",
         "tags": [
             "313301",
-            "Computer Technology",
+            "Information Technology",
             "Semester 3",
             "K-Scheme"
         ],
@@ -1427,7 +1502,7 @@
         "category": "subject-guide",
         "tags": [
             "313302",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 3",
             "K-Scheme"
         ],
@@ -1441,7 +1516,7 @@
         "category": "subject-guide",
         "tags": [
             "313304",
-            "Computer Technology",
+            "Information Technology",
             "Semester 3",
             "K-Scheme"
         ],
@@ -1469,7 +1544,7 @@
         "category": "subject-guide",
         "tags": [
             "313002",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 3",
             "K-Scheme"
         ],
@@ -1496,7 +1571,7 @@
         "category": "subject-guide",
         "tags": [
             "314301",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 4",
             "K-Scheme"
         ],
@@ -1510,7 +1585,7 @@
         "category": "subject-guide",
         "tags": [
             "314318",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 4",
             "K-Scheme"
         ],
@@ -1524,21 +1599,21 @@
         "category": "subject-guide",
         "tags": [
             "314004",
-            "Computer Technology",
+            "Information Technology",
             "Semester 4",
             "K-Scheme"
         ],
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "UI UX DESIGN (314005)",
-        "description": "Syllabus, Notes and Important Questions for UI UX DESIGN.",
+        "title": "UI_UX DESIGN (314005)",
+        "description": "Syllabus, Notes and Important Questions for UI_UX DESIGN.",
         "url": "/Branches/314005-ui-ux-design.html",
         "thumbnail": "/Branches/media/314005-ui-ux-design.svg",
         "category": "subject-guide",
         "tags": [
             "314005",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 4",
             "K-Scheme"
         ],
@@ -1565,7 +1640,7 @@
         "category": "subject-guide",
         "tags": [
             "315002",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 5",
             "K-Scheme"
         ],
@@ -1579,7 +1654,7 @@
         "category": "subject-guide",
         "tags": [
             "315003",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 5",
             "K-Scheme"
         ],
@@ -1600,14 +1675,14 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "Elective: 315321-ADVANCE COMPUTER NETWORK ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 315321-ADVANCE COMPUTER NETWORK.",
+        "title": "Elective: 315321 - ADVANCE COMPUTER NETWORK ()",
+        "description": "Syllabus, Notes and Important Questions for Elective: 315321 - ADVANCE COMPUTER NETWORK.",
         "url": "/Branches/elective-315321-advance-computer-network.html",
         "thumbnail": "/Branches/media/elective-315321-advance-computer-network.svg",
         "category": "subject-guide",
         "tags": [
             "",
-            "Computer Technology",
+            "Information Technology",
             "Semester 5",
             "K-Scheme"
         ],
@@ -1628,14 +1703,14 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "Elective: 315326-DATA ANALYTICS ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 315326-DATA ANALYTICS.",
+        "title": "Elective: 315326 - DATA ANALYTICS ()",
+        "description": "Syllabus, Notes and Important Questions for Elective: 315326 - DATA ANALYTICS.",
         "url": "/Branches/elective-315326-data-analytics.html",
         "thumbnail": "/Branches/media/elective-315326-data-analytics.svg",
         "category": "subject-guide",
         "tags": [
             "",
-            "Computer Technology",
+            "Information Technology",
             "Semester 5",
             "K-Scheme"
         ],
@@ -1662,7 +1737,7 @@
         "category": "subject-guide",
         "tags": [
             "315301",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1676,7 +1751,7 @@
         "category": "subject-guide",
         "tags": [
             "316313",
-            "Computer Technology",
+            "Information Technology",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1704,7 +1779,7 @@
         "category": "subject-guide",
         "tags": [
             "316005",
-            "Computer Technology",
+            "Information Technology",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1718,7 +1793,7 @@
         "category": "subject-guide",
         "tags": [
             "316006",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1732,7 +1807,7 @@
         "category": "subject-guide",
         "tags": [
             "316004",
-            "Computer Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1746,7 +1821,7 @@
         "category": "subject-guide",
         "tags": [
             "",
-            "Computer Technology",
+            "Information Technology",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1760,7 +1835,7 @@
         "category": "subject-guide",
         "tags": [
             "",
-            "Computer Technology",
+            "Information Technology",
             "Semester 6",
             "K-Scheme"
         ],
@@ -1807,62 +1882,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING GRAPHICS (311008)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
-        "url": "/Branches/311008-engineering-graphics.html",
-        "thumbnail": "/Branches/media/311008-engineering-graphics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311008",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "ENGINEERING WORKSHOP PRACTICE (311007)",
         "description": "Syllabus, Notes and Important Questions for ENGINEERING WORKSHOP PRACTICE.",
         "url": "/Branches/311007-engineering-workshop-practice.html",
@@ -1877,68 +1896,12 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
-            "Electronics and Telecommunication",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Electronics and Telecommunication Semester 2",
         "description": "Download all subjects syllabus and notes for Electronics and Telecommunication Semester 2.",
         "url": "/Branches/ETC-Engineering-Semester-2.html",
         "thumbnail": "/Branches/media/ETC-Engineering-Semester-2.svg",
         "category": "subject-guide",
         "tags": [
-            "Electronics and Telecommunication",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROFESSIONAL COMMUNICATION (312002)",
-        "description": "Syllabus, Notes and Important Questions for PROFESSIONAL COMMUNICATION.",
-        "url": "/Branches/312002-professional-communication.html",
-        "thumbnail": "/Branches/media/312002-professional-communication.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312002",
-            "Electronics and Telecommunication",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SOCIAL AND LIFE SKILLS (312003)",
-        "description": "Syllabus, Notes and Important Questions for SOCIAL AND LIFE SKILLS.",
-        "url": "/Branches/312003-social-and-life-skills.html",
-        "thumbnail": "/Branches/media/312003-social-and-life-skills.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312003",
             "Electronics and Telecommunication",
             "Semester 2",
             "K-Scheme"
@@ -1967,20 +1930,6 @@
         "category": "subject-guide",
         "tags": [
             "312009",
-            "Electronics and Telecommunication",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "APPLIED MATHEMATICS (312301)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED MATHEMATICS.",
-        "url": "/Branches/312301-applied-mathematics.html",
-        "thumbnail": "/Branches/media/312301-applied-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312301",
             "Electronics and Telecommunication",
             "Semester 2",
             "K-Scheme"
@@ -2085,20 +2034,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
-            "Electronics and Telecommunication",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "BASIC PYTHON PROGRAMMING (313011)",
         "description": "Syllabus, Notes and Important Questions for BASIC PYTHON PROGRAMMING.",
         "url": "/Branches/313011-basic-python-programming.html",
@@ -2106,8 +2041,8 @@
         "category": "subject-guide",
         "tags": [
             "313011",
-            "Electronics and Telecommunication",
-            "Semester 3",
+            "Electrical Engineering",
+            "Semester 6",
             "K-Scheme"
         ],
         "dateAdded": "2026-01-06"
@@ -2133,20 +2068,6 @@
         "thumbnail": "/Branches/media/ETC-Engineering-Semester-4.svg",
         "category": "subject-guide",
         "tags": [
-            "Electronics and Telecommunication",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
             "Electronics and Telecommunication",
             "Semester 4",
             "K-Scheme"
@@ -2265,42 +2186,14 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS (315002)",
-        "description": "Syllabus, Notes and Important Questions for ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS.",
-        "url": "/Branches/315002-entrepreneurship-development-and-startups.html",
-        "thumbnail": "/Branches/media/315002-entrepreneurship-development-and-startups.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315002",
-            "Electronics and Telecommunication",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Electronics and Telecommunication",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "INTERNSHIP (12 WEEKS) (315004)",
-        "description": "Syllabus, Notes and Important Questions for INTERNSHIP (12 WEEKS).",
+        "title": "INTERNSHIP(12 WEEKS) (315004)",
+        "description": "Syllabus, Notes and Important Questions for INTERNSHIP(12 WEEKS).",
         "url": "/Branches/315004-internship-12-weeks.html",
         "thumbnail": "/Branches/media/315004-internship-12-weeks.svg",
         "category": "subject-guide",
         "tags": [
             "315004",
-            "Electronics and Telecommunication",
+            "Electrical Engineering",
             "Semester 5",
             "K-Scheme"
         ],
@@ -2362,20 +2255,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
-            "Electronics and Telecommunication",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "EMERGING TRENDS IN ELECTRONICS (316337)",
         "description": "Syllabus, Notes and Important Questions for EMERGING TRENDS IN ELECTRONICS.",
         "url": "/Branches/316337-emerging-trends-in-electronics.html",
@@ -2411,20 +2290,6 @@
         "category": "subject-guide",
         "tags": [
             "316338",
-            "Electronics and Telecommunication",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
             "Electronics and Telecommunication",
             "Semester 6",
             "K-Scheme"
@@ -2500,208 +2365,12 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING GRAPHICS (311008)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
-        "url": "/Branches/311008-engineering-graphics.html",
-        "thumbnail": "/Branches/media/311008-engineering-graphics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311008",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING WORKSHOP PRACTICE (311002)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING WORKSHOP PRACTICE.",
-        "url": "/Branches/311002-engineering-workshop-practice.html",
-        "thumbnail": "/Branches/media/311002-engineering-workshop-practice.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311002",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
-            "Information Technology",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Information Technology Semester 2",
         "description": "Download all subjects syllabus and notes for Information Technology Semester 2.",
         "url": "/Branches/Information-Technology-Semester-2.html",
         "thumbnail": "/Branches/media/Information-Technology-Semester-2.svg",
         "category": "subject-guide",
         "tags": [
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "LINUX BASICS (312001)",
-        "description": "Syllabus, Notes and Important Questions for LINUX BASICS.",
-        "url": "/Branches/312001-linux-basics.html",
-        "thumbnail": "/Branches/media/312001-linux-basics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312001",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROFESSIONAL COMMUNICATION (312002)",
-        "description": "Syllabus, Notes and Important Questions for PROFESSIONAL COMMUNICATION.",
-        "url": "/Branches/312002-professional-communication.html",
-        "thumbnail": "/Branches/media/312002-professional-communication.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312002",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SOCIAL AND LIFE SKILLS (312003)",
-        "description": "Syllabus, Notes and Important Questions for SOCIAL AND LIFE SKILLS.",
-        "url": "/Branches/312003-social-and-life-skills.html",
-        "thumbnail": "/Branches/media/312003-social-and-life-skills.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312003",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "WEB PAGE DESIGNING (312004)",
-        "description": "Syllabus, Notes and Important Questions for WEB PAGE DESIGNING.",
-        "url": "/Branches/312004-web-page-designing.html",
-        "thumbnail": "/Branches/media/312004-web-page-designing.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312004",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "APPLIED MATHEMATICS (312301)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED MATHEMATICS.",
-        "url": "/Branches/312301-applied-mathematics.html",
-        "thumbnail": "/Branches/media/312301-applied-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312301",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING (312302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC ELECTRICAL AND ELECTRONICS ENGINEERING.",
-        "url": "/Branches/312302-basic-electrical-and-electronics-engineering.html",
-        "thumbnail": "/Branches/media/312302-basic-electrical-and-electronics-engineering.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312302",
-            "Information Technology",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROGRAMMING IN C (312303)",
-        "description": "Syllabus, Notes and Important Questions for PROGRAMMING IN C.",
-        "url": "/Branches/312303-programming-in-c.html",
-        "thumbnail": "/Branches/media/312303-programming-in-c.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312303",
             "Information Technology",
             "Semester 2",
             "K-Scheme"
@@ -2722,48 +2391,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "DATA STRUCTURE USING C (313301)",
-        "description": "Syllabus, Notes and Important Questions for DATA STRUCTURE USING C.",
-        "url": "/Branches/313301-data-structure-using-c.html",
-        "thumbnail": "/Branches/media/313301-data-structure-using-c.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313301",
-            "Information Technology",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "DATABASE MANAGEMENT SYSTEM (313302)",
-        "description": "Syllabus, Notes and Important Questions for DATABASE MANAGEMENT SYSTEM.",
-        "url": "/Branches/313302-database-management-system.html",
-        "thumbnail": "/Branches/media/313302-database-management-system.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313302",
-            "Information Technology",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "OBJECT ORIENTED PROGRAMMING USING C++ (313304)",
-        "description": "Syllabus, Notes and Important Questions for OBJECT ORIENTED PROGRAMMING USING C++.",
-        "url": "/Branches/313304-object-oriented-programming-using-c.html",
-        "thumbnail": "/Branches/media/313304-object-oriented-programming-using-c.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313304",
-            "Information Technology",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "DIGITAL TECHNIQUES AND MICROPROCESSORS (313305)",
         "description": "Syllabus, Notes and Important Questions for DIGITAL TECHNIQUES AND MICROPROCESSORS.",
         "url": "/Branches/313305-digital-techniques-and-microprocessors.html",
@@ -2771,20 +2398,6 @@
         "category": "subject-guide",
         "tags": [
             "313305",
-            "Information Technology",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
             "Information Technology",
             "Semester 3",
             "K-Scheme"
@@ -2819,34 +2432,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
-            "Information Technology",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "DATA COMMUNICATION AND COMPUTER NETWORK (314318)",
-        "description": "Syllabus, Notes and Important Questions for DATA COMMUNICATION AND COMPUTER NETWORK.",
-        "url": "/Branches/314318-data-communication-and-computer-network.html",
-        "thumbnail": "/Branches/media/314318-data-communication-and-computer-network.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314318",
-            "Information Technology",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "INFORMATION SECURITY (314319)",
         "description": "Syllabus, Notes and Important Questions for INFORMATION SECURITY.",
         "url": "/Branches/314319-information-security.html",
@@ -2854,20 +2439,6 @@
         "category": "subject-guide",
         "tags": [
             "314319",
-            "Information Technology",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PYTHON PROGRAMMING (314004)",
-        "description": "Syllabus, Notes and Important Questions for PYTHON PROGRAMMING.",
-        "url": "/Branches/314004-python-programming.html",
-        "thumbnail": "/Branches/media/314004-python-programming.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314004",
             "Information Technology",
             "Semester 4",
             "K-Scheme"
@@ -2916,62 +2487,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS (315002)",
-        "description": "Syllabus, Notes and Important Questions for ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS.",
-        "url": "/Branches/315002-entrepreneurship-development-and-startups.html",
-        "thumbnail": "/Branches/media/315002-entrepreneurship-development-and-startups.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315002",
-            "Information Technology",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Information Technology",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "INTERNSHIP (12 WEEKS) (315004)",
-        "description": "Syllabus, Notes and Important Questions for INTERNSHIP (12 WEEKS).",
-        "url": "/Branches/315004-internship-12-weeks.html",
-        "thumbnail": "/Branches/media/315004-internship-12-weeks.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315004",
-            "Information Technology",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 315321 - ADVANCE COMPUTER NETWORK ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 315321 - ADVANCE COMPUTER NETWORK.",
-        "url": "/Branches/elective-315321-advance-computer-network.html",
-        "thumbnail": "/Branches/media/elective-315321-advance-computer-network.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
-            "Information Technology",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Elective: 315324 - ADVANCE DATABASE MANAGEMENT ()",
         "description": "Syllabus, Notes and Important Questions for Elective: 315324 - ADVANCE DATABASE MANAGEMENT.",
         "url": "/Branches/elective-315324-advance-database-management.html",
@@ -2979,21 +2494,7 @@
         "category": "subject-guide",
         "tags": [
             "",
-            "Information Technology",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 315326 - DATA ANALYTICS ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 315326 - DATA ANALYTICS.",
-        "url": "/Branches/elective-315326-data-analytics.html",
-        "thumbnail": "/Branches/media/elective-315326-data-analytics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
-            "Information Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 5",
             "K-Scheme"
         ],
@@ -3006,34 +2507,6 @@
         "thumbnail": "/Branches/media/Information-Technology-Semester-6.svg",
         "category": "subject-guide",
         "tags": [
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "EMERGING TRENDS IN COMPUTER ENGINEERING AND INFORMATION TECHNOLOGY (316313)",
-        "description": "Syllabus, Notes and Important Questions for EMERGING TRENDS IN COMPUTER ENGINEERING AND INFORMATION TECHNOLOGY.",
-        "url": "/Branches/316313-emerging-trends-in-computer-engineering-and-information-technology.html",
-        "thumbnail": "/Branches/media/316313-emerging-trends-in-computer-engineering-and-information-technology.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316313",
             "Information Technology",
             "Semester 6",
             "K-Scheme"
@@ -3055,84 +2528,14 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "CLIENT SIDE SCRIPTING (316005)",
-        "description": "Syllabus, Notes and Important Questions for CLIENT SIDE SCRIPTING.",
-        "url": "/Branches/316005-client-side-scripting.html",
-        "thumbnail": "/Branches/media/316005-client-side-scripting.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316005",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "MOBILE APPLICATION DEVELOPMENT (316006)",
-        "description": "Syllabus, Notes and Important Questions for MOBILE APPLICATION DEVELOPMENT.",
-        "url": "/Branches/316006-mobile-application-development.html",
-        "thumbnail": "/Branches/media/316006-mobile-application-development.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316006",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 316315-DIGITAL FORENSIC AND HACKING TECHNIQUES ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 316315-DIGITAL FORENSIC AND HACKING TECHNIQUES.",
-        "url": "/Branches/elective-316315-digital-forensic-and-hacking-techniques.html",
-        "thumbnail": "/Branches/media/elective-316315-digital-forensic-and-hacking-techniques.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 316316-MACHINE LEARNING ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 316316-MACHINE LEARNING.",
-        "url": "/Branches/elective-316316-machine-learning.html",
-        "thumbnail": "/Branches/media/elective-316316-machine-learning.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
-            "Information Technology",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 316321-DATA WAREHOUSING WITH MINING TECHNIQUES ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 316321-DATA WAREHOUSING WITH MINING TECHNIQUES.",
+        "title": "Elective: 316321 - DATA WAREHOUSING WITH MINING TECHNIQUES ()",
+        "description": "Syllabus, Notes and Important Questions for Elective: 316321 - DATA WAREHOUSING WITH MINING TECHNIQUES.",
         "url": "/Branches/elective-316321-data-warehousing-with-mining-techniques.html",
         "thumbnail": "/Branches/media/elective-316321-data-warehousing-with-mining-techniques.svg",
         "category": "subject-guide",
         "tags": [
             "",
-            "Information Technology",
+            "Artificial Intelligence & Machine Learning",
             "Semester 6",
             "K-Scheme"
         ],
@@ -3165,48 +2568,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Mechanical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Mechanical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Mechanical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "ENGINEERING GRAPHICS (311006)",
         "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
         "url": "/Branches/311006-engineering-graphics.html",
@@ -3214,7 +2575,7 @@
         "category": "subject-guide",
         "tags": [
             "311006",
-            "Mechanical Engineering",
+            "Electrical Engineering",
             "Semester 1",
             "K-Scheme"
         ],
@@ -3228,35 +2589,7 @@
         "category": "subject-guide",
         "tags": [
             "311005",
-            "Mechanical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Mechanical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
-            "Mechanical Engineering",
+            "Electrical Engineering",
             "Semester 1",
             "K-Scheme"
         ],
@@ -3276,48 +2609,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "PROFESSIONAL COMMUNICATION (312002)",
-        "description": "Syllabus, Notes and Important Questions for PROFESSIONAL COMMUNICATION.",
-        "url": "/Branches/312002-professional-communication.html",
-        "thumbnail": "/Branches/media/312002-professional-communication.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312002",
-            "Mechanical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SOCIAL AND LIFE SKILLS (312003)",
-        "description": "Syllabus, Notes and Important Questions for SOCIAL AND LIFE SKILLS.",
-        "url": "/Branches/312003-social-and-life-skills.html",
-        "thumbnail": "/Branches/media/312003-social-and-life-skills.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312003",
-            "Mechanical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "APPLIED MATHEMATICS (312301)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED MATHEMATICS.",
-        "url": "/Branches/312301-applied-mathematics.html",
-        "thumbnail": "/Branches/media/312301-applied-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312301",
-            "Mechanical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "APPLIED SCIENCE (312308)",
         "description": "Syllabus, Notes and Important Questions for APPLIED SCIENCE.",
         "url": "/Branches/312308-applied-science.html",
@@ -3325,7 +2616,7 @@
         "category": "subject-guide",
         "tags": [
             "312308",
-            "Mechanical Engineering",
+            "Electrical Engineering",
             "Semester 2",
             "K-Scheme"
         ],
@@ -3394,7 +2685,7 @@
         "category": "subject-guide",
         "tags": [
             "313308",
-            "Mechanical Engineering",
+            "Civil Engineering",
             "Semester 3",
             "K-Scheme"
         ],
@@ -3457,20 +2748,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
-            "Mechanical Engineering",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "COMPUTER AIDED DRAFTING (313006)",
         "description": "Syllabus, Notes and Important Questions for COMPUTER AIDED DRAFTING.",
         "url": "/Branches/313006-computer-aided-drafting.html",
@@ -3505,20 +2782,6 @@
         "thumbnail": "/Branches/media/Mechanical-Engineering-Semester-4.svg",
         "category": "subject-guide",
         "tags": [
-            "Mechanical Engineering",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
             "Mechanical Engineering",
             "Semester 4",
             "K-Scheme"
@@ -3679,34 +2942,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Mechanical Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "INTERNSHIP (12 WEEKS) (315004)",
-        "description": "Syllabus, Notes and Important Questions for INTERNSHIP (12 WEEKS).",
-        "url": "/Branches/315004-internship-12-weeks.html",
-        "thumbnail": "/Branches/media/315004-internship-12-weeks.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315004",
-            "Mechanical Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Elective: 315367 - PRODUCT DESIGN AND DEVELOPMENT ()",
         "description": "Syllabus, Notes and Important Questions for Elective: 315367 - PRODUCT DESIGN AND DEVELOPMENT.",
         "url": "/Branches/elective-315367-product-design-and-development.html",
@@ -3755,20 +2990,6 @@
         "thumbnail": "/Branches/media/Mechanical-Engineering-Semester-6.svg",
         "category": "subject-guide",
         "tags": [
-            "Mechanical Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
             "Mechanical Engineering",
             "Semester 6",
             "K-Scheme"
@@ -3825,20 +3046,6 @@
         "category": "subject-guide",
         "tags": [
             "316013",
-            "Mechanical Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
             "Mechanical Engineering",
             "Semester 6",
             "K-Scheme"
@@ -3914,62 +3121,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING GRAPHICS (311006)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
-        "url": "/Branches/311006-engineering-graphics.html",
-        "thumbnail": "/Branches/media/311006-engineering-graphics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311006",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "CIVIL ENGINEERING WORKSHOP (311010)",
         "description": "Syllabus, Notes and Important Questions for CIVIL ENGINEERING WORKSHOP.",
         "url": "/Branches/311010-civil-engineering-workshop.html",
@@ -3977,34 +3128,6 @@
         "category": "subject-guide",
         "tags": [
             "311010",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Civil Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
             "Civil Engineering",
             "Semester 1",
             "K-Scheme"
@@ -4136,20 +3259,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "STRENGTH OF MATERIALS (313308)",
-        "description": "Syllabus, Notes and Important Questions for STRENGTH OF MATERIALS.",
-        "url": "/Branches/313308-strength-of-materials.html",
-        "thumbnail": "/Branches/media/313308-strength-of-materials.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313308",
-            "Civil Engineering",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "ADVANCED SURVEYING (313321)",
         "description": "Syllabus, Notes and Important Questions for ADVANCED SURVEYING.",
         "url": "/Branches/313321-advanced-surveying.html",
@@ -4192,20 +3301,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
-            "Civil Engineering",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "BUILDING PLANNING & DRAWING WITH CAD (313009)",
         "description": "Syllabus, Notes and Important Questions for BUILDING PLANNING & DRAWING WITH CAD.",
         "url": "/Branches/313009-building-planning-drawing-with-cad.html",
@@ -4240,20 +3335,6 @@
         "thumbnail": "/Branches/media/Civil-Semester-4.svg",
         "category": "subject-guide",
         "tags": [
-            "Civil Engineering",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
             "Civil Engineering",
             "Semester 4",
             "K-Scheme"
@@ -4386,48 +3467,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS (315002)",
-        "description": "Syllabus, Notes and Important Questions for ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS.",
-        "url": "/Branches/315002-entrepreneurship-development-and-startups.html",
-        "thumbnail": "/Branches/media/315002-entrepreneurship-development-and-startups.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315002",
-            "Civil Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Civil Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "INTERNSHIP (12 WEEKS) (315004)",
-        "description": "Syllabus, Notes and Important Questions for INTERNSHIP (12 WEEKS).",
-        "url": "/Branches/315004-internship-12-weeks.html",
-        "thumbnail": "/Branches/media/315004-internship-12-weeks.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315004",
-            "Civil Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Elective: 315316- ENERGY CONSERVATION AND GREEN BUILDING ()",
         "description": "Syllabus, Notes and Important Questions for Elective: 315316- ENERGY CONSERVATION AND GREEN BUILDING.",
         "url": "/Branches/elective-315316-energy-conservation-and-green-building.html",
@@ -4483,20 +3522,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
-            "Civil Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "CONTRACTS AND BILLING (316307)",
         "description": "Syllabus, Notes and Important Questions for CONTRACTS AND BILLING.",
         "url": "/Branches/316307-contracts-and-billing.html",
@@ -4532,20 +3557,6 @@
         "category": "subject-guide",
         "tags": [
             "316309",
-            "Civil Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
             "Civil Engineering",
             "Semester 6",
             "K-Scheme"
@@ -4621,138 +3632,12 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING GRAPHICS (311006)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
-        "url": "/Branches/311006-engineering-graphics.html",
-        "thumbnail": "/Branches/media/311006-engineering-graphics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311006",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING WORKSHOP PRACTICE (311005)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING WORKSHOP PRACTICE.",
-        "url": "/Branches/311005-engineering-workshop-practice.html",
-        "thumbnail": "/Branches/media/311005-engineering-workshop-practice.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311005",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
-            "Electrical Engineering",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Electrical Engineering Semester 2",
         "description": "Download all subjects syllabus and notes for Electrical Engineering Semester 2.",
         "url": "/Branches/Electrical-Engineering-Semester-2.html",
         "thumbnail": "/Branches/media/Electrical-Engineering-Semester-2.svg",
         "category": "subject-guide",
         "tags": [
-            "Electrical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROFESSIONAL COMMUNICATION (312002)",
-        "description": "Syllabus, Notes and Important Questions for PROFESSIONAL COMMUNICATION.",
-        "url": "/Branches/312002-professional-communication.html",
-        "thumbnail": "/Branches/media/312002-professional-communication.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312002",
-            "Electrical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SOCIAL AND LIFE SKILLS (312003)",
-        "description": "Syllabus, Notes and Important Questions for SOCIAL AND LIFE SKILLS.",
-        "url": "/Branches/312003-social-and-life-skills.html",
-        "thumbnail": "/Branches/media/312003-social-and-life-skills.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312003",
             "Electrical Engineering",
             "Semester 2",
             "K-Scheme"
@@ -4767,34 +3652,6 @@
         "category": "subject-guide",
         "tags": [
             "312006",
-            "Electrical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "APPLIED MATHEMATICS (312301)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED MATHEMATICS.",
-        "url": "/Branches/312301-applied-mathematics.html",
-        "thumbnail": "/Branches/media/312301-applied-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312301",
-            "Electrical Engineering",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "APPLIED SCIENCE (312308)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED SCIENCE.",
-        "url": "/Branches/312308-applied-science.html",
-        "thumbnail": "/Branches/media/312308-applied-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312308",
             "Electrical Engineering",
             "Semester 2",
             "K-Scheme"
@@ -4899,20 +3756,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
-            "Electrical Engineering",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "ELECTRICAL MATERIAL AND WIRING PRACTICE (313015)",
         "description": "Syllabus, Notes and Important Questions for ELECTRICAL MATERIAL AND WIRING PRACTICE.",
         "url": "/Branches/313015-electrical-material-and-wiring-practice.html",
@@ -4933,20 +3776,6 @@
         "thumbnail": "/Branches/media/Electrical-Engineering-Semester-4.svg",
         "category": "subject-guide",
         "tags": [
-            "Electrical Engineering",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
             "Electrical Engineering",
             "Semester 4",
             "K-Scheme"
@@ -5065,48 +3894,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS (315002)",
-        "description": "Syllabus, Notes and Important Questions for ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS.",
-        "url": "/Branches/315002-entrepreneurship-development-and-startups.html",
-        "thumbnail": "/Branches/media/315002-entrepreneurship-development-and-startups.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315002",
-            "Electrical Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Electrical Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "INTERNSHIP(12 WEEKS) (315004)",
-        "description": "Syllabus, Notes and Important Questions for INTERNSHIP(12 WEEKS).",
-        "url": "/Branches/315004-internship-12-weeks.html",
-        "thumbnail": "/Branches/media/315004-internship-12-weeks.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315004",
-            "Electrical Engineering",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Elective: 315335 - ELECTRIC VEHICLE TECHNOLOGY ()",
         "description": "Syllabus, Notes and Important Questions for Elective: 315335 - ELECTRIC VEHICLE TECHNOLOGY.",
         "url": "/Branches/elective-315335-electric-vehicle-technology.html",
@@ -5162,20 +3949,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
-            "Electrical Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "EMERGING TRENDS IN ELECTRICAL ENGINEERING (3316326)",
         "description": "Syllabus, Notes and Important Questions for EMERGING TRENDS IN ELECTRICAL ENGINEERING.",
         "url": "/Branches/3316326-emerging-trends-in-electrical-engineering.html",
@@ -5211,34 +3984,6 @@
         "category": "subject-guide",
         "tags": [
             "316328",
-            "Electrical Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC PYTHON PROGRAMMING (313011)",
-        "description": "Syllabus, Notes and Important Questions for BASIC PYTHON PROGRAMMING.",
-        "url": "/Branches/313011-basic-python-programming.html",
-        "thumbnail": "/Branches/media/313011-basic-python-programming.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313011",
-            "Electrical Engineering",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
             "Electrical Engineering",
             "Semester 6",
             "K-Scheme"
@@ -5328,104 +4073,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "BASIC MATHEMATICS (311302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC MATHEMATICS.",
-        "url": "/Branches/311302-basic-mathematics.html",
-        "thumbnail": "/Branches/media/311302-basic-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311302",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC SCIENCE (311305)",
-        "description": "Syllabus, Notes and Important Questions for BASIC SCIENCE.",
-        "url": "/Branches/311305-basic-science.html",
-        "thumbnail": "/Branches/media/311305-basic-science.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311305",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "COMMUNICATION SKILLS (ENGLISH) (311303)",
-        "description": "Syllabus, Notes and Important Questions for COMMUNICATION SKILLS (ENGLISH).",
-        "url": "/Branches/311303-communication-skills-english.html",
-        "thumbnail": "/Branches/media/311303-communication-skills-english.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311303",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING GRAPHICS (311008)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING GRAPHICS.",
-        "url": "/Branches/311008-engineering-graphics.html",
-        "thumbnail": "/Branches/media/311008-engineering-graphics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311008",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "ENGINEERING WORKSHOP PRACTICE (311002)",
-        "description": "Syllabus, Notes and Important Questions for ENGINEERING WORKSHOP PRACTICE.",
-        "url": "/Branches/311002-engineering-workshop-practice.html",
-        "thumbnail": "/Branches/media/311002-engineering-workshop-practice.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311002",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "FUNDAMENTALS OF ICT (311001)",
-        "description": "Syllabus, Notes and Important Questions for FUNDAMENTALS OF ICT.",
-        "url": "/Branches/311001-fundamentals-of-ict.html",
-        "thumbnail": "/Branches/media/311001-fundamentals-of-ict.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311001",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "YOGA AND MEDITATION (311003)",
-        "description": "Syllabus, Notes and Important Questions for YOGA AND MEDITATION.",
-        "url": "/Branches/311003-yoga-and-meditation.html",
-        "thumbnail": "/Branches/media/311003-yoga-and-meditation.svg",
-        "category": "subject-guide",
-        "tags": [
-            "311003",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 1",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Artificial Intelligence & Machine Learning Semester 2",
         "description": "Download all subjects syllabus and notes for Artificial Intelligence & Machine Learning Semester 2.",
         "url": "/Branches/AI-ML-Semester-2.html",
@@ -5439,124 +4086,12 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "APPLIED MATHEMATICS (312301)",
-        "description": "Syllabus, Notes and Important Questions for APPLIED MATHEMATICS.",
-        "url": "/Branches/312301-applied-mathematics.html",
-        "thumbnail": "/Branches/media/312301-applied-mathematics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312301",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING (312302)",
-        "description": "Syllabus, Notes and Important Questions for BASIC ELECTRICAL AND ELECTRONICS ENGINEERING.",
-        "url": "/Branches/312302-basic-electrical-and-electronics-engineering.html",
-        "thumbnail": "/Branches/media/312302-basic-electrical-and-electronics-engineering.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312302",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROGRAMMING IN C (312303)",
-        "description": "Syllabus, Notes and Important Questions for PROGRAMMING IN C.",
-        "url": "/Branches/312303-programming-in-c.html",
-        "thumbnail": "/Branches/media/312303-programming-in-c.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312303",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "LINUX BASICS (312001)",
-        "description": "Syllabus, Notes and Important Questions for LINUX BASICS.",
-        "url": "/Branches/312001-linux-basics.html",
-        "thumbnail": "/Branches/media/312001-linux-basics.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312001",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "PROFESSIONAL COMMUNICATION (312002)",
-        "description": "Syllabus, Notes and Important Questions for PROFESSIONAL COMMUNICATION.",
-        "url": "/Branches/312002-professional-communication.html",
-        "thumbnail": "/Branches/media/312002-professional-communication.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312002",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SOCIAL AND LIFE SKILLS (312003)",
-        "description": "Syllabus, Notes and Important Questions for SOCIAL AND LIFE SKILLS.",
-        "url": "/Branches/312003-social-and-life-skills.html",
-        "thumbnail": "/Branches/media/312003-social-and-life-skills.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312003",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "WEB PAGE DESIGNING (312004)",
-        "description": "Syllabus, Notes and Important Questions for WEB PAGE DESIGNING.",
-        "url": "/Branches/312004-web-page-designing.html",
-        "thumbnail": "/Branches/media/312004-web-page-designing.svg",
-        "category": "subject-guide",
-        "tags": [
-            "312004",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 2",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Artificial Intelligence & Machine Learning Semester 3",
         "description": "Download all subjects syllabus and notes for Artificial Intelligence & Machine Learning Semester 3.",
         "url": "/Branches/AI-ML-Semester-3.html",
         "thumbnail": "/Branches/media/AI-ML-Semester-3.svg",
         "category": "subject-guide",
         "tags": [
-            "Artificial Intelligence & Machine Learning",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "DATABASE MANAGEMENT SYSTEM (313302)",
-        "description": "Syllabus, Notes and Important Questions for DATABASE MANAGEMENT SYSTEM.",
-        "url": "/Branches/313302-database-management-system.html",
-        "thumbnail": "/Branches/media/313302-database-management-system.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313302",
             "Artificial Intelligence & Machine Learning",
             "Semester 3",
             "K-Scheme"
@@ -5592,20 +4127,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ESSENCE OF INDIAN CONSTITUTION (313002)",
-        "description": "Syllabus, Notes and Important Questions for ESSENCE OF INDIAN CONSTITUTION.",
-        "url": "/Branches/313002-essence-of-indian-constitution.html",
-        "thumbnail": "/Branches/media/313002-essence-of-indian-constitution.svg",
-        "category": "subject-guide",
-        "tags": [
-            "313002",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 3",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "DATA STORY TELLING AND VISUALIZATION (313004)",
         "description": "Syllabus, Notes and Important Questions for DATA STORY TELLING AND VISUALIZATION.",
         "url": "/Branches/313004-data-story-telling-and-visualization.html",
@@ -5633,34 +4154,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENVIRONMENTAL EDUCATION AND SUSTAINABILITY (314301)",
-        "description": "Syllabus, Notes and Important Questions for ENVIRONMENTAL EDUCATION AND SUSTAINABILITY.",
-        "url": "/Branches/314301-environmental-education-and-sustainability.html",
-        "thumbnail": "/Branches/media/314301-environmental-education-and-sustainability.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314301",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "DATA COMMUNICATION AND COMPUTER NETWORK (314318)",
-        "description": "Syllabus, Notes and Important Questions for DATA COMMUNICATION AND COMPUTER NETWORK.",
-        "url": "/Branches/314318-data-communication-and-computer-network.html",
-        "thumbnail": "/Branches/media/314318-data-communication-and-computer-network.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314318",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "MATHEMATICS FOR MACHINE LEARNING (314320)",
         "description": "Syllabus, Notes and Important Questions for MATHEMATICS FOR MACHINE LEARNING.",
         "url": "/Branches/314320-mathematics-for-machine-learning.html",
@@ -5668,20 +4161,6 @@
         "category": "subject-guide",
         "tags": [
             "314320",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 4",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "UI_UX DESIGN (314005)",
-        "description": "Syllabus, Notes and Important Questions for UI_UX DESIGN.",
-        "url": "/Branches/314005-ui-ux-design.html",
-        "thumbnail": "/Branches/media/314005-ui-ux-design.svg",
-        "category": "subject-guide",
-        "tags": [
-            "314005",
             "Artificial Intelligence & Machine Learning",
             "Semester 4",
             "K-Scheme"
@@ -5716,34 +4195,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS (315002)",
-        "description": "Syllabus, Notes and Important Questions for ENTREPRENEURSHIP DEVELOPMENT AND STARTUPS.",
-        "url": "/Branches/315002-entrepreneurship-development-and-startups.html",
-        "thumbnail": "/Branches/media/315002-entrepreneurship-development-and-startups.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315002",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "SEMINAR AND PROJECT INITIATION COURSE (315003)",
-        "description": "Syllabus, Notes and Important Questions for SEMINAR AND PROJECT INITIATION COURSE.",
-        "url": "/Branches/315003-seminar-and-project-initiation-course.html",
-        "thumbnail": "/Branches/media/315003-seminar-and-project-initiation-course.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315003",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "INTERNSHIP ( 12 WEEKS) (314004)",
         "description": "Syllabus, Notes and Important Questions for INTERNSHIP ( 12 WEEKS).",
         "url": "/Branches/314004-internship-12-weeks.html",
@@ -5751,20 +4202,6 @@
         "category": "subject-guide",
         "tags": [
             "314004",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 5",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 315324 - ADVANCE DATABASE MANAGEMENT ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 315324 - ADVANCE DATABASE MANAGEMENT.",
-        "url": "/Branches/elective-315324-advance-database-management.html",
-        "thumbnail": "/Branches/media/elective-315324-advance-database-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
             "Artificial Intelligence & Machine Learning",
             "Semester 5",
             "K-Scheme"
@@ -5813,20 +4250,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "MANAGEMENT (315301)",
-        "description": "Syllabus, Notes and Important Questions for MANAGEMENT.",
-        "url": "/Branches/315301-management.html",
-        "thumbnail": "/Branches/media/315301-management.svg",
-        "category": "subject-guide",
-        "tags": [
-            "315301",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "BIG DATA ANALYTICS (316318)",
         "description": "Syllabus, Notes and Important Questions for BIG DATA ANALYTICS.",
         "url": "/Branches/316318-big-data-analytics.html",
@@ -5855,20 +4278,6 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "MOBILE APPLICATION DEVELOPMENT (316006)",
-        "description": "Syllabus, Notes and Important Questions for MOBILE APPLICATION DEVELOPMENT.",
-        "url": "/Branches/316006-mobile-application-development.html",
-        "thumbnail": "/Branches/media/316006-mobile-application-development.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316006",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "NETWORK MANAGEMENT AND ADMINISTRATION (316007)",
         "description": "Syllabus, Notes and Important Questions for NETWORK MANAGEMENT AND ADMINISTRATION.",
         "url": "/Branches/316007-network-management-and-administration.html",
@@ -5883,38 +4292,10 @@
         "dateAdded": "2026-01-06"
     },
     {
-        "title": "CAPSTONE PROJECT (316004)",
-        "description": "Syllabus, Notes and Important Questions for CAPSTONE PROJECT.",
-        "url": "/Branches/316004-capstone-project.html",
-        "thumbnail": "/Branches/media/316004-capstone-project.svg",
-        "category": "subject-guide",
-        "tags": [
-            "316004",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
         "title": "Elective: 316320 - ADVANCED ALGORITHM IN AI & ML ()",
         "description": "Syllabus, Notes and Important Questions for Elective: 316320 - ADVANCED ALGORITHM IN AI & ML.",
         "url": "/Branches/elective-316320-advanced-algorithm-in-ai-ml.html",
         "thumbnail": "/Branches/media/elective-316320-advanced-algorithm-in-ai-ml.svg",
-        "category": "subject-guide",
-        "tags": [
-            "",
-            "Artificial Intelligence & Machine Learning",
-            "Semester 6",
-            "K-Scheme"
-        ],
-        "dateAdded": "2026-01-06"
-    },
-    {
-        "title": "Elective: 316321 - DATA WAREHOUSING WITH MINING TECHNIQUES ()",
-        "description": "Syllabus, Notes and Important Questions for Elective: 316321 - DATA WAREHOUSING WITH MINING TECHNIQUES.",
-        "url": "/Branches/elective-316321-data-warehousing-with-mining-techniques.html",
-        "thumbnail": "/Branches/media/elective-316321-data-warehousing-with-mining-techniques.svg",
         "category": "subject-guide",
         "tags": [
             "",

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+    <defs>
+        <linearGradient id="bg-grad-14" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#14B8A6" />
+            <stop offset="100%" stop-color="#0D9488" />
+        </linearGradient>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        </pattern>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="12" stdDeviation="20" flood-opacity="0.25"/>
+        </filter>
+    </defs>
+    <rect width="1280" height="720" fill="url(#bg-grad-14)" />
+    <rect width="1280" height="720" fill="url(#grid)" />
+    <circle cx="1100" cy="150" r="350" fill="white" opacity="0.04" />
+    <circle cx="150" cy="650" r="250" fill="white" opacity="0.04" />
+    <path d="M0,720 L1280,450 L1280,720 Z" fill="rgba(255,255,255,0.03)" />
+    <rect x="120" y="140" width="1040" height="440" rx="40" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="2" backdrop-filter="blur(16px)" filter="url(#shadow)" />
+    <text x="640" y="250" font-family="'Inter', system-ui, sans-serif" font-weight="900" font-size="45" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="5">314301</text>
+
+    <text x="640" y="340" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="70" fill="white" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.2))">Environmental Education and</text>
+    <text x="640" y="425" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="70" fill="white" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.2))">Sustainability</text>
+    <rect x="520" y="490" width="240" height="6" rx="3" fill="white" opacity="0.6" />
+    <text x="640" y="560" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="28" fill="rgba(255,255,255,0.95)" text-anchor="middle" letter-spacing="2">MSBTE DIPLOMA QUESTION BANKS</text>
+    <text x="1150" y="680" font-family="system-ui, sans-serif" font-weight="bold" font-size="22" fill="white" opacity="0.6" text-anchor="end" letter-spacing="1">msbtenotes-info.netlify.app</text>
+</svg>
