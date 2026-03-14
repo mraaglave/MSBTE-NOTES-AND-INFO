@@ -353,9 +353,10 @@ window.saveTest = async () => {
     }
     
     const btn = document.getElementById('publishBtn');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = 'Publishing to Database...';
+    const btnTextEl = document.getElementById('publishBtnText');
+    btnTextEl.textContent = 'Saving to Database...';
     btn.disabled = true;
+    btn.classList.add('opacity-75', 'cursor-not-allowed');
 
     try {
         const payload = {
@@ -413,8 +414,9 @@ window.saveTest = async () => {
         
     } catch (err) {
         alert("Error saving test: " + err.message);
+        setFormMode(editingTestId ? 'edit' : 'create', editingTestId ? title : null);
     } finally {
-        btn.innerHTML = originalText;
+        btn.classList.remove('opacity-75', 'cursor-not-allowed');
         btn.disabled = false;
     }
 };
