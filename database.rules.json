@@ -48,7 +48,7 @@
       }
     },
     "mock_tests": {
-      ".read": "auth != null",
+      ".read": true,
       ".write": "auth != null && auth.token.email === 'bitbuster32@gmail.com'"
     },
     "mock_results": {

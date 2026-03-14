@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile & Results | MSBTE Mock Tests</title>
+    <meta name="description" content="View your MSBTE mock test performance, track your scores, and review your practice exam history.">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .font-display { font-family: 'Clash Display', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+    <nav class="bg-white shadow z-50 flex-none h-[64px] border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center text-blue-600 font-bold text-xl font-display group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2 transition-transform group-hover:scale-110" viewBox="0 0 576 512" fill="currentColor">
+                            <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/>
+                        </svg>
+                        MSBTE Notes & Info
+                    </a>
+                    <span class="hidden md:inline-block ml-3 bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">Mock Tests Profile</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Back to Tests</a>
+                    <button id="logoutBtn" class="hidden text-sm text-red-600 hover:text-red-800 font-medium bg-red-50 px-3 py-1.5 rounded-lg border border-red-100">Logout</button>
+                    <span id="userEmailDisplay" class="hidden text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-md font-semibold truncate max-w-[150px] md:max-w-xs"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex w-full relative">
+        <div id="loadingView" class="w-full flex justify-center items-center py-20">
+            <div class="flex flex-col items-center justify-center text-gray-500">
+                <svg class="w-10 h-10 animate-spin text-blue-600 mb-4" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="font-medium text-lg">Loading your profile data...</span>
+            </div>
+        </div>
+
+        <div id="profileView" class="hidden max-w-5xl mx-auto w-full px-4 py-8">
+            <h1 class="text-3xl font-display font-extrabold text-blue-600 mb-2">Student Profile</h1>
+            <p class="text-gray-600 mb-8 max-w-2xl">Track your performance across all mock tests and practice exams. Consistent practice improves your final grades!</p>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div><p class="text-gray-500 text-xs font-bold uppercase tracking-wide">Exams Taken</p><p class="text-2xl font-black text-gray-900" id="statAttempts">0</p></div>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <div><p class="text-gray-500 text-xs font-bold uppercase tracking-wide">Average Score</p><p class="text-2xl font-black text-gray-900"><span id="statAverage">0</span>%</p></div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-xl font-bold font-display text-gray-900">Your Exam History</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <thead class="bg-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Test Subject & Date</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Score</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody" class="bg-white divide-y divide-gray-100">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm font-medium">
+                © 2026 MSBTE Notes & Info - Student Portal Platform
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/profile.js"></script>
+</body>
+</html>
