@@ -19,88 +19,248 @@
             border-color: #2563eb;
             background-color: #eff6ff;
         }
+        .option-radio:checked + .option-label .radio-dot { border-color: #2563eb; }
+        .option-radio:checked + .option-label .radio-dot svg { opacity: 1; }
         .correct-answer { background-color: #dcfce7 !important; border-color: #22c55e !important; }
         .wrong-answer { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
+        .timer-danger { animation: pulse-red 1s ease-in-out infinite; }
+        @keyframes pulse-red { 0%,100%{ color: #ef4444; } 50%{ color: #fca5a5; } }
+        .nav-btn { transition: all 0.15s; }
+        .nav-btn.answered { background: #2563eb; color: #fff; border-color: #2563eb; }
+        .nav-btn.visited { background: #fff7ed; color: #ea580c; border-color: #fdba74; }
+        .nav-btn.current { box-shadow: 0 0 0 3px rgba(37,99,235,0.3); }
+        .question-block.active-q { border-color: #93c5fd; }
+        .mobile-drawer { transform: translateY(100%); transition: transform 0.3s ease; }
+        .mobile-drawer.open { transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
-    <nav class="bg-white shadow z-40 flex-none h-[64px] border-b border-gray-100 sticky top-0">
+    <!-- Sticky Nav -->
+    <nav class="bg-white shadow z-40 flex-none border-b border-gray-100 sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- App Title -->
-                <div class="font-display font-bold text-lg text-gray-800 flex items-center gap-2">
-                    <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                    </span>
-                    <span class="text-gray-900 truncate max-w-[150px] md:max-w-md" id="navTestTitle">Loading Test...</span>
+                <!-- Left: Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="hidden md:flex items-center text-blue-600 font-bold text-xl font-display group mr-3" id="exitLogoLink">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2 transition-transform group-hover:scale-110" viewBox="0 0 576 512" fill="currentColor">
+                            <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/>
+                        </svg>
+                        MSBTE Notes & Info
+                    </a>
+                    <div class="font-display font-bold text-sm md:text-base text-gray-800 flex items-center gap-2">
+                        <span class="w-7 h-7 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 md:hidden">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                        </span>
+                        <span class="truncate max-w-[120px] sm:max-w-[200px] md:max-w-md" id="navTestTitle">Loading Test...</span>
+                    </div>
                 </div>
-                <div>
-                    <a href="index.html" class="flex items-center gap-1.5 text-sm font-bold text-gray-500 hover:text-red-500 bg-gray-100 px-3 py-1.5 rounded-lg transition" onclick="return confirm('Are you sure you want to exit? Your progress will be lost.')">
+                <!-- Right: Timer + Exit -->
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Timer -->
+                    <div id="timerDisplay" class="hidden items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-lg border border-gray-200">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span id="timerText" class="font-mono font-bold text-sm text-gray-700">00:00</span>
+                    </div>
+                    <!-- Progress Badge (mobile) -->
+                    <div id="progressBadge" class="hidden sm:hidden items-center bg-blue-50 px-2 py-1 rounded-md border border-blue-100">
+                        <span class="text-xs font-bold text-blue-700"><span id="navAnswered">0</span>/<span id="navTotal">0</span></span>
+                    </div>
+                    <!-- Exit -->
+                    <button onclick="showExitModal()" class="flex items-center gap-1.5 text-sm font-bold text-gray-500 hover:text-red-500 bg-gray-100 px-3 py-1.5 rounded-lg transition">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         <span class="hidden sm:inline">Exit Test</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-8 md:py-12">
-        
-        <div id="loading" class="flex flex-col items-center justify-center py-20 text-gray-500">
-            <svg class="w-10 h-10 animate-spin text-blue-600 mb-4" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <span class="font-medium text-lg">Preparing your test environment...</span>
-        </div>
-        
-        <div id="testContainer" class="hidden">
-            <div class="mb-10 text-center">
-                <h1 id="testTitle" class="text-3xl md:text-4xl font-display font-extrabold text-blue-600 mb-3"></h1>
-                <p id="testDescription" class="text-gray-600 text-lg max-w-2xl mx-auto"></p>
+    <!-- Loading -->
+    <div id="loading" class="flex-grow flex flex-col items-center justify-center py-20 text-gray-500">
+        <svg class="w-10 h-10 animate-spin text-blue-600 mb-4" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span class="font-medium text-lg">Preparing your test environment...</span>
+    </div>
+
+    <!-- Main Content: Sidebar + Questions -->
+    <div id="testContainer" class="hidden flex-grow">
+        <div class="max-w-7xl mx-auto w-full px-4 py-6 md:py-8 flex gap-6">
+            <!-- Left: Questions Area -->
+            <div class="flex-grow min-w-0">
+                <!-- Header -->
+                <div class="mb-6 text-center md:text-left">
+                    <h1 id="testTitle" class="text-2xl md:text-3xl font-display font-extrabold text-blue-600 mb-2"></h1>
+                    <p id="testDescription" class="text-gray-500 text-sm md:text-base max-w-2xl"></p>
+                </div>
+
+                <!-- Promo Banner (if externalLink exists) -->
+                <div id="promoBanner" class="hidden mb-6">
+                    <a id="promoLink" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 hover:shadow-md transition-all group">
+                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <p id="promoText" class="text-sm font-bold text-amber-800 truncate">Study Material Available</p>
+                            <p class="text-xs text-amber-600 mt-0.5">Click to view → opens in new tab</p>
+                        </div>
+                        <svg class="w-5 h-5 text-amber-400 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Questions -->
+                <form id="testForm" class="space-y-6">
+                    <div id="questionsContainer" class="space-y-6"></div>
+
+                    <div id="submitBar" class="pt-6 pb-8 border-t border-gray-200 mt-8 sticky bottom-0 bg-gray-50/95 backdrop-blur z-30 flex flex-col sm:flex-row justify-center items-center gap-3">
+                        <button id="submitBtn" type="button" onclick="showSubmitModal()" class="w-full sm:w-auto sm:px-16 bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-xl shadow-blue-200 text-lg flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Submit Test
+                        </button>
+                    </div>
+                </form>
             </div>
 
-            <form id="testForm" onsubmit="submitTest(event)" class="space-y-8">
-                <div id="questionsContainer" class="space-y-6">
-                    <!-- Questions injected here -->
+            <!-- Right: Question Navigator Sidebar (Desktop) -->
+            <aside id="sidebarNav" class="hidden lg:block w-64 flex-shrink-0">
+                <div class="sticky top-20">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                            <h3 class="font-bold text-sm text-gray-800 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                                Question Navigator
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1">
+                                <span id="sidebarAnswered" class="font-bold text-blue-600">0</span> / <span id="sidebarTotal">0</span> answered
+                            </p>
+                        </div>
+                        <div id="sidebarGrid" class="p-3 grid grid-cols-5 gap-2 max-h-[400px] overflow-y-auto"></div>
+                        <div class="px-4 py-3 border-t border-gray-100">
+                            <div class="flex items-center gap-3 text-[10px] text-gray-500">
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-gray-200 border border-gray-300"></span>Not visited</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-orange-100 border border-orange-300"></span>Visited</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-blue-600"></span>Answered</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="pt-8 pb-12 border-t border-gray-200 mt-10 sticky bottom-0 bg-gray-50/90 backdrop-blur pb-8 z-30 flex justify-center">
-                    <button id="submitBtn" type="submit" class="w-full md:w-auto md:px-16 bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-xl shadow-blue-200 text-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Submit Test
-                    </button>
-                </div>
-            </form>
+            </aside>
         </div>
+    </div>
 
-        <!-- Results Modal -->
-        <div id="resultsModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-            <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform scale-100 transition-transform">
-                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                <h2 class="text-3xl font-bold font-display text-gray-900 mb-2">Test Completed!</h2>
-                <p class="text-gray-500 mb-8 font-medium">Your results have been securely recorded.</p>
-                
-                <div class="bg-blue-50 rounded-2xl p-6 mb-8 border border-blue-100">
-                    <div class="text-sm text-blue-600 font-bold uppercase tracking-wider mb-1">Final Score</div>
-                    <div class="text-5xl font-black text-blue-700" id="scoreDisplay"></div>
-                </div>
-                
-                <div class="flex flex-col gap-3">
-                    <button onclick="closeModalAndScroll()" class="w-full bg-gray-100 text-gray-700 font-bold py-3.5 rounded-xl hover:bg-gray-200 transition">Review Answers</button>
-                    <a href="index.html" class="block w-full bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition">Return to Dashboard</a>
-                </div>
+    <!-- Mobile Question Navigator Floating Button -->
+    <button id="mobileNavToggle" class="hidden fixed bottom-6 right-6 z-40 lg:hidden w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl shadow-blue-300 flex items-center justify-center hover:bg-blue-700 transition-all active:scale-90" onclick="toggleMobileDrawer()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+    </button>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawerOverlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden" onclick="toggleMobileDrawer()"></div>
+    <div id="mobileDrawer" class="mobile-drawer fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white rounded-t-3xl shadow-2xl border-t border-gray-200 max-h-[60vh]">
+        <div class="flex items-center justify-between px-5 py-3 border-b border-gray-100">
+            <h3 class="font-bold text-sm text-gray-800">Question Navigator</h3>
+            <div class="flex items-center gap-3">
+                <p class="text-xs text-gray-500"><span id="drawerAnswered" class="font-bold text-blue-600">0</span> / <span id="drawerTotal">0</span></p>
+                <button onclick="toggleMobileDrawer()" class="text-gray-400 hover:text-gray-600 p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
         </div>
+        <div id="drawerGrid" class="p-4 grid grid-cols-6 gap-2.5 overflow-y-auto max-h-[45vh]"></div>
+    </div>
 
-    </main>
+    <!-- Exit Confirmation Modal -->
+    <div id="exitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-6 md:p-8 max-w-sm w-full shadow-2xl text-center">
+            <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold font-display text-gray-900 mb-2">Exit Test?</h2>
+            <p class="text-gray-500 text-sm mb-2">Your progress will be lost and this attempt won't be recorded.</p>
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-3 mb-6 text-sm">
+                <p class="font-bold text-orange-800">⚠️ <span id="exitUnanswered">0</span> questions unanswered</p>
+                <p class="text-orange-600 text-xs mt-1">Time remaining: <span id="exitTimeLeft" class="font-mono font-bold">--:--</span></p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="hideExitModal()" class="flex-1 bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">Continue Test</button>
+                <button onclick="confirmExit()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-3 rounded-xl hover:bg-gray-200 transition">Exit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Confirmation Modal -->
+    <div id="submitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-6 md:p-8 max-w-sm w-full shadow-2xl text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold font-display text-gray-900 mb-2">Submit Test?</h2>
+            <p class="text-gray-500 text-sm mb-4">Once submitted, you cannot change your answers.</p>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                    <p class="text-2xl font-black text-green-700" id="submitAnsweredCount">0</p>
+                    <p class="text-xs font-bold text-green-600 uppercase tracking-wide">✅ Answered</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                    <p class="text-2xl font-black text-orange-700" id="submitUnansweredCount">0</p>
+                    <p class="text-xs font-bold text-orange-600 uppercase tracking-wide">⚠️ Unanswered</p>
+                </div>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="hideSubmitModal()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-3 rounded-xl hover:bg-gray-200 transition">Cancel</button>
+                <button onclick="executeSubmit()" id="confirmSubmitBtn" class="flex-1 bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition">Submit Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
+            <div id="resultIcon" class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-3xl font-bold font-display text-gray-900 mb-2">Test Completed!</h2>
+            <p class="text-gray-500 mb-6 font-medium">Your results have been securely recorded.</p>
+
+            <div class="bg-blue-50 rounded-2xl p-6 mb-4 border border-blue-100">
+                <div class="text-sm text-blue-600 font-bold uppercase tracking-wider mb-1">Final Score</div>
+                <div class="text-5xl font-black text-blue-700" id="scoreDisplay"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-gray-50 rounded-xl p-3 border border-gray-100">
+                    <p class="text-xs text-gray-500 font-bold uppercase">Percentage</p>
+                    <p class="text-xl font-black text-gray-900" id="percentDisplay">0%</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-3 border border-gray-100">
+                    <p class="text-xs text-gray-500 font-bold uppercase">Time Taken</p>
+                    <p class="text-xl font-black text-gray-900" id="timeTakenDisplay">--:--</p>
+                </div>
+            </div>
+
+            <!-- Promo Banner in Results -->
+            <div id="resultPromoBanner" class="hidden mb-6">
+                <a id="resultPromoLink" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-3 hover:shadow-md transition-all text-left group">
+                    <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <p id="resultPromoText" class="text-xs font-bold text-amber-800 truncate">Study Material</p>
+                    </div>
+                    <svg class="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button onclick="closeModalAndScroll()" class="w-full bg-gray-100 text-gray-700 font-bold py-3.5 rounded-xl hover:bg-gray-200 transition">Review Answers</button>
+                <a href="index.html" class="block w-full bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition">Return to Dashboard</a>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-white border-t border-gray-200 mt-auto">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <p class="text-center text-gray-400 text-sm font-medium">
-                © 2026 MSBTE Notes &amp; Info - Student Portal Platform
+                &copy; 2026 MSBTE Notes &amp; Info - Student Portal Platform
             </p>
         </div>
     </footer>

@@ -164,10 +164,12 @@ window.updateQuestion = (qIndex, field, value) => {
 };
 
 window.resetForm = () => {
-    if(confirm("Clear the entire formulate fields?")) {
+    if(confirm("Clear the entire form fields?")) {
         document.getElementById('testTitle').value = '';
         document.getElementById('testDescription').value = '';
         document.getElementById('testType').value = 'practice';
+        document.getElementById('externalLinkUrl').value = '';
+        document.getElementById('externalLinkText').value = '';
         questions = [];
         renderQuestions();
     }
@@ -266,18 +268,30 @@ window.saveTest = async () => {
     try {
         const testsRef = ref(db, 'mock_tests');
         const newTestRef = push(testsRef);
-        await set(newTestRef, {
+        const payload = {
             title: title,
             description: desc,
             type: type,
             questions: questions,
             createdAt: Date.now()
-        });
+        };
+
+        // Add external link if provided
+        const externalLink = document.getElementById('externalLinkUrl').value.trim();
+        const externalLinkText = document.getElementById('externalLinkText').value.trim();
+        if (externalLink) {
+            payload.externalLink = externalLink;
+            payload.externalLinkText = externalLinkText || 'Study Material Available';
+        }
+
+        await set(newTestRef, payload);
         
         alert("Test published successfully!");
         document.getElementById('testTitle').value = '';
         document.getElementById('testDescription').value = '';
         document.getElementById('testType').value = 'practice';
+        document.getElementById('externalLinkUrl').value = '';
+        document.getElementById('externalLinkText').value = '';
         questions = [];
         renderQuestions();
         
