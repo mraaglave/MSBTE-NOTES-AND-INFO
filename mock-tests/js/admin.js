@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app-check.js";
-import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, set, get } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
@@ -30,6 +30,7 @@ const db = getDatabase(app);
 let questions = [];
 let analyticsTestsCount = 0;
 let analyticsAttemptsCount = 0;
+let editingTestId = null; // null = creating new, string = editing existing
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -165,6 +166,7 @@ window.updateQuestion = (qIndex, field, value) => {
 
 window.resetForm = () => {
     if(confirm("Clear the entire form fields?")) {
+        editingTestId = null;
         document.getElementById('testTitle').value = '';
         document.getElementById('testDescription').value = '';
         document.getElementById('testType').value = 'practice';
@@ -172,8 +174,86 @@ window.resetForm = () => {
         document.getElementById('externalLinkText').value = '';
         questions = [];
         renderQuestions();
+        setFormMode('create');
     }
 }
+
+function setFormMode(mode, testName) {
+    const formTitle = document.getElementById('formTitle');
+    const editIndicator = document.getElementById('editingIndicator');
+    const cancelBtn = document.getElementById('cancelEditBtn');
+    const btnText = document.getElementById('publishBtnText');
+    const btn = document.getElementById('publishBtn');
+
+    if (mode === 'edit') {
+        formTitle.textContent = 'Edit Mock Test';
+        editIndicator.classList.remove('hidden');
+        document.getElementById('editingTestName').textContent = testName || '';
+        cancelBtn.classList.remove('hidden');
+        btnText.textContent = 'Update Test';
+        btn.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'shadow-blue-200');
+        btn.classList.add('bg-amber-600', 'hover:bg-amber-700', 'shadow-amber-200');
+    } else {
+        formTitle.textContent = 'Create Mock Test';
+        editIndicator.classList.add('hidden');
+        cancelBtn.classList.add('hidden');
+        btnText.textContent = 'Publish New Test';
+        btn.classList.remove('bg-amber-600', 'hover:bg-amber-700', 'shadow-amber-200');
+        btn.classList.add('bg-blue-600', 'hover:bg-blue-700', 'shadow-blue-200');
+    }
+}
+
+window.cancelEdit = () => {
+    editingTestId = null;
+    document.getElementById('testTitle').value = '';
+    document.getElementById('testDescription').value = '';
+    document.getElementById('testType').value = 'practice';
+    document.getElementById('externalLinkUrl').value = '';
+    document.getElementById('externalLinkText').value = '';
+    questions = [];
+    renderQuestions();
+    setFormMode('create');
+};
+
+window.loadTestForEdit = async (testId) => {
+    try {
+        const snapshot = await get(ref(db, `mock_tests/${testId}`));
+        if (!snapshot.exists()) { alert('Test not found.'); return; }
+        const test = snapshot.val();
+
+        editingTestId = testId;
+        document.getElementById('testTitle').value = test.title || '';
+        document.getElementById('testDescription').value = test.description || '';
+        document.getElementById('testType').value = test.type || 'practice';
+        document.getElementById('externalLinkUrl').value = test.externalLink || '';
+        document.getElementById('externalLinkText').value = test.externalLinkText || '';
+
+        questions = (test.questions || []).map(q => ({
+            text: q.text || '',
+            options: q.options || ['', '', '', ''],
+            correct: typeof q.correct === 'number' ? q.correct : 0
+        }));
+        renderQuestions();
+        setFormMode('edit', test.title);
+
+        // Scroll form into view
+        document.getElementById('formTitle').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+        alert('Error loading test: ' + err.message);
+    }
+};
+
+window.deleteTest = async (testId, title) => {
+    if (!confirm(`Permanently delete "${title}"? This cannot be undone.`)) return;
+    if (!confirm(`Are you REALLY sure? All student results referencing this test will remain but the test itself will be gone.`)) return;
+    try {
+        await set(ref(db, `mock_tests/${testId}`), null);
+        alert('Test deleted.');
+        if (editingTestId === testId) cancelEdit();
+    } catch (err) {
+        alert('Error deleting: ' + err.message);
+    }
+};
 
 function renderQuestions() {
     const container = document.getElementById('questionsContainer');
@@ -266,14 +346,12 @@ window.saveTest = async () => {
     btn.disabled = true;
 
     try {
-        const testsRef = ref(db, 'mock_tests');
-        const newTestRef = push(testsRef);
         const payload = {
             title: title,
             description: desc,
             type: type,
             questions: questions,
-            createdAt: Date.now()
+            createdAt: editingTestId ? undefined : Date.now()
         };
 
         // Add external link if provided
@@ -282,11 +360,36 @@ window.saveTest = async () => {
         if (externalLink) {
             payload.externalLink = externalLink;
             payload.externalLinkText = externalLinkText || 'Study Material Available';
+        } else {
+            payload.externalLink = null;
+            payload.externalLinkText = null;
         }
 
-        await set(newTestRef, payload);
-        
-        alert("Test published successfully!");
+        if (editingTestId) {
+            // UPDATE existing test
+            // Preserve original createdAt
+            const existingSnap = await get(ref(db, `mock_tests/${editingTestId}`));
+            if (existingSnap.exists()) {
+                payload.createdAt = existingSnap.val().createdAt || Date.now();
+            } else {
+                payload.createdAt = Date.now();
+            }
+            payload.updatedAt = Date.now();
+            await set(ref(db, `mock_tests/${editingTestId}`), payload);
+            alert('Test updated successfully!');
+        } else {
+            // CREATE new test
+            payload.createdAt = Date.now();
+            const testsRef = ref(db, 'mock_tests');
+            const newTestRef = push(testsRef);
+            await set(newTestRef, payload);
+            alert('Test published successfully!');
+            analyticsTestsCount++;
+            document.getElementById('statTests').textContent = analyticsTestsCount;
+        }
+
+        // Reset form
+        editingTestId = null;
         document.getElementById('testTitle').value = '';
         document.getElementById('testDescription').value = '';
         document.getElementById('testType').value = 'practice';
@@ -294,10 +397,7 @@ window.saveTest = async () => {
         document.getElementById('externalLinkText').value = '';
         questions = [];
         renderQuestions();
-        
-        // Update stats locally
-        analyticsTestsCount++;
-        document.getElementById('statTests').textContent = analyticsTestsCount;
+        setFormMode('create');
         
     } catch (err) {
         alert("Error saving test: " + err.message);
@@ -394,5 +494,48 @@ window.fetchTotalTestsCount = function() {
         const data = snapshot.val();
         analyticsTestsCount = data ? Object.keys(data).length : 0;
         document.getElementById('statTests').textContent = analyticsTestsCount;
+        renderExistingTests(data);
     });
+}
+
+function renderExistingTests(data) {
+    const container = document.getElementById('existingTestsContainer');
+    if (!data) {
+        container.innerHTML = `<p class="text-gray-400 text-sm col-span-full text-center py-6">No tests created yet.</p>`;
+        return;
+    }
+
+    let html = '';
+    const tests = Object.keys(data).map(id => ({ id, ...data[id] }));
+    tests.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+    tests.forEach(test => {
+        const qCount = test.questions ? test.questions.length : 0;
+        const isMock = test.type === 'mock';
+        const typeBadge = isMock
+            ? '<span class="text-[10px] font-bold bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded">Mock</span>'
+            : '<span class="text-[10px] font-bold bg-green-100 text-green-700 px-1.5 py-0.5 rounded">Practice</span>';
+        const isEditing = editingTestId === test.id;
+
+        html += `
+            <div class="relative p-3 rounded-xl border ${isEditing ? 'border-amber-300 bg-amber-50/50' : 'border-gray-200 bg-white hover:border-blue-200'} transition group">
+                <div class="flex items-start justify-between mb-2">
+                    <h4 class="text-sm font-bold text-gray-900 line-clamp-1 flex-grow pr-2">${test.title}</h4>
+                    ${typeBadge}
+                </div>
+                <p class="text-xs text-gray-500 mb-3">${qCount} questions${test.externalLink ? ' · 🔗 Has promo link' : ''}</p>
+                <div class="flex gap-2">
+                    <button onclick="loadTestForEdit('${test.id}')" class="flex-1 text-xs font-bold py-1.5 px-2 rounded-lg ${isEditing ? 'bg-amber-200 text-amber-800' : 'bg-blue-50 text-blue-700 hover:bg-blue-100'} transition flex items-center justify-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        ${isEditing ? 'Editing...' : 'Edit'}
+                    </button>
+                    <button onclick="deleteTest('${test.id}', '${test.title.replace(/'/g, "\\'").replace(/"/g, '&quot;')}')" class="text-xs font-bold py-1.5 px-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition flex items-center justify-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        Delete
+                    </button>
+                </div>
+            </div>`;
+    });
+
+    container.innerHTML = html;
 }

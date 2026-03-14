@@ -91,12 +91,31 @@
                 <!-- Extend with more stats if needed -->
             </div>
 
+            <!-- Existing Tests Manager -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                    <h2 class="text-xl font-bold font-display text-gray-900 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        Manage Existing Tests
+                    </h2>
+                </div>
+                <div id="existingTestsContainer" class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[350px] overflow-y-auto">
+                    <p class="text-gray-400 text-sm col-span-full text-center py-6">Loading tests...</p>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Create Test Section -->
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col h-full lg:max-h-[800px]">
                     <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-                        <h2 class="text-xl font-bold font-display text-gray-900">Create Mock Test</h2>
-                        <button onclick="resetForm()" class="text-sm font-semibold text-gray-500 hover:text-gray-800 transition">Clear Form</button>
+                        <div>
+                            <h2 id="formTitle" class="text-xl font-bold font-display text-gray-900">Create Mock Test</h2>
+                            <p id="editingIndicator" class="hidden text-xs text-amber-600 font-bold mt-0.5">✏️ Editing: <span id="editingTestName"></span></p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="cancelEditBtn" onclick="cancelEdit()" class="hidden text-sm font-semibold text-red-500 hover:text-red-700 bg-red-50 px-3 py-1 rounded-lg border border-red-100 transition">Cancel Edit</button>
+                            <button onclick="resetForm()" class="text-sm font-semibold text-gray-500 hover:text-gray-800 transition">Clear Form</button>
+                        </div>
                     </div>
                     
                     <div class="p-6 overflow-y-auto flex-grow">
@@ -154,10 +173,10 @@
                         </div>
                     </div>
                     
-                    <div class="p-6 border-t bg-gray-50">
-                        <button onclick="saveTest()" id="publishBtn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all flex justify-center items-center gap-2 text-lg">
+                    <div class="p-6 border-t bg-gray-50 flex gap-3">
+                        <button onclick="saveTest()" id="publishBtn" class="flex-1 bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all flex justify-center items-center gap-2 text-lg">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-                            Publish Core Test
+                            <span id="publishBtnText">Publish New Test</span>
                         </button>
                     </div>
                 </div>

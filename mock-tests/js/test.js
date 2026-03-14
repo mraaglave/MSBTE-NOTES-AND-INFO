@@ -15,33 +15,32 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-const urlParams = new URLSearchParams(window.location.search);
-const testId = urlParams.get('id');
+// ── State ──
+const testId = new URLSearchParams(window.location.search).get('id');
 let currentTest = null;
 let currentUser = null;
-let questionStates = []; // 'not-visited' | 'visited' | 'answered'
+let currentIndex = 0;        // which question is visible
+let answers = [];             // user answers: null = unanswered, number = selected option index
 let timerInterval = null;
-let timeRemaining = 0; // seconds
+let timeRemaining = 0;
 let testStartTime = 0;
 let testSubmitted = false;
-let mobileDrawerOpen = false;
+let reviewIndex = 0;
+let gradeResults = [];        // { isCorrect, userAnswer, correctAnswer } per question
 
-if (!testId) { window.location.href = 'index.html'; }
+if (!testId) window.location.href = 'index.html';
 
 // ── Auth ──
-onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(auth, (user) => {
     if (user) { currentUser = user; loadTest(); }
     else { window.location.href = 'index.html'; }
 });
 
-// ── beforeunload guard ──
-function beforeUnloadHandler(e) {
-    e.preventDefault();
-    e.returnValue = '';
-}
+// ── beforeunload ──
+function onBeforeUnload(e) { e.preventDefault(); e.returnValue = ''; }
 
 // ── Shuffle ──
-function shuffleArray(arr) {
+function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -49,397 +48,372 @@ function shuffleArray(arr) {
     return arr;
 }
 
-// ── Load Test ──
+function esc(str) { return str.replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+// ══════════════════════════════
+//  LOAD TEST
+// ══════════════════════════════
 async function loadTest() {
     try {
-        const snapshot = await get(ref(db, `mock_tests/${testId}`));
-        if (snapshot.exists()) {
-            currentTest = snapshot.val();
-            if (currentTest.questions && currentTest.questions.length > 0) {
-                currentTest.questions = shuffleArray(currentTest.questions);
-                const limit = currentTest.type === 'mock' ? 100 : 20;
-                currentTest.questions = currentTest.questions.slice(0, Math.min(limit, currentTest.questions.length));
-            }
-            renderTest();
-            startTimer();
-            window.addEventListener('beforeunload', beforeUnloadHandler);
-        } else {
+        const snap = await get(ref(db, `mock_tests/${testId}`));
+        if (!snap.exists()) {
             document.getElementById('loading').innerHTML = `
                 <div class="text-red-500 mb-4"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
                 <div class="font-bold text-xl text-gray-900 mb-2">Test Not Found</div>
-                <p class="text-gray-500 mb-6">This test may have been removed or the link is invalid.</p>
+                <p class="text-gray-500 mb-6">This test may have been removed.</p>
                 <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium">Go Back</a>`;
+            return;
         }
+        currentTest = snap.val();
+        if (currentTest.questions?.length) {
+            currentTest.questions = shuffle(currentTest.questions);
+            const limit = currentTest.type === 'mock' ? 100 : 20;
+            currentTest.questions = currentTest.questions.slice(0, Math.min(limit, currentTest.questions.length));
+        }
+        answers = new Array(currentTest.questions?.length || 0).fill(null);
+        initTestUI();
+        startTimer();
+        window.addEventListener('beforeunload', onBeforeUnload);
     } catch (err) {
-        document.getElementById('loading').innerHTML = `<p class="text-red-500 font-medium">Error loading test: ${err.message}</p><a href="index.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg">Go Back</a>`;
+        document.getElementById('loading').innerHTML = `<p class="text-red-500 font-medium">Error: ${err.message}</p><a href="index.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg">Go Back</a>`;
     }
 }
 
-// ── Render Test ──
-function renderTest() {
+// ══════════════════════════════
+//  INIT UI
+// ══════════════════════════════
+function initTestUI() {
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('testContainer').classList.remove('hidden');
-    document.getElementById('mobileNavToggle').classList.remove('hidden');
-    document.getElementById('mobileNavToggle').classList.add('flex');
-
     document.getElementById('navTestTitle').textContent = currentTest.title;
-    document.getElementById('testTitle').textContent = currentTest.title;
-    document.getElementById('testDescription').textContent = currentTest.description || '';
+    document.getElementById('navTotal').textContent = currentTest.questions.length;
 
-    // Promo banner
+    // Promo
     if (currentTest.externalLink) {
         document.getElementById('promoBanner').classList.remove('hidden');
         document.getElementById('promoLink').href = currentTest.externalLink;
         document.getElementById('promoText').textContent = currentTest.externalLinkText || 'Study Material Available';
     }
 
-    const total = currentTest.questions ? currentTest.questions.length : 0;
-    questionStates = new Array(total).fill('not-visited');
-    if (total > 0) questionStates[0] = 'visited'; // First question is visited
-
-    // Update counters
-    updateCounters();
-
-    const container = document.getElementById('questionsContainer');
-    container.innerHTML = '';
-
-    if (currentTest.questions) {
-        currentTest.questions.forEach((q, qIndex) => {
-            const safeText = q.text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            const div = document.createElement('div');
-            div.className = 'bg-white p-5 md:p-7 rounded-2xl shadow-sm border-2 border-gray-100 question-block transition-all';
-            div.id = `question-${qIndex}`;
-            div.innerHTML = `
-                <h3 class="text-base md:text-lg font-bold font-display text-gray-900 mb-5 flex gap-3">
-                    <span class="bg-blue-100 text-blue-700 min-w-[30px] h-[30px] rounded-full flex items-center justify-center text-sm flex-shrink-0">${qIndex + 1}</span>
-                    <span class="leading-relaxed">${safeText}</span>
-                </h3>
-                <div class="space-y-3 ml-0 md:ml-10">
-                    ${q.options.map((opt, oIndex) => {
-                        const safeOpt = opt.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                        return `<div class="relative">
-                            <input type="radio" name="q_${qIndex}" id="q_${qIndex}_o_${oIndex}" value="${oIndex}" class="hidden option-radio peer" onchange="markAnswered(${qIndex})">
-                            <label for="q_${qIndex}_o_${oIndex}" class="option-label flex items-center w-full p-3.5 border-2 border-gray-200 rounded-xl hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-blue-600 font-medium text-gray-700 transition text-sm">
-                                <span class="radio-dot w-5 h-5 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-3 h-3 fill-current text-blue-600 opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
-                                </span>
-                                <span class="option-letter font-bold text-gray-400 mr-2 text-xs">${String.fromCharCode(65 + oIndex)}.</span>
-                                ${safeOpt}
-                            </label>
-                        </div>`;
-                    }).join('')}
-                </div>
-                <div class="result-indicator hidden mt-5 pt-3 border-t ml-0 md:ml-10 font-bold flex items-center gap-2 text-sm"></div>
-            `;
-            container.appendChild(div);
-        });
-    }
-
-    renderNavigator();
-    setupScrollObserver();
+    renderDots();
+    showQuestion(0);
 }
 
-// ── Mark Answered ──
-window.markAnswered = (qIndex) => {
-    questionStates[qIndex] = 'answered';
-    updateCounters();
-    renderNavigator();
+// ══════════════════════════════
+//  RENDER QUESTION
+// ══════════════════════════════
+function showQuestion(idx) {
+    currentIndex = idx;
+    const q = currentTest.questions[idx];
+    const total = currentTest.questions.length;
+    const card = document.getElementById('questionCard');
+
+    document.getElementById('navCurrent').textContent = idx + 1;
+    document.getElementById('progressBar').style.width = `${((idx + 1) / total) * 100}%`;
+
+    const selectedAnswer = answers[idx];
+
+    card.innerHTML = `
+        <div class="q-card bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col flex-grow">
+            <!-- Question Header -->
+            <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">${idx + 1}</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide">Question ${idx + 1} of ${total}</span>
+                </div>
+                ${answers[idx] !== null ? '<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">✓ Answered</span>' : '<span class="text-xs font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Not answered</span>'}
+            </div>
+            <!-- Question Text -->
+            <div class="px-5 pt-5 pb-3">
+                <h2 class="text-base sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
+            </div>
+            <!-- Options -->
+            <div class="px-5 pb-5 space-y-2.5 flex-grow">
+                ${q.options.map((opt, oi) => `
+                    <div>
+                        <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selectedAnswer === oi ? 'checked' : ''} onchange="selectAnswer(${oi})">
+                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3 sm:p-3.5 border-2 border-gray-200 rounded-xl font-medium text-gray-700 transition text-sm cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50">
+                            <span class="opt-dot w-5 h-5 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center flex-shrink-0 transition">
+                                <svg class="w-3 h-3 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
+                            </span>
+                            <span class="font-bold text-gray-400 mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
+                            <span>${esc(opt)}</span>
+                        </label>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    // Update button states
+    document.getElementById('prevBtn').disabled = idx === 0;
+    const isLast = idx === total - 1;
+    document.getElementById('nextBtn').style.display = isLast ? 'none' : 'flex';
+    document.getElementById('skipBtn').style.display = isLast ? 'none' : 'flex';
+
+    renderDots();
+}
+
+// ══════════════════════════════
+//  ANSWER SELECTION
+// ══════════════════════════════
+window.selectAnswer = (optIndex) => {
+    answers[currentIndex] = optIndex;
+    renderDots();
+    // Update the badge in the card
+    showQuestion(currentIndex); // re-render to show "Answered" badge
 };
 
-// ── Scroll Observer (mark visited) ──
-function setupScrollObserver() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !testSubmitted) {
-                const idx = parseInt(entry.target.id.split('-')[1]);
-                if (questionStates[idx] === 'not-visited') {
-                    questionStates[idx] = 'visited';
-                    renderNavigator();
-                    updateCounters();
-                }
-            }
-        });
-    }, { threshold: 0.3 });
+// ══════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════
+window.goToNext = () => {
+    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+};
 
-    document.querySelectorAll('.question-block').forEach(el => observer.observe(el));
+window.goToPrev = () => {
+    if (currentIndex > 0) showQuestion(currentIndex - 1);
+};
+
+window.skipQuestion = () => {
+    // Move to next without answering
+    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+};
+
+window.jumpToQuestion = (idx) => {
+    showQuestion(idx);
+};
+
+// ══════════════════════════════
+//  DOTS NAVIGATOR
+// ══════════════════════════════
+function renderDots() {
+    const dotsNav = document.getElementById('dotsNav');
+    if (!dotsNav || !currentTest?.questions) return;
+    let html = '';
+    currentTest.questions.forEach((_, i) => {
+        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-gray-200 text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition hover:border-blue-300';
+        if (i === currentIndex) cls += ' current';
+        if (answers[i] !== null) cls += ' answered';
+        html += `<button type="button" onclick="jumpToQuestion(${i})" class="${cls}">${i + 1}</button>`;
+    });
+    dotsNav.innerHTML = html;
 }
 
-// ── Timer ──
+// ══════════════════════════════
+//  TIMER
+// ══════════════════════════════
 function startTimer() {
-    const minutes = currentTest.type === 'mock' ? 120 : 30;
-    timeRemaining = minutes * 60;
+    const mins = currentTest.type === 'mock' ? 120 : 30;
+    timeRemaining = mins * 60;
     testStartTime = Date.now();
-
-    const timerEl = document.getElementById('timerDisplay');
-    timerEl.classList.remove('hidden');
-    timerEl.classList.add('flex');
-
-    updateTimerDisplay();
+    document.getElementById('timerBox').classList.remove('hidden');
+    document.getElementById('timerBox').classList.add('flex');
+    updateTimerUI();
     timerInterval = setInterval(() => {
         timeRemaining--;
-        if (timeRemaining <= 0) {
-            timeRemaining = 0;
-            clearInterval(timerInterval);
-            autoSubmit();
-            return;
-        }
-        updateTimerDisplay();
+        if (timeRemaining <= 0) { timeRemaining = 0; clearInterval(timerInterval); autoSubmit(); return; }
+        updateTimerUI();
     }, 1000);
 }
 
-function updateTimerDisplay() {
-    const hrs = Math.floor(timeRemaining / 3600);
-    const mins = Math.floor((timeRemaining % 3600) / 60);
-    const secs = timeRemaining % 60;
-    const timerText = document.getElementById('timerText');
-
-    if (hrs > 0) {
-        timerText.textContent = `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    } else {
-        timerText.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }
-
-    // Danger styling when < 5 min
+function updateTimerUI() {
+    const h = Math.floor(timeRemaining / 3600);
+    const m = Math.floor((timeRemaining % 3600) / 60);
+    const s = timeRemaining % 60;
+    const txt = h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    const el = document.getElementById('timerText');
+    el.textContent = txt;
     if (timeRemaining < 300 && timeRemaining > 0) {
-        timerText.classList.add('timer-danger');
-        document.getElementById('timerDisplay').classList.remove('bg-gray-100', 'border-gray-200');
-        document.getElementById('timerDisplay').classList.add('bg-red-50', 'border-red-200');
+        el.classList.add('timer-danger');
+        document.getElementById('timerBox').classList.replace('bg-gray-100', 'bg-red-50');
+        document.getElementById('timerBox').classList.replace('border-gray-200', 'border-red-200');
     }
 }
 
-function getTimerString() {
-    const hrs = Math.floor(timeRemaining / 3600);
-    const mins = Math.floor((timeRemaining % 3600) / 60);
-    const secs = timeRemaining % 60;
-    if (hrs > 0) return `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+function timerString() {
+    const h = Math.floor(timeRemaining / 3600), m = Math.floor((timeRemaining % 3600) / 60), s = timeRemaining % 60;
+    return h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 
 function getTimeTaken() {
-    const elapsed = Math.round((Date.now() - testStartTime) / 1000);
-    const mins = Math.floor(elapsed / 60);
-    const secs = elapsed % 60;
-    return { seconds: elapsed, display: `${mins}m ${secs}s` };
+    const e = Math.round((Date.now() - testStartTime) / 1000);
+    return { seconds: e, display: `${Math.floor(e/60)}m ${e%60}s` };
 }
 
-// ── Counters ──
-function getAnsweredCount() {
-    return questionStates.filter(s => s === 'answered').length;
-}
-
-function updateCounters() {
-    const answered = getAnsweredCount();
-    const total = questionStates.length;
-    const els = ['sidebarAnswered', 'drawerAnswered', 'navAnswered'];
-    const totals = ['sidebarTotal', 'drawerTotal', 'navTotal'];
-    els.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = answered; });
-    totals.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = total; });
-}
-
-// ── Navigator ──
-function renderNavigator() {
-    const sidebar = document.getElementById('sidebarGrid');
-    const drawer = document.getElementById('drawerGrid');
-    if (!sidebar || !drawer) return;
-
-    let html = '';
-    questionStates.forEach((state, i) => {
-        const cls = state === 'answered' ? 'answered' : state === 'visited' ? 'visited' : '';
-        html += `<button type="button" onclick="scrollToQuestion(${i})" class="nav-btn w-full aspect-square rounded-lg border border-gray-200 text-xs font-bold text-gray-600 hover:border-blue-400 transition ${cls}">${i + 1}</button>`;
-    });
-    sidebar.innerHTML = html;
-    drawer.innerHTML = html;
-    updateCounters();
-}
-
-window.scrollToQuestion = (idx) => {
-    const el = document.getElementById(`question-${idx}`);
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Brief highlight
-        el.classList.add('active-q');
-        setTimeout(() => el.classList.remove('active-q'), 1500);
-    }
-    // Close mobile drawer if open
-    if (mobileDrawerOpen) toggleMobileDrawer();
-};
-
-// ── Mobile Drawer ──
-window.toggleMobileDrawer = () => {
-    mobileDrawerOpen = !mobileDrawerOpen;
-    const drawer = document.getElementById('mobileDrawer');
-    const overlay = document.getElementById('mobileDrawerOverlay');
-    if (mobileDrawerOpen) {
-        drawer.classList.add('open');
-        overlay.classList.remove('hidden');
-    } else {
-        drawer.classList.remove('open');
-        overlay.classList.add('hidden');
-    }
-};
-
-// ── Exit Modal ──
+// ══════════════════════════════
+//  EXIT MODAL
+// ══════════════════════════════
 window.showExitModal = () => {
-    const unanswered = questionStates.length - getAnsweredCount();
-    document.getElementById('exitUnanswered').textContent = unanswered;
-    document.getElementById('exitTimeLeft').textContent = getTimerString();
+    document.getElementById('exitUnanswered').textContent = answers.filter(a => a === null).length;
+    document.getElementById('exitTimeLeft').textContent = timerString();
     document.getElementById('exitModal').classList.remove('hidden');
 };
+window.hideExitModal = () => document.getElementById('exitModal').classList.add('hidden');
+window.confirmExit = () => { testSubmitted = true; window.removeEventListener('beforeunload', onBeforeUnload); if (timerInterval) clearInterval(timerInterval); window.location.href = 'index.html'; };
 
-window.hideExitModal = () => {
-    document.getElementById('exitModal').classList.add('hidden');
-};
+document.getElementById('exitLogoLink')?.addEventListener('click', e => { if (!testSubmitted) { e.preventDefault(); showExitModal(); } });
 
-window.confirmExit = () => {
-    testSubmitted = true;
-    window.removeEventListener('beforeunload', beforeUnloadHandler);
-    if (timerInterval) clearInterval(timerInterval);
-    window.location.href = 'index.html';
-};
-
-// Logo exit confirmation
-document.getElementById('exitLogoLink')?.addEventListener('click', (e) => {
-    if (!testSubmitted) {
-        e.preventDefault();
-        showExitModal();
-    }
-});
-
-// ── Submit Modal ──
+// ══════════════════════════════
+//  SUBMIT MODAL
+// ══════════════════════════════
 window.showSubmitModal = () => {
-    const answered = getAnsweredCount();
-    const unanswered = questionStates.length - answered;
-    document.getElementById('submitAnsweredCount').textContent = answered;
-    document.getElementById('submitUnansweredCount').textContent = unanswered;
+    const answered = answers.filter(a => a !== null).length;
+    document.getElementById('submitAnswered').textContent = answered;
+    document.getElementById('submitUnanswered').textContent = answers.length - answered;
     document.getElementById('submitModal').classList.remove('hidden');
 };
+window.hideSubmitModal = () => document.getElementById('submitModal').classList.add('hidden');
 
-window.hideSubmitModal = () => {
-    document.getElementById('submitModal').classList.add('hidden');
-};
-
-// ── Auto Submit (timer expired) ──
 function autoSubmit() {
     alert("⏰ Time's up! Your test has been auto-submitted.");
     gradeAndSave();
 }
 
-// ── Execute Submit (user confirmed) ──
-window.executeSubmit = () => {
-    hideSubmitModal();
-    document.getElementById('submitBtn').disabled = true;
-    document.getElementById('submitBtn').innerHTML = '<svg class="animate-spin w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8a8 8 0 01-8-8z"></path></svg> Grading...';
-    gradeAndSave();
-};
+window.executeSubmit = () => { hideSubmitModal(); gradeAndSave(); };
 
-// ── Grade & Save ──
+// ══════════════════════════════
+//  GRADE & SAVE
+// ══════════════════════════════
 async function gradeAndSave() {
     testSubmitted = true;
-    window.removeEventListener('beforeunload', beforeUnloadHandler);
+    window.removeEventListener('beforeunload', onBeforeUnload);
     if (timerInterval) clearInterval(timerInterval);
 
-    const blocks = document.querySelectorAll('.question-block');
     let score = 0;
     const total = currentTest.questions.length;
     const timeTaken = getTimeTaken();
+    gradeResults = [];
 
-    currentTest.questions.forEach((q, qIndex) => {
-        const selectedRadio = document.querySelector(`input[name="q_${qIndex}"]:checked`);
-        const answered = selectedRadio !== null;
-        const answer = answered ? parseInt(selectedRadio.value) : -1;
-        const isCorrect = answered && answer === q.correct;
+    currentTest.questions.forEach((q, i) => {
+        const userAns = answers[i];
+        const correct = q.correct;
+        const isCorrect = userAns !== null && userAns === correct;
         if (isCorrect) score++;
-
-        // Disable radios
-        blocks[qIndex].querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
-
-        const selectedLabel = answered ? blocks[qIndex].querySelector(`input[value="${answer}"] + label`) : null;
-        const correctLabel = blocks[qIndex].querySelector(`input[value="${q.correct}"] + label`);
-        const indicator = blocks[qIndex].querySelector('.result-indicator');
-        indicator.classList.remove('hidden');
-
-        if (isCorrect) {
-            if (selectedLabel) selectedLabel.classList.add('correct-answer');
-            blocks[qIndex].classList.add('border-green-200');
-            blocks[qIndex].style.backgroundColor = 'rgba(240,253,244,0.3)';
-            indicator.classList.add('text-green-600');
-            indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Correct';
-        } else {
-            if (selectedLabel) selectedLabel.classList.add('wrong-answer');
-            if (correctLabel) {
-                correctLabel.classList.add('correct-answer');
-                correctLabel.innerHTML += '<span class="ml-auto text-green-600 flex items-center text-xs font-bold"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Correct</span>';
-            }
-            blocks[qIndex].classList.add('border-red-200');
-            blocks[qIndex].style.backgroundColor = 'rgba(254,242,242,0.3)';
-            indicator.classList.add('text-red-500');
-            if (!answered) {
-                indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"></path></svg> Not Answered';
-                blocks[qIndex].classList.remove('border-red-200');
-                blocks[qIndex].classList.add('border-orange-200');
-                blocks[qIndex].style.backgroundColor = 'rgba(255,247,237,0.3)';
-                indicator.classList.remove('text-red-500');
-                indicator.classList.add('text-orange-500');
-            } else {
-                indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Incorrect';
-            }
-        }
+        gradeResults.push({ userAnswer: userAns, correctAnswer: correct, isCorrect });
     });
-
-    // Hide submit bar, timer, mobile nav
-    document.getElementById('submitBar').classList.add('hidden');
-    document.getElementById('timerDisplay').classList.add('hidden');
-    document.getElementById('mobileNavToggle').classList.add('hidden');
-    document.getElementById('sidebarNav')?.classList.add('hidden');
 
     // Save to Firebase
     try {
-        const resultsRef = ref(db, `mock_results/${currentUser.uid}`);
-        const newResultRef = push(resultsRef);
-        await set(newResultRef, {
-            testId: testId,
-            testTitle: currentTest.title,
-            userEmail: currentUser.email,
-            score: score,
-            total: total,
-            timeTaken: timeTaken.seconds,
-            date: Date.now()
+        const newRef = push(ref(db, `mock_results/${currentUser.uid}`));
+        await set(newRef, {
+            testId, testTitle: currentTest.title, userEmail: currentUser.email,
+            score, total, timeTaken: timeTaken.seconds, date: Date.now()
         });
-
-        const percent = total > 0 ? Math.round((score / total) * 100) : 0;
-        document.getElementById('scoreDisplay').textContent = `${score} / ${total}`;
-        document.getElementById('percentDisplay').textContent = `${percent}%`;
-        document.getElementById('timeTakenDisplay').textContent = timeTaken.display;
-
-        // Result icon color based on score
-        const iconEl = document.getElementById('resultIcon');
-        if (percent >= 80) {
-            iconEl.classList.remove('bg-green-100', 'text-green-600');
-            iconEl.classList.add('bg-green-100', 'text-green-600');
-        } else if (percent < 40) {
-            iconEl.classList.remove('bg-green-100', 'text-green-600');
-            iconEl.classList.add('bg-red-100', 'text-red-500');
-            iconEl.innerHTML = '<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4m0 4h.01"></path></svg>';
-        }
-
-        // Show promo in results
-        if (currentTest.externalLink) {
-            document.getElementById('resultPromoBanner').classList.remove('hidden');
-            document.getElementById('resultPromoLink').href = currentTest.externalLink;
-            document.getElementById('resultPromoText').textContent = currentTest.externalLinkText || 'Study Material Available';
-        }
-
-        setTimeout(() => {
-            document.getElementById('resultsModal').classList.remove('hidden');
-        }, 600);
     } catch (err) {
-        alert("Error saving results: " + err.message);
-        document.getElementById('submitBtn').disabled = false;
-        document.getElementById('submitBtn').textContent = 'Try Submitting Again';
+        console.error('Save error:', err);
     }
+
+    // Show review
+    showReview(score, total, timeTaken);
 }
 
-window.closeModalAndScroll = () => {
-    document.getElementById('resultsModal').classList.add('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+// ══════════════════════════════
+//  REVIEW MODE
+// ══════════════════════════════
+function showReview(score, total, timeTaken) {
+    document.getElementById('testContainer').classList.add('hidden');
+    document.getElementById('reviewContainer').classList.remove('hidden');
+    document.getElementById('timerBox').classList.add('hidden');
+    document.getElementById('progressBar').style.width = '100%';
+
+    const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+    const grade = pct >= 80 ? { color: 'green', icon: '🎉', text: 'Excellent!' } : pct >= 50 ? { color: 'blue', icon: '👍', text: 'Good Job!' } : { color: 'red', icon: '📚', text: 'Keep Practicing!' };
+
+    document.getElementById('scoreSummary').innerHTML = `
+        <p class="text-4xl mb-2">${grade.icon}</p>
+        <h2 class="text-2xl font-bold font-display text-gray-900 mb-1">${grade.text}</h2>
+        <p class="text-gray-500 text-sm mb-4">Your results have been recorded.</p>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="bg-${grade.color}-50 rounded-xl p-3 border border-${grade.color}-200">
+                <p class="text-2xl font-black text-${grade.color}-700">${score}/${total}</p>
+                <p class="text-[10px] font-bold text-${grade.color}-600 uppercase">Score</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-3 border border-gray-200">
+                <p class="text-2xl font-black text-gray-900">${pct}%</p>
+                <p class="text-[10px] font-bold text-gray-500 uppercase">Percentage</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-3 border border-gray-200">
+                <p class="text-2xl font-black text-gray-900">${timeTaken.display}</p>
+                <p class="text-[10px] font-bold text-gray-500 uppercase">Time</p>
+            </div>
+        </div>
+    `;
+
+    // Review promo
+    if (currentTest.externalLink) {
+        document.getElementById('reviewPromoBanner').classList.remove('hidden');
+        document.getElementById('reviewPromoLink').href = currentTest.externalLink;
+        document.getElementById('reviewPromoText').textContent = currentTest.externalLinkText || 'Study Material';
+    }
+
+    renderReviewDots();
+    showReviewQuestion(0);
+}
+
+function renderReviewDots() {
+    const nav = document.getElementById('reviewDotsNav');
+    let html = '';
+    gradeResults.forEach((r, i) => {
+        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition';
+        if (r.isCorrect) cls += ' review-correct';
+        else if (r.userAnswer === null) cls += ' review-skipped';
+        else cls += ' review-wrong';
+        if (i === reviewIndex) cls += ' current';
+        html += `<button type="button" onclick="jumpReview(${i})" class="${cls}">${i + 1}</button>`;
+    });
+    nav.innerHTML = html;
+}
+
+function showReviewQuestion(idx) {
+    reviewIndex = idx;
+    const q = currentTest.questions[idx];
+    const r = gradeResults[idx];
+    const card = document.getElementById('reviewQuestionCard');
+
+    const statusBadge = r.isCorrect
+        ? '<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">✓ Correct</span>'
+        : r.userAnswer === null
+            ? '<span class="text-xs font-bold text-orange-700 bg-orange-100 px-2 py-0.5 rounded-full">⚠ Skipped</span>'
+            : '<span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded-full">✗ Incorrect</span>';
+
+    card.innerHTML = `
+        <div class="q-card bg-white rounded-2xl border border-gray-200 shadow-sm">
+            <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+                <span class="text-xs font-bold text-gray-400">Question ${idx + 1} of ${currentTest.questions.length}</span>
+                ${statusBadge}
+            </div>
+            <div class="px-5 pt-5 pb-3">
+                <h2 class="text-base sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
+            </div>
+            <div class="px-5 pb-5 space-y-2.5">
+                ${q.options.map((opt, oi) => {
+                    let cls = 'flex items-center w-full p-3 sm:p-3.5 border-2 rounded-xl font-medium text-sm transition';
+                    if (oi === r.correctAnswer && oi === r.userAnswer) cls += ' correct-answer';
+                    else if (oi === r.correctAnswer) cls += ' correct-answer';
+                    else if (oi === r.userAnswer) cls += ' wrong-answer';
+                    else cls += ' border-gray-200 text-gray-700';
+
+                    let badge = '';
+                    if (oi === r.correctAnswer && oi === r.userAnswer) badge = '<span class="ml-auto text-xs font-bold text-green-600">✓ Your answer (Correct)</span>';
+                    else if (oi === r.correctAnswer) badge = '<span class="ml-auto text-xs font-bold text-green-600">✓ Correct answer</span>';
+                    else if (oi === r.userAnswer) badge = '<span class="ml-auto text-xs font-bold text-red-500">✗ Your answer</span>';
+
+                    return `<div class="${cls}">
+                        <span class="font-bold text-gray-400 mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
+                        <span class="flex-grow">${esc(opt)}</span>
+                        ${badge}
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+    `;
+
+    document.getElementById('reviewPrevBtn').disabled = idx === 0;
+    document.getElementById('reviewNextBtn').disabled = idx === currentTest.questions.length - 1;
+    renderReviewDots();
+}
+
+window.jumpReview = (i) => showReviewQuestion(i);
+window.reviewPrev = () => { if (reviewIndex > 0) showReviewQuestion(reviewIndex - 1); };
+window.reviewNext = () => { if (reviewIndex < currentTest.questions.length - 1) showReviewQuestion(reviewIndex + 1); };
