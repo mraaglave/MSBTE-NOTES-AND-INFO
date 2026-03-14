@@ -76,38 +76,41 @@ window.renderTest = function() {
     document.getElementById('testDescription').textContent = currentTest.description || '';
 
     const container = document.getElementById('questionsContainer');
-    let html = '';
+    container.innerHTML = '';
     
     if (currentTest.questions) {
         currentTest.questions.forEach((q, qIndex) => {
-            html += `
+            // Sanitize question text
+            const safeText = q.text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            let qHtml = `
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 question-block transition-colors">
                     <h3 class="text-xl font-bold font-display text-gray-900 mb-6 flex gap-3">
                         <span class="bg-blue-100 text-blue-700 min-w-[32px] h-8 rounded-full flex items-center justify-center text-base">${qIndex + 1}</span>
-                        <span class="leading-relaxed">${q.text}</span>
+                        <span class="leading-relaxed">${safeText}</span>
                     </h3>
                     <div class="space-y-4 ml-0 md:ml-11">
             `;
             q.options.forEach((opt, oIndex) => {
-                html += `
+                const safeOpt = opt.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                qHtml += `
                     <div class="relative">
                         <input type="radio" required name="q_${qIndex}" id="q_${qIndex}_o_${oIndex}" value="${oIndex}" class="hidden option-radio peer">
                         <label for="q_${qIndex}_o_${oIndex}" class="option-label flex items-center w-full p-4 border-2 border-gray-200 rounded-xl hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-blue-600 font-medium text-gray-700 transition">
                             <span class="w-6 h-6 border-2 border-gray-300 rounded-full mr-4 flex items-center justify-center text-transparent peer-checked:border-blue-600 peer-checked:text-blue-600">
                                 <svg class="w-4 h-4 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
                             </span>
-                            ${opt}
+                            ${safeOpt}
                         </label>
                     </div>
                 `;
             });
-            html += `</div>
+            qHtml += `</div>
                 <!-- Result Indicator (hidden initially) -->
                 <div class="result-indicator hidden mt-6 pt-4 border-t ml-0 md:ml-11 font-bold flex items-center gap-2"></div>
             </div>`;
+            container.innerHTML += qHtml;
         });
     }
-    container.innerHTML = html;
 
     // Make custom radio buttons show the inner dot when checked
     const style = document.createElement('style');
@@ -128,14 +131,18 @@ window.submitTest = async (e) => {
     
     const formData = new FormData(e.target);
     let score = 0;
+    let unanswered = 0;
     const total = currentTest.questions.length;
     const blocks = document.querySelectorAll('.question-block');
 
     // Grade questions and highlight UI
     currentTest.questions.forEach((q, qIndex) => {
-        const answer = parseInt(formData.get(`q_${qIndex}`));
-        const isCorrect = answer === q.correct;
+        const rawAnswer = formData.get(`q_${qIndex}`);
+        const answered = rawAnswer !== null;
+        const answer = answered ? parseInt(rawAnswer) : -1;
+        const isCorrect = answered && answer === q.correct;
         if (isCorrect) score++;
+        if (!answered) unanswered++;
         
         // Disable all radios to prevent changing answers after submission
         blocks[qIndex].querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);

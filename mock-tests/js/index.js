@@ -27,15 +27,37 @@ try {
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-function getGreeting(email) {
+function getGreeting(user) {
     const hour = new Date().getHours();
     let timeOfDay = 'morning';
     if (hour >= 12 && hour < 17) timeOfDay = 'afternoon';
     else if (hour >= 17) timeOfDay = 'evening';
     
-    const name = email ? email.split('@')[0] : 'Student';
+    const name = user.displayName || (user.email ? user.email.split('@')[0] : 'Student');
     return `Good ${timeOfDay}, ${name}`;
 }
+
+function showAuthModal() {
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('authError').classList.add('hidden');
+    document.getElementById('authModal').classList.remove('hidden');
+}
+window.showAuthModal = showAuthModal;
+
+function hideAuthModal() {
+    document.getElementById('authModal').classList.add('hidden');
+}
+window.hideAuthModal = hideAuthModal;
+
+window.handleStartQuiz = (e, testId) => {
+    e.preventDefault();
+    if (auth.currentUser) {
+        window.location.href = `test.html?id=${testId}`;
+    } else {
+        showAuthModal();
+    }
+};
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -44,7 +66,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('loginModalBtn').classList.add('hidden');
         
         const greetingEl = document.getElementById('userGreeting');
-        greetingEl.textContent = getGreeting(user.email);
+        greetingEl.textContent = getGreeting(user);
         greetingEl.classList.remove('hidden');
         
         // Hide modal if it's open
@@ -59,26 +81,6 @@ onAuthStateChanged(auth, (user) => {
 
 // Load tests regardless of auth status
 loadTests();
-
-window.showAuthModal = () => {
-    document.getElementById('email').value = '';
-    document.getElementById('password').value = '';
-    document.getElementById('authError').classList.add('hidden');
-    document.getElementById('authModal').classList.remove('hidden');
-};
-
-window.hideAuthModal = () => {
-    document.getElementById('authModal').classList.add('hidden');
-};
-
-window.handleStartQuiz = (e, testId) => {
-    e.preventDefault();
-    if (auth.currentUser) {
-        window.location.href = `test.html?id=${testId}`;
-    } else {
-        showAuthModal();
-    }
-};
 
 async function verifyRecaptcha(action = 'login') {
     if (typeof grecaptcha === 'undefined') return true;

@@ -175,18 +175,17 @@ window.resetForm = () => {
 
 function renderQuestions() {
     const container = document.getElementById('questionsContainer');
-    const emptyMsg = document.getElementById('emptyQuestionsMsg');
     document.getElementById('qCountBadge').textContent = questions.length;
     
-    container.innerHTML = '';
-    
     if (questions.length === 0) {
-        container.appendChild(emptyMsg);
-        emptyMsg.style.display = 'block';
+        container.innerHTML = `
+            <div class="text-center py-8 border-2 border-dashed border-gray-200 rounded-xl bg-gray-50" id="emptyQuestionsMsg">
+                <p class="text-gray-500 font-medium">No questions added yet.<br>Click the button below to start.</p>
+            </div>`;
         return;
-    } else {
-        emptyMsg.style.display = 'none';
     }
+    
+    container.innerHTML = '';
     
     questions.forEach((q, i) => {
         const qDiv = document.createElement('div');
