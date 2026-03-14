@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/fireba
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 import { getDatabase, ref, get, set, push } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 
-// ── Firebase Configuration ──
 const firebaseConfig = {
     apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
     authDomain: "msbte-notes-info.firebaseapp.com",
@@ -12,495 +11,434 @@ const firebaseConfig = {
     appId: "1:497397765847:web:5ff2d9910dfe14c22a8292"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-const auth = getAuth(firebaseApp);
-const db = getDatabase(firebaseApp);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
 
-/**
- * ExamManager: Centralized controller for the Mock Test System
- */
-const ExamManager = {
-    // ── State ──
-    testId: new URLSearchParams(window.location.search).get('id'),
-    currentTest: null,
-    currentUser: null,
-    currentIndex: 0,
-    answers: [],
-    questionStates: [], // 0: Not Visited, 1: Answered, 2: Not Answered, 3: Marked, 4: Answered & Marked
-    timerInterval: null,
-    timeRemaining: 0,
-    testStartTime: 0,
-    testSubmitted: false,
-    reviewIndex: 0,
-    gradeResults: [],
-    calcValue: '0',
+// ── State ──
+const testId = new URLSearchParams(window.location.search).get('id');
+let currentTest = null;
+let currentUser = null;
+let currentIndex = 0;        // which question is visible
+let answers = [];             // user answers: null = unanswered, number = selected option index
+let timerInterval = null;
+let timeRemaining = 0;
+let testStartTime = 0;
+let testSubmitted = false;
+let reviewIndex = 0;
+let gradeResults = [];        // { isCorrect, userAnswer, correctAnswer } per question
 
-    // ── Initialization ──
-    async init() {
-        console.log("ExamManager initializing...");
-        if (!this.testId) {
-            window.location.href = 'index.html';
+if (!testId) window.location.href = 'index.html';
+
+// ── Auth ──
+onAuthStateChanged(auth, (user) => {
+    if (user) { currentUser = user; loadTest(); }
+    else { window.location.href = 'index.html'; }
+});
+
+// ── beforeunload ──
+function onBeforeUnload(e) { e.preventDefault(); e.returnValue = ''; }
+
+// ── Shuffle ──
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function esc(str) { return str.replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+// ══════════════════════════════
+//  LOAD TEST
+// ══════════════════════════════
+async function loadTest() {
+    try {
+        const snap = await get(ref(db, `mock_tests/${testId}`));
+        if (!snap.exists()) {
+            document.getElementById('loading').innerHTML = `
+                <div class="text-red-500 mb-4"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
+                <div class="font-bold text-xl text-gray-900 mb-2">Test Not Found</div>
+                <p class="text-gray-500 mb-6">This test may have been removed.</p>
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium">Go Back</a>`;
             return;
         }
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                this.currentUser = user;
-                this.loadTestData();
-            } else {
-                window.location.href = 'index.html';
-            }
-        });
-
-        this.bindGlobalEvents();
-    },
-
-    bindGlobalEvents() {
-        // Fullscreen toggle if needed
-        window.addEventListener('beforeunload', (e) => {
-            if (!this.testSubmitted && this.currentTest) {
-                e.preventDefault();
-                e.returnValue = '';
-            }
-        });
-
-        // Exit logo link safety
-        const exitLogo = document.getElementById('exitLogoLink');
-        if (exitLogo) {
-            exitLogo.onclick = (e) => {
-                if (!this.testSubmitted) {
-                    e.preventDefault();
-                    this.showExitModal();
-                }
-            };
+        currentTest = snap.val();
+        if (currentTest.questions?.length) {
+            currentTest.questions = shuffle(currentTest.questions);
+            const limit = currentTest.type === 'mock' ? 100 : 20;
+            currentTest.questions = currentTest.questions.slice(0, Math.min(limit, currentTest.questions.length));
         }
-    },
+        answers = new Array(currentTest.questions?.length || 0).fill(null);
+        initTestUI();
+        startTimer();
+        window.addEventListener('beforeunload', onBeforeUnload);
+    } catch (err) {
+        document.getElementById('loading').innerHTML = `<p class="text-red-500 font-medium">Error: ${err.message}</p><a href="index.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg">Go Back</a>`;
+    }
+}
 
-    // ── Data Loading ──
-    async loadTestData() {
-        console.log("Loading test data for ID:", this.testId);
-        try {
-            const snap = await get(ref(db, `mock_tests/${this.testId}`));
-            if (!snap.exists()) {
-                this.renderError("Test Not Found", "This test may have been removed or is no longer available.");
-                return;
-            }
+// ══════════════════════════════
+//  INIT UI
+// ══════════════════════════════
+function initTestUI() {
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('testContainer').classList.remove('hidden');
+    document.getElementById('navTestTitle').textContent = currentTest.title;
+    document.getElementById('navTotal').textContent = currentTest.questions.length;
 
-            this.currentTest = snap.val();
-            this.preprocessQuestions();
-            this.answers = new Array(this.currentTest.questions.length).fill(null);
-            this.questionStates = new Array(this.currentTest.questions.length).fill(0);
+    // Promo
+    if (currentTest.externalLink) {
+        document.getElementById('promoBanner').classList.remove('hidden');
+        document.getElementById('promoLink').href = currentTest.externalLink;
+        document.getElementById('promoText').textContent = currentTest.externalLinkText || 'Study Material Available';
+    }
 
-            this.setupInitialUI();
-        } catch (err) {
-            console.error("Data load error:", err);
-            this.renderError("Load Error", "Unable to fetch test data. Please check your connection.");
-        }
-    },
+    renderDots();
+    showQuestion(0);
+}
 
-    preprocessQuestions() {
-        if (this.currentTest.questions?.length) {
-            // Shuffle
-            for (let i = this.currentTest.questions.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [this.currentTest.questions[i], this.currentTest.questions[j]] = [this.currentTest.questions[j], this.currentTest.questions[i]];
-            }
-            // Limit
-            const limit = this.currentTest.type === 'mock' ? 100 : 20;
-            this.currentTest.questions = this.currentTest.questions.slice(0, limit);
-        }
-    },
+// ══════════════════════════════
+//  RENDER QUESTION
+// ══════════════════════════════
+function showQuestion(idx) {
+    currentIndex = idx;
+    const q = currentTest.questions[idx];
+    const total = currentTest.questions.length;
+    const card = document.getElementById('questionCard');
 
-    setupInitialUI() {
-        const loadingEl = document.getElementById('loading');
-        if (loadingEl) loadingEl.classList.add('hidden');
+    document.getElementById('navCurrent').textContent = idx + 1;
+    document.getElementById('progressBar').style.width = `${((idx + 1) / total) * 100}%`;
 
-        const instrTitle = document.getElementById('instrTitle');
-        const instrDuration = document.getElementById('instrDuration');
-        if (instrTitle) instrTitle.textContent = `Instructions - ${this.currentTest.title}`;
-        if (instrDuration) instrDuration.textContent = this.currentTest.type === 'mock' ? 120 : 30;
+    const selectedAnswer = answers[idx];
 
-        this.bindInstructionsEvents();
-    },
-
-    bindInstructionsEvents() {
-        const agreeCheck = document.getElementById('agreeCheck');
-        const startBtn = document.getElementById('startTestBtn');
-
-        if (agreeCheck && startBtn) {
-            const syncBtn = () => {
-                startBtn.disabled = !agreeCheck.checked;
-                console.log("Start button enabled:", agreeCheck.checked);
-            };
-            agreeCheck.onchange = syncBtn;
-            agreeCheck.onclick = syncBtn; // Extra safety for some mobile browsers
-            syncBtn();
-
-            startBtn.onclick = () => this.startExam();
-        }
-    },
-
-    // ── Exam Flow ──
-    startExam() {
-        console.log("Exam starting...");
-        const overlay = document.getElementById('instructionsOverlay');
-        const container = document.getElementById('testContainer');
-        
-        if (overlay) overlay.classList.add('hidden');
-        if (container) container.classList.remove('hidden');
-
-        // Setup Top Nav
-        document.getElementById('navTestTitle').textContent = this.currentTest.title;
-        document.getElementById('userName').textContent = this.currentUser.displayName || this.currentUser.email.split('@')[0];
-        document.getElementById('userInitial').textContent = (this.currentUser.displayName || this.currentUser.email)[0].toUpperCase();
-
-        this.bindExamControls();
-        this.startTimer();
-        this.showQuestion(0);
-    },
-
-    bindExamControls() {
-        window.markForReview = () => this.markForReview();
-        window.clearResponse = () => this.clearResponse();
-        window.goToPrev = () => this.goToPrev();
-        window.goToNext = () => this.goToNext();
-        window.jumpToQuestion = (i) => this.jumpToQuestion(i);
-        window.toggleSidebar = () => this.toggleSidebar();
-        window.toggleCalculator = () => this.toggleCalculator();
-        window.showSubmitModal = () => this.showSubmitModal();
-        window.hideSubmitModal = () => this.hideSubmitModal();
-        window.executeSubmit = () => this.executeSubmit();
-        window.showExitModal = () => this.showExitModal();
-        window.hideExitModal = () => this.hideExitModal();
-        window.confirmExit = () => this.confirmExit();
-        
-        // Results/Review controls
-        window.jumpReview = (i) => this.showReviewQuestion(i);
-        window.reviewPrev = () => this.reviewPrev();
-        window.reviewNext = () => this.reviewNext();
-
-        // Calc
-        window.calcNum = (n) => this.calcNum(n);
-        window.calcOp = (op) => this.calcOp(op);
-        window.calcClear = () => this.calcClear();
-        window.calcEqual = () => this.calcEqual();
-    },
-
-    // ── UI Rendering ──
-    showQuestion(idx) {
-        if (!this.currentTest.questions[idx]) return;
-        this.currentIndex = idx;
-        const q = this.currentTest.questions[idx];
-        const total = this.currentTest.questions.length;
-        
-        // Handle Question State
-        if (this.questionStates[idx] === 0) this.questionStates[idx] = 2; // Visited but not answered
-
-        const card = document.getElementById('questionCard');
-        const selected = this.answers[idx];
-
-        card.innerHTML = `
-            <div class="q-card bg-white/95 backdrop-blur-md rounded-3xl border border-white shadow-premium flex flex-col flex-grow overflow-hidden transition-all duration-300">
-                <div class="px-5 sm:px-7 py-4 sm:py-5 bg-gradient-to-b from-slate-50 to-white/50 border-b border-slate-100 flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <span class="bg-blue-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-sm sm:text-base font-black font-display flex-shrink-0 shadow-lg border border-blue-400/30">${idx + 1}</span>
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-2.5 py-1 rounded-lg">Question ${idx + 1} of ${total}</span>
-                    </div>
-                    <div class="hidden sm:flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Section</span>
+    card.innerHTML = `
+        <div class="q-card bg-white rounded-[2rem] border border-gray-100 shadow-2xl shadow-blue-900/5 flex flex-col flex-grow overflow-hidden">
+            <!-- Question Header -->
+            <div class="px-4 sm:px-8 py-4 sm:py-6 bg-gray-50/50 border-b border-gray-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="bg-blue-600 text-white w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-sm sm:text-base font-black shadow-lg shadow-blue-200 flex-shrink-0">${idx + 1}</span>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] sm:text-xs font-black text-gray-400 uppercase tracking-widest">Question</span>
+                        <span class="text-xs sm:text-sm font-bold text-gray-700">${idx + 1} of ${total}</span>
                     </div>
                 </div>
-                <div class="px-5 sm:px-7 pt-5 sm:pt-7 pb-3 sm:pb-4">
-                    <h2 class="text-base sm:text-xl font-bold text-slate-800 leading-relaxed font-display tracking-tight">${this.esc(q.text)}</h2>
-                </div>
-                <div class="px-5 sm:px-7 pb-5 sm:pb-7 space-y-2.5 sm:space-y-3 flex-grow">
-                    ${q.options.map((opt, oi) => `
-                        <div class="relative group">
-                            <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selected === oi ? 'checked' : ''} onchange="ExamManager.selectAnswer(${oi})">
-                            <label for="opt_${oi}" class="opt-label flex items-center w-full p-3.5 sm:p-4 border-2 border-slate-100 rounded-2xl font-medium text-slate-700 transition-all text-sm sm:text-base cursor-pointer peer-checked:border-blue-500 peer-checked:bg-blue-50/50 hover:border-slate-300 active:scale-[0.99] shadow-sm hover:shadow-md bg-white">
-                                <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-xs font-bold mr-3 sm:mr-4 border border-slate-200 peer-checked:bg-blue-600 peer-checked:text-white transition-colors group-hover:bg-slate-200 uppercase">${String.fromCharCode(65 + oi)}</span>
-                                <span class="leading-snug">${this.esc(opt)}</span>
-                            </label>
-                        </div>
-                    `).join('')}
-                </div>
+                ${answers[idx] !== null 
+                    ? '<span class="text-[10px] sm:text-xs font-bold text-green-600 bg-green-100/50 border border-green-200 px-3 py-1 rounded-full flex items-center gap-1.5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Answered</span>' 
+                    : '<span class="text-[10px] sm:text-xs font-bold text-gray-400 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">Waiting...</span>'}
             </div>
-        `;
-
-        this.updateNavButtons();
-        this.renderDots();
-    },
-
-    selectAnswer(idx) {
-        this.answers[this.currentIndex] = idx;
-        this.questionStates[this.currentIndex] = 1; // Answered
-        this.renderDots();
-    },
-
-    updateNavButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const isLast = this.currentIndex === this.currentTest.questions.length - 1;
-
-        if (prevBtn) prevBtn.disabled = this.currentIndex === 0;
-        if (nextBtn) {
-            nextBtn.textContent = isLast ? 'Save & Submit' : 'Save & Next';
-            nextBtn.onclick = () => isLast ? this.showSubmitModal() : this.goToNext();
-        }
-    },
-
-    renderDots() {
-        const nav = document.getElementById('dotsNav');
-        if (!nav) return;
-        nav.innerHTML = this.currentTest.questions.map((_, i) => {
-            let stateClass = 'not-visited';
-            const state = this.questionStates[i];
-            if (state === 1) stateClass = 'answered';
-            else if (state === 2) stateClass = 'not-answered';
-            else if (state === 3) stateClass = 'marked';
-            else if (state === 4) stateClass = 'marked-answered';
-            
-            const activeClass = (i === this.currentIndex) ? 'ring-2 ring-blue-500 ring-offset-2' : '';
-            return `<button onclick="jumpToQuestion(${i})" class="q-dot w-8 h-8 rounded flex items-center justify-center text-xs font-bold transition-all shadow-sm ${stateClass} ${activeClass}">${i + 1}</button>`;
-        }).join('');
-    },
-
-    // ── Navigation Logic ──
-    goToNext() { if (this.currentIndex < this.currentTest.questions.length - 1) this.showQuestion(this.currentIndex + 1); },
-    goToPrev() { if (this.currentIndex > 0) this.showQuestion(this.currentIndex - 1); },
-    jumpToQuestion(i) {
-        this.showQuestion(i);
-        if (window.innerWidth < 1024) this.toggleSidebar(false);
-    },
-    markForReview() {
-        const isAnswered = this.answers[this.currentIndex] !== null;
-        this.questionStates[this.currentIndex] = isAnswered ? 4 : 3;
-        if (this.currentIndex < this.currentTest.questions.length - 1) this.goToNext();
-        else this.renderDots();
-    },
-    clearResponse() {
-        this.answers[this.currentIndex] = null;
-        this.questionStates[this.currentIndex] = 2; // Visited
-        this.showQuestion(this.currentIndex);
-    },
-
-    // ── Timer Logic ──
-    startTimer() {
-        const mins = this.currentTest.type === 'mock' ? 120 : 30;
-        this.timeRemaining = mins * 60;
-        this.testStartTime = Date.now();
-        this.updateTimerUI();
-        this.timerInterval = setInterval(() => {
-            this.timeRemaining--;
-            if (this.timeRemaining <= 0) {
-                this.timeRemaining = 0;
-                clearInterval(this.timerInterval);
-                this.autoSubmit();
-            } else {
-                this.updateTimerUI();
-            }
-        }, 1000);
-    },
-
-    updateTimerUI() {
-        const h = Math.floor(this.timeRemaining / 3600);
-        const m = Math.floor((this.timeRemaining % 3600) / 60);
-        const s = this.timeRemaining % 60;
-        const display = h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-        const el = document.getElementById('timerText');
-        if (el) el.textContent = display;
-        if (this.timeRemaining < 300) el?.classList.add('timer-danger');
-    },
-
-    // ── Modals & Sidebar ──
-    toggleSidebar(force) {
-        const sidebar = document.getElementById('sidebar');
-        if (typeof force === 'boolean') {
-            force ? sidebar.classList.add('open') : sidebar.classList.remove('open');
-        } else {
-            sidebar.classList.toggle('open');
-        }
-    },
-
-    toggleCalculator() {
-        document.getElementById('calcModal').classList.toggle('hidden');
-    },
-
-    showSubmitModal() {
-        const answered = this.answers.filter(a => a !== null).length;
-        document.getElementById('submitAnswered').textContent = answered;
-        document.getElementById('submitUnanswered').textContent = this.currentTest.questions.length - answered;
-        document.getElementById('submitModal').classList.remove('hidden');
-    },
-    hideSubmitModal() { document.getElementById('submitModal').classList.add('hidden'); },
-
-    showExitModal() {
-        document.getElementById('exitUnanswered').textContent = this.answers.filter(a => a === null).length;
-        const h = Math.floor(this.timeRemaining / 3600), m = Math.floor((this.timeRemaining % 3600) / 60), s = this.timeRemaining % 60;
-        document.getElementById('exitTimeLeft').textContent = h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-        document.getElementById('exitModal').classList.remove('hidden');
-    },
-    hideExitModal() { document.getElementById('exitModal').classList.add('hidden'); },
-    confirmExit() { this.testSubmitted = true; window.location.href = 'index.html'; },
-
-    // ── Submission ──
-    autoSubmit() {
-        alert("Time's Up! Test submitted automatically.");
-        this.executeSubmit();
-    },
-
-    async executeSubmit() {
-        this.testSubmitted = true;
-        this.hideSubmitModal();
-        if (this.timerInterval) clearInterval(this.timerInterval);
-
-        let score = 0;
-        const total = this.currentTest.questions.length;
-        this.gradeResults = this.currentTest.questions.map((q, i) => {
-            const userAns = this.answers[i];
-            const isCorrect = userAns !== null && userAns === q.correct;
-            if (isCorrect) score++;
-            return { userAnswer: userAns, correctAnswer: q.correct, isCorrect };
-        });
-
-        // Save
-        try {
-            const timeTakenSec = Math.round((Date.now() - this.testStartTime) / 1000);
-            await push(ref(db, `mock_results/${this.currentUser.uid}`), {
-                testId: this.testId,
-                testTitle: this.currentTest.title,
-                userEmail: this.currentUser.email,
-                score, total, timeTaken: timeTakenSec, date: Date.now()
-            });
-        } catch (err) { console.error("Save error:", err); }
-
-        this.renderResults(score, total);
-    },
-
-    // ── Results & Review ──
-    renderResults(score, total) {
-        document.getElementById('testContainer').classList.add('hidden');
-        document.getElementById('timerBox').classList.add('hidden');
-        document.getElementById('reviewContainer').classList.remove('hidden');
-
-        const pct = Math.round((score / total) * 100);
-        const timeTaken = Math.round((Date.now() - this.testStartTime) / 1000);
-        const timeDisplay = `${Math.floor(timeTaken/60)}m ${timeTaken%60}s`;
-
-        const grade = pct >= 80 ? { color: 'emerald', bg: 'from-emerald-500 to-green-500', icon: '🏆', text: 'Excellent!' } 
-                    : pct >= 50 ? { color: 'blue', bg: 'from-blue-500 to-indigo-500', icon: '🔥', text: 'Good Job!' } 
-                    : { color: 'orange', bg: 'from-orange-500 to-red-500', icon: '📚', text: 'Keep It Up!' };
-
-        document.getElementById('scoreSummary').innerHTML = `
-            <div class="relative z-10">
-                <div class="text-6xl mb-4 transform hover:scale-110 transition-transform">${grade.icon}</div>
-                <h2 class="text-3xl font-black font-display text-slate-800 mb-1">${grade.text}</h2>
-                <p class="text-slate-500 text-sm mb-8">Results recorded successfully.</p>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="bg-gradient-to-br ${grade.bg} rounded-2xl p-5 text-white shadow-lg">
-                        <p class="text-3xl font-black font-display">${score}<span class="text-sm opacity-70"> / ${total}</span></p>
-                        <p class="text-[10px] font-bold uppercase tracking-widest">Score</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-                        <p class="text-3xl font-black text-slate-800 font-display">${pct}%</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Accuracy</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-                        <p class="text-xl font-black text-slate-800 font-display mt-2">${timeDisplay}</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Time</p>
-                    </div>
-                </div>
+            <!-- Question Text -->
+            <div class="px-5 sm:px-10 pt-6 sm:pt-10 pb-4 sm:pb-6">
+                <h2 class="text-lg sm:text-2xl font-bold text-gray-900 leading-tight tracking-tight">${esc(q.text)}</h2>
             </div>
-        `;
-
-        if (this.currentTest.externalLink) {
-            document.getElementById('reviewPromoBanner').classList.remove('hidden');
-            document.getElementById('reviewPromoLink').href = this.currentTest.externalLink;
-            document.getElementById('reviewPromoText').textContent = this.currentTest.externalLinkText || 'Study Material';
-        }
-
-        this.renderReviewDots();
-        this.showReviewQuestion(0);
-    },
-
-    renderReviewDots() {
-        const nav = document.getElementById('reviewDotsNav');
-        nav.innerHTML = this.gradeResults.map((r, i) => {
-            let cls = 'q-dot w-9 h-9 sm:w-10 sm:h-10 rounded-xl border text-xs font-bold flex items-center justify-center cursor-pointer transition-all shadow-sm';
-            if (r.isCorrect) cls += ' review-correct border-emerald-200';
-            else if (r.userAnswer === null) cls += ' review-skipped border-orange-200';
-            else cls += ' review-wrong border-red-200';
-            if (i === this.reviewIndex) cls += ' scale-110 shadow-md ring-2 ring-blue-400 ring-offset-1';
-            return `<button onclick="jumpReview(${i})" class="${cls}">${i + 1}</button>`;
-        }).join('');
-    },
-
-    showReviewQuestion(idx) {
-        this.reviewIndex = idx;
-        const q = this.currentTest.questions[idx];
-        const r = this.gradeResults[idx];
-        const card = document.getElementById('reviewQuestionCard');
-
-        const badge = r.isCorrect ? '<span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-200">✓ Correct</span>'
-                    : r.userAnswer === null ? '<span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1.5 rounded-xl border border-orange-200">⚠ Skipped</span>'
-                    : '<span class="text-xs font-bold text-red-700 bg-red-100 px-3 py-1.5 rounded-xl border border-red-200">✗ Incorrect</span>';
-
-        card.innerHTML = `
-            <div class="q-card bg-white/95 backdrop-blur-md rounded-3xl border border-white shadow-premium overflow-hidden">
-                <div class="px-6 py-4 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Question ${idx + 1}</span>
-                    ${badge}
-                </div>
-                <div class="p-6">
-                    <h2 class="text-lg font-bold text-slate-800 leading-relaxed mb-6">${this.esc(q.text)}</h2>
-                    <div class="space-y-3">
-                        ${q.options.map((opt, oi) => {
-                            let cls = 'flex items-center w-full p-4 border-2 rounded-2xl font-medium transition-all ';
-                            if (oi === r.correctAnswer && oi === r.userAnswer) cls += 'border-emerald-500 bg-emerald-50';
-                            else if (oi === r.correctAnswer) cls += 'border-emerald-400 bg-emerald-50 border-dashed';
-                            else if (oi === r.userAnswer) cls += 'border-red-400 bg-red-50';
-                            else cls += 'border-slate-50 text-slate-600';
-                            
-                            return `<div class="${cls}">
-                                <span class="font-bold text-slate-400 mr-3">${String.fromCharCode(65 + oi)}.</span>
-                                <span>${this.esc(opt)}</span>
-                            </div>`;
-                        }).join('')}
+            <!-- Options -->
+            <div class="px-5 sm:px-10 pb-6 sm:pb-10 space-y-3 sm:space-y-4 flex-grow">
+                ${q.options.map((opt, oi) => `
+                    <div class="relative group">
+                        <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selectedAnswer === oi ? 'checked' : ''} onchange="selectAnswer(${oi})">
+                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-4 sm:p-5 border-2 border-gray-100 rounded-2xl font-semibold text-gray-700 bg-white cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50/50 hover:bg-gray-50 active:scale-[0.98] premium-shadow">
+                            <span class="opt-dot w-6 h-6 border-2 border-gray-200 rounded-lg mr-4 flex items-center justify-center flex-shrink-0 transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600">
+                                <svg class="w-3 h-3 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
+                            </span>
+                            <div class="flex flex-col flex-grow">
+                                <span class="text-[10px] font-black text-gray-300 uppercase tracking-tighter mb-0.5">${String.fromCharCode(65 + oi)}</span>
+                                <span class="text-sm sm:text-base">${esc(opt)}</span>
+                            </div>
+                        </label>
                     </div>
-                </div>
+                `).join('')}
             </div>
-        `;
+        </div>
+    `;
 
-        document.getElementById('reviewPrevBtn').disabled = idx === 0;
-        document.getElementById('reviewNextBtn').disabled = idx === this.gradeResults.length - 1;
-        this.renderReviewDots();
-    },
+    // Update button states
+    document.getElementById('prevBtn').disabled = idx === 0;
+    const isLast = idx === total - 1;
+    document.getElementById('nextBtn').style.display = isLast ? 'none' : 'flex';
+    document.getElementById('skipBtn').style.display = isLast ? 'none' : 'flex';
 
-    reviewNext() { if (this.reviewIndex < this.gradeResults.length - 1) this.showReviewQuestion(this.reviewIndex + 1); },
-    reviewPrev() { if (this.reviewIndex > 0) this.showReviewQuestion(this.reviewIndex - 1); },
+    renderDots();
+}
 
-    // ── Utilities ──
-    esc(str) { return str.toString().replace(/</g, '&lt;').replace(/>/g, '&gt;'); },
-    renderError(title, msg) {
-        document.getElementById('loading').innerHTML = `
-            <div class="text-red-500 mb-4 animate-bounce"><svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
-            <h2 class="text-2xl font-black font-display text-slate-800 mb-2">${title}</h2>
-            <p class="text-slate-500 mb-8 max-w-xs mx-auto">${msg}</p>
-            <a href="index.html" class="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition-all">Go Home</a>
-        `;
-    },
-
-    // ── Calculator ──
-    calcNum(n) { this.calcValue = this.calcValue === '0' && n !== '.' ? String(n) : this.calcValue + String(n); this.upCalc(); },
-    calcOp(op) { const last = this.calcValue.slice(-1); if (['+','-','*','/'].includes(last)) this.calcValue = this.calcValue.slice(0, -1) + op; else this.calcValue += op; this.upCalc(); },
-    calcClear() { this.calcValue = '0'; this.upCalc(); },
-    calcEqual() { try { this.calcValue = String(eval(this.calcValue.replace(/[^-+/*0-9.]/g, ''))); if (['undefined','NaN','Infinity'].includes(this.calcValue)) this.calcValue = 'Error'; } catch { this.calcValue = 'Error'; } this.upCalc(); },
-    upCalc() { document.getElementById('calcDisplay').textContent = this.calcValue; }
+// ══════════════════════════════
+//  ANSWER SELECTION
+// ══════════════════════════════
+window.selectAnswer = (optIndex) => {
+    answers[currentIndex] = optIndex;
+    renderDots();
+    // Update the badge in the card
+    showQuestion(currentIndex); // re-render to show "Answered" badge
 };
 
-// Start the portal
-ExamManager.init();
+// ══════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════
+window.goToNext = () => {
+    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+};
 
-// Export for internal use if needed
-window.ExamManager = ExamManager;
+window.goToPrev = () => {
+    if (currentIndex > 0) showQuestion(currentIndex - 1);
+};
+
+window.skipQuestion = () => {
+    // Move to next without answering
+    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+};
+
+// ══════════════════════════════
+//  GRID NAVIGATOR TOGGLE
+// ══════════════════════════════
+window.toggleGridNav = () => {
+    const panel = document.getElementById('gridNavPanel');
+    const icon = document.getElementById('gridToggleIcon');
+    const isOpen = panel.classList.toggle('open');
+    icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+};
+
+window.jumpToQuestion = (idx) => {
+    showQuestion(idx);
+    document.getElementById('gridNavPanel').classList.remove('open');
+    document.getElementById('gridToggleIcon').style.transform = 'rotate(0deg)';
+};
+
+// ══════════════════════════════
+//  DOTS NAVIGATOR
+// ══════════════════════════════
+function renderDots() {
+    const dotsNav = document.getElementById('dotsNav');
+    if (!dotsNav || !currentTest?.questions) return;
+    let html = '';
+    currentTest.questions.forEach((_, i) => {
+        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-gray-200 text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition hover:border-blue-300';
+        if (i === currentIndex) cls += ' current';
+        if (answers[i] !== null) cls += ' answered';
+        html += `<button type="button" onclick="jumpToQuestion(${i})" class="${cls}">${i + 1}</button>`;
+    });
+    dotsNav.innerHTML = html;
+}
+
+// ══════════════════════════════
+//  TIMER
+// ══════════════════════════════
+function startTimer() {
+    const mins = currentTest.type === 'mock' ? 120 : 30;
+    timeRemaining = mins * 60;
+    testStartTime = Date.now();
+    document.getElementById('timerBox').classList.remove('hidden');
+    document.getElementById('timerBox').classList.add('flex');
+    updateTimerUI();
+    timerInterval = setInterval(() => {
+        timeRemaining--;
+        if (timeRemaining <= 0) { timeRemaining = 0; clearInterval(timerInterval); autoSubmit(); return; }
+        updateTimerUI();
+    }, 1000);
+}
+
+function updateTimerUI() {
+    const h = Math.floor(timeRemaining / 3600);
+    const m = Math.floor((timeRemaining % 3600) / 60);
+    const s = timeRemaining % 60;
+    const txt = h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    const el = document.getElementById('timerText');
+    el.textContent = txt;
+    if (timeRemaining < 300 && timeRemaining > 0) {
+        el.classList.add('timer-danger');
+        document.getElementById('timerBox').classList.replace('bg-gray-100', 'bg-red-50');
+        document.getElementById('timerBox').classList.replace('border-gray-200', 'border-red-200');
+    }
+}
+
+function timerString() {
+    const h = Math.floor(timeRemaining / 3600), m = Math.floor((timeRemaining % 3600) / 60), s = timeRemaining % 60;
+    return h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+
+function getTimeTaken() {
+    const e = Math.round((Date.now() - testStartTime) / 1000);
+    return { seconds: e, display: `${Math.floor(e/60)}m ${e%60}s` };
+}
+
+// ══════════════════════════════
+//  EXIT MODAL
+// ══════════════════════════════
+window.showExitModal = () => {
+    document.getElementById('exitUnanswered').textContent = answers.filter(a => a === null).length;
+    document.getElementById('exitTimeLeft').textContent = timerString();
+    document.getElementById('exitModal').classList.remove('hidden');
+};
+window.hideExitModal = () => document.getElementById('exitModal').classList.add('hidden');
+window.confirmExit = () => { testSubmitted = true; window.removeEventListener('beforeunload', onBeforeUnload); if (timerInterval) clearInterval(timerInterval); window.location.href = 'index.html'; };
+
+document.getElementById('exitLogoLink')?.addEventListener('click', e => { if (!testSubmitted) { e.preventDefault(); showExitModal(); } });
+
+// ══════════════════════════════
+//  SUBMIT MODAL
+// ══════════════════════════════
+window.showSubmitModal = () => {
+    const answered = answers.filter(a => a !== null).length;
+    document.getElementById('submitAnswered').textContent = answered;
+    document.getElementById('submitUnanswered').textContent = answers.length - answered;
+    document.getElementById('submitModal').classList.remove('hidden');
+};
+window.hideSubmitModal = () => document.getElementById('submitModal').classList.add('hidden');
+
+function autoSubmit() {
+    alert("⏰ Time's up! Your test has been auto-submitted.");
+    gradeAndSave();
+}
+
+window.executeSubmit = () => { hideSubmitModal(); gradeAndSave(); };
+
+// ══════════════════════════════
+//  GRADE & SAVE
+// ══════════════════════════════
+async function gradeAndSave() {
+    testSubmitted = true;
+    window.removeEventListener('beforeunload', onBeforeUnload);
+    if (timerInterval) clearInterval(timerInterval);
+
+    let score = 0;
+    const total = currentTest.questions.length;
+    const timeTaken = getTimeTaken();
+    gradeResults = [];
+
+    currentTest.questions.forEach((q, i) => {
+        const userAns = answers[i];
+        const correct = q.correct;
+        const isCorrect = userAns !== null && userAns === correct;
+        if (isCorrect) score++;
+        gradeResults.push({ userAnswer: userAns, correctAnswer: correct, isCorrect });
+    });
+
+    // Save to Firebase
+    try {
+        const newRef = push(ref(db, `mock_results/${currentUser.uid}`));
+        await set(newRef, {
+            testId, testTitle: currentTest.title, userEmail: currentUser.email,
+            score, total, timeTaken: timeTaken.seconds, date: Date.now()
+        });
+    } catch (err) {
+        console.error('Save error:', err);
+    }
+
+    // Show review
+    showReview(score, total, timeTaken);
+}
+
+// ══════════════════════════════
+//  REVIEW MODE
+// ══════════════════════════════
+function showReview(score, total, timeTaken) {
+    document.getElementById('testContainer').classList.add('hidden');
+    document.getElementById('reviewContainer').classList.remove('hidden');
+    document.getElementById('timerBox').classList.add('hidden');
+    document.getElementById('progressBar').style.width = '100%';
+
+    const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+    const grade = pct >= 80 ? { color: 'green', icon: '🏆', text: 'Distinction!', bg: 'bg-green-50/50', border: 'border-green-200', textCls: 'text-green-700' } : pct >= 50 ? { color: 'blue', icon: '✨', text: 'Qualified!', bg: 'bg-blue-50/50', border: 'border-blue-200', textCls: 'text-blue-700' } : { color: 'orange', icon: '📖', text: 'Practice More!', bg: 'bg-orange-50/50', border: 'border-orange-200', textCls: 'text-orange-700' };
+
+    document.getElementById('scoreSummary').innerHTML = `
+        <div class="relative py-4">
+            <div class="absolute inset-0 flex items-center justify-center opacity-10 blur-3xl saturate-200 pointer-events-none -z-10 bg-${grade.color}-400 rounded-full scale-150"></div>
+            <p class="text-6xl mb-4 animate-bounce">${grade.icon}</p>
+            <h2 class="text-3xl sm:text-4xl font-black font-display text-gray-900 mb-2">${grade.text}</h2>
+            <p class="text-gray-500 font-medium mb-8">Performance analysis for <span class="text-blue-600">${currentTest.title}</span></p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="${grade.bg} rounded-[1.5rem] p-5 border ${grade.border} premium-shadow">
+                <p class="text-3xl font-black ${grade.textCls}">${score}/${total}</p>
+                <p class="text-[10px] font-black ${grade.textCls} opacity-60 uppercase tracking-widest mt-1">Final Score</p>
+            </div>
+            <div class="bg-white rounded-[1.5rem] p-5 border border-gray-100 premium-shadow">
+                <p class="text-3xl font-black text-gray-900">${pct}%</p>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Accuracy</p>
+            </div>
+            <div class="bg-white rounded-[1.5rem] p-5 border border-gray-100 premium-shadow">
+                <p class="text-3xl font-black text-gray-900">${timeTaken.display}</p>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Completion Time</p>
+            </div>
+        </div>
+    `;
+
+    // Review promo
+    if (currentTest.externalLink) {
+        document.getElementById('reviewPromoBanner').classList.remove('hidden');
+        document.getElementById('reviewPromoLink').href = currentTest.externalLink;
+        document.getElementById('reviewPromoText').textContent = currentTest.externalLinkText || 'Study Material';
+    }
+
+    renderReviewDots();
+    showReviewQuestion(0);
+}
+
+function renderReviewDots() {
+    const nav = document.getElementById('reviewDotsNav');
+    let html = '';
+    gradeResults.forEach((r, i) => {
+        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition';
+        if (r.isCorrect) cls += ' review-correct';
+        else if (r.userAnswer === null) cls += ' review-skipped';
+        else cls += ' review-wrong';
+        if (i === reviewIndex) cls += ' current';
+        html += `<button type="button" onclick="jumpReview(${i})" class="${cls}">${i + 1}</button>`;
+    });
+    nav.innerHTML = html;
+}
+
+function showReviewQuestion(idx) {
+    reviewIndex = idx;
+    const q = currentTest.questions[idx];
+    const r = gradeResults[idx];
+    const card = document.getElementById('reviewQuestionCard');
+
+    const statusBadge = r.isCorrect
+        ? '<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">✓ Correct</span>'
+        : r.userAnswer === null
+            ? '<span class="text-xs font-bold text-orange-700 bg-orange-100 px-2 py-0.5 rounded-full">⚠ Skipped</span>'
+            : '<span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded-full">✗ Incorrect</span>';
+
+    card.innerHTML = `
+        <div class="q-card bg-white rounded-[2rem] border border-gray-100 shadow-xl overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50/50 border-b border-gray-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-gray-200 text-gray-700 flex items-center justify-center text-xs font-black shadow-inner flex-shrink-0">${idx + 1}</span>
+                    <span class="text-[10px] sm:text-xs font-black text-gray-400 uppercase tracking-widest">Question ${idx + 1}</span>
+                </div>
+                ${statusBadge}
+            </div>
+            <div class="px-6 sm:px-10 pt-8 pb-4">
+                <h2 class="text-lg sm:text-xl font-bold text-gray-900 leading-tight">${esc(q.text)}</h2>
+            </div>
+            <div class="px-6 sm:px-10 pb-8 space-y-3">
+                ${q.options.map((opt, oi) => {
+                    let cls = 'flex items-center w-full p-4 sm:p-5 border-2 rounded-2xl font-semibold text-sm transition-all premium-shadow';
+                    if (oi === r.correctAnswer) cls += ' correct-answer';
+                    else if (oi === r.userAnswer) cls += ' wrong-answer';
+                    else cls += ' border-gray-50 text-gray-500 opacity-60';
+
+                    let indicator = '';
+                    if (oi === r.correctAnswer && oi === r.userAnswer) indicator = '<div class="ml-auto flex items-center gap-1.5 text-green-600"><span class="text-[10px] font-black uppercase">Correct</span><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>';
+                    else if (oi === r.correctAnswer) indicator = '<div class="ml-auto text-green-600"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>';
+                    else if (oi === r.userAnswer) indicator = '<div class="ml-auto text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg></div>';
+
+                    return `<div class="${cls}">
+                        <span class="w-6 h-6 rounded-lg bg-black/5 flex items-center justify-center text-[10px] font-black mr-4">${String.fromCharCode(65 + oi)}</span>
+                        <span class="flex-grow">${esc(opt)}</span>
+                        ${indicator}
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+    `;
+
+    document.getElementById('reviewPrevBtn').disabled = idx === 0;
+    document.getElementById('reviewNextBtn').disabled = idx === currentTest.questions.length - 1;
+    renderReviewDots();
+}
+
+window.jumpReview = (i) => showReviewQuestion(i);
+window.reviewPrev = () => { if (reviewIndex > 0) showReviewQuestion(reviewIndex - 1); };
+window.reviewNext = () => { if (reviewIndex < currentTest.questions.length - 1) showReviewQuestion(reviewIndex + 1); };

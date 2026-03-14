@@ -15,262 +15,176 @@
     <style>
         .font-display { font-family: 'Clash Display', sans-serif; }
         
-        /* Premium Background Gradient */
-        body {
-            background-color: #f8fafc;
-            background-image: radial-gradient(at 0% 0%, hsla(210, 100%, 97%, 1) 0px, transparent 50%),
-                              radial-gradient(at 100% 100%, hsla(220, 100%, 96%, 1) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-
-        /* Option Styling (Elevated) */
-        .opt-radio:checked + .opt-label { 
-            border-color: #2563eb; 
-            background: linear-gradient(to right, #eff6ff, #ffffff);
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.05), 0 2px 4px -1px rgba(37, 99, 235, 0.03);
-            transform: translateY(-1px);
-        }
-        .opt-radio:checked + .opt-label .opt-dot { border-color: #2563eb; background: #2563eb; box-shadow: 0 0 0 4px #dbeafe; }
+        /* Premium Shadows & Transitions */
+        .premium-shadow { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025), 0 20px 25px -5px rgba(0, 0, 0, 0.03); }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(243, 244, 246, 0.6); }
+        
+        /* Option Styling */
+        .opt-radio:checked + .opt-label { border-color: #2563eb; background: #eff6ff; transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1); }
+        .opt-radio:checked + .opt-label .opt-dot { border-color: #2563eb; background: #2563eb; }
         .opt-radio:checked + .opt-label .opt-dot svg { opacity: 1; color: #fff; }
         .opt-label { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .opt-label:hover { background: #f8fafc; border-color: #cbd5e1; transform: translateY(-1px); }
-        .opt-label:active { transform: translateY(0); }
+        .opt-label:hover { background: #f9fafb; border-color: #d1d5db; transform: translateY(-1px); }
         
-        /* Result Styling (Refined) */
-        .correct-answer { background: linear-gradient(to right, #f0fdf4, #ffffff) !important; border-color: #22c55e !important; box-shadow: 0 2px 4px rgba(34, 197, 94, 0.05) !important; }
-        .wrong-answer { background: linear-gradient(to right, #fef2f2, #ffffff) !important; border-color: #ef4444 !important; box-shadow: 0 2px 4px rgba(239, 68, 68, 0.05) !important; }
-        .unanswered-answer { background: linear-gradient(to right, #fff7ed, #ffffff) !important; border-color: #f97316 !important; }
+        /* Result Styling */
+        .correct-answer { background-color: #f0fdf4 !important; border-color: #22c55e !important; box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.1); }
+        .wrong-answer { background-color: #fef2f2 !important; border-color: #ef4444 !important; box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1); }
+        .unanswered-answer { background-color: #fffaf5 !important; border-color: #f97316 !important; }
         
-        /* Timer danger (Smoother pulse) */
-        .timer-danger { animation: pulse-red 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse-red { 0%, 100% { color: #ef4444; background-color: #fef2f2; border-color: #fca5a5; } 50% { color: #dc2626; background-color: #fee2e2; border-color: #ef4444; } }
+        /* Timer danger */
+        .timer-danger { animation: pulse-red 1.2s ease-in-out infinite; }
+        @keyframes pulse-red { 0%,100%{ color:#ef4444; transform: scale(1); } 50%{ color:#f87171; transform: scale(1.05); } }
         
-        /* Updated Status Classes */
-        .q-dot.not-visited { background: #e2e8f0; color: #64748b; border-color: #cbd5e1; }
-        .q-dot.not-answered { background: #fee2e2; color: #ef4444; border-color: #fca5a5; position: relative; border-radius: 50% 50% 0 50%; } /* TCS iON style shape */
-        .q-dot.answered { background: #22c55e; color: #fff; border-color: #16a34a; border-radius: 50% 50% 50% 0; }
-        .q-dot.marked { background: #8b5cf6; color: #fff; border-color: #7c3aed; border-radius: 50%; }
-        .q-dot.marked-answered { background: #8b5cf6; color: #fff; border-color: #7c3aed; border-radius: 50%; }
-        .q-dot.marked-answered::after { content: '✓'; position: absolute; bottom: -2px; right: -2px; background: #22c55e; color: white; width: 12px; height: 12px; border-radius: 50%; font-size: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid white; }
+        /* Nav button states */
+        .q-dot { transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+        .q-dot.answered { background: #2563eb; color: #fff; border-color: #2563eb; }
+        .q-dot.skipped { background: #fffaf5; color: #ea580c; border-color: #fdba74; }
+        .q-dot.current { box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); border-color: #2563eb; transform: scale(1.1); }
+        .q-dot.review-correct { background: #dcfce7; color: #16a34a; border-color: #22c55e; }
+        .q-dot.review-wrong { background: #fee2e2; color: #ef4444; border-color: #ef4444; }
+        .q-dot.review-skipped { background: #fffaf5; color: #f97316; border-color: #f97316; }
         
-        .palette-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(35px, 1fr)); gap: 0.5rem; }
+        /* Slide animation */
+        .q-card { animation: fadeSlideUp 0.35s cubic-bezier(0, 0, 0.2, 1); }
+        @keyframes fadeSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
         
-        /* Layout */
-        .main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-        .content-area { display: flex; flex: 1; overflow: hidden; position: relative; }
-        .question-col { flex: 1; overflow-y: auto; padding-bottom: 80px; }
-        .sidebar-col { width: 320px; border-left: 1px solid #e5e7eb; background: #fff; display: flex; flex-direction: column; z-index: 30; transition: transform 0.3s ease; }
-        
-        @media (max-width: 1023px) {
-            .sidebar-col { position: fixed; right: 0; top: 64px; bottom: 0; transform: translateX(100%); width: 280px; }
-            .sidebar-col.open { transform: translateX(0); box-shadow: -10px 0 15px -3px rgba(0,0,0,0.1); }
-        }
+        /* Progress bar */
+        .progress-fill { transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%); }
 
-        /* Instructions Overlay */
-        #instructionsOverlay { position: fixed; inset: 0; z-index: 100; background: #fff; display: flex; flex-direction: column; }
+        /* Grid Navigator */
+        .nav-panel { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); max-height: 0; opacity: 0; pointer-events: none; overflow: hidden; }
+        .nav-panel.open { max-height: 400px; opacity: 1; pointer-events: auto; transform: translateY(0); margin-top: 1rem; }
+        .dots-scroll { max-height: 250px; overflow-y: auto; scrollbar-width: thin; padding: 4px; }
+        .dots-scroll::-webkit-scrollbar { width: 4px; }
+        .dots-scroll::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
 
-        /* TCS iON Style Buttons */
-        .btn-exam { padding: 0.5rem 1rem; font-weight: 600; border-radius: 4px; transition: all 0.2s; border: 1px solid transparent; font-size: 0.875rem; }
-        .btn-save { background: #16a34a; color: white; }
-        .btn-save:hover { background: #15803d; }
-        .btn-mark { background: #fff; color: #374151; border-color: #d1d5db; }
-        .btn-mark:hover { background: #f3f4f6; }
-        .btn-clear { background: #fff; color: #374151; border-color: #d1d5db; }
-        .btn-clear:hover { background: #f3f4f6; }
-
-        /* Mobile bottom nav */
+        /* Mobile bottom nav fix */
         @media (max-width: 479px) {
-            .bottom-nav-inner { flex-direction: column; gap: 0.5rem; }
-            .bottom-nav-inner .nav-row { display: flex; gap: 0.5rem; width: 100%; }
+            .bottom-nav-inner { flex-direction: column; gap: 0.6rem; }
+            .bottom-nav-inner .nav-row { display: flex; gap: 0.6rem; width: 100%; }
             .bottom-nav-inner .nav-row button { flex: 1; justify-content: center; }
         }
-        .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
 
-        /* Glass modal backdrop */
-        .glass-backdrop { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background-color: rgba(15, 23, 42, 0.4); }
+        /* Safe area bottom padding for notched phones */
+        .safe-bottom { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
         
-        /* Custom Shadows */
-        .shadow-premium { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.02); }
+        /* Hero Gradient */
+        .hero-bg { background: radial-gradient(circle at top right, #f0f9ff 0%, #fafafa 100%); }
     </style>
 </head>
-<body class="text-gray-900 font-sans">
-    <div class="main-wrapper">
-        <!-- ─── Instructions Overlay ─── -->
-        <div id="instructionsOverlay" class="bg-gray-50">
-            <nav class="bg-white border-b px-6 py-4 flex items-center justify-between shadow-sm sticky top-0 z-50">
-                <div class="flex items-center text-blue-600 font-bold text-xl font-display">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
-                        <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
-                    </svg>
-                    <span class="hidden sm:inline">MSBTE Mock Test</span>
-                    <span class="sm:hidden">Instructions</span>
+<body class="hero-bg text-gray-900 font-sans flex flex-col min-h-screen selection:bg-blue-100">
+
+    <!-- ─── Top Nav ─── -->
+    <nav class="glass-nav z-40 flex-none sticky top-0">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3 min-w-0">
+                    <a href="../index.html" class="flex items-center text-blue-600 font-bold text-xl font-display group" id="exitLogoLink">
+                        <div class="bg-blue-600 text-white p-1.5 rounded-lg mr-2 transition-transform group-hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 576 512" fill="currentColor"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>
+                        </div>
+                        <span class="hidden sm:inline">MSBTE</span>
+                    </a>
+                    <span class="text-gray-300 mx-1 hidden sm:inline">/</span>
+                    <span class="text-sm font-bold text-gray-700 truncate max-w-[120px] sm:max-w-xs" id="navTestTitle">Loading...</span>
                 </div>
-            </nav>
-            <div class="flex-1 overflow-y-auto p-5 sm:p-10 max-w-4xl mx-auto w-full">
-                <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-6 sm:p-8 mb-8">
-                    <h1 class="text-2xl sm:text-3xl font-black font-display text-slate-800 mb-6" id="instrTitle">Exam Instructions</h1>
-                    
-                    <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-5 mb-8 text-sm sm:text-base text-blue-900 leading-relaxed">
-                        <p class="font-bold mb-3 uppercase tracking-wider text-blue-700">General Instructions:</p>
-                        <ul class="list-disc ml-5 space-y-3">
-                            <li>The total duration of the examination is <span class="font-bold text-blue-600" id="instrDuration">--</span> minutes.</li>
-                            <li>The countdown timer in the top right corner of screen will display the remaining time.</li>
-                            <li>The Question Palette shows the status of each question:</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                            <span class="q-dot w-9 h-9 not-visited flex items-center justify-center text-xs font-bold shadow-sm">01</span>
-                            <span class="text-xs sm:text-sm font-medium text-slate-600">You have not visited the question yet.</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                            <span class="q-dot w-9 h-9 not-answered flex items-center justify-center text-xs font-bold shadow-sm">02</span>
-                            <span class="text-xs sm:text-sm font-medium text-slate-600">You have visited but not answered.</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                            <span class="q-dot w-9 h-9 answered flex items-center justify-center text-xs font-bold shadow-sm">03</span>
-                            <span class="text-xs sm:text-sm font-medium text-slate-600">You have answered the question.</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                            <span class="q-dot w-9 h-9 marked flex items-center justify-center text-xs font-bold shadow-sm">04</span>
-                            <span class="text-xs sm:text-sm font-medium text-slate-600">Marked for review (unanswered).</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors col-span-1 sm:col-span-2">
-                            <span class="q-dot w-9 h-9 marked-answered flex items-center justify-center text-xs font-bold shadow-sm">05</span>
-                            <span class="text-xs sm:text-sm font-medium text-slate-600">The question(s) "Answered and Marked for Review" will be evaluated.</span>
+                
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Timer -->
+                    <div id="timerBox" class="hidden items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-xl border border-gray-100 transition-colors">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div class="flex flex-col">
+                            <span class="text-[8px] uppercase font-black text-gray-400 tracking-tighter leading-none mb-0.5">Time</span>
+                            <span id="timerText" class="font-mono font-bold text-xs sm:text-sm text-gray-700 leading-none">00:00</span>
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-100 pt-8">
-                        <label class="flex items-start gap-4 cursor-pointer group mb-10">
-                            <div class="mt-1 relative">
-                                <input type="checkbox" id="agreeCheck" class="w-5 h-5 text-blue-600 border-2 border-slate-300 rounded focus:ring-blue-500 transition-all cursor-pointer">
-                            </div>
-                            <span class="text-sm sm:text-base text-slate-600 group-hover:text-slate-800 transition-colors leading-relaxed">I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree to follow all examination rules.</span>
-                        </label>
-                        <div class="flex justify-center">
-                            <button id="startTestBtn" disabled class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold px-12 py-4 rounded-2xl shadow-xl hover:from-blue-700 hover:to-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all transform active:scale-95 text-lg">I am ready to begin</button>
-                        </div>
+                    <!-- Question Counter -->
+                    <div class="bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-xl flex flex-col items-center min-w-[50px]">
+                        <span class="text-[8px] uppercase font-black text-blue-400 tracking-tighter leading-none mb-0.5">Progress</span>
+                        <span class="text-xs sm:text-sm font-black text-blue-700 leading-none"><span id="navCurrent">1</span>/<span id="navTotal">0</span></span>
                     </div>
+
+                    <!-- Exit -->
+                    <button onclick="showExitModal()" class="flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-500 bg-gray-50 hover:bg-red-50 px-3 py-2 rounded-xl transition-all border border-transparent hover:border-red-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <span class="hidden sm:inline">Exit</span>
+                    </button>
                 </div>
             </div>
         </div>
-
-    <!-- ─── Top Nav ─── -->
-    <nav class="bg-white text-slate-800 z-40 flex-none border-b border-slate-200 sticky top-0 shadow-sm">
-        <div class="px-4 sm:px-6">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-4 min-w-0">
-                    <a href="/" id="exitLogoLink" class="flex items-center text-blue-600 font-bold text-lg font-display flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" viewBox="0 0 576 512" fill="currentColor">
-                            <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z" />
-                        </svg>
-                        <span class="hidden md:inline">MSBTE Notes & Info</span>
-                    </a>
-                    <div class="h-6 w-px bg-slate-200 hidden sm:block"></div>
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest truncate max-w-[150px] sm:max-w-none" id="navTestTitle">Loading Test...</span>
-                </div>
-                <div class="flex items-center gap-2 sm:gap-4">
-                    <!-- Calculator Toggle -->
-                    <button onclick="toggleCalculator()" class="text-slate-400 hover:text-blue-600 transition p-2 hover:bg-slate-50 rounded-xl" title="Calculator">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    </button>
-                    <!-- Timer -->
-                    <div id="timerBox" class="flex items-center gap-2 bg-slate-50 px-3 sm:px-4 py-1.5 rounded-xl border border-slate-200">
-                        <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden xs:block">Time Left</span>
-                        <span id="timerText" class="font-mono font-black text-sm text-blue-600 tracking-tight">00:00:00</span>
-                    </div>
-                    <!-- Sidebar Toggle (Mobile) -->
-                    <button onclick="toggleSidebar()" class="lg:hidden text-slate-400 hover:text-blue-600 transition p-2 hover:bg-slate-50 rounded-xl">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>
-                </div>
-            </div>
+        <!-- Progress Bar -->
+        <div class="h-1 bg-gray-100">
+            <div id="progressBar" class="progress-fill h-full rounded-r-full shadow-[0_0_8px_rgba(37,99,235,0.4)]" style="width:0%"></div>
         </div>
     </nav>
 
-    <div class="content-area">
-        <!-- Main Column -->
-        <div class="question-col bg-slate-50 relative">
-            <div id="loading" class="flex flex-col items-center justify-center py-20 text-gray-500">
-                <svg class="w-10 h-10 animate-spin text-blue-600 mb-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                <span class="font-medium text-lg">Preparing...</span>
-            </div>
-            <div id="testContainer" class="hidden">
-                <div class="max-w-4xl mx-auto px-4 py-6">
-                    <!-- Single Question Card -->
-                    <div id="questionCard"></div>
+    <!-- ─── Loading ─── -->
+    <div id="loading" class="flex-grow flex flex-col items-center justify-center py-20 text-gray-500">
+        <div class="relative w-16 h-16 mb-6">
+            <div class="absolute inset-0 border-4 border-blue-100 rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-t-blue-600 rounded-full animate-spin"></div>
+        </div>
+        <span class="font-bold text-xl text-gray-800 tracking-tight">Syncing Environment...</span>
+        <p class="text-sm mt-2 text-gray-400">Please wait while we prepare your test</p>
+    </div>
+
+    <!-- ─── Main Test Container ─── -->
+    <div id="testContainer" class="hidden flex-grow flex flex-col">
+        <div class="max-w-3xl mx-auto w-full px-4 sm:px-6 py-4 sm:py-8 flex-grow flex flex-col safe-bottom">
+
+            <!-- Quick Nav / Grid Toggle -->
+            <div class="mb-4">
+                <button onclick="toggleGridNav()" class="w-full flex items-center justify-between px-4 py-3 bg-white rounded-2xl border border-gray-200 shadow-sm hover:border-blue-300 transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                        </div>
+                        <span class="text-sm font-bold text-gray-700">Question Navigator</span>
+                    </div>
+                    <svg id="gridToggleIcon" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="gridNavPanel" class="nav-panel">
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-xl p-4">
+                        <div id="dotsNav" class="dots-scroll flex flex-wrap gap-2 justify-center"></div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-center gap-4">
+                            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-md bg-blue-600"></div><span class="text-[10px] font-bold text-gray-500 uppercase">Answered</span></div>
+                            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-md border-2 border-orange-200 bg-orange-50"></div><span class="text-[10px] font-bold text-gray-500 uppercase">Skipped</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Footer Controls (Professional Style) -->
-            <div class="fixed bottom-0 left-0 lg:right-[320px] right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 sm:p-4 z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.03)] safe-bottom">
-                <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
-                    <div class="flex items-center gap-2">
-                        <button id="markBtn" onclick="markForReview()" class="btn-exam bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-50 flex items-center gap-1.5 shadow-sm active:scale-95 transition-all">
-                            <span class="hidden sm:inline">Mark for Review & Next</span>
-                            <span class="sm:hidden">Mark</span>
+            <!-- Single Question Card -->
+            <div id="questionCard" class="flex-grow flex flex-col">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Bottom Navigation Buttons -->
+            <div id="bottomNav" class="mt-3 sm:mt-4 bg-white rounded-xl border border-gray-200 shadow-sm p-2.5 sm:p-4">
+                <div class="bottom-nav-inner flex items-center justify-between gap-2 sm:gap-3">
+                    <button id="prevBtn" onclick="goToPrev()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40 disabled:cursor-not-allowed min-w-0">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="hidden xs:inline sm:inline">Prev</span>
+                    </button>
+                    <div class="nav-row flex items-center gap-1.5 sm:gap-2">
+                        <button id="skipBtn" onclick="skipQuestion()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-orange-600 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3 sm:px-4 py-2.5 rounded-xl transition">
+                            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                            Skip
                         </button>
-                        <button id="clearBtn" onclick="clearResponse()" class="btn-exam bg-white text-slate-600 hover:text-red-600 border border-slate-200 hover:border-red-200 hover:bg-red-50 shadow-sm active:scale-95 transition-all hidden sm:block">Clear Response</button>
+                        <button id="nextBtn" onclick="goToNext()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 sm:px-5 py-2.5 rounded-xl shadow-md shadow-blue-200 transition">
+                            Next
+                            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <button id="prevBtn" onclick="goToPrev()" class="btn-exam bg-slate-100 text-slate-600 hover:bg-slate-200 active:scale-95 transition-all">Previous</button>
-                        <button id="nextBtn" onclick="goToNext()" class="btn-exam bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 sm:px-10 shadow-lg shadow-blue-200 active:scale-95 transition-all">Save & Next</button>
-                    </div>
+                    <button id="submitTestBtn" onclick="showSubmitModal()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-white bg-green-600 hover:bg-green-700 px-3 sm:px-5 py-2.5 rounded-xl shadow-md shadow-green-200 transition">
+                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="hidden sm:inline">Submit</span>
+                        <span class="sm:hidden">End</span>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <!-- Sidebar Column -->
-        <aside id="sidebar" class="sidebar-col">
-            <!-- User Profile Area -->
-            <div class="p-6 bg-slate-50 border-b flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-inner" id="userInitial">U</div>
-                    <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Candidate</p>
-                        <p class="font-bold text-slate-800" id="userName">User Name</p>
-                    </div>
-                </div>
-                <button onclick="toggleSidebar()" class="lg:hidden text-slate-400 hover:text-slate-600 transition p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-
-            <!-- Palette Area -->
-            <div class="flex-1 overflow-y-auto p-5">
-                <p class="text-xs font-bold text-slate-500 mb-4 px-1 text-center">QUESTION PALETTE</p>
-                <div id="dotsNav" class="palette-container"></div>
-            </div>
-
-            <!-- Legend and Footer -->
-            <div class="p-5 border-t bg-slate-50">
-                <div class="grid grid-cols-2 gap-y-3 mb-6">
-                    <div class="flex items-center gap-2">
-                        <span class="q-dot w-5 h-5 answered flex items-center justify-center text-[10px] font-bold">1</span>
-                        <span class="text-[10px] text-slate-600 font-bold uppercase">Answered</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="q-dot w-5 h-5 not-answered flex items-center justify-center text-[10px] font-bold">2</span>
-                        <span class="text-[10px] text-slate-600 font-bold uppercase">Not Answered</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="q-dot w-5 h-5 not-visited flex items-center justify-center text-[10px] font-bold">3</span>
-                        <span class="text-[10px] text-slate-600 font-bold uppercase">Not Visited</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="q-dot w-5 h-5 marked flex items-center justify-center text-[10px] font-bold">4</span>
-                        <span class="text-[10px] text-slate-600 font-bold uppercase">Marked</span>
-                    </div>
-                    <div class="flex items-center gap-2 col-span-2">
-                        <span class="q-dot w-5 h-5 marked-answered flex items-center justify-center text-[10px] font-bold">5</span>
-                        <span class="text-[10px] text-slate-600 font-bold uppercase tracking-tighter">Answered & Marked</span>
-                    </div>
-                </div>
-                <button onclick="showSubmitModal()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-md hover:bg-blue-700 transition active:scale-95">Submit Test</button>
-            </div>
-        </aside>
     </div>
 
     <!-- ─── Review Container (after submit) ─── -->
@@ -289,103 +203,68 @@
                 </a>
             </div>
             <!-- Review Dots -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-2.5 sm:p-4 mb-4 sm:mb-6">
-                <div id="reviewDotsNav" class="dots-scroll flex flex-wrap gap-1.5 sm:gap-2 justify-center"></div>
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-2 sm:p-3 mb-3 sm:mb-4">
+                <div id="reviewDotsNav" class="dots-scroll flex flex-wrap gap-1 sm:gap-1.5 justify-center"></div>
             </div>
             <!-- Review Question Card -->
             <div id="reviewQuestionCard"></div>
             <!-- Review Nav -->
-            <div class="mt-4 sm:mt-6 flex items-center justify-between gap-3 bg-white/90 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-3 sm:p-5">
-                <button onclick="reviewPrev()" id="reviewPrevBtn" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 bg-white hover:bg-slate-50 border border-slate-200 px-4 sm:px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <div class="mt-3 sm:mt-4 flex items-center justify-between gap-2 bg-white rounded-xl border border-gray-200 shadow-sm p-2.5 sm:p-3">
+                <button onclick="reviewPrev()" id="reviewPrevBtn" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     <span class="hidden sm:inline">Prev</span>
                 </button>
-                <a href="index.html" class="flex-grow text-xs sm:text-sm font-bold text-blue-600 bg-blue-50/50 hover:bg-blue-50 border border-blue-200/60 px-4 py-3 rounded-xl transition-all text-center mx-2 hover:shadow-sm active:scale-95">
-                    <span class="hidden sm:inline">Return to Dashboard</span>
+                <a href="index.html" class="text-xs sm:text-sm font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 sm:px-4 py-2.5 rounded-xl transition text-center">
+                    <span class="hidden sm:inline">Back to Dashboard</span>
                     <span class="sm:hidden">Dashboard</span>
                 </a>
-                <button onclick="reviewNext()" id="reviewNextBtn" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 bg-white hover:bg-slate-50 border border-slate-200 px-4 sm:px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
+                <button onclick="reviewNext()" id="reviewNextBtn" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40">
                     <span class="hidden sm:inline">Next</span>
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- ─── Exit Modal ─── -->
-    <div id="exitModal" class="hidden fixed inset-0 glass-backdrop z-[60] flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl text-center transform transition-all border border-slate-100">
-            <div class="w-16 h-16 bg-red-100 text-red-500 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-12 shadow-sm">
-                <svg class="w-8 h-8 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+    <div id="exitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center">
+            <div class="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
-            <h2 class="text-xl font-bold font-display text-slate-900 mb-2">Exit Test?</h2>
-            <p class="text-slate-500 text-sm mb-6 leading-relaxed">Your progress will be lost and you won't get a score.</p>
-            <div class="bg-orange-50/80 border border-orange-100 rounded-xl p-3 mb-6 text-sm">
-                <p class="font-bold text-orange-800 flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span id="exitUnanswered">0</span> unanswered &bull; <span id="exitTimeLeft" class="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-900">--:--</span> left
-                </p>
+            <h2 class="text-lg font-bold font-display text-gray-900 mb-1">Exit Test?</h2>
+            <p class="text-gray-500 text-sm mb-4">Progress will be lost.</p>
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-2.5 mb-5 text-sm">
+                <p class="font-bold text-orange-800">⚠️ <span id="exitUnanswered">0</span> unanswered &bull; <span id="exitTimeLeft" class="font-mono">--:--</span> left</p>
             </div>
-            <div class="flex flex-col-reverse sm:flex-row gap-3">
-                <button onclick="confirmExit()" class="flex-1 bg-slate-50 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-100 border border-slate-200 transition-all text-sm active:scale-95">Force Exit</button>
-                <button onclick="hideExitModal()" class="flex-1 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-3.5 rounded-xl hover:from-blue-700 hover:to-blue-600 shadow-md shadow-blue-200 transition-all text-sm active:scale-95">Resume Test</button>
+            <div class="flex gap-3">
+                <button onclick="hideExitModal()" class="flex-1 bg-blue-600 text-white font-bold py-2.5 rounded-xl hover:bg-blue-700 transition text-sm">Continue</button>
+                <button onclick="confirmExit()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2.5 rounded-xl hover:bg-gray-200 transition text-sm">Exit</button>
             </div>
         </div>
     </div>
 
     <!-- ─── Submit Modal ─── -->
-    <div id="submitModal" class="hidden fixed inset-0 glass-backdrop z-[60] flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl text-center transform transition-all border border-slate-100">
-            <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-12 shadow-sm border border-blue-100">
-                <svg class="w-8 h-8 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <div id="submitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center">
+            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
-            <h2 class="text-xl font-bold font-display text-slate-900 mb-2">Submit Test?</h2>
-            <p class="text-slate-500 text-sm mb-6 leading-relaxed">Are you sure you want to lock in your answers and view your score?</p>
-            <div class="grid grid-cols-2 gap-3 mb-7">
-                <div class="bg-emerald-50/80 border border-emerald-100 rounded-xl p-3.5 transition-transform hover:scale-105">
-                    <p class="text-3xl font-black text-emerald-600 font-display tracking-tight" id="submitAnswered">0</p>
-                    <p class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mt-1">Answered</p>
+            <h2 class="text-lg font-bold font-display text-gray-900 mb-1">Submit Test?</h2>
+            <p class="text-gray-500 text-sm mb-4">You cannot change answers after submitting.</p>
+            <div class="grid grid-cols-2 gap-3 mb-5">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                    <p class="text-2xl font-black text-green-700" id="submitAnswered">0</p>
+                    <p class="text-[10px] font-bold text-green-600 uppercase">✅ Answered</p>
                 </div>
-                <div class="bg-orange-50/80 border border-orange-100 rounded-xl p-3.5 transition-transform hover:scale-105">
-                    <p class="text-3xl font-black text-orange-600 font-display tracking-tight" id="submitUnanswered">0</p>
-                    <p class="text-[10px] font-bold text-orange-600 uppercase tracking-widest mt-1">Skipped</p>
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                    <p class="text-2xl font-black text-orange-700" id="submitUnanswered">0</p>
+                    <p class="text-[10px] font-bold text-orange-600 uppercase">⚠️ Unanswered</p>
                 </div>
             </div>
-            <div class="flex flex-col-reverse sm:flex-row gap-3">
-                <button onclick="hideSubmitModal()" class="flex-1 bg-slate-50 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-100 border border-slate-200 transition-all text-sm active:scale-95">Review More</button>
-                <button onclick="executeSubmit()" class="flex-1 bg-gradient-to-r from-emerald-500 to-green-500 text-white font-bold py-3.5 rounded-xl hover:from-emerald-600 hover:to-green-600 shadow-[0_4px_14px_0_rgba(16,185,129,0.39)] transition-all text-sm active:scale-95">Submit Test</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ─── Calculator Modal ─── -->
-    <div id="calcModal" class="hidden fixed bottom-24 right-4 sm:right-10 z-50 w-64 bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden select-none">
-        <div class="p-3 bg-slate-900 flex items-center justify-between cursor-move" id="calcHeader">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Calculator</span>
-            <button onclick="toggleCalculator()" class="text-slate-500 hover:text-white transition">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-        </div>
-        <div class="p-4">
-            <div id="calcDisplay" class="bg-slate-950 p-3 rounded-lg text-right text-xl font-mono text-emerald-400 truncate mb-4 border border-slate-800 h-14 flex items-center justify-end">0</div>
-            <div class="grid grid-cols-4 gap-2">
-                <button onclick="calcClear()" class="col-span-2 bg-red-900/40 text-red-400 p-2 rounded-lg font-bold text-sm hover:bg-red-800/50 transition">AC</button>
-                <button onclick="calcOp('/')" class="bg-slate-700 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">÷</button>
-                <button onclick="calcOp('*')" class="bg-slate-700 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">×</button>
-                <button onclick="calcNum(7)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">7</button>
-                <button onclick="calcNum(8)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">8</button>
-                <button onclick="calcNum(9)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">9</button>
-                <button onclick="calcOp('-')" class="bg-slate-700 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">−</button>
-                <button onclick="calcNum(4)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">4</button>
-                <button onclick="calcNum(5)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">5</button>
-                <button onclick="calcNum(6)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">6</button>
-                <button onclick="calcOp('+')" class="bg-slate-700 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">+</button>
-                <button onclick="calcNum(1)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">1</button>
-                <button onclick="calcNum(2)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">2</button>
-                <button onclick="calcNum(3)" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">3</button>
-                <button onclick="calcEqual()" class="row-span-2 bg-blue-600 text-white p-2 rounded-lg font-bold hover:bg-blue-500 transition">=</button>
-                <button onclick="calcNum(0)" class="col-span-2 bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">0</button>
-                <button onclick="calcNum('.')" class="bg-slate-700/50 text-white p-2 rounded-lg font-bold hover:bg-slate-600 transition">.</button>
+            <div class="flex gap-3">
+                <button onclick="hideSubmitModal()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2.5 rounded-xl hover:bg-gray-200 transition text-sm">Cancel</button>
+                <button onclick="executeSubmit()" class="flex-1 bg-green-600 text-white font-bold py-2.5 rounded-xl hover:bg-green-700 shadow-lg shadow-green-200 transition text-sm">Submit Now</button>
             </div>
         </div>
     </div>
