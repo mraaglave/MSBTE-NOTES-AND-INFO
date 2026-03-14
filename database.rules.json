@@ -1,4 +1,4 @@
-﻿{
+{
   "rules": {
     "users": {
       "": {
@@ -45,6 +45,18 @@
         "": {
           ".validate": "newData.hasChildren(['userId', 'content', 'createdAt']) && newData.child('userId').val() === auth.uid"
         }
+      }
+    },
+    "mock_tests": {
+      ".read": "auth != null",
+      ".write": "auth != null && auth.token.email === 'bitbuster32@gmail.com'"
+    },
+    "mock_results": {
+      ".read": "auth != null && auth.token.email === 'bitbuster32@gmail.com'",
+      ".write": "auth != null",
+      "$uid": {
+         ".read": "$uid === auth.uid || auth.token.email === 'bitbuster32@gmail.com'",
+         ".write": "$uid === auth.uid || auth.token.email === 'bitbuster32@gmail.com'"
       }
     }
   }

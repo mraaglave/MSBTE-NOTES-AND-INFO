@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Mock Test | MSBTE Notes & Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .font-display { font-family: 'Clash Display', sans-serif; }
+        .option-label { cursor: pointer; }
+        .option-radio:checked + .option-label {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .correct-answer { background-color: #dcfce7 !important; border-color: #22c55e !important; }
+        .wrong-answer { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+    <nav class="bg-white shadow z-40 flex-none h-[64px] border-b border-gray-100 sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- App Title -->
+                <div class="font-display font-bold text-lg text-gray-800 flex items-center gap-2">
+                    <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    </span>
+                    <span class="text-gray-900 truncate max-w-[150px] md:max-w-md" id="navTestTitle">Loading Test...</span>
+                </div>
+                <div>
+                    <a href="index.html" class="flex items-center gap-1.5 text-sm font-bold text-gray-500 hover:text-red-500 bg-gray-100 px-3 py-1.5 rounded-lg transition" onclick="return confirm('Are you sure you want to exit? Your progress will be lost.')">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <span class="hidden sm:inline">Exit Test</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-8 md:py-12">
+        
+        <div id="loading" class="flex flex-col items-center justify-center py-20 text-gray-500">
+            <svg class="w-10 h-10 animate-spin text-blue-600 mb-4" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span class="font-medium text-lg">Preparing your test environment...</span>
+        </div>
+        
+        <div id="testContainer" class="hidden">
+            <div class="mb-10 text-center">
+                <h1 id="testTitle" class="text-3xl md:text-4xl font-display font-extrabold text-blue-600 mb-3"></h1>
+                <p id="testDescription" class="text-gray-600 text-lg max-w-2xl mx-auto"></p>
+            </div>
+
+            <form id="testForm" onsubmit="submitTest(event)" class="space-y-8">
+                <div id="questionsContainer" class="space-y-6">
+                    <!-- Questions injected here -->
+                </div>
+                
+                <div class="pt-8 pb-12 border-t border-gray-200 mt-10 sticky bottom-0 bg-gray-50/90 backdrop-blur pb-8 z-30 flex justify-center">
+                    <button id="submitBtn" type="submit" class="w-full md:w-auto md:px-16 bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-xl shadow-blue-200 text-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Submit Test
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="resultsModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform scale-100 transition-transform">
+                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold font-display text-gray-900 mb-2">Test Completed!</h2>
+                <p class="text-gray-500 mb-8 font-medium">Your results have been securely recorded.</p>
+                
+                <div class="bg-blue-50 rounded-2xl p-6 mb-8 border border-blue-100">
+                    <div class="text-sm text-blue-600 font-bold uppercase tracking-wider mb-1">Final Score</div>
+                    <div class="text-5xl font-black text-blue-700" id="scoreDisplay"></div>
+                </div>
+                
+                <div class="flex flex-col gap-3">
+                    <button onclick="closeModalAndScroll()" class="w-full bg-gray-100 text-gray-700 font-bold py-3.5 rounded-xl hover:bg-gray-200 transition">Review Answers</button>
+                    <a href="index.html" class="block w-full bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition">Return to Dashboard</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+        import { getDatabase, ref, get, set, push } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
+            authDomain: "msbte-notes-info.firebaseapp.com",
+            projectId: "msbte-notes-info",
+            storageBucket: "msbte-notes-info.firebasestorage.app",
+            messagingSenderId: "497397765847",
+            appId: "1:497397765847:web:5ff2d9910dfe14c22a8292"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const testId = urlParams.get('id');
+        let currentTest = null;
+        let currentUser = null;
+
+        if (!testId) {
+            window.location.href = 'index.html';
+        }
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                loadTest();
+            } else {
+                // Not logged in, redirect
+                window.location.href = 'index.html';
+            }
+        });
+
+        async function loadTest() {
+            try {
+                const snapshot = await get(ref(db, `mock_tests/\${testId}`));
+                if (snapshot.exists()) {
+                    currentTest = snapshot.val();
+                    renderTest();
+                } else {
+                    document.getElementById('loading').innerHTML = `
+                        <div class="text-red-500 mb-4"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
+                        <div class="font-bold text-xl text-gray-900 mb-2">Test Not Found</div>
+                        <p class="text-gray-500 mb-6">This test may have been removed or the link is invalid.</p>
+                        <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium">Go Back</a>
+                    `;
+                }
+            } catch (err) {
+                document.getElementById('loading').textContent = "Error loading test: " + err.message;
+            }
+        }
+
+        function renderTest() {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('testContainer').classList.remove('hidden');
+            
+            document.getElementById('navTestTitle').textContent = currentTest.title;
+            document.getElementById('testTitle').textContent = currentTest.title;
+            document.getElementById('testDescription').textContent = currentTest.description || '';
+
+            const container = document.getElementById('questionsContainer');
+            let html = '';
+            
+            if (currentTest.questions) {
+                currentTest.questions.forEach((q, qIndex) => {
+                    html += `
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 question-block transition-colors">
+                            <h3 class="text-xl font-bold font-display text-gray-900 mb-6 flex gap-3">
+                                <span class="bg-blue-100 text-blue-700 min-w-[32px] h-8 rounded-full flex items-center justify-center text-base">\${qIndex + 1}</span>
+                                <span class="leading-relaxed">\${q.text}</span>
+                            </h3>
+                            <div class="space-y-4 ml-0 md:ml-11">
+                    `;
+                    q.options.forEach((opt, oIndex) => {
+                        html += `
+                            <div class="relative">
+                                <input type="radio" required name="q_\${qIndex}" id="q_\${qIndex}_o_\${oIndex}" value="\${oIndex}" class="hidden option-radio peer">
+                                <label for="q_\${qIndex}_o_\${oIndex}" class="option-label flex items-center w-full p-4 border-2 border-gray-200 rounded-xl hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-blue-600 font-medium text-gray-700 transition">
+                                    <span class="w-6 h-6 border-2 border-gray-300 rounded-full mr-4 flex items-center justify-center text-transparent peer-checked:border-blue-600 peer-checked:text-blue-600">
+                                        <svg class="w-4 h-4 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
+                                    </span>
+                                    \${opt}
+                                </label>
+                            </div>
+                        `;
+                    });
+                    html += `</div>
+                        <!-- Result Indicator (hidden initially) -->
+                        <div class="result-indicator hidden mt-6 pt-4 border-t ml-0 md:ml-11 font-bold flex items-center gap-2"></div>
+                    </div>`;
+                });
+            }
+            container.innerHTML = html;
+
+            // Make custom radio buttons show the inner dot when checked
+            const style = document.createElement('style');
+            style.textContent = `
+                .option-radio:checked + label span { border-color: #2563eb; }
+                .option-radio:checked + label span svg { opacity: 1; }
+            `;
+            document.head.appendChild(style);
+        }
+
+        window.submitTest = async (e) => {
+            e.preventDefault();
+            
+            if(!confirm("Are you sure you want to submit your answers?")) return;
+            
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').innerHTML = '<svg class="animate-spin w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8a8 8 0 01-8-8z"></path></svg> Grading...';
+            
+            const formData = new FormData(e.target);
+            let score = 0;
+            const total = currentTest.questions.length;
+            const blocks = document.querySelectorAll('.question-block');
+
+            // Grade questions and highlight UI
+            currentTest.questions.forEach((q, qIndex) => {
+                const answer = parseInt(formData.get(`q_\${qIndex}`));
+                const isCorrect = answer === q.correct;
+                if (isCorrect) score++;
+                
+                // Disable all radios to prevent changing answers after submission
+                blocks[qIndex].querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+                
+                // Highlight Selected
+                const selectedLabel = blocks[qIndex].querySelector(`input[value="\${answer}"] + label`);
+                const correctLabel = blocks[qIndex].querySelector(`input[value="\${q.correct}"] + label`);
+                const indicator = blocks[qIndex].querySelector('.result-indicator');
+                
+                indicator.classList.remove('hidden');
+
+                if (isCorrect) {
+                    if(selectedLabel) selectedLabel.classList.add('correct-answer');
+                    blocks[qIndex].classList.add('border-green-200', 'bg-green-50/30');
+                    indicator.classList.add('text-green-600');
+                    indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Correct Answer';
+                } else {
+                    if(selectedLabel) selectedLabel.classList.add('wrong-answer');
+                    if(correctLabel) {
+                        correctLabel.classList.add('correct-answer');
+                        // Add green checkmark span for visual clarity
+                        correctLabel.innerHTML += '<span class="ml-auto text-green-600 flex items-center text-sm"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Correct selected option</span>';
+                    }
+                    blocks[qIndex].classList.add('border-red-200', 'bg-red-50/30');
+                    indicator.classList.add('text-red-500');
+                    indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Incorrect';
+                }
+            });
+
+            // Save results to Firebase
+            try {
+                const resultsRef = ref(db, `mock_results/\${currentUser.uid}`);
+                const newResultRef = push(resultsRef);
+                await set(newResultRef, {
+                    testId: testId,
+                    testTitle: currentTest.title,
+                    userEmail: currentUser.email,
+                    score: score,
+                    total: total,
+                    date: Date.now()
+                });
+
+                document.getElementById('scoreDisplay').textContent = `\${score} / \${total}`;
+                
+                // Show Modal
+                setTimeout(() => {
+                    document.getElementById('resultsModal').classList.remove('hidden');
+                    // hide submit btn since test is over
+                    document.getElementById('submitBtn').parentElement.classList.add('hidden');
+                }, 800);
+            } catch (err) {
+                alert("Error saving results: " + err.message);
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').textContent = 'Try Submitting Again';
+            }
+        };
+
+        window.closeModalAndScroll = () => {
+            document.getElementById('resultsModal').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
