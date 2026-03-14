@@ -186,14 +186,21 @@ window.selectAnswer = (optIndex) => {
 //  NAVIGATION
 // ══════════════════════════════
 window.goToNext = () => {
-    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+    if (!currentTest || !currentTest.questions) return;
+    if (currentIndex < currentTest.questions.length - 1) {
+        showQuestion(currentIndex + 1);
+    }
 };
 
 window.goToPrev = () => {
-    if (currentIndex > 0) showQuestion(currentIndex - 1);
+    if (!currentTest || !currentTest.questions) return;
+    if (currentIndex > 0) {
+        showQuestion(currentIndex - 1);
+    }
 };
 
 window.markForReview = () => {
+    if (!currentTest || !currentTest.questions) return;
     const isAnswered = answers[currentIndex] !== null;
     questionStates[currentIndex] = isAnswered ? 4 : 3;
     if (currentIndex < currentTest.questions.length - 1) {
@@ -204,13 +211,21 @@ window.markForReview = () => {
 };
 
 window.clearResponse = () => {
+    if (!currentTest || !currentTest.questions) return;
     answers[currentIndex] = null;
     questionStates[currentIndex] = 2; // Not Answered (but visited)
     showQuestion(currentIndex);
 };
 
 window.jumpToQuestion = (idx) => {
-    showQuestion(idx);
+    if (!currentTest || !currentTest.questions) return;
+    if (idx >= 0 && idx < currentTest.questions.length) {
+        showQuestion(idx);
+        // On mobile, close sidebar after jumping
+        if (window.innerWidth < 1024) {
+            document.getElementById('sidebar').classList.remove('open');
+        }
+    }
 };
 
 window.toggleSidebar = () => {
