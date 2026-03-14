@@ -83,7 +83,10 @@ async function loadTest() {
 //  INSTRUCTIONS
 // ══════════════════════════════
 function initInstructions() {
-    document.getElementById('loading').classList.add('hidden');
+    console.log("initInstructions called");
+    const loadingEl = document.getElementById('loading');
+    if (loadingEl) loadingEl.classList.add('hidden');
+    
     document.getElementById('instrTitle').textContent = `Instructions - ${currentTest.title}`;
     const mins = currentTest.type === 'mock' ? 120 : 30;
     document.getElementById('instrDuration').textContent = mins;
@@ -100,6 +103,17 @@ function initInstructions() {
         agreeCheck.addEventListener('change', updateBtn);
         agreeCheck.addEventListener('click', updateBtn);
         
+        // Attach the start click listener directly here for maximum reliability
+        startTestBtn.onclick = () => {
+            console.log("Start button clicked via direct onclick");
+            window.startTestActual();
+        };
+        
+        startTestBtn.addEventListener('click', () => {
+            console.log("Start button clicked via event listener");
+            window.startTestActual();
+        });
+        
         // Ensure initial state
         updateBtn();
     } else {
@@ -108,35 +122,33 @@ function initInstructions() {
 }
 
 window.startTestActual = () => {
-    console.log("startTestActual called");
+    console.log("startTestActual triggered");
     try {
         const overlay = document.getElementById('instructionsOverlay');
         const container = document.getElementById('testContainer');
         const loading = document.getElementById('loading');
         
-        if (overlay) overlay.classList.add('hidden');
-        if (container) container.classList.remove('hidden');
-        if (loading) loading.classList.add('hidden'); // Extra safety
+        if (!overlay || !container) {
+            console.error("Critical elements missing at start:", { overlay, container });
+            return;
+        }
+
+        overlay.classList.add('hidden');
+        container.classList.remove('hidden');
+        if (loading) loading.classList.add('hidden');
         
-        console.log("Initializing Test UI...");
+        console.log("Starting Test UI Setup...");
         initTestUI();
         startTimer();
         window.addEventListener('beforeunload', onBeforeUnload);
+        console.log("Test successfully started");
     } catch (err) {
-        console.error("Error starting test:", err);
-        alert("There was an error starting the test. Please refresh the page.");
+        console.error("CRITICAL ERROR during test start:", err);
+        alert("System error. Please refresh and try again.");
     }
 };
 
-// Also attach via event listener for robustness
-document.addEventListener('DOMContentLoaded', () => {
-    const startBtn = document.getElementById('startTestBtn');
-    if (startBtn) {
-        startBtn.addEventListener('click', () => {
-            window.startTestActual();
-        });
-    }
-});
+// Remove the DOMContentLoaded listener as it's now handled in initInstructions
 
 // ══════════════════════════════
 //  INIT UI
