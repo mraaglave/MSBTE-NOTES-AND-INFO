@@ -15,89 +15,107 @@
     <style>
         .font-display { font-family: 'Clash Display', sans-serif; }
         
-        /* Option Styling */
-        .opt-radio:checked + .opt-label { border-color: #2563eb; background: #eff6ff; }
-        .opt-radio:checked + .opt-label .opt-dot { border-color: #2563eb; background: #2563eb; }
-        .opt-radio:checked + .opt-label .opt-dot svg { opacity: 1; color: #fff; }
-        .opt-label:hover { background: #f9fafb; border-color: #d1d5db; }
-        
-        /* Result Styling */
-        .correct-answer { background-color: #dcfce7 !important; border-color: #22c55e !important; }
-        .wrong-answer { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
-        .unanswered-answer { background-color: #fff7ed !important; border-color: #f97316 !important; }
-        
-        /* Timer danger */
-        .timer-danger { animation: pulse-red 1s ease-in-out infinite; }
-        @keyframes pulse-red { 0%,100%{ color:#ef4444; } 50%{ color:#fca5a5; } }
-        
-        /* Nav button states */
-        .q-dot { transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
-        .q-dot.answered { background: #2563eb; color: #fff; border-color: #2563eb; }
-        .q-dot.skipped { background: #fff7ed; color: #ea580c; border-color: #fdba74; }
-        .q-dot.current { box-shadow: 0 0 0 3px rgba(37,99,235,0.25); border-color: #2563eb; }
-        .q-dot.review-correct { background: #dcfce7; color: #16a34a; border-color: #22c55e; }
-        .q-dot.review-wrong { background: #fee2e2; color: #ef4444; border-color: #ef4444; }
-        .q-dot.review-skipped { background: #fff7ed; color: #f97316; border-color: #f97316; }
-        
-        /* Slide animation */
-        .q-card { animation: fadeSlideIn 0.25s ease-out; }
-        @keyframes fadeSlideIn { from { opacity:0; transform:translateX(12px); } to { opacity:1; transform:translateX(0); } }
-        
-        /* Progress bar */
-        .progress-fill { transition: width 0.3s ease; }
+        /* Premium Background Gradient */
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 0% 0%, hsla(210, 100%, 97%, 1) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, hsla(220, 100%, 96%, 1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
 
-        /* Dots navigator: scrollable on mobile when many questions */
-        .dots-scroll { max-height: 4.5rem; overflow-y: auto; scrollbar-width: thin; }
-        .dots-scroll::-webkit-scrollbar { height: 4px; width: 4px; }
-        .dots-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        /* Option Styling (Elevated) */
+        .opt-radio:checked + .opt-label { 
+            border-color: #2563eb; 
+            background: linear-gradient(to right, #eff6ff, #ffffff);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.05), 0 2px 4px -1px rgba(37, 99, 235, 0.03);
+            transform: translateY(-1px);
+        }
+        .opt-radio:checked + .opt-label .opt-dot { border-color: #2563eb; background: #2563eb; box-shadow: 0 0 0 4px #dbeafe; }
+        .opt-radio:checked + .opt-label .opt-dot svg { opacity: 1; color: #fff; }
+        .opt-label { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .opt-label:hover { background: #f8fafc; border-color: #cbd5e1; transform: translateY(-1px); }
+        .opt-label:active { transform: translateY(0); }
+        
+        /* Result Styling (Refined) */
+        .correct-answer { background: linear-gradient(to right, #f0fdf4, #ffffff) !important; border-color: #22c55e !important; box-shadow: 0 2px 4px rgba(34, 197, 94, 0.05) !important; }
+        .wrong-answer { background: linear-gradient(to right, #fef2f2, #ffffff) !important; border-color: #ef4444 !important; box-shadow: 0 2px 4px rgba(239, 68, 68, 0.05) !important; }
+        .unanswered-answer { background: linear-gradient(to right, #fff7ed, #ffffff) !important; border-color: #f97316 !important; }
+        
+        /* Timer danger (Smoother pulse) */
+        .timer-danger { animation: pulse-red 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse-red { 0%, 100% { color: #ef4444; background-color: #fef2f2; border-color: #fca5a5; } 50% { color: #dc2626; background-color: #fee2e2; border-color: #ef4444; } }
+        
+        /* Premium Nav Dots */
+        .q-dot { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent; }
+        .q-dot:hover { transform: scale(1.1); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .q-dot.answered { background: #2563eb; color: #fff; border-color: #2563eb; box-shadow: 0 2px 4px rgba(37,99,235,0.2); }
+        .q-dot.skipped { background: #fff7ed; color: #ea580c; border-color: #fdba74; }
+        .q-dot.current { box-shadow: 0 0 0 3px #dbeafe, 0 2px 4px rgba(37,99,235,0.1); border-color: #2563eb; background: #fff; color: #2563eb; font-weight: bold; }
+        
+        /* Smooth fade-slide for main card */
+        .q-card { animation: premiumSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes premiumSlideIn { from { opacity: 0; transform: translateY(8px) scale(0.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        
+        /* Glowing Progress bar */
+        .progress-fill { transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px rgba(37,99,235,0.4); }
+
+        /* Scrollbars */
+        .dots-scroll { max-height: 4.5rem; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+        .dots-scroll::-webkit-scrollbar { width: 5px; height: 5px; }
+        .dots-scroll::-webkit-scrollbar-track { background: transparent; }
+        .dots-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
         @media (min-width: 640px) { .dots-scroll { max-height: 6rem; } }
 
-        /* Mobile bottom nav fix */
+        /* Mobile bottom nav */
         @media (max-width: 479px) {
             .bottom-nav-inner { flex-direction: column; gap: 0.5rem; }
             .bottom-nav-inner .nav-row { display: flex; gap: 0.5rem; width: 100%; }
             .bottom-nav-inner .nav-row button { flex: 1; justify-content: center; }
         }
-
-        /* Safe area bottom padding for notched phones */
         .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+
+        /* Glass modal backdrop */
+        .glass-backdrop { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background-color: rgba(15, 23, 42, 0.4); }
+        
+        /* Custom Shadows */
+        .shadow-premium { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.02); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+<body class="text-gray-900 font-sans flex flex-col min-h-screen">
 
     <!-- ─── Top Nav ─── -->
-    <nav class="bg-white shadow-sm z-40 flex-none border-b border-gray-100 sticky top-0">
+    <nav class="bg-white/80 backdrop-blur-md shadow-[0_1px_3px_0_rgba(0,0,0,0.02)] z-40 flex-none border-b border-gray-100/50 sticky top-0 transition-all duration-300">
         <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-14">
-                <div class="flex items-center gap-2 min-w-0">
-                    <a href="../index.html" class="hidden md:flex items-center text-blue-600 font-bold text-lg font-display group mr-2" id="exitLogoLink">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1.5" viewBox="0 0 576 512" fill="currentColor"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3 min-w-0">
+                    <a href="../index.html" class="hidden md:flex items-center text-blue-600 font-bold text-lg font-display group mr-1" id="exitLogoLink">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110" viewBox="0 0 576 512" fill="currentColor"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>
                         MSBTE
                     </a>
-                    <span class="text-gray-300 hidden md:inline">|</span>
-                    <span class="text-sm font-bold text-gray-700 truncate max-w-[140px] sm:max-w-[240px]" id="navTestTitle">Loading...</span>
+                    <div class="h-4 w-px bg-gray-300 hidden md:block"></div>
+                    <span class="text-sm font-bold text-slate-700 truncate max-w-[160px] sm:max-w-[280px]" id="navTestTitle">Loading Test...</span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2.5 sm:gap-4">
                     <!-- Timer -->
-                    <div id="timerBox" class="hidden items-center gap-1.5 bg-gray-100 px-2.5 py-1 rounded-lg border border-gray-200">
-                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span id="timerText" class="font-mono font-bold text-xs text-gray-700">00:00</span>
+                    <div id="timerBox" class="hidden items-center gap-1.5 sm:bg-slate-50 sm:px-3 py-1.5 sm:rounded-lg sm:border sm:border-slate-200 transition-colors">
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span id="timerText" class="font-mono font-bold text-xs sm:text-sm text-slate-700 tracking-tight">00:00</span>
                     </div>
                     <!-- Question Counter -->
-                    <div class="bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">
-                        <span class="text-xs font-bold text-blue-700"><span id="navCurrent">1</span>/<span id="navTotal">0</span></span>
+                    <div class="bg-blue-50 border border-blue-100/50 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg shadow-sm">
+                        <span class="text-xs sm:text-sm font-bold text-blue-700"><span id="navCurrent">1</span> <span class="text-blue-400 font-normal">/</span> <span id="navTotal">0</span></span>
                     </div>
                     <!-- Exit -->
-                    <button onclick="showExitModal()" class="flex items-center gap-1 text-xs font-bold text-gray-500 hover:text-red-500 bg-gray-100 px-2.5 py-1.5 rounded-lg transition">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    <button onclick="showExitModal()" class="flex items-center justify-center gap-1.5 text-xs font-bold text-slate-500 hover:text-white bg-white hover:bg-red-500 border border-slate-200 hover:border-red-500 px-3 py-1.5 sm:py-2 rounded-lg transition-all shadow-sm">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
                         <span class="hidden sm:inline">Exit</span>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Progress Bar -->
-        <div class="h-1 bg-gray-100">
-            <div id="progressBar" class="progress-fill h-full bg-blue-600 rounded-r-full" style="width:0%"></div>
+        <div class="h-1 bg-slate-100">
+            <div id="progressBar" class="progress-fill h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-r-full" style="width:0%"></div>
         </div>
     </nav>
 
@@ -126,8 +144,8 @@
             </div>
 
             <!-- Question Dots Navigator -->
-            <div class="mb-3 sm:mb-4 bg-white rounded-xl border border-gray-200 shadow-sm p-2 sm:p-3">
-                <div id="dotsNav" class="dots-scroll flex flex-wrap gap-1 sm:gap-1.5 justify-center"></div>
+            <div class="mb-3 sm:mb-5 bg-white/80 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-2.5 sm:p-4">
+                <div id="dotsNav" class="dots-scroll flex flex-wrap gap-1.5 sm:gap-2 justify-center"></div>
             </div>
 
             <!-- Single Question Card -->
@@ -136,26 +154,26 @@
             </div>
 
             <!-- Bottom Navigation Buttons -->
-            <div id="bottomNav" class="mt-3 sm:mt-4 bg-white rounded-xl border border-gray-200 shadow-sm p-2.5 sm:p-4">
-                <div class="bottom-nav-inner flex items-center justify-between gap-2 sm:gap-3">
-                    <button id="prevBtn" onclick="goToPrev()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40 disabled:cursor-not-allowed min-w-0">
-                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <div id="bottomNav" class="mt-4 sm:mt-6 bg-white/90 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-3 sm:p-5">
+                <div class="bottom-nav-inner flex items-center justify-between gap-2 sm:gap-4">
+                    <button id="prevBtn" onclick="goToPrev()" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 bg-white hover:bg-slate-50 border border-slate-200 px-3 sm:px-5 py-3 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                         <span class="hidden xs:inline sm:inline">Prev</span>
                     </button>
-                    <div class="nav-row flex items-center gap-1.5 sm:gap-2">
-                        <button id="skipBtn" onclick="skipQuestion()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-orange-600 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3 sm:px-4 py-2.5 rounded-xl transition">
-                            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                    <div class="nav-row flex items-center gap-2 sm:gap-3">
+                        <button id="skipBtn" onclick="skipQuestion()" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-orange-600 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-4 sm:px-6 py-3 rounded-xl transition-all shadow-sm active:scale-95">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
                             Skip
                         </button>
-                        <button id="nextBtn" onclick="goToNext()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 sm:px-5 py-2.5 rounded-xl shadow-md shadow-blue-200 transition">
+                        <button id="nextBtn" onclick="goToNext()" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-5 sm:px-8 py-3 rounded-xl shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] transition-all active:scale-95">
                             Next
-                            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                     </div>
-                    <button id="submitTestBtn" onclick="showSubmitModal()" class="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-bold text-white bg-green-600 hover:bg-green-700 px-3 sm:px-5 py-2.5 rounded-xl shadow-md shadow-green-200 transition">
-                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span class="hidden sm:inline">Submit</span>
-                        <span class="sm:hidden">End</span>
+                    <button id="submitTestBtn" onclick="showSubmitModal()" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 px-4 sm:px-8 py-3 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.39)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.23)] transition-all active:scale-95">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="hidden sm:inline">Submit Test</span>
+                        <span class="sm:hidden">Submit</span>
                     </button>
                 </div>
             </div>
@@ -178,68 +196,71 @@
                 </a>
             </div>
             <!-- Review Dots -->
-            <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-2 sm:p-3 mb-3 sm:mb-4">
-                <div id="reviewDotsNav" class="dots-scroll flex flex-wrap gap-1 sm:gap-1.5 justify-center"></div>
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-2.5 sm:p-4 mb-4 sm:mb-6">
+                <div id="reviewDotsNav" class="dots-scroll flex flex-wrap gap-1.5 sm:gap-2 justify-center"></div>
             </div>
             <!-- Review Question Card -->
             <div id="reviewQuestionCard"></div>
             <!-- Review Nav -->
-            <div class="mt-3 sm:mt-4 flex items-center justify-between gap-2 bg-white rounded-xl border border-gray-200 shadow-sm p-2.5 sm:p-3">
-                <button onclick="reviewPrev()" id="reviewPrevBtn" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40">
-                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <div class="mt-4 sm:mt-6 flex items-center justify-between gap-3 bg-white/90 backdrop-blur-sm rounded-2xl border border-white shadow-premium p-3 sm:p-5">
+                <button onclick="reviewPrev()" id="reviewPrevBtn" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 bg-white hover:bg-slate-50 border border-slate-200 px-4 sm:px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     <span class="hidden sm:inline">Prev</span>
                 </button>
-                <a href="index.html" class="text-xs sm:text-sm font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 sm:px-4 py-2.5 rounded-xl transition text-center">
-                    <span class="hidden sm:inline">Back to Dashboard</span>
+                <a href="index.html" class="flex-grow text-xs sm:text-sm font-bold text-blue-600 bg-blue-50/50 hover:bg-blue-50 border border-blue-200/60 px-4 py-3 rounded-xl transition-all text-center mx-2 hover:shadow-sm active:scale-95">
+                    <span class="hidden sm:inline">Return to Dashboard</span>
                     <span class="sm:hidden">Dashboard</span>
                 </a>
-                <button onclick="reviewNext()" id="reviewNextBtn" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 px-3 sm:px-4 py-2.5 rounded-xl transition disabled:opacity-40">
+                <button onclick="reviewNext()" id="reviewNextBtn" class="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 bg-white hover:bg-slate-50 border border-slate-200 px-4 sm:px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed">
                     <span class="hidden sm:inline">Next</span>
-                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- ─── Exit Modal ─── -->
-    <div id="exitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center">
-            <div class="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+    <div id="exitModal" class="hidden fixed inset-0 glass-backdrop z-[60] flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl text-center transform transition-all border border-slate-100">
+            <div class="w-16 h-16 bg-red-100 text-red-500 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-12 shadow-sm">
+                <svg class="w-8 h-8 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
-            <h2 class="text-lg font-bold font-display text-gray-900 mb-1">Exit Test?</h2>
-            <p class="text-gray-500 text-sm mb-4">Progress will be lost.</p>
-            <div class="bg-orange-50 border border-orange-200 rounded-lg p-2.5 mb-5 text-sm">
-                <p class="font-bold text-orange-800">⚠️ <span id="exitUnanswered">0</span> unanswered &bull; <span id="exitTimeLeft" class="font-mono">--:--</span> left</p>
+            <h2 class="text-xl font-bold font-display text-slate-900 mb-2">Exit Test?</h2>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">Your progress will be lost and you won't get a score.</p>
+            <div class="bg-orange-50/80 border border-orange-100 rounded-xl p-3 mb-6 text-sm">
+                <p class="font-bold text-orange-800 flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span id="exitUnanswered">0</span> unanswered &bull; <span id="exitTimeLeft" class="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-900">--:--</span> left
+                </p>
             </div>
-            <div class="flex gap-3">
-                <button onclick="hideExitModal()" class="flex-1 bg-blue-600 text-white font-bold py-2.5 rounded-xl hover:bg-blue-700 transition text-sm">Continue</button>
-                <button onclick="confirmExit()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2.5 rounded-xl hover:bg-gray-200 transition text-sm">Exit</button>
+            <div class="flex flex-col-reverse sm:flex-row gap-3">
+                <button onclick="confirmExit()" class="flex-1 bg-slate-50 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-100 border border-slate-200 transition-all text-sm active:scale-95">Force Exit</button>
+                <button onclick="hideExitModal()" class="flex-1 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-3.5 rounded-xl hover:from-blue-700 hover:to-blue-600 shadow-md shadow-blue-200 transition-all text-sm active:scale-95">Resume Test</button>
             </div>
         </div>
     </div>
 
     <!-- ─── Submit Modal ─── -->
-    <div id="submitModal" class="hidden fixed inset-0 bg-gray-900/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center">
-            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <div id="submitModal" class="hidden fixed inset-0 glass-backdrop z-[60] flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl text-center transform transition-all border border-slate-100">
+            <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-12 shadow-sm border border-blue-100">
+                <svg class="w-8 h-8 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
-            <h2 class="text-lg font-bold font-display text-gray-900 mb-1">Submit Test?</h2>
-            <p class="text-gray-500 text-sm mb-4">You cannot change answers after submitting.</p>
-            <div class="grid grid-cols-2 gap-3 mb-5">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-3">
-                    <p class="text-2xl font-black text-green-700" id="submitAnswered">0</p>
-                    <p class="text-[10px] font-bold text-green-600 uppercase">✅ Answered</p>
+            <h2 class="text-xl font-bold font-display text-slate-900 mb-2">Submit Test?</h2>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">Are you sure you want to lock in your answers and view your score?</p>
+            <div class="grid grid-cols-2 gap-3 mb-7">
+                <div class="bg-emerald-50/80 border border-emerald-100 rounded-xl p-3.5 transition-transform hover:scale-105">
+                    <p class="text-3xl font-black text-emerald-600 font-display tracking-tight" id="submitAnswered">0</p>
+                    <p class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mt-1">Answered</p>
                 </div>
-                <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
-                    <p class="text-2xl font-black text-orange-700" id="submitUnanswered">0</p>
-                    <p class="text-[10px] font-bold text-orange-600 uppercase">⚠️ Unanswered</p>
+                <div class="bg-orange-50/80 border border-orange-100 rounded-xl p-3.5 transition-transform hover:scale-105">
+                    <p class="text-3xl font-black text-orange-600 font-display tracking-tight" id="submitUnanswered">0</p>
+                    <p class="text-[10px] font-bold text-orange-600 uppercase tracking-widest mt-1">Skipped</p>
                 </div>
             </div>
-            <div class="flex gap-3">
-                <button onclick="hideSubmitModal()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2.5 rounded-xl hover:bg-gray-200 transition text-sm">Cancel</button>
-                <button onclick="executeSubmit()" class="flex-1 bg-green-600 text-white font-bold py-2.5 rounded-xl hover:bg-green-700 shadow-lg shadow-green-200 transition text-sm">Submit Now</button>
+            <div class="flex flex-col-reverse sm:flex-row gap-3">
+                <button onclick="hideSubmitModal()" class="flex-1 bg-slate-50 text-slate-600 font-bold py-3.5 rounded-xl hover:bg-slate-100 border border-slate-200 transition-all text-sm active:scale-95">Review More</button>
+                <button onclick="executeSubmit()" class="flex-1 bg-gradient-to-r from-emerald-500 to-green-500 text-white font-bold py-3.5 rounded-xl hover:from-emerald-600 hover:to-green-600 shadow-[0_4px_14px_0_rgba(16,185,129,0.39)] transition-all text-sm active:scale-95">Submit Test</button>
             </div>
         </div>
     </div>

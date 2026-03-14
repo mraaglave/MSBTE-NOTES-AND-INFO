@@ -114,30 +114,30 @@ function showQuestion(idx) {
     const selectedAnswer = answers[idx];
 
     card.innerHTML = `
-        <div class="q-card bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col flex-grow">
+        <div class="q-card bg-white/95 backdrop-blur-md rounded-3xl border border-white shadow-premium flex flex-col flex-grow overflow-hidden transition-all duration-300">
             <!-- Question Header -->
-            <div class="px-3 sm:px-5 py-3 sm:py-4 border-b border-gray-100 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <span class="bg-blue-100 text-blue-700 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">${idx + 1}</span>
-                    <span class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wide">Q ${idx + 1} of ${total}</span>
+            <div class="px-5 sm:px-7 py-4 sm:py-5 bg-gradient-to-b from-slate-50 to-white/50 border-b border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="bg-blue-100 text-blue-700 w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-sm sm:text-base font-black font-display flex-shrink-0 shadow-sm border border-blue-200">${idx + 1}</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-2.5 py-1 rounded-lg">Question ${idx + 1} of ${total}</span>
                 </div>
-                ${answers[idx] !== null ? '<span class="text-[10px] sm:text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full flex-shrink-0">✓ Answered</span>' : '<span class="text-[10px] sm:text-xs font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full flex-shrink-0">Unanswered</span>'}
+                ${answers[idx] !== null ? '<span class="text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-xl flex-shrink-0 shadow-sm">✓ Saved</span>' : '<span class="text-[10px] sm:text-xs font-bold text-slate-400 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-xl flex-shrink-0">Unanswered</span>'}
             </div>
             <!-- Question Text -->
-            <div class="px-3 sm:px-5 pt-4 sm:pt-5 pb-2 sm:pb-3">
-                <h2 class="text-sm sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
+            <div class="px-5 sm:px-7 pt-5 sm:pt-7 pb-3 sm:pb-4">
+                <h2 class="text-base sm:text-xl font-bold text-slate-800 leading-relaxed font-display tracking-tight">${esc(q.text)}</h2>
             </div>
             <!-- Options -->
-            <div class="px-3 sm:px-5 pb-4 sm:pb-5 space-y-2 sm:space-y-2.5 flex-grow">
+            <div class="px-5 sm:px-7 pb-5 sm:pb-7 space-y-2.5 sm:space-y-3 flex-grow">
                 ${q.options.map((opt, oi) => `
                     <div>
                         <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selectedAnswer === oi ? 'checked' : ''} onchange="selectAnswer(${oi})">
-                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3 sm:p-3.5 border-2 border-gray-200 rounded-xl font-medium text-gray-700 transition text-xs sm:text-sm cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 active:scale-[0.98]">
-                            <span class="opt-dot w-5 h-5 border-2 border-gray-300 rounded-full mr-2.5 sm:mr-3 flex items-center justify-center flex-shrink-0 transition">
-                                <svg class="w-3 h-3 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
+                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3.5 sm:p-4 border-2 border-slate-100 rounded-2xl font-medium text-slate-700 transition-all text-sm sm:text-base cursor-pointer peer-checked:border-blue-500 hover:border-slate-300 active:scale-[0.99] shadow-sm hover:shadow peer-checked:shadow-md bg-white">
+                            <span class="opt-dot w-6 h-6 border-2 border-slate-300 rounded-full mr-3 sm:mr-4 flex items-center justify-center flex-shrink-0 transition-all shadow-sm">
+                                <svg class="w-3.5 h-3.5 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
                             </span>
-                            <span class="font-bold text-gray-400 mr-1.5 sm:mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
-                            <span>${esc(opt)}</span>
+                            <span class="font-black font-display text-slate-300 mr-2 sm:mr-3 text-sm sm:text-base w-5 text-right">${String.fromCharCode(65 + oi)}.</span>
+                            <span class="leading-snug">${esc(opt)}</span>
                         </label>
                     </div>
                 `).join('')}
@@ -318,24 +318,34 @@ function showReview(score, total, timeTaken) {
     document.getElementById('progressBar').style.width = '100%';
 
     const pct = total > 0 ? Math.round((score / total) * 100) : 0;
-    const grade = pct >= 80 ? { color: 'green', icon: '🎉', text: 'Excellent!' } : pct >= 50 ? { color: 'blue', icon: '👍', text: 'Good Job!' } : { color: 'red', icon: '📚', text: 'Keep Practicing!' };
+    const grade = pct >= 80 ? { color: 'emerald', bg: 'from-emerald-500 to-green-500', icon: '🏆', text: 'Excellent Performance!' } 
+                : pct >= 50 ? { color: 'blue', bg: 'from-blue-500 to-indigo-500', icon: '🔥', text: 'Good Job!' } 
+                : { color: 'orange', bg: 'from-orange-500 to-red-500', icon: '📚', text: 'Keep Practicing!' };
 
+    document.getElementById('scoreSummary').className = "bg-white/95 backdrop-blur-md rounded-3xl border border-white shadow-premium p-6 sm:p-8 mb-5 sm:mb-8 text-center relative overflow-hidden";
+    
     document.getElementById('scoreSummary').innerHTML = `
-        <p class="text-4xl mb-2">${grade.icon}</p>
-        <h2 class="text-2xl font-bold font-display text-gray-900 mb-1">${grade.text}</h2>
-        <p class="text-gray-500 text-sm mb-4">Your results have been recorded.</p>
-        <div class="grid grid-cols-3 gap-3">
-            <div class="bg-${grade.color}-50 rounded-xl p-3 border border-${grade.color}-200">
-                <p class="text-2xl font-black text-${grade.color}-700">${score}/${total}</p>
-                <p class="text-[10px] font-bold text-${grade.color}-600 uppercase">Score</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-3 border border-gray-200">
-                <p class="text-2xl font-black text-gray-900">${pct}%</p>
-                <p class="text-[10px] font-bold text-gray-500 uppercase">Percentage</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-3 border border-gray-200">
-                <p class="text-2xl font-black text-gray-900">${timeTaken.display}</p>
-                <p class="text-[10px] font-bold text-gray-500 uppercase">Time</p>
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-${grade.color}-50 rounded-full blur-2xl opacity-60"></div>
+        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-${grade.color}-50 rounded-full blur-2xl opacity-60"></div>
+        
+        <div class="relative z-10">
+            <div class="text-5xl sm:text-6xl mb-3 sm:mb-4 inline-block transform hover:scale-110 transition-transform hover:rotate-6 cursor-default">${grade.icon}</div>
+            <h2 class="text-2xl sm:text-3xl font-black font-display text-slate-800 tracking-tight mb-1 sm:mb-2">${grade.text}</h2>
+            <p class="text-slate-500 text-xs sm:text-sm mb-6 sm:mb-8 font-medium">Your results have been securely recorded.</p>
+            
+            <div class="grid grid-cols-3 gap-3 sm:gap-4">
+                <div class="bg-gradient-to-br ${grade.bg} rounded-2xl p-4 sm:p-5 shadow-lg transform transition hover:-translate-y-1">
+                    <p class="text-2xl sm:text-4xl font-black text-white font-display tracking-tight">${score}<span class="text-sm sm:text-lg text-white/70 font-bold ml-1">/ ${total}</span></p>
+                    <p class="text-[9px] sm:text-[10px] font-bold text-white/90 uppercase tracking-widest mt-1">Score</p>
+                </div>
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-sm transform transition hover:-translate-y-1">
+                    <p class="text-2xl sm:text-4xl font-black text-slate-800 font-display tracking-tight">${pct}<span class="text-sm sm:text-lg text-slate-400 font-bold ml-1">%</span></p>
+                    <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Percentage</p>
+                </div>
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-sm transform transition hover:-translate-y-1">
+                    <p class="text-xl sm:text-2xl font-black text-slate-800 font-display tracking-tight mt-1 sm:mt-2 mb-1 sm:mb-2">${timeTaken.display}</p>
+                    <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Time Taken</p>
+                </div>
             </div>
         </div>
     `;
@@ -355,11 +365,11 @@ function renderReviewDots() {
     const nav = document.getElementById('reviewDotsNav');
     let html = '';
     gradeResults.forEach((r, i) => {
-        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition';
-        if (r.isCorrect) cls += ' review-correct';
-        else if (r.userAnswer === null) cls += ' review-skipped';
-        else cls += ' review-wrong';
-        if (i === reviewIndex) cls += ' current';
+        let cls = 'q-dot w-7 h-7 sm:w-10 sm:h-10 rounded-xl border text-[10px] sm:text-sm font-bold flex items-center justify-center cursor-pointer transition-all shadow-sm';
+        if (r.isCorrect) cls += ' review-correct border-emerald-200';
+        else if (r.userAnswer === null) cls += ' review-skipped border-orange-200';
+        else cls += ' review-wrong border-red-200';
+        if (i === reviewIndex) cls += ' current scale-110 shadow-md ring-2 ring-white ring-offset-1';
         html += `<button type="button" onclick="jumpReview(${i})" class="${cls}">${i + 1}</button>`;
     });
     nav.innerHTML = html;
@@ -372,32 +382,33 @@ function showReviewQuestion(idx) {
     const card = document.getElementById('reviewQuestionCard');
 
     const statusBadge = r.isCorrect
-        ? '<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">✓ Correct</span>'
+        ? '<span class="text-[10px] sm:text-xs font-bold text-emerald-700 bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-xl shadow-sm">✓ Correct</span>'
         : r.userAnswer === null
-            ? '<span class="text-xs font-bold text-orange-700 bg-orange-100 px-2 py-0.5 rounded-full">⚠ Skipped</span>'
-            : '<span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded-full">✗ Incorrect</span>';
+            ? '<span class="text-[10px] sm:text-xs font-bold text-orange-700 bg-orange-100 border border-orange-200 px-3 py-1.5 rounded-xl shadow-sm">⚠ Skipped</span>'
+            : '<span class="text-[10px] sm:text-xs font-bold text-red-700 bg-red-100 border border-red-200 px-3 py-1.5 rounded-xl shadow-sm">✗ Incorrect</span>';
 
     card.innerHTML = `
-        <div class="q-card bg-white rounded-2xl border border-gray-200 shadow-sm">
-            <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
-                <span class="text-xs font-bold text-gray-400">Question ${idx + 1} of ${currentTest.questions.length}</span>
+        <div class="q-card bg-white/95 backdrop-blur-md rounded-3xl border border-white shadow-premium flex flex-col flex-grow overflow-hidden transition-all duration-300">
+            <div class="px-5 sm:px-7 py-4 sm:py-5 bg-gradient-to-b from-slate-50 to-white/50 border-b border-slate-100 flex items-center justify-between">
+                <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-2.5 py-1 rounded-lg">Question ${idx + 1} of ${currentTest.questions.length}</span>
                 ${statusBadge}
             </div>
-            <div class="px-5 pt-5 pb-3">
-                <h2 class="text-base sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
+            <div class="px-5 sm:px-7 pt-5 sm:pt-7 pb-3 sm:pb-4">
+                <h2 class="text-base sm:text-xl font-bold text-slate-800 leading-relaxed font-display tracking-tight">${esc(q.text)}</h2>
             </div>
-            <div class="px-5 pb-5 space-y-2.5">
+            <div class="px-5 sm:px-7 pb-5 sm:pb-7 space-y-2.5 sm:space-y-3">
                 ${q.options.map((opt, oi) => {
-                    let cls = 'flex items-center w-full p-3 sm:p-3.5 border-2 rounded-xl font-medium text-sm transition';
-                    if (oi === r.correctAnswer && oi === r.userAnswer) cls += ' correct-answer';
-                    else if (oi === r.correctAnswer) cls += ' correct-answer';
-                    else if (oi === r.userAnswer) cls += ' wrong-answer';
-                    else cls += ' border-gray-200 text-gray-700';
+                    let cls = 'flex items-center w-full p-3.5 sm:p-4 border-2 rounded-2xl font-medium text-sm sm:text-base transition-all bg-white';
+                    if (oi === r.correctAnswer && oi === r.userAnswer) cls += ' border-emerald-500 bg-emerald-50 shadow-[0_2px_10px_rgba(16,185,129,0.15)]';
+                    else if (oi === r.correctAnswer) cls += ' border-emerald-400 bg-emerald-50 border-dashed';
+                    else if (oi === r.userAnswer) cls += ' border-red-400 bg-red-50 shadow-[0_2px_8px_rgba(239,68,68,0.1)]';
+                    else cls += ' border-slate-100 text-slate-600';
 
                     let badge = '';
-                    if (oi === r.correctAnswer && oi === r.userAnswer) badge = '<span class="ml-auto text-xs font-bold text-green-600">✓ Your answer (Correct)</span>';
-                    else if (oi === r.correctAnswer) badge = '<span class="ml-auto text-xs font-bold text-green-600">✓ Correct answer</span>';
-                    else if (oi === r.userAnswer) badge = '<span class="ml-auto text-xs font-bold text-red-500">✗ Your answer</span>';
+                    if (oi === r.correctAnswer && oi === r.userAnswer) badge = '<span class="ml-auto text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-100/50 px-2 py-1 rounded font-display tracking-wide">✓ Correctly Chosen</span>';
+                    else if (oi === r.correctAnswer) badge = '<span class="ml-auto text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-100/50 px-2 py-1 rounded font-display tracking-wide border border-emerald-200 border-dashed">✓ Correct Answer</span>';
+                    else if (oi === r.userAnswer) badge = '<span class="ml-auto text-[10px] sm:text-xs font-bold text-red-500 bg-red-100/50 px-2 py-1 rounded font-display tracking-wide">✗ Your Selection</span>';
+
 
                     return `<div class="${cls}">
                         <span class="font-bold text-gray-400 mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
