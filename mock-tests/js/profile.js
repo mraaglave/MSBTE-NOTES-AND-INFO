@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { getDatabase, ref, onValue, get, update } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
@@ -14,12 +15,31 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
+const storage = getStorage(app);
+
+let profileImageFile = null;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         document.getElementById('logoutBtn').classList.remove('hidden');
         document.getElementById('userEmailDisplay').textContent = user.email;
         document.getElementById('userEmailDisplay').classList.remove('hidden');
+        
+        // Populate profile edit fields
+        if(user.displayName) document.getElementById('displayNameInput').value = user.displayName;
+        if(user.photoURL) {
+            document.getElementById('profileImageDisplay').src = user.photoURL;
+            document.getElementById('profileImageDisplay').classList.remove('hidden');
+            document.getElementById('profileImagePlaceholder').classList.add('hidden');
+        }
+
+        const userRef = ref(db, `mock_users/${user.uid}`);
+        onValue(userRef, (snapshot) => {
+            if(snapshot.exists() && snapshot.val().username) {
+                document.getElementById('usernameInput').value = snapshot.val().username;
+            }
+        });
+
         loadProfileData(user.uid);
     } else {
         window.location.href = 'index.html';
@@ -105,3 +125,82 @@ function renderEmptyState() {
         </td></tr>
     `;
 }
+
+window.handleImageSelect = (e) => {
+    const file = e.target.files[0];
+    if(file) {
+        profileImageFile = file;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            document.getElementById('profileImageDisplay').src = e.target.result;
+            document.getElementById('profileImageDisplay').classList.remove('hidden');
+            document.getElementById('profileImagePlaceholder').classList.add('hidden');
+        };
+        reader.readAsDataURL(file);
+    }
+};
+
+window.saveProfileInfo = async () => {
+    const user = auth.currentUser;
+    if(!user) return;
+
+    const saveBtn = document.getElementById('saveProfileBtn');
+    const originalText = saveBtn.innerHTML;
+    saveBtn.disabled = true;
+    saveBtn.innerHTML = '<svg class="animate-spin w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8a8 8 0 01-8-8z"></path></svg> Saving...';
+
+    try {
+        let photoURL = user.photoURL;
+        const displayName = document.getElementById('displayNameInput').value.trim();
+        let desiredUsername = document.getElementById('usernameInput').value.trim().toLowerCase();
+        desiredUsername = desiredUsername.replace(/[^a-z0-9_.]/g, ''); // strip invalid chars (allow alphanumeric, underscore, dot)
+
+        if (desiredUsername) {
+            // Get old username
+            const userRef = ref(db, `mock_users/${user.uid}`);
+            const userSnap = await get(userRef);
+            const oldUsername = userSnap.exists() ? userSnap.val().username : null;
+
+            if (desiredUsername !== oldUsername) {
+                // Check availability
+                const usernameRef = ref(db, `usernames/${desiredUsername}`);
+                const unameSnap = await get(usernameRef);
+                if (unameSnap.exists() && unameSnap.val() !== user.uid) {
+                    throw new Error("Username is already taken. Please choose another one.");
+                }
+
+                // Prepare updates for DB
+                const updates = {};
+                updates[`usernames/${desiredUsername}`] = user.uid;
+                if (oldUsername) {
+                    updates[`usernames/${oldUsername}`] = null;
+                }
+                updates[`mock_users/${user.uid}/username`] = desiredUsername;
+                await update(ref(db), updates);
+            }
+        }
+
+        // If a new image was selected, upload it to Firebase Storage
+        if (profileImageFile) {
+            const ext = profileImageFile.name.split('.').pop();
+            const imageRef = storageRef(storage, `profile_images/${user.uid}_${Date.now()}.${ext}`);
+            await uploadBytes(imageRef, profileImageFile);
+            photoURL = await getDownloadURL(imageRef);
+        }
+
+        // Update Firebase Auth Profile
+        await updateProfile(user, {
+            displayName: displayName || null,
+            photoURL: photoURL
+        });
+
+        alert("Profile updated successfully!");
+        
+    } catch (error) {
+        console.error("Error updating profile: ", error);
+        alert("Failed to update profile: " + error.message);
+    } finally {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = originalText;
+    }
+};

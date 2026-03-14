@@ -1,9 +1,21 @@
 {
   "rules": {
+    "mock_users": {
+      "$uid": {
+         ".read": "$uid === auth.uid",
+         ".write": "$uid === auth.uid"
+      }
+    },
+    "usernames": {
+      ".read": "auth != null",
+      "$username": {
+        ".write": "auth != null && (!data.exists() || data.val() === auth.uid)"
+      }
+    },
     "users": {
-      "": {
-        ".read": " === auth.uid",
-        ".write": " === auth.uid"
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
       }
     },
     "forum_messages": {
