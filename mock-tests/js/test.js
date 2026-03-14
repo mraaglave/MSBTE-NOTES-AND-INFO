@@ -91,18 +91,52 @@ function initInstructions() {
     const agreeCheck = document.getElementById('agreeCheck');
     const startTestBtn = document.getElementById('startTestBtn');
     
-    agreeCheck.addEventListener('change', () => {
-        startTestBtn.disabled = !agreeCheck.checked;
-    });
+    if (agreeCheck && startTestBtn) {
+        const updateBtn = () => {
+            startTestBtn.disabled = !agreeCheck.checked;
+            console.log("Agreement checked:", agreeCheck.checked, "Button disabled:", startTestBtn.disabled);
+        };
+        
+        agreeCheck.addEventListener('change', updateBtn);
+        agreeCheck.addEventListener('click', updateBtn);
+        
+        // Ensure initial state
+        updateBtn();
+    } else {
+        console.error("Instructions elements not found:", { agreeCheck, startTestBtn });
+    }
 }
 
 window.startTestActual = () => {
-    document.getElementById('instructionsOverlay').classList.add('hidden');
-    document.getElementById('testContainer').classList.remove('hidden');
-    initTestUI();
-    startTimer();
-    window.addEventListener('beforeunload', onBeforeUnload);
+    console.log("startTestActual called");
+    try {
+        const overlay = document.getElementById('instructionsOverlay');
+        const container = document.getElementById('testContainer');
+        const loading = document.getElementById('loading');
+        
+        if (overlay) overlay.classList.add('hidden');
+        if (container) container.classList.remove('hidden');
+        if (loading) loading.classList.add('hidden'); // Extra safety
+        
+        console.log("Initializing Test UI...");
+        initTestUI();
+        startTimer();
+        window.addEventListener('beforeunload', onBeforeUnload);
+    } catch (err) {
+        console.error("Error starting test:", err);
+        alert("There was an error starting the test. Please refresh the page.");
+    }
 };
+
+// Also attach via event listener for robustness
+document.addEventListener('DOMContentLoaded', () => {
+    const startBtn = document.getElementById('startTestBtn');
+    if (startBtn) {
+        startBtn.addEventListener('click', () => {
+            window.startTestActual();
+        });
+    }
+});
 
 // ══════════════════════════════
 //  INIT UI
@@ -402,7 +436,6 @@ function showReview(score, total, timeTaken) {
     document.getElementById('testContainer').classList.add('hidden');
     document.getElementById('reviewContainer').classList.remove('hidden');
     document.getElementById('timerBox').classList.add('hidden');
-    document.getElementById('progressBar').style.width = '100%';
 
     const pct = total > 0 ? Math.round((score / total) * 100) : 0;
     const grade = pct >= 80 ? { color: 'emerald', bg: 'from-emerald-500 to-green-500', icon: '🏆', text: 'Excellent Performance!' } 
