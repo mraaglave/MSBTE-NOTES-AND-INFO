@@ -19,14 +19,15 @@ const db = getDatabase(app);
 const testId = new URLSearchParams(window.location.search).get('id');
 let currentTest = null;
 let currentUser = null;
-let currentIndex = 0;        // which question is visible
-let answers = [];             // user answers: null = unanswered, number = selected option index
+let currentIndex = 0;        
+let answers = [];             
+let questionStates = [];      // 0: Not Visited, 1: Answered, 2: Not Answered, 3: Marked, 4: Answered & Marked
 let timerInterval = null;
 let timeRemaining = 0;
 let testStartTime = 0;
 let testSubmitted = false;
 let reviewIndex = 0;
-let gradeResults = [];        // { isCorrect, userAnswer, correctAnswer } per question
+let gradeResults = [];        
 
 if (!testId) window.location.href = 'index.html';
 
@@ -71,29 +72,45 @@ async function loadTest() {
             currentTest.questions = currentTest.questions.slice(0, Math.min(limit, currentTest.questions.length));
         }
         answers = new Array(currentTest.questions?.length || 0).fill(null);
-        initTestUI();
-        startTimer();
-        window.addEventListener('beforeunload', onBeforeUnload);
+        questionStates = new Array(currentTest.questions?.length || 0).fill(0); // All not visited
+        initInstructions();
     } catch (err) {
         document.getElementById('loading').innerHTML = `<p class="text-red-500 font-medium">Error: ${err.message}</p><a href="index.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg">Go Back</a>`;
     }
 }
 
 // ══════════════════════════════
+//  INSTRUCTIONS
+// ══════════════════════════════
+function initInstructions() {
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('instrTitle').textContent = `Instructions - ${currentTest.title}`;
+    const mins = currentTest.type === 'mock' ? 120 : 30;
+    document.getElementById('instrDuration').textContent = mins;
+    
+    const agreeCheck = document.getElementById('agreeCheck');
+    const startTestBtn = document.getElementById('startTestBtn');
+    
+    agreeCheck.addEventListener('change', () => {
+        startTestBtn.disabled = !agreeCheck.checked;
+    });
+}
+
+window.startTestActual = () => {
+    document.getElementById('instructionsOverlay').classList.add('hidden');
+    document.getElementById('testContainer').classList.remove('hidden');
+    initTestUI();
+    startTimer();
+    window.addEventListener('beforeunload', onBeforeUnload);
+};
+
+// ══════════════════════════════
 //  INIT UI
 // ══════════════════════════════
 function initTestUI() {
-    document.getElementById('loading').classList.add('hidden');
-    document.getElementById('testContainer').classList.remove('hidden');
     document.getElementById('navTestTitle').textContent = currentTest.title;
-    document.getElementById('navTotal').textContent = currentTest.questions.length;
-
-    // Promo
-    if (currentTest.externalLink) {
-        document.getElementById('promoBanner').classList.remove('hidden');
-        document.getElementById('promoLink').href = currentTest.externalLink;
-        document.getElementById('promoText').textContent = currentTest.externalLinkText || 'Study Material Available';
-    }
+    document.getElementById('userName').textContent = currentUser.displayName || currentUser.email.split('@')[0];
+    document.getElementById('userInitial').textContent = (currentUser.displayName || currentUser.email)[0].toUpperCase();
 
     renderDots();
     showQuestion(0);
@@ -108,8 +125,10 @@ function showQuestion(idx) {
     const total = currentTest.questions.length;
     const card = document.getElementById('questionCard');
 
-    document.getElementById('navCurrent').textContent = idx + 1;
-    document.getElementById('progressBar').style.width = `${((idx + 1) / total) * 100}%`;
+    // Update State to 'Visited' if it was 'Not Visited'
+    if (questionStates[idx] === 0) {
+        questionStates[idx] = 2; // Not Answered (but visited)
+    }
 
     const selectedAnswer = answers[idx];
 
@@ -118,10 +137,13 @@ function showQuestion(idx) {
             <!-- Question Header -->
             <div class="px-5 sm:px-7 py-4 sm:py-5 bg-gradient-to-b from-slate-50 to-white/50 border-b border-slate-100 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <span class="bg-blue-100 text-blue-700 w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-sm sm:text-base font-black font-display flex-shrink-0 shadow-sm border border-blue-200">${idx + 1}</span>
+                    <span class="bg-blue-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-sm sm:text-base font-black font-display flex-shrink-0 shadow-lg border border-blue-400/30">${idx + 1}</span>
                     <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-2.5 py-1 rounded-lg">Question ${idx + 1} of ${total}</span>
                 </div>
-                ${answers[idx] !== null ? '<span class="text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-xl flex-shrink-0 shadow-sm">✓ Saved</span>' : '<span class="text-[10px] sm:text-xs font-bold text-slate-400 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-xl flex-shrink-0">Unanswered</span>'}
+                <div class="hidden sm:flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Section</span>
+                </div>
             </div>
             <!-- Question Text -->
             <div class="px-5 sm:px-7 pt-5 sm:pt-7 pb-3 sm:pb-4">
@@ -130,13 +152,10 @@ function showQuestion(idx) {
             <!-- Options -->
             <div class="px-5 sm:px-7 pb-5 sm:pb-7 space-y-2.5 sm:space-y-3 flex-grow">
                 ${q.options.map((opt, oi) => `
-                    <div>
+                    <div class="relative group">
                         <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selectedAnswer === oi ? 'checked' : ''} onchange="selectAnswer(${oi})">
-                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3.5 sm:p-4 border-2 border-slate-100 rounded-2xl font-medium text-slate-700 transition-all text-sm sm:text-base cursor-pointer peer-checked:border-blue-500 hover:border-slate-300 active:scale-[0.99] shadow-sm hover:shadow peer-checked:shadow-md bg-white">
-                            <span class="opt-dot w-6 h-6 border-2 border-slate-300 rounded-full mr-3 sm:mr-4 flex items-center justify-center flex-shrink-0 transition-all shadow-sm">
-                                <svg class="w-3.5 h-3.5 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
-                            </span>
-                            <span class="font-black font-display text-slate-300 mr-2 sm:mr-3 text-sm sm:text-base w-5 text-right">${String.fromCharCode(65 + oi)}.</span>
+                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3.5 sm:p-4 border-2 border-slate-100 rounded-2xl font-medium text-slate-700 transition-all text-sm sm:text-base cursor-pointer peer-checked:border-blue-500 peer-checked:bg-blue-50/50 hover:border-slate-300 active:scale-[0.99] shadow-sm hover:shadow-md bg-white">
+                            <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-xs font-bold mr-3 sm:mr-4 border border-slate-200 peer-checked:bg-blue-600 peer-checked:text-white transition-colors group-hover:bg-slate-200 uppercase">${String.fromCharCode(65 + oi)}</span>
                             <span class="leading-snug">${esc(opt)}</span>
                         </label>
                     </div>
@@ -145,11 +164,11 @@ function showQuestion(idx) {
         </div>
     `;
 
-    // Update button states
+    // Update UI components
     document.getElementById('prevBtn').disabled = idx === 0;
     const isLast = idx === total - 1;
-    document.getElementById('nextBtn').style.display = isLast ? 'none' : 'flex';
-    document.getElementById('skipBtn').style.display = isLast ? 'none' : 'flex';
+    document.getElementById('nextBtn').textContent = isLast ? 'Save & Submit' : 'Save & Next';
+    document.getElementById('nextBtn').onclick = isLast ? showSubmitModal : goToNext;
 
     renderDots();
 }
@@ -159,9 +178,8 @@ function showQuestion(idx) {
 // ══════════════════════════════
 window.selectAnswer = (optIndex) => {
     answers[currentIndex] = optIndex;
+    questionStates[currentIndex] = 1; // Answered
     renderDots();
-    // Update the badge in the card
-    showQuestion(currentIndex); // re-render to show "Answered" badge
 };
 
 // ══════════════════════════════
@@ -175,14 +193,58 @@ window.goToPrev = () => {
     if (currentIndex > 0) showQuestion(currentIndex - 1);
 };
 
-window.skipQuestion = () => {
-    // Move to next without answering
-    if (currentIndex < currentTest.questions.length - 1) showQuestion(currentIndex + 1);
+window.markForReview = () => {
+    const isAnswered = answers[currentIndex] !== null;
+    questionStates[currentIndex] = isAnswered ? 4 : 3;
+    if (currentIndex < currentTest.questions.length - 1) {
+        showQuestion(currentIndex + 1);
+    } else {
+        renderDots();
+    }
+};
+
+window.clearResponse = () => {
+    answers[currentIndex] = null;
+    questionStates[currentIndex] = 2; // Not Answered (but visited)
+    showQuestion(currentIndex);
 };
 
 window.jumpToQuestion = (idx) => {
     showQuestion(idx);
 };
+
+window.toggleSidebar = () => {
+    document.getElementById('sidebar').classList.toggle('open');
+};
+
+window.toggleCalculator = () => {
+    document.getElementById('calcModal').classList.toggle('hidden');
+};
+
+// ── Calculator Logic ──
+let calcValue = '0';
+window.calcNum = (n) => {
+    if (calcValue === '0' && n !== '.') calcValue = String(n);
+    else calcValue += String(n);
+    updateCalc();
+};
+window.calcOp = (op) => {
+    const last = calcValue.slice(-1);
+    if (['+','-','*','/'].includes(last)) calcValue = calcValue.slice(0, -1) + op;
+    else calcValue += op;
+    updateCalc();
+};
+window.calcClear = () => { calcValue = '0'; updateCalc(); };
+window.calcEqual = () => {
+    try {
+        calcValue = String(eval(calcValue.replace(/[^-+/*0-9.]/g, '')));
+        if (calcValue === 'undefined' || calcValue === 'NaN') calcValue = 'Error';
+    } catch { calcValue = 'Error'; }
+    updateCalc();
+};
+function updateCalc() {
+    document.getElementById('calcDisplay').textContent = calcValue;
+}
 
 // ══════════════════════════════
 //  DOTS NAVIGATOR
@@ -192,10 +254,20 @@ function renderDots() {
     if (!dotsNav || !currentTest?.questions) return;
     let html = '';
     currentTest.questions.forEach((_, i) => {
-        let cls = 'q-dot w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-gray-200 text-[10px] sm:text-xs font-bold flex items-center justify-center cursor-pointer transition hover:border-blue-300';
-        if (i === currentIndex) cls += ' current';
-        if (answers[i] !== null) cls += ' answered';
-        html += `<button type="button" onclick="jumpToQuestion(${i})" class="${cls}">${i + 1}</button>`;
+        let stateClass = 'not-visited';
+        const state = questionStates[i];
+        if (state === 1) stateClass = 'answered';
+        else if (state === 2) stateClass = 'not-answered';
+        else if (state === 3) stateClass = 'marked';
+        else if (state === 4) stateClass = 'marked-answered';
+        
+        let borderClass = (i === currentIndex) ? 'ring-2 ring-blue-500 ring-offset-2' : '';
+        
+        html += `
+            <button type="button" onclick="jumpToQuestion(${i})" 
+                class="q-dot w-8 h-8 rounded flex items-center justify-center text-xs font-bold transition-all shadow-sm ${stateClass} ${borderClass}">
+                ${i + 1}
+            </button>`;
     });
     dotsNav.innerHTML = html;
 }
