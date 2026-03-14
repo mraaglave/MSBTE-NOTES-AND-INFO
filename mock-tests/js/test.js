@@ -116,27 +116,27 @@ function showQuestion(idx) {
     card.innerHTML = `
         <div class="q-card bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col flex-grow">
             <!-- Question Header -->
-            <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+            <div class="px-3 sm:px-5 py-3 sm:py-4 border-b border-gray-100 flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">${idx + 1}</span>
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide">Question ${idx + 1} of ${total}</span>
+                    <span class="bg-blue-100 text-blue-700 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">${idx + 1}</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wide">Q ${idx + 1} of ${total}</span>
                 </div>
-                ${answers[idx] !== null ? '<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">✓ Answered</span>' : '<span class="text-xs font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Not answered</span>'}
+                ${answers[idx] !== null ? '<span class="text-[10px] sm:text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full flex-shrink-0">✓ Answered</span>' : '<span class="text-[10px] sm:text-xs font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full flex-shrink-0">Unanswered</span>'}
             </div>
             <!-- Question Text -->
-            <div class="px-5 pt-5 pb-3">
-                <h2 class="text-base sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
+            <div class="px-3 sm:px-5 pt-4 sm:pt-5 pb-2 sm:pb-3">
+                <h2 class="text-sm sm:text-lg font-bold text-gray-900 leading-relaxed">${esc(q.text)}</h2>
             </div>
             <!-- Options -->
-            <div class="px-5 pb-5 space-y-2.5 flex-grow">
+            <div class="px-3 sm:px-5 pb-4 sm:pb-5 space-y-2 sm:space-y-2.5 flex-grow">
                 ${q.options.map((opt, oi) => `
                     <div>
                         <input type="radio" name="answer" id="opt_${oi}" value="${oi}" class="hidden opt-radio peer" ${selectedAnswer === oi ? 'checked' : ''} onchange="selectAnswer(${oi})">
-                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3 sm:p-3.5 border-2 border-gray-200 rounded-xl font-medium text-gray-700 transition text-sm cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50">
-                            <span class="opt-dot w-5 h-5 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center flex-shrink-0 transition">
+                        <label for="opt_${oi}" class="opt-label flex items-center w-full p-3 sm:p-3.5 border-2 border-gray-200 rounded-xl font-medium text-gray-700 transition text-xs sm:text-sm cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 active:scale-[0.98]">
+                            <span class="opt-dot w-5 h-5 border-2 border-gray-300 rounded-full mr-2.5 sm:mr-3 flex items-center justify-center flex-shrink-0 transition">
                                 <svg class="w-3 h-3 fill-current opacity-0 transition-opacity" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
                             </span>
-                            <span class="font-bold text-gray-400 mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
+                            <span class="font-bold text-gray-400 mr-1.5 sm:mr-2 text-xs">${String.fromCharCode(65 + oi)}.</span>
                             <span>${esc(opt)}</span>
                         </label>
                     </div>

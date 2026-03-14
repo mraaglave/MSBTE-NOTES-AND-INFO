@@ -14,24 +14,37 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
-    <nav class="bg-white shadow z-50 flex-none h-[64px] border-b border-gray-100">
+    <nav class="bg-white shadow z-50 flex-none border-b border-gray-100 sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Left: Logo -->
                 <div class="flex items-center">
-                    <a href="../index.html" class="flex items-center text-blue-600 font-bold text-xl font-display group">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2 transition-transform group-hover:scale-110" viewBox="0 0 576 512" fill="currentColor">
+                    <a href="../index.html" class="flex items-center text-blue-600 font-bold text-lg sm:text-xl font-display group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7 mr-1.5 sm:mr-2 transition-transform group-hover:scale-110" viewBox="0 0 576 512" fill="currentColor">
                             <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/>
                         </svg>
-                        MSBTE Notes & Info
+                        <span class="hidden sm:inline">MSBTE Notes & Info</span>
+                        <span class="sm:hidden">MSBTE</span>
                     </a>
-                    <span class="hidden md:inline-block ml-3 bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">Mock Tests Profile</span>
+                    <span class="hidden md:inline-block ml-3 bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">Profile</span>
                 </div>
-                <div class="flex items-center gap-4">
+                <!-- Desktop -->
+                <div class="hidden sm:flex items-center gap-3">
                     <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Back to Tests</a>
                     <button id="logoutBtn" class="hidden text-sm text-red-600 hover:text-red-800 font-medium bg-red-50 px-3 py-1.5 rounded-lg border border-red-100">Logout</button>
-                    <span id="userEmailDisplay" class="hidden text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-md font-semibold truncate max-w-[150px] md:max-w-xs"></span>
+                    <span id="userEmailDisplay" class="hidden text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-md font-semibold truncate max-w-xs"></span>
                 </div>
+                <!-- Mobile Hamburger -->
+                <button class="sm:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition" onclick="document.getElementById('profileMobileMenu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="profileMobileMenu" class="hidden sm:hidden border-t border-gray-100 bg-white shadow-lg">
+            <div class="px-4 py-3 space-y-2">
+                <span id="userEmailDisplayMobile" class="hidden block text-xs text-blue-600 font-semibold py-2 border-b border-gray-100 mb-2 truncate"></span>
+                <a href="index.html" class="block text-sm font-bold text-gray-700 bg-gray-50 px-4 py-2.5 rounded-lg transition">← Back to Tests</a>
+                <button id="logoutBtnMobile" class="hidden w-full text-left text-sm text-red-600 font-medium bg-red-50 px-4 py-2.5 rounded-lg border border-red-100 transition">Logout</button>
             </div>
         </div>
     </nav>

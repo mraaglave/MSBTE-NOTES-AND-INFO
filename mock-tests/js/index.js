@@ -61,21 +61,41 @@ window.handleStartQuiz = (e, testId) => {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        // Desktop
         document.getElementById('logoutBtn').classList.remove('hidden');
         document.getElementById('profileBtn').classList.remove('hidden');
         document.getElementById('loginModalBtn').classList.add('hidden');
-        
         const greetingEl = document.getElementById('userGreeting');
         greetingEl.textContent = getGreeting(user);
         greetingEl.classList.remove('hidden');
         
-        // Hide modal if it's open
+        // Mobile
+        const mGreeting = document.getElementById('userGreetingMobile');
+        if (mGreeting) { mGreeting.textContent = getGreeting(user); mGreeting.classList.remove('hidden'); }
+        const mLogin = document.getElementById('loginModalBtnMobile');
+        if (mLogin) mLogin.classList.add('hidden');
+        const mProfile = document.getElementById('profileBtnMobile');
+        if (mProfile) mProfile.classList.remove('hidden');
+        const mLogout = document.getElementById('logoutBtnMobile');
+        if (mLogout) mLogout.classList.remove('hidden');
+        
         hideAuthModal();
     } else {
+        // Desktop
         document.getElementById('logoutBtn').classList.add('hidden');
         document.getElementById('profileBtn').classList.add('hidden');
         document.getElementById('loginModalBtn').classList.remove('hidden');
         document.getElementById('userGreeting').classList.add('hidden');
+        
+        // Mobile
+        const mGreeting = document.getElementById('userGreetingMobile');
+        if (mGreeting) mGreeting.classList.add('hidden');
+        const mLogin = document.getElementById('loginModalBtnMobile');
+        if (mLogin) mLogin.classList.remove('hidden');
+        const mProfile = document.getElementById('profileBtnMobile');
+        if (mProfile) mProfile.classList.add('hidden');
+        const mLogout = document.getElementById('logoutBtnMobile');
+        if (mLogout) mLogout.classList.add('hidden');
     }
 });
 
@@ -120,6 +140,8 @@ window.loginWithGoogle = async () => {
 };
 
 document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
+const mLogoutBtn = document.getElementById('logoutBtnMobile');
+if (mLogoutBtn) mLogoutBtn.addEventListener('click', () => signOut(auth));
 
 function loadTests() {
     const testsRef = ref(db, 'mock_tests');

@@ -25,6 +25,12 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('userEmailDisplay').textContent = user.email;
         document.getElementById('userEmailDisplay').classList.remove('hidden');
         
+        // Mobile
+        const mEmail = document.getElementById('userEmailDisplayMobile');
+        if (mEmail) { mEmail.textContent = user.email; mEmail.classList.remove('hidden'); }
+        const mLogout = document.getElementById('logoutBtnMobile');
+        if (mLogout) mLogout.classList.remove('hidden');
+        
         // Populate profile edit fields
         if(user.displayName) document.getElementById('displayNameInput').value = user.displayName;
         if(user.photoURL) {
@@ -47,6 +53,8 @@ onAuthStateChanged(auth, (user) => {
 });
 
 document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
+const mLogoutBtnP = document.getElementById('logoutBtnMobile');
+if (mLogoutBtnP) mLogoutBtnP.addEventListener('click', () => signOut(auth));
 
 function loadProfileData(uid) {
     const resultsRef = ref(db, `mock_results/${uid}`);

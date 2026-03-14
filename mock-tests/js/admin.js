@@ -41,6 +41,12 @@ onAuthStateChanged(auth, (user) => {
             document.getElementById('adminEmailDisplay').classList.remove('hidden');
             document.getElementById('adminEmailDisplay').textContent = user.email;
             
+            // Mobile
+            const mEmail = document.getElementById('adminEmailDisplayMobile');
+            if (mEmail) { mEmail.textContent = user.email; mEmail.classList.remove('hidden'); }
+            const mLogout = document.getElementById('logoutBtnMobile');
+            if (mLogout) { mLogout.classList.remove('hidden'); mLogout.addEventListener('click', () => signOut(auth)); }
+            
             loadResults(); 
             fetchTotalTestsCount();
         } else {
@@ -54,6 +60,12 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('dashboardView').classList.add('hidden');
         document.getElementById('logoutBtn').classList.add('hidden');
         document.getElementById('adminEmailDisplay').classList.add('hidden');
+        
+        // Mobile
+        const mEmail = document.getElementById('adminEmailDisplayMobile');
+        if (mEmail) mEmail.classList.add('hidden');
+        const mLogout = document.getElementById('logoutBtnMobile');
+        if (mLogout) mLogout.classList.add('hidden');
     }
 });
 
