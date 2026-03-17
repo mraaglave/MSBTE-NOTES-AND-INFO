@@ -1,8 +1,17 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app-check.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+    getAuth,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    signOut,
+    GoogleAuthProvider,
+    signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+// ── Firebase config ──────────────────────────────────────────────────────────
 const firebaseConfig = {
     apiKey: "AIzaSyBCA3de0oBHEmAAwguGcmD8hy679caG64I",
     authDomain: "msbte-notes-info.firebaseapp.com",
@@ -10,11 +19,13 @@ const firebaseConfig = {
     storageBucket: "msbte-notes-info.firebasestorage.app",
     messagingSenderId: "497397765847",
     appId: "1:497397765847:web:5ff2d9910dfe14c22a8292",
-    measurementId: "G-QJXDTZXDZ2"
+    measurementId: "G-QJXDTZXDZ2",
+    databaseURL: "https://msbte-notes-info-default-rtdb.firebaseio.com"
 };
 
 const app = initializeApp(firebaseConfig);
 
+// App Check (non-fatal on failure)
 try {
     initializeAppCheck(app, {
         provider: new ReCaptchaV3Provider('6LftA34sAAAAAGAYDgjQ4RCsCUeBmE6GQvgauRPm'),
@@ -25,183 +36,292 @@ try {
 }
 
 const auth = getAuth(app);
-const db = getDatabase(app);
+const db   = getDatabase(app);
 
+// ── Helpers ──────────────────────────────────────────────────────────────────
 function getGreeting(user) {
-    const hour = new Date().getHours();
-    let timeOfDay = 'morning';
-    if (hour >= 12 && hour < 17) timeOfDay = 'afternoon';
-    else if (hour >= 17) timeOfDay = 'evening';
-    
-    const name = user.displayName || (user.email ? user.email.split('@')[0] : 'Student');
-    return `Good ${timeOfDay}, ${name}`;
+    const h = new Date().getHours();
+    const period = h < 12 ? 'morning' : h < 17 ? 'afternoon' : 'evening';
+    const name = user.displayName
+        ? user.displayName.split(' ')[0]
+        : user.email
+            ? user.email.split('@')[0]
+            : 'Student';
+    return `Good ${period}, ${name}!`;
 }
 
-function showAuthModal() {
-    document.getElementById('email').value = '';
-    document.getElementById('password').value = '';
-    document.getElementById('authError').classList.add('hidden');
-    document.getElementById('authModal').classList.remove('hidden');
-}
-window.showAuthModal = showAuthModal;
+function el(id) { return document.getElementById(id); }
+function show(id) { const e = el(id); if (e) e.style.display = ''; }
+function hide(id) { const e = el(id); if (e) e.style.display = 'none'; }
+function showFlex(id) { const e = el(id); if (e) e.style.display = 'flex'; }
 
-function hideAuthModal() {
-    document.getElementById('authModal').classList.add('hidden');
+async function recaptcha(action = 'submit') {
+    if (typeof grecaptcha === 'undefined') return null;
+    try {
+        return await grecaptcha.execute('6LftA34sAAAAAGAYDgjQ4RCsCUeBmE6GQvgauRPm', { action });
+    } catch {
+        return null;
+    }
 }
-window.hideAuthModal = hideAuthModal;
 
+// ── Auth state ───────────────────────────────────────────────────────────────
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // ── Logged in ──
+
+        // Desktop
+        const greetingEl = el('userGreeting');
+        if (greetingEl) {
+            el('greetingText').textContent = getGreeting(user);
+            greetingEl.classList.add('visible');
+        }
+        hide('loginModalBtn');
+        hide('signupNavBtn');
+        showFlex('profileBtn');
+        showFlex('logoutBtn');
+
+        // Mobile
+        const mGreeting = el('userGreetingMobile');
+        if (mGreeting) { mGreeting.textContent = getGreeting(user); mGreeting.style.display = 'block'; }
+        hide('loginModalBtnMobile');
+        hide('signupBtnMobile');
+        showFlex('profileBtnMobile');
+        showFlex('logoutBtnMobile');
+
+        // Hero signup btn becomes "Go to Profile"
+        const heroSignup = el('heroSignupBtn');
+        if (heroSignup) {
+            heroSignup.textContent = 'My Profile';
+            heroSignup.onclick = () => { window.location.href = 'profile.html'; };
+        }
+
+        // Hide CTA banner
+        const banner = el('ctaBanner');
+        if (banner) banner.classList.add('hidden');
+
+        if (window.hideAuthModal) window.hideAuthModal();
+
+    } else {
+        // ── Logged out ──
+
+        // Desktop
+        const greetingEl = el('userGreeting');
+        if (greetingEl) greetingEl.classList.remove('visible');
+        showFlex('loginModalBtn');
+        showFlex('signupNavBtn');
+        hide('profileBtn');
+        hide('logoutBtn');
+
+        // Mobile
+        const mGreeting = el('userGreetingMobile');
+        if (mGreeting) mGreeting.style.display = 'none';
+        showFlex('loginModalBtnMobile');
+        showFlex('signupBtnMobile');
+        hide('profileBtnMobile');
+        hide('logoutBtnMobile');
+
+        // Hero btn back to signup
+        const heroSignup = el('heroSignupBtn');
+        if (heroSignup) {
+            heroSignup.innerHTML = `
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                </svg>
+                Get Started Free`;
+            heroSignup.onclick = () => window.showAuthModal('signup');
+        }
+
+        // Show CTA banner
+        const banner = el('ctaBanner');
+        if (banner) banner.classList.remove('hidden');
+    }
+});
+
+// ── Quiz start handler ────────────────────────────────────────────────────────
 window.handleStartQuiz = (e, testId) => {
     e.preventDefault();
     if (auth.currentUser) {
         window.location.href = `test.html?id=${testId}`;
     } else {
-        showAuthModal();
+        window.showAuthModal('login');
     }
 };
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // Desktop
-        document.getElementById('logoutBtn').classList.remove('hidden');
-        document.getElementById('profileBtn').classList.remove('hidden');
-        document.getElementById('loginModalBtn').classList.add('hidden');
-        const greetingEl = document.getElementById('userGreeting');
-        greetingEl.textContent = getGreeting(user);
-        greetingEl.classList.remove('hidden');
-        
-        // Mobile
-        const mGreeting = document.getElementById('userGreetingMobile');
-        if (mGreeting) { mGreeting.textContent = getGreeting(user); mGreeting.classList.remove('hidden'); }
-        const mLogin = document.getElementById('loginModalBtnMobile');
-        if (mLogin) mLogin.classList.add('hidden');
-        const mProfile = document.getElementById('profileBtnMobile');
-        if (mProfile) mProfile.classList.remove('hidden');
-        const mLogout = document.getElementById('logoutBtnMobile');
-        if (mLogout) mLogout.classList.remove('hidden');
-        
-        hideAuthModal();
-    } else {
-        // Desktop
-        document.getElementById('logoutBtn').classList.add('hidden');
-        document.getElementById('profileBtn').classList.add('hidden');
-        document.getElementById('loginModalBtn').classList.remove('hidden');
-        document.getElementById('userGreeting').classList.add('hidden');
-        
-        // Mobile
-        const mGreeting = document.getElementById('userGreetingMobile');
-        if (mGreeting) mGreeting.classList.add('hidden');
-        const mLogin = document.getElementById('loginModalBtnMobile');
-        if (mLogin) mLogin.classList.remove('hidden');
-        const mProfile = document.getElementById('profileBtnMobile');
-        if (mProfile) mProfile.classList.add('hidden');
-        const mLogout = document.getElementById('logoutBtnMobile');
-        if (mLogout) mLogout.classList.add('hidden');
-    }
-});
-
-// Load tests regardless of auth status
-loadTests();
-
-async function verifyRecaptcha(action = 'login') {
-    if (typeof grecaptcha === 'undefined') return true;
-    try { return await grecaptcha.execute('6LftA34sAAAAAGAYDgjQ4RCsCUeBmE6GQvgauRPm', { action }); } 
-    catch (e) { return true; }
-}
-
-window.showError = (msg) => {
-    const errEl = document.getElementById('authError');
-    errEl.textContent = msg;
-    errEl.classList.remove('hidden');
-};
-
+// ── Auth actions ──────────────────────────────────────────────────────────────
 window.login = async () => {
-    await verifyRecaptcha('login');
-    const email = document.getElementById('email').value.trim();
-    const pass = document.getElementById('password').value;
-    if(!email || !pass) return window.showError("Email and password required.");
-    try { await signInWithEmailAndPassword(auth, email, pass); } 
-    catch (e) { window.showError(e.message); }
+    const email = el('email').value.trim();
+    const pass  = el('password').value;
+    if (!email || !pass) return window.showError('Please enter your email and password.');
+    await recaptcha('login');
+    try {
+        await signInWithEmailAndPassword(auth, email, pass);
+    } catch (err) {
+        window.showError(friendlyError(err.code));
+    }
 };
 
 window.signup = async () => {
-    await verifyRecaptcha('signup');
-    const email = document.getElementById('email').value.trim();
-    const pass = document.getElementById('password').value;
-    if(!email || !pass) return window.showError("Email and password required.");
-    try { await createUserWithEmailAndPassword(auth, email, pass); } 
-    catch (e) { window.showError(e.message); }
+    const email = el('email').value.trim();
+    const pass  = el('password').value;
+    if (!email || !pass) return window.showError('Please enter your email and password.');
+    if (pass.length < 6) return window.showError('Password must be at least 6 characters.');
+    await recaptcha('signup');
+    try {
+        await createUserWithEmailAndPassword(auth, email, pass);
+    } catch (err) {
+        window.showError(friendlyError(err.code));
+    }
 };
 
 window.loginWithGoogle = async () => {
-    await verifyRecaptcha('login');
+    await recaptcha('google_login');
     const provider = new GoogleAuthProvider();
-    try { await signInWithPopup(auth, provider); } 
-    catch (e) { window.showError(e.message); }
+    try {
+        await signInWithPopup(auth, provider);
+    } catch (err) {
+        if (err.code !== 'auth/popup-closed-by-user') {
+            window.showError(friendlyError(err.code));
+        }
+    }
 };
 
-document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
-const mLogoutBtn = document.getElementById('logoutBtnMobile');
-if (mLogoutBtn) mLogoutBtn.addEventListener('click', () => signOut(auth));
+// Logout buttons
+const logoutHandler = () => signOut(auth);
+const logoutBtn = el('logoutBtn');
+const logoutBtnMobile = el('logoutBtnMobile');
+if (logoutBtn)       logoutBtn.addEventListener('click', logoutHandler);
+if (logoutBtnMobile) logoutBtnMobile.addEventListener('click', logoutHandler);
+
+// ── Friendly error messages ───────────────────────────────────────────────────
+function friendlyError(code) {
+    const map = {
+        'auth/user-not-found':       'No account found with this email.',
+        'auth/wrong-password':       'Incorrect password. Please try again.',
+        'auth/email-already-in-use': 'An account with this email already exists.',
+        'auth/invalid-email':        'Please enter a valid email address.',
+        'auth/weak-password':        'Password must be at least 6 characters.',
+        'auth/too-many-requests':    'Too many attempts. Please wait and try again.',
+        'auth/network-request-failed': 'Network error. Please check your connection.',
+        'auth/popup-blocked':        'Popup was blocked. Please allow popups for this site.',
+        'auth/invalid-credential':   'Invalid credentials. Please check and try again.',
+    };
+    return map[code] || 'Something went wrong. Please try again.';
+}
+
+// ── Load tests from Firebase ──────────────────────────────────────────────────
+loadTests();
 
 function loadTests() {
     const testsRef = ref(db, 'mock_tests');
     onValue(testsRef, (snapshot) => {
         const data = snapshot.val();
-        let html = '';
-        
-        if (data) {
-            Object.keys(data).forEach(id => {
-                const test = data[id];
-                const dateObj = new Date(test.createdAt || Date.now());
-                const dateStr = dateObj.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' });
-                const qCount = test.questions ? test.questions.length : 0;
-                const isMock = test.type === 'mock';
-                const typeBadgeColor = isMock ? 'bg-purple-100 text-purple-700' : 'bg-green-100 text-green-700';
-                const typeBadgeText = isMock ? 'Mock Exam' : 'Practice Exam';
-                
-                html += `
-                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
-                        <div class="flex-grow">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-xs font-bold ${typeBadgeColor} px-2.5 py-1 rounded-full uppercase tracking-wide">${typeBadgeText}</span>
-                            </div>
-                            <h3 class="text-xl font-bold font-display mb-2 text-gray-900">${test.title}</h3>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">${test.description || 'Interactive test designed to prepare you.'}</p>
-                            ${test.externalLink ? `<a href="${test.externalLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg hover:bg-amber-100 transition mb-2" onclick="event.stopPropagation()">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                ${test.externalLinkText || 'Study Material'}
-                            </a>` : ''}
-                        </div>
-                        <div class="border-t border-gray-100 pt-4 mt-auto">
-                            <div class="flex justify-between items-center text-[13px] font-medium text-gray-500 mb-4 bg-gray-50 px-3 py-2 rounded-lg">
-                                <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>${qCount} Qs</div>
-                                <div>Added ${dateStr}</div>
-                            </div>
-                            <button onclick="handleStartQuiz(event, '${id}')" class="inline-flex w-full items-center justify-center gap-2 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 shadow-md shadow-blue-200 transition">
-                                Start Quiz
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
+        const grid = el('testsList');
+        const countBadge = el('testCountBadge');
+
+        if (!data) {
+            grid.innerHTML = emptyState();
+            return;
         }
-        
-        if(!html) {
-            html = `
-            <div class="col-span-full border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center bg-white mt-8">
-                <div class="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4 text-gray-400">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+
+        const entries = Object.entries(data);
+        if (countBadge) {
+            countBadge.textContent = `${entries.length} test${entries.length !== 1 ? 's' : ''} available`;
+            countBadge.style.display = 'inline-flex';
+        }
+
+        grid.innerHTML = entries.map(([id, test]) => buildCard(id, test)).join('');
+
+    }, (error) => {
+        console.error('Firebase read error:', error);
+        el('testsList').innerHTML = `
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-1">No Tests Found</h3>
-                <p class="text-gray-500 max-w-sm mx-auto">Admin hasn't uploaded any mock tests yet. Check back soon for new quizzes.</p>
+                <h3>Failed to load tests</h3>
+                <p>Please refresh the page or check your internet connection.</p>
             </div>`;
-        }
-        document.getElementById('testsList').innerHTML = html;
     });
+}
+
+function buildCard(id, test) {
+    const date   = new Date(test.createdAt || Date.now());
+    const dateStr = date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    const qCount = Array.isArray(test.questions) ? test.questions.length : 0;
+    const isMock = test.type === 'mock';
+    const typeClass = isMock ? 'type-mock' : 'type-practice';
+    const typeLabel = isMock ? 'Mock Exam' : 'Practice';
+
+    const extLink = test.externalLink ? `
+        <a href="${escapeHtml(test.externalLink)}" target="_blank" rel="noopener noreferrer"
+            class="ext-link" onclick="event.stopPropagation()">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            ${escapeHtml(test.externalLinkText || 'Study Material')}
+        </a>` : '';
+
+    return `
+        <div class="test-card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                </div>
+                <span class="type-badge ${typeClass}">${typeLabel}</span>
+            </div>
+
+            <h3 class="card-title">${escapeHtml(test.title || 'Untitled Test')}</h3>
+            <p class="card-desc">${escapeHtml(test.description || 'Interactive test designed to prepare you for your MSBTE exams.')}</p>
+            ${extLink}
+
+            <div class="card-meta">
+                <div class="card-meta-item">
+                    <span class="dot"></span>
+                    ${qCount} Question${qCount !== 1 ? 's' : ''}
+                </div>
+                <div>Added ${dateStr}</div>
+            </div>
+
+            <div class="card-footer">
+                <button class="btn-start" onclick="handleStartQuiz(event, '${escapeHtml(id)}')">
+                    Start Quiz
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>`;
+}
+
+function emptyState() {
+    return `
+        <div class="empty-state">
+            <div class="empty-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+            </div>
+            <h3>No Tests Yet</h3>
+            <p>The admin hasn't uploaded any mock tests yet. Check back soon!</p>
+        </div>`;
+}
+
+// XSS prevention
+function escapeHtml(str) {
+    if (typeof str !== 'string') return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }
