@@ -8,7 +8,3 @@
 # ------------------------------------------
 http://*    https://:splat    301
 
-# ------------------------------------------
-# 3. Force canonical domain (avoid duplicate content)
-# ------------------------------------------
-https://msbtenotes-info.netlify.app/*     https://www.msbtenotes-info.netlify.app/:splat   301
