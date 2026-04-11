@@ -1,5 +1,41 @@
 [
     {
+        "id": "k-scheme-guess-papers",
+        "title": "MSBTE K Scheme Guess Papers & Important Questions",
+        "image": "/resourse/blog-resourse/k-scheme-guess-papers.png",
+        "imageAlt": "MSBTE K Scheme Guess Papers and Important Questions",
+        "dateAndReadTime": "April 11, 2026 · 4 min read",
+        "shortTitle": "K Scheme Guess Papers",
+        "description": "Access crucial MSBTE K Scheme Guess Papers and Important Questions for multiple subjects from Basic Mathematics to VLSI Applications.",
+        "url": "/Blog/k-scheme-guess-papers.html",
+        "keywords": [
+            "MSBTE K Scheme",
+            "Guess Papers",
+            "Important Questions",
+            "MSBTE Exams",
+            "Question Bank"
+        ],
+        "category": "Notes"
+    },
+    {
+        "id": "msbte-summer-2026-last-minute-tips",
+        "title": "MSBTE Summer 2026: Last Minute Exam Study Tips & Precautions | K Scheme",
+        "image": "/resourse/blog-resourse/msbte-last-minute-tips.png",
+        "imageAlt": "Last minute study tips for MSBTE Exams",
+        "dateAndReadTime": "April 11, 2026 · 6 min read",
+        "shortTitle": "Last Minute Study Tips",
+        "description": "Last minute study tips and crucial precautions for MSBTE Summer 2026 Exams. Get K-Scheme question banks and resources to maximize your score.",
+        "url": "/Blog/msbte-summer-2026-last-minute-tips.html",
+        "keywords": [
+            "MSBTE Summer 2026",
+            "last minute study tips",
+            "MSBTE K Scheme",
+            "MSBTE Question Bank",
+            "MSBTE Exam Precautions"
+        ],
+        "category": "Study Tips"
+    },
+    {
         "id": "sppu-summer-2026-exam-roadmap",
         "title": "SPPU Summer 2026 Engineering Exam Roadmap & Tentative Dates",
         "image": "/resourse/blog-resourse/sppu-summer-2026-exam-roadmap.png",
