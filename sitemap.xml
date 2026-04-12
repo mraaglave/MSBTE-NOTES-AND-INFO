@@ -29,11 +29,18 @@
 
   <!-- Blog Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/asha-bhosle-death-news.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/k-scheme-guess-papers.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-last-minute-tips.html</loc>
     <lastmod>2026-04-11</lastmod>
