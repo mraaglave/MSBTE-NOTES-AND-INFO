@@ -1824,12 +1824,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Blog/blog-frame.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-result-update-jan-2025.html</loc>
     <lastmod>2026-01-21</lastmod>
@@ -1854,18 +1849,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Courses/test.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Jobs/apply-redirect.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Jobs/bookmarked-jobs.html</loc>
     <lastmod>2026-01-21</lastmod>
@@ -1884,12 +1869,7 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Jobs/success-redirect.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/4th-sem-computer-microprojects.html</loc>
     <lastmod>2026-01-21</lastmod>
@@ -1962,12 +1942,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Notes/Manual/manual-blank.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/Manual/pco-lab-manual.html</loc>
     <lastmod>2026-01-21</lastmod>
@@ -1998,12 +1973,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/video-course/topic-template.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/aaple-sarkar-dbt-portal-guide.html</loc>
     <lastmod>2026-01-31</lastmod>
@@ -2220,12 +2190,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/Notes/note_page_template.html</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/object-oriented-programming-in-c-semester---3.html</loc>
     <lastmod>2026-01-31</lastmod>
@@ -2413,12 +2378,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://msbtenotes-info.netlify.app/CollegeInfo/article-template.html</loc>
-    <lastmod>2026-02-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://msbtenotes-info.netlify.app/CollegeInfo/index.html</loc>
     <lastmod>2026-02-11</lastmod>
