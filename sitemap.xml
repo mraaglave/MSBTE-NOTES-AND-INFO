@@ -27,7 +27,21 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- News Section -->
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/News/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <!-- Blog Pages -->
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/all-india-ncat-2026.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/cm-fellowship-maharashtra-2026.html</loc>
     <lastmod>2026-04-13</lastmod>
