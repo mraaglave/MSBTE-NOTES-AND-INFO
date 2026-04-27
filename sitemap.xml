@@ -35,6 +35,12 @@
     <priority>0.90</priority>
   </url>
 
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Notes/python-handbook.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <!-- Blog Pages -->
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-notes-summer-exam-2026.html</loc>
@@ -249,7 +255,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <!-- Notes & Resources -->
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/advanced-java-notes.html</loc>
@@ -260,6 +265,12 @@
   <url>
     <loc>https://msbtenotes-info.netlify.app/Notes/dsa-handwritten-notes.html</loc>
     <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Notes/python-handbook.html</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

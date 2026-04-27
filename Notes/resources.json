@@ -1,5 +1,20 @@
 [
     {
+        "title": "The Ultimate Python Handbook PDF - Full Course Notes",
+        "description": "Download CodeWithHarry's Ultimate Python Handbook covering everything from basics to AI projects like Jarvis.",
+        "url": "/Notes/python-handbook.html",
+        "thumbnail": "/resourse/note-thumbs/python-handbook.png",
+        "category": "notes",
+        "tags": [
+            "Python",
+            "Handwritten",
+            "PDF",
+            "Projects",
+            "Full Course"
+        ],
+        "dateAdded": "2026-04-27"
+    },
+    {
         "title": "311305 - Basic Physics - First Year First Semester Question Bank",
         "description": "Download 311305 - Basic Physics question banks, model answers, and study materials for First Year First Semester, First Year.",
         "url": "/Notes/311305-basic-physics.html",
