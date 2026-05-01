@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" 
-     xmlns:media="http://search.yahoo.com/mrss/" 
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MSBTE Notes &amp; Info Blog</title>
     <link>https://msbtenotes-info.netlify.app</link>
     <description>Latest updates, scholarship guides, and academic news for MSBTE students.</description>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Feb 2026 07:24:55 -0000</lastBuildDate>
-    <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png</url>
       <title>MSBTE Notes &amp; Info</title>
@@ -28,7 +24,7 @@
         <media:title type="plain">All India NCAT 2026</media:title>
         <media:description type="plain">All India NCAT 2026 Registration and Prize Details</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/all_india_ncat_2026.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/all_india_ncat_2026.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>What to do after Diploma in Engineering? Career Options after Polytechnic</title>
@@ -36,6 +32,11 @@
       <description>Completed your Diploma? Discover the best career paths: Degree (DSE), jobs, certifications, and more.</description>
       <pubDate>Thu, 26 Mar 2026 12:00:00 +0530</pubDate>
       <guid>https://msbtenotes-info.netlify.app/Blog/what-to-do-after-diploma.html</guid>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/what-to-do-after-diploma.png" type="image/png" length="0"/>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/what-to-do-after-diploma.png" medium="image" type="image/png">
+        <media:title type="plain">What to do after Diploma in Engineering? Career Options after Polytechnic</media:title>
+        <media:description type="plain">What to do after Diploma in Engineering? Career Options after Polytechnic</media:description>
+      </media:content>
     </item>
     <item>
       <title>What to do after 10th? Career Options in Maharashtra | Complete Guide</title>
@@ -50,7 +51,7 @@
         <media:title type="plain">What to do after 10th</media:title>
         <media:description type="plain">Career Options in Maharashtra after 10th</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/what-to-do-after-10th.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/what-to-do-after-10th.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>How to Study Smarter using AI: A Complete Guide for MSBTE Diploma Students</title>
@@ -65,7 +66,7 @@
         <media:title type="plain">AI Study Guide</media:title>
         <media:description type="plain">How to Study Smarter using AI</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ai-study-guide-banner.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ai-study-guide-banner.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Summer 2026 Exam Cancelled? Here Is The Truth</title>
@@ -80,7 +81,7 @@
         <media:title type="plain">Fake News Alert</media:title>
         <media:description type="plain">Fake News Alert Banner</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/fake-news-alert.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/fake-news-alert.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Top 5 Best Engineering Colleges in Maharashtra: Admission, Placement, and Ranking Guide (2025-26)</title>
@@ -89,9 +90,14 @@
       <pubDate>Tue, 03 Mar 2026 12:00:00 +0530</pubDate>
       <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
       <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/top-5-engineering-colleges-maharashtra.html</guid>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-5-engineering-colleges-maharashtra.png" type="image/png" length="0"/>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-5-engineering-colleges-maharashtra.png" medium="image" type="image/png">
+        <media:title type="plain">Top 5 Best Engineering Colleges in Maharashtra: Admission, Placement, and Ranking Guide (2025-26)</media:title>
+        <media:description type="plain">Top 5 Best Engineering Colleges in Maharashtra: Admission, Placement, and Ranking Guide (2025-26)</media:description>
+      </media:content>
     </item>
     <item>
-      <title>MSBTE Summer 2026 Exam Time Table & Dates | Official Roadmap</title>
+      <title>MSBTE Summer 2026 Exam Time Table &amp; Dates | Official Roadmap</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-exam-roadmap.html</link>
       <description>MSBTE Summer 2026 Exam time table is out! Check official dates for practicals (April 8-18) and theory exams (April 23-May 16) along with our expert survival guide.</description>
       <pubDate>Mon, 02 Mar 2026 12:00:00 +0530</pubDate>
@@ -103,7 +109,7 @@
         <media:title type="plain">MSBTE Summer 2026 Exam Roadmap</media:title>
         <media:description type="plain">Editorial illustration of study desk representing exam roadmap</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-summer-2026-exam-roadmap.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-summer-2026-exam-roadmap.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>D.Pharm Exit Exam Halted: PCI Allows Direct Registration in 2026</title>
@@ -119,7 +125,7 @@
         <media:title type="plain">D.Pharm Exit Exam Halted</media:title>
         <media:description type="plain">Illustration representing pharmacy education and official stamp of approval</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dpharm-exit-exam-cancelled-2026.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dpharm-exit-exam-cancelled-2026.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>SPPU to Grant Academic Credits for Kumbh Mela Volunteering; Decision Under Review After Backlash</title>
@@ -135,7 +141,7 @@
         <media:title type="plain">SPPU to Grant Academic Credits for Kumbh Mela Volunteering</media:title>
         <media:description type="plain">SPPU's decision to award 2 academic credits for volunteering at the 2026-27 Nashik Kumbh Mela faces criticism from student groups.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_kumbh_mela_credits_2026.jpg" type="image/jpeg" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_kumbh_mela_credits_2026.jpg" type="image/jpeg" length="0"/>
     </item>
     <item>
       <title>List of Autonomous Engineering Colleges in Maharashtra 2025 | AICTE Approved</title>
@@ -151,7 +157,7 @@
         <media:title type="plain">List of Autonomous Engineering Colleges in Maharashtra 2025</media:title>
         <media:description type="plain">Complete list of AICTE approved autonomous engineering colleges in Maharashtra with college codes and locations.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/autonomous-engineering-colleges-maharashtra.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/autonomous-engineering-colleges-maharashtra.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>SPPU Result OUT For Winter Session 2025; Download UG and PG Marksheet PDF at unipune.ac.in</title>
@@ -170,7 +176,7 @@
         <media:title type="plain">SPPU Result OUT For Winter Session 2025; Download UG and PG Marksheet PDF at unipune.ac.in</media:title>
         <media:description type="plain">SPPU Winter Session 2025 Result declared! Access direct links for 14 courses including B.E., M.Com, B.Com, B.A.LL.B, BBA &amp; more. Download UG/PG marksheet PDF, check revaluation process &amp; grace marks details.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_result_winter_2025.jpg" type="image/jpeg" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/sppu_result_winter_2025.jpg" type="image/jpeg" length="0"/>
     </item>
     <item>
       <title>312303 PIC Programming in C Manual Answers | MSBTE K-Scheme</title>
@@ -187,7 +193,7 @@
         <media:title type="plain">312303 PIC Programming in C Manual Answers | MSBTE K-Scheme</media:title>
         <media:description type="plain">Complete solved lab manual for PIC Programming in C (312303). Access all 25 practical answers for MSBTE K-Scheme.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/programming-in-c-lab-manual.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MahaDBT Scholarship Errors &amp; Solutions 2026: Troubleshoot Issues</title>
@@ -204,7 +210,7 @@
         <media:title type="plain">MahaDBT Scholarship Errors &amp; Solutions 2026: Troubleshoot Issues</media:title>
         <media:description type="plain">Troubleshoot common MahaDBT scholarship errors like 'Account Closed', 'Aadhaar Not Seeded', and 'KYC Pending' with our complete solution guide.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/mahadbt-errors-thumbnail.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/mahadbt-errors-thumbnail.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Aaple Sarkar DBT Portal (Mahadbt) 2026: Login, Registration &amp; New Rules</title>
@@ -221,7 +227,7 @@
         <media:title type="plain">Aaple Sarkar DBT Portal (Mahadbt) 2026: Login, Registration &amp; New Rules</media:title>
         <media:description type="plain">Official Aaple Sarkar DBT Portal (Mahadbt) 2026 guide. Direct link for Login &amp; Registration. Apply for Post Matric Scholarship, check application status, and get Aadhaar linking help.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/aaple-sarkar-dbt-thumbnail.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/aaple-sarkar-dbt-thumbnail.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Post Matric Scholarship to OBC Students (2025-26): Eligibility &amp; Benefits</title>
@@ -238,7 +244,7 @@
         <media:title type="plain">Post Matric Scholarship to OBC Students (2025-26): Eligibility &amp; Benefits</media:title>
         <media:description type="plain">Apply for Post Matric Scholarship to OBC Students. Get 50-100% fee waiver &amp; maintenance allowance. Check eligibility &amp; documents.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/obc-scholarship-thumbnail.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/obc-scholarship-thumbnail.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Academic Calendar 2025-26: Key Dates for Exams &amp; Terms</title>
@@ -255,7 +261,7 @@
         <media:title type="plain">MSBTE Academic Calendar 2025-26: Key Dates for Exams &amp; Terms</media:title>
         <media:description type="plain">MSBTE Academic Calendar 2025-26 Released: Check Winter 2025 &amp; Summer 2026 exam dates, term start/end schedule, and class test timetable for Diploma students.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-academic-calendar-2025-26.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-academic-calendar-2025-26.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>UGC Reforms 2026: New Rules for PhD, Faculty &amp; Foreign Campuses</title>
@@ -272,7 +278,7 @@
         <media:title type="plain">UGC Reforms 2026: New Rules for PhD, Faculty &amp; Foreign Campuses</media:title>
         <media:description type="plain">Breakdown of UGC's 2026 reforms: New Anti-Discrimination rules, Direct PhD after 4-year UG, Faculty recruitment changes, and Foreign University campuses in India.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ugc-new-rules-2026.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ugc-new-rules-2026.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem</title>
@@ -290,7 +296,7 @@
         <media:title type="plain">Programming in C (312303) Notes PDF | MSBTE K-Scheme 2nd Sem</media:title>
         <media:description type="plain">Download free Programming in C (312303) notes PDF for MSBTE K-Scheme Semester 2. Includes unit-wise study material, important questions, and solved examples.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/programming-in-c-312303.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>NITI Aayog Internship 2026 Apply Online - Eligibility &amp; Date</title>
@@ -307,7 +313,7 @@
         <media:title type="plain">NITI Aayog Internship 2026 Apply Online - Eligibility &amp; Date</media:title>
         <media:description type="plain">Apply online for NITI Aayog Internship 2026. Official government internship for Engineering, Management, Law &amp; Policy students. Check eligibility, stipend, and direct link.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/niti-aayog-internship-2026.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/niti-aayog-internship-2026.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Computer Engineering Diploma All Semester Subject Notes and Books</title>
@@ -320,7 +326,7 @@
         <media:title type="plain">Computer Engineering Diploma All Semester Subject Notes and Books</media:title>
         <media:description type="plain">Download all semester subject notes, books, and manuals for MSBTE Computer Engineering Diploma (K-Scheme). Access free PDFs for Sem 1 to 6.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" type="image/svg+xml" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/computer-engineering-diploma-notes.svg" type="image/svg+xml" length="0"/>
     </item>
     <item>
       <title>Ajit Pawar Death News: Maharashtra Deputy CM Dies in Tragic Plane Crash in Baramati</title>
@@ -333,7 +339,7 @@
         <media:title type="plain">Ajit Pawar Death News: Maharashtra Deputy CM Dies in Tragic Plane Crash in Baramati</media:title>
         <media:description type="plain">Maharashtra Deputy CM Ajit Pawar dies in a tragic plane crash in Baramati. Read the latest updates on the crash investigation, 3-day state mourning, and funeral details.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ajit-pawar-death-news.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/ajit-pawar-death-news.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Top Engineering Colleges in Pune 2026 | Best Options for Engineering Aspirants</title>
@@ -346,7 +352,7 @@
         <media:title type="plain">Top Engineering Colleges in Pune 2026 | Best Options for Engineering Aspirants</media:title>
         <media:description type="plain">Discover the top engineering colleges in Pune including COEP, PICT, VIT, AIT, and IIIT. Compare placements and highlights.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/top-engineering-colleges-pune.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025: Your Guide to Photocopy &amp; Re-Evaluation</title>
@@ -359,7 +365,7 @@
         <media:title type="plain">MSBTE Winter 2025: Your Guide to Photocopy &amp; Re-Evaluation</media:title>
         <media:description type="plain">Complete guide on MSBTE Winter 2025 Photocopy &amp; Re-Evaluation process with Digital Evaluation updates.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-photocopy-reevaluation.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>100+ Microproject Ideas for 4th Sem Computer Engineering (MSBTE K-Scheme)</title>
@@ -372,7 +378,7 @@
         <media:title type="plain">100+ Microproject Ideas for 4th Sem Computer Engineering (MSBTE K-Scheme)</media:title>
         <media:description type="plain">Get 100+ innovative microproject ideas for MSBTE 4th Sem Computer Engineering (Java, Python, DCN, MIC).</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/4th-sem-computer-microprojects.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>🔴 MSBTE Result Update 2025 | Result Declared Today at 2:00 PM</title>
@@ -385,7 +391,7 @@
         <media:title type="plain">🔴 MSBTE Result Update 2025 | Result Declared Today at 2:00 PM</media:title>
         <media:description type="plain">Breaking: MSBTE Winter 2025 Result will be declared TODAY 2nd January at 2:00 PM. Check official links and steps to view your result.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" type="image/jpeg" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-result-update-jan-2025.jpg" type="image/jpeg" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Result OUT: Revaluation, Photocopy &amp; Grace Marks Rules Explained</title>
@@ -398,7 +404,7 @@
         <media:title type="plain">MSBTE Winter 2025 Result OUT: Revaluation, Photocopy &amp; Grace Marks Rules Explained</media:title>
         <media:description type="plain">Complete guide on MSBTE Winter 2025 Result - Check result, apply for revaluation, understand photocopy vs revaluation, grace marks eligibility, and what to do after result.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result-revaluation.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Result Date &amp; How to Check</title>
@@ -411,7 +417,7 @@
         <media:title type="plain">MSBTE Winter 2025 Result Date &amp; How to Check</media:title>
         <media:description type="plain">Check MSBTE Winter 2025 result date, checking process, and mark sheet details.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-result.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>DATABASE MANAGEMENT SYSTEM – Guss Paper (Free Version)</title>
@@ -424,7 +430,7 @@
         <media:title type="plain">DATABASE MANAGEMENT SYSTEM – Guss Paper (Free Version)</media:title>
         <media:description type="plain">A free 30-mark guess paper for the MSBTE K-Scheme DBMS (313302) exam, perfect for quick revision.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/dbms-guess-paper-free.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Cloud Computing (315325) - Complete Study Guide for MSBTE K-Scheme</title>
@@ -437,7 +443,7 @@
         <media:title type="plain">Cloud Computing (315325) - Complete Study Guide for MSBTE K-Scheme</media:title>
         <media:description type="plain">A complete resource hub for Cloud Computing with syllabus, notes, video lectures, and micro-project ideas.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/branch-resourse/cloud-computing-banner.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</title>
@@ -450,7 +456,7 @@
         <media:title type="plain">MSBTE Winter 2025 Exam Study Strategies — जुनी मेहनत, नवी स्मार्टनेस!</media:title>
         <media:description type="plain">जुनी मेहनत आणि नवी स्मार्टनेस वापरून MSBTE परीक्षेत यश कसे मिळवायचे ते शिका.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-study-strategies.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</title>
@@ -463,7 +469,7 @@
         <media:title type="plain">MSBTE Winter 2025 Theory Examination Timetable: Complete Guide with Exam Dates &amp; Schedule</media:title>
         <media:description type="plain">Download the official theory exam timetable and get key preparation tips for your diploma exams.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/time-table-2025.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/time-table-2025.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</title>
@@ -476,7 +482,7 @@
         <media:title type="plain">MSBTE Winter 2025 Hall Ticket Download | Official Link &amp; Guide</media:title>
         <media:description type="plain">Official guide to download your admit card using your enrollment or seat number.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-winter-2025-hall-ticket.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</title>
@@ -489,7 +495,7 @@
         <media:title type="plain">Happy Engineer's Day 2025: Celebrating Innovation and Building the Future</media:title>
         <media:description type="plain">Learn the history and significance of Engineer's Day and discover resources to fuel your own engineering journey.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/engineering-day-2025.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Advanced Java Handwritten Notes - Free PDF Download</title>
@@ -502,7 +508,7 @@
         <media:title type="plain">Advanced Java Handwritten Notes - Free PDF Download</media:title>
         <media:description type="plain">Download free handwritten notes covering Servlets, JSP, JDBC, and more for your exam preparation.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/advanced-java-notes.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</title>
@@ -515,7 +521,7 @@
         <media:title type="plain">MSBTE K-Scheme Question Banks | All Branches (CO, ME, CE, EE, IT, E&amp;TC)</media:title>
         <media:description type="plain">Your central hub for all K-Scheme question banks for every department.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-k-scheme-question-banks.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</title>
@@ -528,7 +534,7 @@
         <media:title type="plain">MSBTE Electrical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for Electrical Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-electrical-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</title>
@@ -541,7 +547,7 @@
         <media:title type="plain">MSBTE Civil Engineering Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for Civil Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-civil-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</title>
@@ -554,7 +560,7 @@
         <media:title type="plain">MSBTE Mechanical Engineering Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for Mechanical Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-mech-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</title>
@@ -567,7 +573,7 @@
         <media:title type="plain">MSBTE Information Technology Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for IT Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-it-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</title>
@@ -580,7 +586,7 @@
         <media:title type="plain">MSBTE Electronics &amp; Telecomm. Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for E&amp;TC Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-etc-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</title>
@@ -593,7 +599,7 @@
         <media:title type="plain">MSBTE Computer Engineering Question Bank (K-Scheme) | All Semesters</media:title>
         <media:description type="plain">Download semester-wise K-Scheme question banks for Computer Engineering.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-computer-engg-question-bank.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</title>
@@ -606,7 +612,7 @@
         <media:title type="plain">Naukri Campus Young Turks 2025 — Skill Assessment Test (SAT)</media:title>
         <media:description type="plain">Compete for a ₹20 Lakh prize pool in this national skill test.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/naukri-young-turks-2025.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best Python &amp; Web Development Microproject Ideas for Beginners</title>
@@ -619,7 +625,7 @@
         <media:title type="plain">20 Best Python &amp; Web Development Microproject Ideas for Beginners</media:title>
         <media:description type="plain">Beginner-friendly projects using HTML, CSS, JS, and Python.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-web.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best Computer Networks Microproject Ideas for Diploma Students</title>
@@ -632,7 +638,7 @@
         <media:title type="plain">20 Best Computer Networks Microproject Ideas for Diploma Students</media:title>
         <media:description type="plain">Master networking with Packet Tracer, subnetting, and socket programming.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-cn.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best Software Engineering Microproject Ideas for Diploma Students</title>
@@ -645,7 +651,7 @@
         <media:title type="plain">20 Best Software Engineering Microproject Ideas for Diploma Students</media:title>
         <media:description type="plain">Learn to create SRS documents, UML diagrams, test plans, and more.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-se.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best Operating System Microproject Ideas for Diploma Students (C++/Linux)</title>
@@ -658,7 +664,7 @@
         <media:title type="plain">20 Best Operating System Microproject Ideas for Diploma Students (C++/Linux)</media:title>
         <media:description type="plain">Projects on scheduling, deadlock detection, and memory management.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-os.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best DBMS Microproject Ideas for Diploma Students (SQL)</title>
@@ -671,7 +677,7 @@
         <media:title type="plain">20 Best DBMS Microproject Ideas for Diploma Students (SQL)</media:title>
         <media:description type="plain">Master SQL with projects on normalization, joins, and transactions.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-dbms.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>20 Best OOP Microproject Ideas for Diploma Students (C++/Java)</title>
@@ -684,7 +690,7 @@
         <media:title type="plain">20 Best OOP Microproject Ideas for Diploma Students (C++/Java)</media:title>
         <media:description type="plain">Practice encapsulation, inheritance, and polymorphism with C++/Java.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-microproject-ideas-oop.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Top 5 Must-Have Skills Every Engineer Needs in 2025 to Succeed</title>
@@ -697,7 +703,7 @@
         <media:title type="plain">Top 5 Must-Have Skills Every Engineer Needs in 2025 to Succeed</media:title>
         <media:description type="plain">A roadmap covering coding, AI tools, cloud, and adaptability.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5-skills-for-engg.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>MSBTE Winter 2025 Exam Form Fill up Dates &amp; Official Link</title>
@@ -710,7 +716,7 @@
         <media:title type="plain">MSBTE Winter 2025 Exam Form Fill up Dates &amp; Official Link</media:title>
         <media:description type="plain">Deadlines, late fees, and step-by-step guide for students.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/Msbte-winter-2025-exam-form.png" type="image/png" length="0"/>
     </item>
     <item>
       <title>Five Free Certificate Courses to Advance Your Career Toward MAANG-Level Roles</title>
@@ -723,7 +729,7 @@
         <media:title type="plain">Five Free Certificate Courses to Advance Your Career Toward MAANG-Level Roles</media:title>
         <media:description type="plain">Certificates in AI, ML, Cloud, and more from top companies.</media:description>
       </media:content>
-      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5 Free Certificate Courses.PNG" type="image/png" length="0" />
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/5 Free Certificate Courses.PNG" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
