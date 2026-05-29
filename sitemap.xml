@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Main Pages -->
@@ -42,6 +42,12 @@
     <priority>0.85</priority>
   </url>
   <!-- Blog Pages -->
+  <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-expected-result-date.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
   <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/sppu-be-2019-pattern-summer-2026-timetable.html</loc>
     <lastmod>2026-05-04</lastmod>
