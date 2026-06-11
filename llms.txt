@@ -114,4 +114,5 @@ We cover all major engineering branches including **Computer, IT, Civil, Mechani
 ## Important Resources
 - [Sitemap](https://msbtenotes-info.netlify.app/sitemap.xml) - Full site structure.
 - [RSS Feed](https://msbtenotes-info.netlify.app/rss.xml) - Feed for latest updates.
+- [MSBTE Result Summer Exam 2026](https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-exam-result-date-and-link.html) - Expected date, direct portal link, and step-by-step marksheet download guide.
 - [WhatsApp Community](https://chat.whatsapp.com/KFcI5VeJOpjLPgp30NXMfQ) - Join for real-time updates and support.
