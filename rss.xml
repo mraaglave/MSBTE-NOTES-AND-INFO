@@ -5,13 +5,31 @@
     <link>https://msbtenotes-info.netlify.app</link>
     <description>Latest updates, scholarship guides, and academic news for MSBTE students.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 07:54:21 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jun 2026 10:45:00 GMT</lastBuildDate>
     <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png</url>
       <title>MSBTE Notes &amp; Info</title>
       <link>https://msbtenotes-info.netlify.app</link>
     </image>
+    <item>
+      <title>MSBTE Summer 2026 Re-Evaluation and Photocopy Process Announced</title>
+      <link>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-photocopy-reevaluation.html</link>
+      <description>MSBTE Summer 2026 Photocopy &amp; Re-Evaluation dates announced. Apply for photocopy (June 20-22) and Re-Evaluation (July 3-4). Step-by-step guide with official schedule and digital evaluation rules.</description>
+      <pubDate>Thu, 19 Jun 2026 10:45:00 GMT</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-photocopy-reevaluation.html</guid>
+      <category>MSBTE Summer 2026 photocopy</category>
+      <category>MSBTE Summer 2026 re-evaluation</category>
+      <category>MSBTE revaluation 2026</category>
+      <category>MSBTE digital evaluation</category>
+      <category>MSBTE answer sheet photocopy</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-summer-2026-photocopy-reevaluation.png" medium="image" type="image/png">
+        <media:title type="plain">MSBTE Summer 2026 Photocopy and Re-Evaluation</media:title>
+        <media:description type="plain">MSBTE Summer 2026 Photocopy and Re-Evaluation Process Announcement</media:description>
+      </media:content>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/msbte-summer-2026-photocopy-reevaluation.png" type="image/png" length="0" />
+    </item>
     <item>
       <title>MSBTE Summer 2026 Result Declared: Direct Link &amp; Updates</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-result-declared.html</link>

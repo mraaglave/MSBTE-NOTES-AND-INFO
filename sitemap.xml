@@ -43,6 +43,12 @@
   </url>
   <!-- Blog Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-photocopy-reevaluation.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-result-declared.html</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
