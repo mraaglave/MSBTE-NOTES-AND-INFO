@@ -5,13 +5,32 @@
     <link>https://msbtenotes-info.netlify.app</link>
     <description>Latest updates, scholarship guides, and academic news for MSBTE students.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jun 2026 10:45:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 15:55:00 GMT</lastBuildDate>
     <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png</url>
       <title>MSBTE Notes &amp; Info</title>
       <link>https://msbtenotes-info.netlify.app</link>
     </image>
+    <item>
+      <title>Top 20 Engineering Colleges in Maharashtra for MHT CET Aspirants (Detailed Guide)</title>
+      <link>https://msbtenotes-info.netlify.app/Blog/top-20-engineering-colleges-maharashtra.html</link>
+      <description>Discover the top 20 engineering colleges in Maharashtra for MHT CET aspirants. Check previous year cutoff percentiles, average fees, and placements.</description>
+      <pubDate>Tue, 30 Jun 2026 15:55:00 GMT</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/top-20-engineering-colleges-maharashtra.html</guid>
+      <category>top 20 engineering colleges in maharashtra</category>
+      <category>best engineering colleges in maharashtra</category>
+      <category>mht cet engineering colleges</category>
+      <category>VJTI mumbai cutoff</category>
+      <category>PICT pune cutoff</category>
+      <category>COEP pune</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-college-in-maha.png" medium="image" type="image/png">
+        <media:title type="plain">Top 20 Engineering Colleges in Maharashtra</media:title>
+        <media:description type="plain">Top 20 Engineering Colleges in Maharashtra for MHT CET Aspirants Guide</media:description>
+      </media:content>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/20-college-in-maha.png" type="image/png" length="0" />
+    </item>
     <item>
       <title>MSBTE Summer 2026 Re-Evaluation and Photocopy Process Announced</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-summer-2026-photocopy-reevaluation.html</link>
