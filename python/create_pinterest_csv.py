@@ -7,17 +7,27 @@ import os
 # Configuration
 BASE_URL = "https://msbtenotes-info.netlify.app"
 BLOGS_JSON_PATH = "blogs.json"
-OUTPUT_CSV_PATH = "pinterest_upload.csv"
+OUTPUT_CSV_PATH = os.path.join("data", "pinterest_upload.csv")
 PINTEREST_BOARD = "MSBTE Updates"
 
 def parse_date(date_str_raw):
     # Format in JSON: "February 1, 2026 · 12 min read"
-    clean_date_str = date_str_raw.split(' · ')[0]
-    try:
-        dt = datetime.datetime.strptime(clean_date_str, "%B %d, %Y")
-        return dt.strftime("%Y-%m-%d")
-    except ValueError:
-        return datetime.datetime.now().strftime("%Y-%m-%d")
+    clean_date_str = date_str_raw.split(' · ')[0].strip()
+    for fmt in ("%B %d, %Y", "%b %d, %Y"):
+        try:
+            dt = datetime.datetime.strptime(clean_date_str, fmt)
+            return dt.strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    # Extra fallback: strip periods if any
+    clean_date_str_no_dot = clean_date_str.replace('.', '')
+    for fmt in ("%B %d, %Y", "%b %d, %Y"):
+        try:
+            dt = datetime.datetime.strptime(clean_date_str_no_dot, fmt)
+            return dt.strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    return datetime.datetime.now().strftime("%Y-%m-%d")
 
 def generate_csv():
     print("Generating Pinterest CSV...")

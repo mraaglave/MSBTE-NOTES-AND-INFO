@@ -17,11 +17,27 @@ def generate_rss_item(blog_post):
     
     # pubDate should be RFC 822 format. 
     # The JSON has "February 1, 2026 · 10 min read". We need to parse this or use current time if parsing fails.
-    date_str_raw = blog_post.get('dateAndReadTime', '').split(' · ')[0]
-    try:
-        dt = datetime.datetime.strptime(date_str_raw, "%B %d, %Y")
+    date_str_raw = blog_post.get('dateAndReadTime', '').split(' · ')[0].strip()
+    dt = None
+    for fmt in ("%B %d, %Y", "%b %d, %Y"):
+        try:
+            dt = datetime.datetime.strptime(date_str_raw, fmt)
+            break
+        except ValueError:
+            continue
+    if dt is None:
+        # Extra fallback: strip periods if any
+        date_str_raw_no_dot = date_str_raw.replace('.', '')
+        for fmt in ("%B %d, %Y", "%b %d, %Y"):
+            try:
+                dt = datetime.datetime.strptime(date_str_raw_no_dot, fmt)
+                break
+            except ValueError:
+                continue
+
+    if dt is not None:
         pub_date = formatdate(float(dt.timestamp()))
-    except Exception as e:
+    else:
         # Fallback to current time if parsing fails
         pub_date = formatdate(float(datetime.datetime.now().timestamp()))
 
