@@ -55,6 +55,12 @@
   </url>
   <!-- Blog Pages -->
   <url>
+    <loc>https://msbtenotes-info.netlify.app/Blog/dse-admission-schedule-2026.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://msbtenotes-info.netlify.app/Blog/top-20-engineering-colleges-maharashtra.html</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
