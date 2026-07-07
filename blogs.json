@@ -1,5 +1,24 @@
 [
     {
+        "id": "professional-software-project-development",
+        "title": "Professional Final Year Project Development Services for Diploma & Engineering Students",
+        "image": "/resourse/blog-resourse/services-we-provide.png",
+        "imageAlt": "Project Development Services",
+        "dateAndReadTime": "July 07, 2026 · 5 min read",
+        "shortTitle": "Final Year Project Services",
+        "description": "Get industry-level software projects with complete source code, documentation, reports, and installation support for MSBTE diploma and B.E./B.Tech students.",
+        "url": "/Blog/professional-software-project-development.html",
+        "keywords": [
+            "final year project",
+            "software project",
+            "engineering project",
+            "MSBTE project",
+            "micro project",
+            "computer engineering project"
+        ],
+        "category": "Services"
+    },
+    {
         "id": "top-20-engineering-colleges-maharashtra",
         "title": "Top 20 Engineering Colleges in Maharashtra for MHT CET Aspirants (Detailed Guide)",
         "image": "/resourse/blog-resourse/20-college-in-maha.png",
