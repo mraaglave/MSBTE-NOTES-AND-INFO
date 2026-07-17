@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             blogCard.href = relativeUrl;
             blogCard.className = 'block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden';
             blogCard.innerHTML = `
-                <img src="${relativeImage}" alt="${post.imageAlt}" class="w-full h-40 object-cover" loading="lazy">
+                <img src="${relativeImage}" alt="${post.imageAlt}" class="w-full object-cover" style="aspect-ratio: 16 / 9;" loading="lazy">
                 <div class="p-4">
                     <h3 class="font-semibold text-blue-700">${post.shortTitle}</h3>
                 </div>

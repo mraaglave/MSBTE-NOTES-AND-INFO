@@ -198,6 +198,8 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        .faq-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem; transition: all 0.3s ease; }
+        .faq-card:hover { border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); }
     </style>
 </head>
 
@@ -215,32 +217,14 @@
                 MSBTE Notes &amp; Info
             </a>
             
-            <!-- Mobile Menu Toggle -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none" aria-label="Toggle Menu">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-            
-            <div class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
-                <a href="/" class="hover:text-blue-600 transition">Home</a>
-                <a href="/scheme/k-scheme.html" class="hover:text-blue-600 transition">K-Scheme</a>
-                <a href="/scheme/i-scheme.html" class="hover:text-blue-600 transition">I-Scheme</a>
-                <a href="/internships.html" class="hover:text-blue-600 transition">Internships</a>
-                <a href="/Jobs/" class="hover:text-blue-600 transition">Jobs</a>
-                <a href="/Blog/index.html" class="text-blue-600 transition">Blog</a>
-            </div>
+            <div class="hidden md:flex space-x-6"><a href="/about.html" class="hover:text-blue-600">About</a><a
+                    href="/contact.html" class="hover:text-blue-600">Contact</a><a href="/privacy-policy.html"
+                    class="hover:text-blue-600">Privacy</a></div><button onclick="toggleMobileMenu()"
+                class="md:hidden text-blue-600 text-3xl font-bold">≡</button>
         </div>
-        
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobileNav" class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3 shadow-inner">
-            <a href="/" class="block text-gray-700 hover:text-blue-600 font-semibold">Home</a>
-            <a href="/scheme/k-scheme.html" class="block text-gray-700 hover:text-blue-600 font-semibold">K-Scheme</a>
-            <a href="/scheme/i-scheme.html" class="block text-gray-700 hover:text-blue-600 font-semibold">I-Scheme</a>
-            <a href="/internships.html" class="block text-gray-700 hover:text-blue-600 font-semibold">Internships</a>
-            <a href="/Jobs/" class="block text-gray-700 hover:text-blue-600 font-semibold">Jobs</a>
-            <a href="/Blog/index.html" class="block text-blue-600 font-semibold">Blog</a>
-        </div>
+        <div id="mobileNav" class="md:hidden hidden bg-white shadow px-4 py-2"><a href="/about.html"
+                class="block py-2">About</a><a href="/contact.html" class="block py-2">Contact</a><a
+                href="/privacy-policy.html" class="block py-2">Privacy Policy</a></div>
     </nav>
 
     <!-- Main Container -->
@@ -525,27 +509,27 @@
 
             <!-- FAQ Section -->
             <div class="my-10" id="faq">
-                <h2 class="text-2xl font-bold text-blue-600 font-display mb-4">Frequently Asked Questions (FAQ)</h2>
-                <div class="space-y-6">
-                    <div>
+                <h2 class="text-2xl font-bold text-blue-600 font-display mb-6">Frequently Asked Questions (FAQ)</h2>
+                <div class="space-y-4">
+                    <div class="faq-card">
                         <p class="font-bold text-lg text-gray-800">Q: Is BE equal to BTech?</p>
-                        <p class="text-gray-700">A: Yes. Both are undergraduate engineering degrees recognized by AICTE and accepted by employers and universities.</p>
+                        <p class="text-gray-700 mt-2">A: Yes. Both are undergraduate engineering degrees recognized by AICTE and accepted by employers and universities.</p>
                     </div>
-                    <div>
+                    <div class="faq-card">
                         <p class="font-bold text-lg text-gray-800">Q: Which degree is better for software engineering?</p>
-                        <p class="text-gray-700">A: Both are equally suitable. Your programming skills, projects, and internship experience matter far more.</p>
+                        <p class="text-gray-700 mt-2">A: Both are equally suitable. Your programming skills, projects, and internship experience matter far more.</p>
                     </div>
-                    <div>
+                    <div class="faq-card">
                         <p class="font-bold text-lg text-gray-800">Q: Is BE valid abroad?</p>
-                        <p class="text-gray-700">A: Yes. BE is recognized internationally for higher studies and employment, subject to the destination country's evaluation process.</p>
+                        <p class="text-gray-700 mt-2">A: Yes. BE is recognized internationally for higher studies and employment, subject to the destination country's evaluation process.</p>
                     </div>
-                    <div>
+                    <div class="faq-card">
                         <p class="font-bold text-lg text-gray-800">Q: Can BE students write GATE?</p>
-                        <p class="text-gray-700">A: Yes. Both BE and BTech graduates are eligible for GATE.</p>
+                        <p class="text-gray-700 mt-2">A: Yes. Both BE and BTech graduates are eligible for GATE.</p>
                     </div>
-                    <div>
+                    <div class="faq-card">
                         <p class="font-bold text-lg text-gray-800">Q: Is there any salary difference between BE and BTech?</p>
-                        <p class="text-gray-700">A: No. Salaries depend on your skills, college, experience, and employer—not the degree title.</p>
+                        <p class="text-gray-700 mt-2">A: No. Salaries depend on your skills, college, experience, and employer—not the degree title.</p>
                     </div>
                 </div>
             </div>
