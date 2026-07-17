@@ -1,10 +1,9 @@
 const fs = require('fs').promises;
-const { parseStringPromise } = require('xml2js');
 const path = require('path');
 
-const RSS_PATH = path.join(__dirname, 'rss.xml');
-const BLOGS_JSON_PATH = path.join(__dirname, 'blogs.json');
-const RESOURCES_JSON_PATH = path.join(__dirname, 'Notes', 'resources.json');
+const RSS_PATH = path.join(__dirname, '..', 'rss.xml');
+const BLOGS_JSON_PATH = path.join(__dirname, '..', 'blogs.json');
+const RESOURCES_JSON_PATH = path.join(__dirname, '..', 'Notes', 'resources.json');
 
 const BASE_URL = 'https://msbtenotes-info.netlify.app';
 
@@ -100,40 +99,99 @@ function getResourceTags(title, categories) {
     return Array.from(tags);
 }
 
+/**
+ * Decodes XML entities.
+ * @param {string} str - The XML encoded string.
+ * @returns {string} The decoded string.
+ */
+function unescapeXml(str) {
+    if (!str) return '';
+    return str
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&apos;/g, "'")
+        .replace(/&quot;/g, '"');
+}
+
 async function updateJsonFiles() {
     try {
         console.log('Reading rss.xml...');
         const xmlData = await fs.readFile(RSS_PATH, 'utf8');
-        const parsedData = await parseStringPromise(xmlData);
 
-        const items = parsedData.rss.channel[0].item;
+        // Extract all <item> tags using regex
+        const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+        const items = [];
+        let match;
+        while ((match = itemRegex.exec(xmlData)) !== null) {
+            items.push(match[1]);
+        }
         console.log(`Found ${items.length} items in the RSS feed.`);
 
         const blogPosts = [];
         const resources = [];
 
-        for (const item of items) {
-            const link = item.link[0];
-            const title = item.title[0];
-            const description = item.description[0];
-            const pubDate = item.pubDate[0];
-            const categories = item.category || [];
-            const mediaContent = item['media:content'] ? item['media:content'][0].$ : null;
+        for (const itemXml of items) {
+            const link = unescapeXml(((itemXml.match(/<link>(.*?)<\/link>/i) || [])[1] || '').trim());
+            const title = unescapeXml(((itemXml.match(/<title>(.*?)<\/title>/i) || [])[1] || '').trim());
+            const description = unescapeXml(((itemXml.match(/<description>(.*?)<\/description>/i) || [])[1] || '').trim());
+            const pubDate = ((itemXml.match(/<pubDate>(.*?)<\/pubDate>/i) || [])[1] || '').trim();
+            
+            // Extract categories
+            const categoryRegex = /<category>(.*?)<\/category>/gi;
+            const categories = [];
+            let catMatch;
+            while ((catMatch = categoryRegex.exec(itemXml)) !== null) {
+                categories.push(unescapeXml(catMatch[1].trim()));
+            }
+
+            // Extract media:content
+            let mediaUrl = '';
+            let mediaTitle = '';
+            let mediaDescription = '';
+
+            const mediaContentMatch = itemXml.match(/<media:content\s+([^>]*?)\/?>/i);
+            if (mediaContentMatch && mediaContentMatch[1]) {
+                const attrs = mediaContentMatch[1];
+                mediaUrl = unescapeXml((attrs.match(/url="([^"]*?)"/i) || [])[1] || '');
+            } else {
+                const enclosureMatch = itemXml.match(/<enclosure\s+([^>]*?)\/?>/i);
+                if (enclosureMatch && enclosureMatch[1]) {
+                    const attrs = enclosureMatch[1];
+                    mediaUrl = unescapeXml((attrs.match(/url="([^"]*?)"/i) || [])[1] || '');
+                }
+            }
+
+            const mediaTitleMatch = itemXml.match(/<media:title[^>]*?>(.*?)<\/media:title>/i);
+            if (mediaTitleMatch) mediaTitle = unescapeXml(mediaTitleMatch[1].trim());
+
+            const mediaDescMatch = itemXml.match(/<media:description[^>]*?>(.*?)<\/media:description>/i);
+            if (mediaDescMatch) mediaDescription = unescapeXml(mediaDescMatch[1].trim());
 
             const relativeUrl = toRelativeUrl(link);
-            const id = path.basename(relativeUrl.replace(/\/$/, ''), '.html'); // Handle trailing slashes
+            const id = path.basename(relativeUrl.replace(/\/$/, ''), '.html');
 
             // Check if it's a blog post
             if (relativeUrl.startsWith('/Blog/')) {
+                const KNOWN_CATEGORIES = ["Result Updates", "Admission News", "Services", "Career Guidance", "Education Policy", "Education News", "Government", "Tributes"];
+                let primaryCategory = "Blog";
+                for (const cat of categories) {
+                    if (KNOWN_CATEGORIES.includes(cat)) {
+                        primaryCategory = cat;
+                        break;
+                    }
+                }
                 blogPosts.push({
                     id: id,
                     title: title,
-                    image: mediaContent ? toRelativeUrl(mediaContent.url) : '',
-                    imageAlt: mediaContent ? (mediaContent['media:title'] ? mediaContent['media:title'][0] : title) : title,
+                    image: mediaUrl ? toRelativeUrl(mediaUrl) : '',
+                    imageAlt: mediaTitle || title,
                     dateAndReadTime: `${new Date(pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} · ${calculateReadTime(description)}`,
                     shortTitle: generateShortTitle(title),
                     description: description,
                     url: relativeUrl,
+                    keywords: categories,
+                    category: primaryCategory
                 });
             }
             // Check if it's a resource (in /Notes/, /Branches/, or /Jobs/)
@@ -145,7 +203,7 @@ async function updateJsonFiles() {
                     title: title,
                     description: description,
                     url: relativeUrl,
-                    thumbnail: mediaContent ? toRelativeUrl(mediaContent.url) : '/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png',
+                    thumbnail: mediaUrl ? toRelativeUrl(mediaUrl) : '/resourse/MSBTE%20NOTES%20AND%20INFORMATION.png',
                     category: getResourceCategory(categories),
                     tags: getResourceTags(title, categories),
                     dateAdded: new Date(pubDate).toISOString().split('T')[0], // YYYY-MM-DD

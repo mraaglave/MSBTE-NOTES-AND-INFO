@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const TARGET_FILE = path.join(__dirname, '..', 'Blog', 'msbte-summer-2026-exam-result-date-and-link.html');
+const TARGET_FILE = process.argv[2]
+    ? path.resolve(process.argv[2])
+    : path.join(__dirname, '..', 'Blog', 'msbte-summer-2026-exam-result-date-and-link.html');
 
 function validate() {
     console.log("Checking schemas in:", TARGET_FILE);
