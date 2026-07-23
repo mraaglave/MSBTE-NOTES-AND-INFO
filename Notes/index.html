@@ -154,13 +154,14 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="/style.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" as="style">
     <link rel="preload" href="/Notes/notes.js" as="script">
 
 
     <!-- Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
     <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
@@ -174,6 +175,7 @@
         }
 
         body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: #f8fafc;
             /* bg-slate-50 */
             background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
@@ -184,7 +186,7 @@
         h2,
         h3,
         .font-display {
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Poppins', 'Inter', sans-serif;
         }
 
         /* Glassmorphism Classes */
