@@ -154,14 +154,13 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="/style.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" as="style">
     <link rel="preload" href="/Notes/notes.js" as="script">
 
 
     <!-- Fonts & Tailwind -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <script async src="https://fundingchoicesmessages.google.com/i/pub-9227354288966999?ers=1"></script>
     <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
@@ -175,7 +174,6 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: #f8fafc;
             /* bg-slate-50 */
             background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
@@ -186,7 +184,7 @@
         h2,
         h3,
         .font-display {
-            font-family: 'Poppins', 'Inter', sans-serif;
+            font-family: 'Clash Display', sans-serif;
         }
 
         /* Glassmorphism Classes */
@@ -702,6 +700,12 @@
                 <ul class="space-y-3 text-sm">
                     <li><a href="/" class="hover:text-white transition-colors flex items-center gap-2"><span
                                 class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Home</a></li>
+                    <li><a href="/Blog/" class="hover:text-white transition-colors flex items-center gap-2"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Blog</a></li>
+                    <li><a href="/CollegeInfo/" class="hover:text-white transition-colors flex items-center gap-2"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> College Info</a></li>
+                    <li><a href="/sitemap.html" class="hover:text-white transition-colors flex items-center gap-2"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Sitemap</a></li>
                     <li><a href="/about.html" class="hover:text-white transition-colors flex items-center gap-2"><span
                                 class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> About Us</a></li>
                     <li><a href="/contact.html" class="hover:text-white transition-colors flex items-center gap-2"><span
@@ -733,8 +737,9 @@
 
         <div
             class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-indigo-800/50 flex flex-col md:flex-row justify-between items-center text-xs text-indigo-300 gap-4">
-            <p>&copy; 2025 MSBTE Notes & Info. All rights reserved.</p>
+            <p>&copy; 2026 MSBTE Notes &amp; Info. All rights reserved.</p>
             <div class="flex items-center gap-6">
+                <a href="/Blog/" class="hover:text-white transition-colors">Blog</a>
                 <a href="/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
                 <a href="/privacy-policy.html" class="hover:text-white transition-colors">Privacy</a>
             </div>
