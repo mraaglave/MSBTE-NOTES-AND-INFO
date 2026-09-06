@@ -5,13 +5,30 @@
     <link>https://msbtenotes-info.netlify.app</link>
     <description>Latest updates, scholarship guides, and academic news for MSBTE students.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2026 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 13:30:00 GMT</lastBuildDate>
     <atom:link href="https://msbtenotes-info.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://msbtenotes-info.netlify.app/resourse/favicon-32x32.png</url>
       <title>MSBTE Notes &amp; Info</title>
       <link>https://msbtenotes-info.netlify.app</link>
     </image>
+    <item>
+      <title>Engineering Admission 2026: Institute-Level Round Strictly Merit-Based, CET Cell Guidelines</title>
+      <link>https://msbtenotes-info.netlify.app/Blog/engineering-admissions-institute-level-round-merit-based-2026.html</link>
+      <description>Maharashtra CET Cell issues strict merit rules for 2026 institute-level engineering admissions with daily reporting &amp; observers. Check vacant seats &amp; process.</description>
+      <pubDate>Sun, 06 Sep 2026 13:30:00 GMT</pubDate>
+      <dc:creator>MSBTE Notes &amp; Info Team</dc:creator>
+      <guid isPermaLink="true">https://msbtenotes-info.netlify.app/Blog/engineering-admissions-institute-level-round-merit-based-2026.html</guid>
+      <category>Engineering Admissions 2026</category>
+      <category>Institute Level Round 2026</category>
+      <category>CET Cell Guidelines</category>
+      <category>Admission Updates</category>
+      <media:content url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/institute-level-engineering-admission-2026.png" medium="image" type="image/png">
+        <media:title type="plain">Engineering Admissions 2026: Institute-Level Round Strictly Merit-Based</media:title>
+        <media:description type="plain">Engineering Admissions 2026: Institute-Level Round Strictly Merit-Based</media:description>
+      </media:content>
+      <enclosure url="https://msbtenotes-info.netlify.app/resourse/blog-resourse/institute-level-engineering-admission-2026.png" type="image/png" length="0" />
+    </item>
     <item>
       <title>MSBTE Academic Calendar 2026-27 Released: Key Dates for Odd Sem, Winter Exam &amp; Enrolment</title>
       <link>https://msbtenotes-info.netlify.app/Blog/msbte-academic-calendar-2026-27-winter-exam-date.html</link>
